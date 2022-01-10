@@ -19,25 +19,29 @@
     }
 }
 
-
+.module {
+}
 .cursor {
-    width: 20px;
-    height: 20px;
-    border: 1px solid white;
+    cursor: none !important;	
+    /* cursor: url('../public/vercel.svg'), auto;	 */
+    width: 10px;
+    height: 10px;
+    /* border: 1px solid rgb(209, 53, 53); */
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
+    background-color: #80E0A7;
     }
     .cursor::after {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     border: 2px solid #80E0A7;
     border-radius: 50%;
-    opacity: .5;
-    top: -8px;
-    left: -8px;
+    opacity: .6;
+    top: -9px;
+    left: -9px;
     }
     @keyframes cursorAnim {
     0% {
