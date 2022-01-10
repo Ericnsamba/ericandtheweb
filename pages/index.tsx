@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-8xl text-green text-bold font-display">Eric &amp; the web</h1>
+        <h1 className="text-8xl text-green font-bold font-display">Eric &amp; the web</h1>
         <p className="text-sm hover:text-base font-body"> hello</p>
       </main>
     </div>
