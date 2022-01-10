@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer utilities {
     .h-64 {
         height: 64px;
@@ -16,3 +18,39 @@
         margin: 20px
     }
 }
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    }
+    .cursor::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border: 2px solid #80E0A7;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    }
+    @keyframes cursorAnim {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(5);
+    }
+    100% {
+    transform: scale(1);
+    opacity: 0;
+    }
+    }
+    .expand {
+    animation: cursorAnim 0.8s forwards;
+    }

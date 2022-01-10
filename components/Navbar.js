@@ -4,7 +4,7 @@ import memojiImage from "../public/images/ericMemoji.png";
 
 const NavBar = () => {
   return (
-    <div className="flex justify-between	items-center rounded-xl	m-5 p-5 border">
+    <div className="flex justify-between	items-center rounded-xl	m-5 p-5 border border-slate-200">
       <div className="flex items-cente">
         <Image
           className="mr-10"
@@ -15,24 +15,19 @@ const NavBar = () => {
         />
 
         <div className="flex items-start flex-col	self-center	ml-5">
-          <strong>Eric & The Web</strong>
-          <span>Designer & Developer</span>
+          <strong className="text-black font-body">Eric & The Web</strong>
+          <span className="text-slate-300	font-body font-light">Designer & Developer</span>
         </div>
-        {/* <div className="flex items-cente">
-          
-          <p className="text-sm font-normal font-body">Eric & The Web</p>
-          <p className="text-sm font-normal font-body">Designer & Developer</p>
-        </div> */}
       </div>
       <div className="w-3/12	justify-between flex ">
         <Link href="/">
-          <a className="font-body uppercase" >About me</a>
+          <a className="font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100" >About me</a>
         </Link>
         <Link href="/portfolio">
-          <a className="font-body uppercase">Portfolio</a>
+          <a className="font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">Portfolio</a>
         </Link>
         <Link href="/contact">
-          <a className="font-body uppercase">Contact</a>
+          <a className="font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">Contact</a>
         </Link>
       </div>
     </div>
