@@ -4,13 +4,14 @@ import NavBar from "./Navbar"
 
 const Layout = ({children}) => {
 return (
-    <div className="content container mx-auto cursor-none">
+    <div className="flex flex-col lg:content lg:container mx-auto min-h-screen">
+        {/* content container mx-auto */}
         <CustomCursor />
         <NavBar/>
-        <div className="my-8 cursor-none">
+        <div className={"mainbody py-8 px-8"}>
         {children}
         </div>
-        <Footer className=""/>
+        <Footer className="pt-12"/>
     </div>
 )
 }

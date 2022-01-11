@@ -5,16 +5,15 @@ import { useState } from "react";
 const Footer = () => {
   const [mode, setMode] = useState("auto");
   return (
-    <div className="absolute inset-x-0	bottom-0">
+     <div className="mt-10"> 
       <footer id="footer" className="relative z-50">
-      {/* <footer id="footer" className="relative z-50 bg-slate-200 	"> */}
         <div className="border-gray-200 dark:border-gray-700 py-2">
           <div className="mx-auto container px-4 xl:px-12 2xl:px-4">
             <div className="lg:flex">
-            <div className="w-full lg:w-1/2 flex items-start justify-start">
+            <div className="w-full lg:w-1/2 flex items-start lg:justify-start justify-center">
                 <div className="flex items-center mb-6">
                   <a href="javascript:void(0)">
-                    <div className="text-black cursor-pointer hover:text-brand ">
+                    <div className="text-black cursor-pointer hover:text-green ">
                       <svg
                         className="footer-icon feather feather-github"
                         xmlns="http://www.w3.org/2000/svg"
@@ -32,9 +31,9 @@ const Footer = () => {
                     </div>
                   </a>
                   <a href="javascript:void(0)">
-                    <div className="pl-4">
+                    <div className="pl-4 text-black cursor-pointer hover:text-green">
                       <svg
-                        className="footer-icon feather feather-twitter text-black cursor-pointer"
+                        className="footer-icon feather feather-twitter"
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
                         height={24}
@@ -51,12 +50,11 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 lg:mb-0 flex justify-end items-start">
+              <div className="w-full lg:w-1/2 lg:mb-0 flex lg:justify-end justify-center items-start">
               <ul>
                     <li>
                       <Link href="javascript:void(0)">
-                        {/* <a className="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-green text-gray-800 dark:text-gray-50"> */}
-                        <a className="text-xs lg:text-sm leading-none text-black">
+                        <a className="text-base text-body lg:text-sm leading-none text-black">
                           Thanks
                         </a>
                       </Link>

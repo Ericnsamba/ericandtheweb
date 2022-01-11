@@ -2,27 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* layer */
+@layer utilities {}
 
-
-@layer utilities {
-    .h-64 {
-        height: 64px;
-    }
-    .w-60 {
-        width: 60px;
-    }
-    m-20 {
-        margin: 20px
-    }
-    mr-20 {
-        margin: 20px
-    }
+/* mainn */
+.mainbody {
+    flex: 1;
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.module {
-}
+
+/* cursor */
+.module {}
+
 .cursor {
-    cursor: none !important;	
+    /* cursor: none !important;	 */
     /* cursor: url('../public/vercel.svg'), auto;	 */
     width: 10px;
     height: 10px;
@@ -31,8 +29,9 @@
     position: absolute;
     pointer-events: none;
     background-color: #80E0A7;
-    }
-    .cursor::after {
+}
+
+.cursor::after {
     content: "";
     width: 30px;
     height: 30px;
@@ -42,19 +41,23 @@
     opacity: .6;
     top: -9px;
     left: -9px;
-    }
-    @keyframes cursorAnim {
+}
+
+@keyframes cursorAnim {
     0% {
-    transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-    transform: scale(5);
+        transform: scale(5);
     }
+
     100% {
-    transform: scale(1);
-    opacity: 0;
+        transform: scale(1);
+        opacity: 0;
     }
-    }
-    .expand {
+}
+
+.expand {
     animation: cursorAnim 0.8s forwards;
-    }
+}
