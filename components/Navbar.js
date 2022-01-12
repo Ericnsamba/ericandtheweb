@@ -63,22 +63,22 @@ const NavBar = ({ fixed }) => {
             >
               <div className="flex flex-col lg:flex-row list-none lg:ml-auto lg:w-1/2	px-8 justify-between">
                 <Link href="/" >
-                  <a onClick={() =>  setMenuOpen(false)} className="text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
                     Home
                   </a>
                 </Link>
                 <Link href="/about">
-                  <a onClick={() =>  setMenuOpen(false)} className="text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
                     About me
                   </a>
                 </Link>
                 <Link href="/portfolio">
-                  <a onClick={() =>  setMenuOpen(false)} className="text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
                     Portfolio
                   </a>
                 </Link>
                 <Link href="/contact">
-                  <a onClick={() =>  setMenuOpen(false)} className="text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
                     Contact
                   </a>
                 </Link>
