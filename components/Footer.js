@@ -7,7 +7,7 @@ import { Camera, Dribbble, GitHub, Twitter, Linkedin, Instagram } from "react-fe
 const Footer = () => {
   const [mode, setMode] = useState("auto");
   return (
-    <div className="mt-10">
+    <div className="mt-10  mb-6 lg:mb-0">
       <footer id="footer" className="relative z-50">
         <div className="border-gray-200 dark:border-gray-700 py-2">
           <div className="mx-auto container px-4 xl:px-12 2xl:px-4">
@@ -48,7 +48,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link href="javascript:void(0)">
-                      <a className="text-base text-body lg:text-sm leading-none text-black">
+                      <a className="text-base font-bold text-body lg:text-sm leading-none text-black">
                         MY CV
                       </a>
                     </Link>

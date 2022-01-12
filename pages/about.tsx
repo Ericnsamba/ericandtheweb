@@ -18,7 +18,7 @@ export default function AboutPage() {
       <div className="mx-auto container px-4 xl:px-12 2xl:px-4 ">
         <div className="lg:flex">
           <div className="w-full sm:px-0  lg:w-1/2 justify-between flex flex-col lg:px-10 h-full">
-            <h1 className="text-7xl text-green font-bold font-display">
+            <h1 className="text-7xl text-green font-bold ">
               About me
             </h1>
 
@@ -47,8 +47,8 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 max-w-xs -mt-20 lg:-mr-10 -mr-4 self-end	z-10 hover:shadow-md">
-              <h4 className="subheader text-black font-display mb-4">Portfolio</h4>
+            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 lg:w-96 w-72		 -mt-20 lg:-mr-10 lg:self-end self-center	z-10 hover:shadow-md">
+              <h4 className="subheader text-black font-display mb-4 text-white text-lg">Portfolio</h4>
               <p className="font-body text-black">
                 I am a developer and UX/UI designer based in Italy. National and
                 international customers have relied.
