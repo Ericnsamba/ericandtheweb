@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Eric &amp; the web | Portfolio</title>
+        <title>Eric &amp; the web | About me</title>
         <meta
           name="description"
           content="Product designer and app developer website"
