@@ -125,16 +125,19 @@
     src: url(https://github.com/Ericnsamba/ericandtheweb/blob/main/public/assets/fonts/MonumentExtended-Bold.ttf?raw=true);
 } */
 h1 {
-    font-family: 'Monument Extended' !important;
+    font-family: 'Monument Extended', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     font-weight: bold;
     letter-spacing: .05em
 }
 h2, h3, h4 {
-    font-family: 'Monument Extended' !important;
+    font-family: 'Monument Extended', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     letter-spacing: .05em
 }
 p, .header-nav-item a .menuItems {
-    font-family: 'Circular Std Book' !important;
+    font-family: 'Circular Std Book', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 .subheader {
     font-family: 'Monument Extended' !important;
