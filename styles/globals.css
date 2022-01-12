@@ -1,11 +1,41 @@
+@import url('/fonts/stylesheet.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* layer */
-@layer utilities {}
 
-/* mainn */
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../public//assets//fonts/MonumentExtended-Regular.ttf');
+}
+@font-face {
+    font-family: 'CircularStd';
+    src: url('../public//assets/fonts/CircularStd-Book.otf');
+}
+@font-face {
+    font-family: 'NeoRetroFill';
+    src: url(https://static1.squarespace.com/static/5f1b9f2f34c4503c6738c796/t/5fecc0efcd896d745924ab9b/1609351407792/NEORF___-webfont.woff);
+}
+h1 {
+    font-family: 'MonumentExtended' !important;
+    font-weight: bold;
+    /* letter-spacing: .05em */
+}
+h2 {
+    font-family: 'MonumentExtended' !important;
+}
+h3, h4, p, .header-nav-item a {
+    font-family: 'CircularStd' !important;
+}
+.subheader {
+    font-family: 'MonumentExtended' !important;
+}
+
+
+
+
+/* main on every page*/
 .mainbody {
     flex: 1;
     /* background-color: beige; */
@@ -15,9 +45,6 @@
     align-items: center;
 }
 
-
-/* cursor */
-.module {}
 
 .cursor {
     /* cursor: none !important;	 */

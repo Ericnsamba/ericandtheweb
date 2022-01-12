@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-8xl text-green text-bold">Portfolio</h1>
+        <h1 className="text-8xl text-green font-normal ">Portfolio</h1>
       </main>
     </div>
   );

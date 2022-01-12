@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import EricPhoto from "../public/images/eric-picture.png";
+import EricPhoto from "../public/assets/images/eric-picture.png";
 
 export default function AboutPage() {
   return (
@@ -23,7 +23,7 @@ export default function AboutPage() {
             </h1>
 
             <div className="py-10">
-              <p>
+              <p className="text-black font-normal">
                 I am a developer and UX/UI designer based in Italy. National and
                 international customers have relied on me for design,
                 implementation, and management of their digital products. As a
@@ -47,9 +47,9 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 max-w-xs -mt-20 lg:-mr-10 -mr-6 self-end	z-10 hover:shadow-md">
-              <h4 className="font-display mb-4">Portfolio</h4>
-              <p className="font-body ">
+            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 max-w-xs -mt-20 lg:-mr-10 -mr-4 self-end	z-10 hover:shadow-md">
+              <h4 className="subheader text-black font-display mb-4">Portfolio</h4>
+              <p className="font-body text-black">
                 I am a developer and UX/UI designer based in Italy. National and
                 international customers have relied.
               </p>

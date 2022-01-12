@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import memojiImage from "../public/images/ericMemoji.png";
+import memojiImage from "../public/assets/images/ericMemoji.png";
 
 const NavBar = ({ fixed }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);

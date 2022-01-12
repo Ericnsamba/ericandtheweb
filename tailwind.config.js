@@ -12,11 +12,12 @@ module.exports = {
         },
         green: '#80E0A7',
         black: '#212322',
-        ForestGreen: '#1C4220'
+        ForestGreen: '#1C4220',
+        white: '#ffffff'
       },
       fontFamily: {
-        'display': ['Monument Extended'],
-        'body': ['Circular Std'],
+        'display': ['"Monument Extended"', 'Helvetica, Arial, sans-serif'],
+        'body': ['"Circular Std"', 'Helvetica, Arial, sans-serif'],
       },
       height: {
 				"10v": "10vh",
@@ -33,6 +34,8 @@ module.exports = {
     },
   },
   plugins: [
-    
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    // require('@tailwindcss/form'),
   ],
 }
