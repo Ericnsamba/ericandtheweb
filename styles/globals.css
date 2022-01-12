@@ -16,9 +16,9 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* MonumentExtended-Regular */
 @font-face {
-    font-family: 'Monument Extended Regular';
+    font-family: 'MonumentExtended-Regular';
     src: url('../public/fonts/MonumentExtended-Regular.eot');
     src: url('../public/fonts/MonumentExtended-Regular.eot?#iefix') format('embedded-opentype'),
         url('../public/fonts/MonumentExtended-Regular.woff2') format('woff2'),
@@ -28,7 +28,7 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* MonumentExtended-Light */
 @font-face {
     font-family: 'Monument Extended Light';
     src: url('../public/fonts/MonumentExtended-Light.eot');
@@ -40,9 +40,9 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* MonumentExtended-Bold */
 @font-face {
-    font-family: 'Monument Extended Bold';
+    font-family: 'MonumentExtended-Bold';
     src: url('../public/fonts/MonumentExtended-Bold.eot');
     src: url('../public/fonts/MonumentExtended-Bold.eot?#iefix') format('embedded-opentype'),
         url('../public/fonts/MonumentExtended-Bold.woff2') format('woff2'),
@@ -67,6 +67,8 @@
 
 
 /* CircularStd  font face*/
+
+
 @font-face {
     font-family: 'Circular Std';
     src: url('../public/fonts/CircularStd-Medium.eot');
@@ -92,7 +94,7 @@
 }
 
 @font-face {
-    font-family: 'Circular Std Book';
+    font-family: 'CircularStd-Book';
     src: url('../public/fonts/CircularStd-Book.eot');
     src: url('../public/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
         url('../public/fonts/CircularStd-Book.woff2') format('woff2'),
@@ -125,22 +127,22 @@
     src: url(https://github.com/Ericnsamba/ericandtheweb/blob/main/public/assets/fonts/MonumentExtended-Bold.ttf?raw=true);
 } */
 h1 {
-    font-family: 'Monument Extended Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'MonumentExtended-Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     font-weight: regular;
     letter-spacing: .05em
 }
 h2, h3, h4 {
-    font-family: 'Monument Extended Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'MonumentExtended-Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     letter-spacing: .05em
 }
 p, .header-nav-item a .menuItems {
-    font-family: 'Circular Std Book', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'CircularStd-Book', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 .subheader {
-    font-family: 'Monument Extended Regular',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'MonumentExtended-Regular',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     letter-spacing: .05em
 }
