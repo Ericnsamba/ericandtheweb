@@ -12,6 +12,24 @@ export default function AboutPage() {
           name="description"
           content="Product designer and app developer website"
         />
+        <link
+            rel="preload"
+            href="../public/fonts/MonumentExtended-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+        <link
+            rel="preload"
+            href="../public/fonts/MonumentExtended-Bold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+        <link
+            rel="preload"
+            href="../public/fonts/CircularStd-Book.ttf"
+            as="font"
+            crossOrigin=""
+          />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

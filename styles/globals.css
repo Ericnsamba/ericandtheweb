@@ -140,7 +140,8 @@ p, .header-nav-item a .menuItems {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 .subheader {
-    font-family: 'Monument Extended Regular' !important;
+    font-family: 'Monument Extended Regular',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
     letter-spacing: .05em
 }
 
