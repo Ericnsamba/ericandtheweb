@@ -31,9 +31,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-8xl text-green font-bold font-display">Eric &amp; the web</h1>
-        <p className="text-sm hover:text-base font-body"> hello</p>
+      <iframe className="max-w-full" src='https://my.spline.design/iphone13copy-e971d79210421a5f0b6dbebf8e0fab55/'  width='1000px' height='600px'></iframe>
       </main>
     </div>
   );
 }
+// Eric & The Web

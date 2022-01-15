@@ -5,6 +5,7 @@
 
 
 
+/* Monument Extended Ultralight */
 @font-face {
     font-family: 'Monument Extended Ultralight';
     src: url('../styles/fonts/MonumentExtended-Ultralight.eot');
@@ -19,11 +20,11 @@
 /* MonumentExtended-Regular */
 @font-face {
     font-family: 'MonumentExtended-Regular';
-    src: url('../styles/fonts/MonumentExtended-Regular.eot');
-    src: url('../styles/fonts/MonumentExtended-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../styles/fonts/MonumentExtended-Regular.woff2') format('woff2'),
-        url('../styles/fonts/MonumentExtended-Regular.woff') format('woff'),
-        url('../styles/fonts/MonumentExtended-Regular.ttf') format('truetype');
+    src: url(../styles/fonts/MonumentExtended-Regular.eot);
+    src: url(../styles/fonts/MonumentExtended-Regular.eot?#iefix) format('embedded-opentype'),
+        url(../styles/fonts/MonumentExtended-Regular.woff2) format('woff2'),
+        url(../styles/fonts/MonumentExtended-Regular.woff) format('woff'),
+        url(../styles/fonts/MonumentExtended-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -43,11 +44,11 @@
 /* MonumentExtended-Bold */
 @font-face {
     font-family: 'MonumentExtended-Bold';
-    src: url('../styles/fonts/MonumentExtended-Bold.eot');
-    src: url('../styles/fonts/MonumentExtended-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../styles/fonts/MonumentExtended-Bold.woff2') format('woff2'),
-        url('../styles/fonts/MonumentExtended-Bold.woff') format('woff'),
-        url('../styles/fonts/MonumentExtended-Bold.ttf') format('truetype');
+    src: url(../styles/fonts/MonumentExtended-Bold.eot);
+    src: url(../styles/fonts/MonumentExtended-Bold.eot?#iefix) format('embedded-opentype'),
+        url(../styles/fonts/MonumentExtended-Bold.woff2) format('woff2'),
+        url(../styles/fonts/MonumentExtended-Bold.woff) format('woff'),
+        url(../styles/fonts/MonumentExtended-Bold.ttf) format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
