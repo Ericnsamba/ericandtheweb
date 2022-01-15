@@ -1,0 +1,113 @@
+
+/* Monument Extended Ultralight */
+/* @font-face {
+    font-family: 'Monument Extended Ultralight';
+    src: url('../styles/fonts/MonumentExtended-Ultralight.eot');
+    src: url('../styles/fonts/MonumentExtended-Ultralight.eot?#iefix') format('embedded-opentype'),
+        url('../styles/fonts/MonumentExtended-Ultralight.woff2') format('woff2'),
+        url('../styles/fonts/MonumentExtended-Ultralight.woff') format('woff'),
+        url('../styles/fonts/MonumentExtended-Ultralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+} */
+/* MonumentExtended-Regular */
+@font-face {
+    font-family: 'MonumentExtended-Regular';
+    src: url(../../public/fonts/MonumentExtended-Regular.eot);
+    src: url(../../public/fonts/MonumentExtended-Regular.eot?#iefix) format('embedded-opentype'),
+        url(../../public/fonts/MonumentExtended-Regular.woff2) format('font-woff2'),
+        url(../../public/fonts/MonumentExtended-Regular.woff) format('font-woff'),
+        url(../../public/fonts/MonumentExtended-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/* MonumentExtended-Light */
+@font-face {
+    font-family: 'Monument Extended Light';
+    src: url('../../public/fonts/MonumentExtended-Light.eot');
+    src: url('../../public/fonts/MonumentExtended-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/MonumentExtended-Light.woff2') format('font-woff2'),
+        url('../../public/fonts/MonumentExtended-Light.woff') format('font-woff'),
+        url('../../public/fonts/MonumentExtended-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+/* MonumentExtended-Bold */
+@font-face {
+    font-family: 'MonumentExtended-Bold';
+    src: url(../../public/fonts/MonumentExtended-Bold.eot);
+    src: url(../../public/fonts/MonumentExtended-Bold.eot?#iefix) format('embedded-opentype'),
+        url(../../public/fonts/MonumentExtended-Bold.woff2) format('font-woff2'),
+        url(../../public/fonts/MonumentExtended-Bold.woff) format('font-woff'),
+        url(../../public/fonts/MonumentExtended-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended Ultrabold';
+    src: url('../../public/fonts/MonumentExtended-Ultrabold.eot');
+    src: url('../../public/fonts/MonumentExtended-Ultrabold.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/MonumentExtended-Ultrabold.woff2') format('font-woff2'),
+        url('../../public/fonts/MonumentExtended-Ultrabold.woff') format('font-woff'),
+        url('../../public/fonts/MonumentExtended-Ultrabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* CircularStd  font face*/
+
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('../../public/fonts/CircularStd-Medium.eot');
+    src: url('../../public/fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/CircularStd-Medium.woff2') format('font-woff2'),
+        url('../../public/fonts/CircularStd-Medium.woff') format('font-woff'),
+        url('../../public/fonts/CircularStd-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('../../public/fonts/CircularSpotifyText-Light.eot');
+    src: url('../../public/fonts/CircularSpotifyText-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/CircularSpotifyText-Light.woff2') format('font-woff2'),
+        url('../../public/fonts/CircularSpotifyText-Light.woff') format('font-woff'),
+        url('../../public/fonts/CircularSpotifyText-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CircularStd-Book';
+    src: url('../../public/fonts/CircularStd-Book.eot');
+    src: url('../../public/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/CircularStd-Book.woff2') format('font-woff2'),
+        url('../../public/fonts/CircularStd-Book.woff') format('font-woff'),
+        url('../../public/fonts/CircularStd-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('../../public/fonts/CircularStd-Bold.eot');
+    src: url('../../public/fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../public/fonts/CircularStd-Bold.woff2') format('font-woff2'),
+        url('../../public/fonts/CircularStd-Bold.woff') format('font-woff'),
+        url('../../public/fonts/CircularStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
