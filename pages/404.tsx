@@ -27,7 +27,7 @@ export default function PageNotfound() {
       </Head>
 
       <main className={styles.main} id="content">
-        <StaggeredMotion
+        {/* <StaggeredMotion
           defaultStyles={[{ h: 0, size: 0 }]}
           styles={() =>
             prevInterpolatedStyles.map((_, i) => {
@@ -42,17 +42,18 @@ export default function PageNotfound() {
               {interpolatingStyles.map(
                 () => (
                   // <div key={i} style={{ border: '1px solid', height: style.h }} />
-                  <h1
-                    style={{ fontSize: style.size }}
-                    className="lg:text-8xl text-green font-bold font-display"
-                  >
-                    Page Not found
-                  </h1>
+                 
                 )
               )}
             </div>
           )}
-        </StaggeredMotion>
+        </StaggeredMotion> */}
+        <h1
+          style={{ fontSize: styles.size }}
+          className="lg:text-8xl text-green font-bold font-display"
+        >
+          Page Not found
+        </h1>
 
         <p className="text-sm hover:text-base font-body"> hello</p>
       </main>

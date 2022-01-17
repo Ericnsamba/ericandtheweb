@@ -16,20 +16,20 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className="landing-hero py-20">
-          <h1 className="UltralightFontSize lg:text-9xl text-6xl text-green font-display">
+          <h1 className="UltralightFontSize lg:text-9xl text-4xl text-green font-display">
             Creative
           </h1>
 
           <div className="flex py-4">
             <SvgAnimation className="hidden lg:flex" />
             {/* mobile */}
-            <h1 className="lg:hidden lg:text-9xl text-6xl text-green font-display">
-              {/* Developer */}
+            <h1 className="lg:hidden text-4xl text-green font-display ">
+              Developer
             </h1>
-            <span className="flex items-end -mb-2 px-4 text-base text-forestGreen font-display"> And</span>
+            <span className="flex items-end lg:-mb-2 px-4 text-base text-forestGreen font-display"> And</span>
           </div>
 
-          <h1 className="UltralightFontSize lg:text-9xl text-6xl text-green font-display">
+          <h1 className="UltralightFontSize lg:text-9xl text-4xl text-green font-display">
             Designer
           </h1>
 
