@@ -12,8 +12,9 @@ module.exports = {
         },
         green: '#80E0A7',
         black: '#212322',
-        ForestGreen: '#1C4220',
-        white: '#ffffff'
+        forestGreen: '#1C4220',
+        white: '#ffffff',
+        bgGrey: '#f7f9f9',
       },
       fontFamily: {
         'display': ['"Monument Extended"', 'Helvetica, Arial, sans-serif'],

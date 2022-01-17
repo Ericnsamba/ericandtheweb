@@ -12,24 +12,6 @@ export default function AboutPage() {
           name="description"
           content="Product designer and app developer website"
         />
-        <link
-            rel="preload"
-            href="../public/fonts/MonumentExtended-Regular.ttf"
-            as="font"
-            crossOrigin=""
-          />
-        <link
-            rel="preload"
-            href="../public/fonts/MonumentExtended-Bold.ttf"
-            as="font"
-            crossOrigin=""
-          />
-        <link
-            rel="preload"
-            href="../public/fonts/CircularStd-Book.ttf"
-            as="font"
-            crossOrigin=""
-          />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -46,12 +28,11 @@ export default function AboutPage() {
 
               <div className="py-10">
                 <p className="text-black font-normal">
-                  I am a developer and UX/UI designer based in Italy. National and
-                  international customers have relied on me for design,
-                  implementation, and management of their digital products. As a
-                  freelancer, I works also with web agencies, companies, startups
-                  and individuals to create a blueprint for the digital business.
-                  Also, Judge at CSSDA and Envato Author.
+                I'm Eric — a product designer and app developer. 
+                I have spent the last 3 years designing & building web applications for some of the world's biggest asset managers like Generali, Boston Partners, CTI and many others, whilst working at Kurtosys.  
+                I’m always learning more, i am pretty much  a javaScript and its frameworks lover. 
+                I am passionate about beautiful, clean and minimal designs. 
+                I learn quickly and i dont sleep till i solve a bug or i am happy with my design. 
                 </p>
               </div>
             </div>

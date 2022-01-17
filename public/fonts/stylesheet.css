@@ -1,16 +1,16 @@
 
 /* Monument Extended Ultralight */
-/* @font-face {
+@font-face {
     font-family: 'Monument Extended Ultralight';
-    src: url('../styles/fonts/MonumentExtended-Ultralight.eot');
-    src: url('../styles/fonts/MonumentExtended-Ultralight.eot?#iefix') format('embedded-opentype'),
-        url('../styles/fonts/MonumentExtended-Ultralight.woff2') format('woff2'),
-        url('../styles/fonts/MonumentExtended-Ultralight.woff') format('woff'),
-        url('../styles/fonts/MonumentExtended-Ultralight.ttf') format('truetype');
+    src: url(../../public/fonts/MonumentExtended-Ultralight.eot);
+    src: url(../../public/fonts/MonumentExtended-Ultralight.eot?#iefix) format('embedded-opentype'),
+        url(../../public/fonts/MonumentExtended-Ultralight.woff2) format('woff2'),
+        url(../../public/fonts/MonumentExtended-Ultralight.woff) format('woff'),
+        url(../../public/fonts/MonumentExtended-Ultralight.ttf) format('truetype');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
-} */
+}
 /* MonumentExtended-Regular */
 @font-face {
     font-family: 'MonumentExtended-Regular';
@@ -26,11 +26,11 @@
 /* MonumentExtended-Light */
 @font-face {
     font-family: 'Monument Extended Light';
-    src: url('../../public/fonts/MonumentExtended-Light.eot');
-    src: url('../../public/fonts/MonumentExtended-Light.eot?#iefix') format('embedded-opentype'),
-        url('../../public/fonts/MonumentExtended-Light.woff2') format('font-woff2'),
-        url('../../public/fonts/MonumentExtended-Light.woff') format('font-woff'),
-        url('../../public/fonts/MonumentExtended-Light.ttf') format('truetype');
+    src: url(../../public/fonts/MonumentExtended-Light.eot);
+    src: url(../../public/fonts/MonumentExtended-Light.eot?#iefix) format('embedded-opentype'),
+        url(../../public/fonts/MonumentExtended-Light.woff2) format('font-woff2'),
+        url(../../public/fonts/MonumentExtended-Light.woff) format('font-woff'),
+        url(../../public/fonts/MonumentExtended-Light.ttf) format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;

@@ -11,7 +11,7 @@ const NavBar = ({ fixed }) => {
   return (
     <div className="flex flex-wrap py-2 mt-3" >
       <div className="w-full px-4">
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white rounded-xl border border-slate-200 ">
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3  rounded-xl border border-slate-200 ">
           <div className="container mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
               <div className="flex items-cente">
@@ -63,22 +63,22 @@ const NavBar = ({ fixed }) => {
             >
               <div className="flex flex-col lg:flex-row list-none lg:ml-auto lg:w-1/2	px-8 justify-between">
                 <Link href="/" >
-                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-sm	text-forestGreen opacity-50	hover:opacity-100">
                     Home
                   </a>
                 </Link>
                 <Link href="/about">
-                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-sm	text-forestGreen opacity-50	hover:opacity-100">
                     About me
                   </a>
                 </Link>
                 <Link href="/portfolio">
-                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-sm	text-forestGreen opacity-50	hover:opacity-100">
                     Portfolio
                   </a>
                 </Link>
                 <Link href="/contact">
-                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-base	text-ForestGreen opacity-50	hover:opacity-100">
+                  <a onClick={() =>  setMenuOpen(false)} className="menuItems text-center py-4 font-body uppercase text-sm	text-forestGreen opacity-50	hover:opacity-100">
                     Contact
                   </a>
                 </Link>

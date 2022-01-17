@@ -1,7 +1,7 @@
-import Image from "next/image";
+import React, { useState } from "react";
+// import { motion } from "framer-motion"
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
 import { Camera, Dribbble, GitHub, Twitter, Linkedin, Instagram } from "react-feather";
 
 const Footer = () => {
@@ -16,27 +16,27 @@ const Footer = () => {
                 {/* footer icons */}
                 <div className="flex items-center mb-6">
                   <a href="https://github.com/Ericnsamba" target="_blank">
-                    <div className="px-4">
+                    <div className="px-4 hover:animate-bounce ease-in duration-300">
                       <GitHub  size={24} className="text-black cursor-pointer hover:text-green "/>
                     </div>
                   </a>
                   <a href="https://twitter.com/EricandTheWeb" target="_blank">
-                    <div className="px-4">
+                    <div className="px-4 hover:animate-bounce ease-in duration-300">
                       <Twitter  size={24} className="text-black cursor-pointer hover:text-green "/>
                     </div>
                   </a>
                   <a href="https://www.instagram.com/ericandtheweb/" target="_blank">
-                    <div className="px-4">
+                    <div className="px-4 hover:animate-bounce ease-in duration-300">
                       <Instagram  size={24} className="text-black cursor-pointer hover:text-green "/>
                     </div>
                   </a>
                   <a href="https://www.linkedin.com/in/eric-manasse/" target="_blank">
-                    <div className="px-4">
+                    <div className="px-4 hover:animate-bounce ease-in duration-300">
                       <Linkedin  size={24} className="text-black cursor-pointer hover:text-green "/>
                     </div>
                   </a>
                   <a href="https://dribbble.com/ericandtheweb" target="_blank">
-                    <div className="px-4">
+                    <div className="px-4 hover:animate-bounce ease-in duration-300">
                       <Dribbble  size={24} className="text-black cursor-pointer hover:text-green "/>
                     </div>
                   </a>
