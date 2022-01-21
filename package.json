@@ -6,12 +6,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
     "feather-icons": "^4.28.0",
     "framer-motion": "^5.6.0",
     "lodash": "^4.17.21",
     "next": "latest",
+    "next-themes": "0.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",

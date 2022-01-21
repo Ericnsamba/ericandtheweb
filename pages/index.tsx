@@ -16,39 +16,46 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className="landing-hero py-20">
-          <h1 className="UltralightFontSize lg:text-9xl text-4xl text-green font-display">
+          <h1 className="UltralightFontSize lg:text-9xl text-5xl text-forestGreen dark:text-green font-display">
             Creative
           </h1>
 
           <div className="flex py-4">
-            <SvgAnimation className="hidden lg:flex" />
+            <div className="flex">
+              <SvgAnimation className="hidden lg:flex" />
+              <span className="hidden lg:flex font-display p-1 h-9  mx-3 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-forestGreen dark:before:bg-green relative inline-block">
+                <span className="relative text-white dark:text-forestGreen text-3xl">and</span>
+              </span>
+            </div>
             {/* mobile */}
-            <h1 className="lg:hidden text-4xl text-green font-display ">
+            <h1 className="lg:hidden text-5xl text-forestGreen dark:text-green font-display ">
               Developer
+              <span className="px-2 my-1 mx-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-forestGreen dark:before:bg-green relative inline-block">
+                <span className="relative text-white dark:text-forestGreen text-3xl">and</span>
+              </span>
             </h1>
-            <span className="flex items-end lg:-mb-2 px-4 text-base text-forestGreen font-display"> And</span>
           </div>
 
-          <h1 className="UltralightFontSize lg:text-9xl text-4xl text-green font-display">
+          <h1 className="UltralightFontSize lg:text-9xl text-5xl text-forestGreen dark:text-green font-display">
             Designer
           </h1>
 
         </div>
 
         {/* About section */}
-        <div className="mx-auto container px-4 xl:px-12 2xl:px-4 py-12 lg:mt-20 bg-bgGrey rounded-2xl">
+        <div className="mx-auto container px-4 xl:px-12 2xl:px-4 py-12 lg:mt-20 bg-bgGrey dark:bg-green rounded-2xl">
           <div className="lg:flex">
             <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col lg:px-10 py-1">
               {/* <div className="w-full h-full bg-slate-100 sm:px-0  lg:w-1/2 justify-between flex flex-col lg:px-10 h-full"> */}
 
 
               <div className="">
-                <h1 className="text-7xl text-green font-bold ">
+                <h1 className="text-7xl text-forestGreen font-bold ">
                   About me
                 </h1>
 
                 <div className="py-10">
-                  <p className="text-black font-normal">
+                  <p className="text-forestGreen font-normal">
                     I'm Eric — a product designer and app developer.
                     I have spent the last 3 years designing & building web applications for some of the world's biggest asset managers like Generali, Boston Partners, CTI and many others, whilst working at Kurtosys.
                     I’m always learning more, i am pretty much  a javaScript and its frameworks lover.
@@ -60,13 +67,13 @@ export default function Home() {
 
               <div>
                 <div className=" pb-3">
-                  <p className="subheader">Mentor</p>
+                  <p className="subheader text-forestGreen">Mentor</p>
                   <p className="text-base text-black">
                     <a href="https://www.linkedin.com/in/tim-gaud/">Tim Gaud</a>
                   </p>
                 </div>
                 <div className=" pb-10">
-                  <p className="subheader">Recognitions</p>
+                  <p className="subheader text-forestGreen">Recognitions</p>
                   <p className="text-base text-black">Muzli <span className="text-sm px-3 text-green"><a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">#33</a></span></p>
                 </div>
               </div>
@@ -88,9 +95,9 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 lg:w-96 w-64 -mt-20 lg:-mr-10 lg:self-end self-center	z-10 ">
-                <h4 className="subheader text-black font-display mb-4 text-white text-lg">Portfolio</h4>
-                <p className="font-body text-black">
+              <div className="flex flex-col dark:bg-forestGreen bg-green rounded-lg overflow-hidden p-7 lg:w-96 w-64 -mt-20 lg:-mr-10 lg:self-end self-center	z-10 ">
+                <h4 className="subheader text-forestGreen font-display mb-4 dark:text-slate-100 text-lg">Portfolio</h4>
+                <p className="font-body text-forestGreen dark:text-slate-100">
                   I am a developer and a Prdoduct(UX/UI) designer based in London.
                 </p>
               </div>

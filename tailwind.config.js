@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   mode: 'jit',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -33,6 +34,7 @@ module.exports = {
 				"100v": "100vh",
 			},
     },
+    typography: (theme) => ({}),
   },
   plugins: [
     require('@tailwindcss/typography'),

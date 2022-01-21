@@ -104,7 +104,13 @@ p,
   /* Home screen svg animation */
 
    .svg-elem-1 {
-    stroke: #80E0A7;
+    /* stroke: #1C4220; */
+    -webkit-transition: stroke-dashoffset 2s ease 0s;
+    transition: stroke-dashoffset 2s ease 0.2s;
+    animation-delay: 0.5;
+  }
+   .svg-elem-1 .dark{
+    stroke: #09ff22;
     -webkit-transition: stroke-dashoffset 2s ease 0s;
     transition: stroke-dashoffset 2s ease 0.2s;
     animation-delay: 0.5;
