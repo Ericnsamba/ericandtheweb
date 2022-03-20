@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import EricPhoto from "../public/assets/images/eric-picture.png";
+import Experience from "../components/Experience";
 
 export default function AboutPage() {
   return (
@@ -19,7 +20,7 @@ export default function AboutPage() {
         <div className="lg:flex">
           <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col lg:px-10 py-1">
             <div className="">
-              <h1 className="text-7xl text-green font-bold ">
+              <h1 className="text-7xl text-forestGreen dark:text-green font-bold ">
                 About me
               </h1>
 
@@ -35,17 +36,17 @@ export default function AboutPage() {
             </div>
 
             <div>
-                <div className=" pb-3">
-                  <p className="subheader text-forestGreen dark:text-green">Mentor</p>
-                  <p className="text-base text-black dark:text-slate-300">
-                    <a href="https://www.linkedin.com/in/tim-gaud/">Tim Gaud</a>
-                  </p>
-                </div>
-                <div className=" pb-10">
-                  <p className="subheader text-forestGreen dark:text-green">Recognitions</p>
-                  <p className="text-base text-black dark:text-slate-300">Muzli <span className="text-sm px-3 text-green dark:text-slate-300"><a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">#33</a></span></p>
-                </div>
+              <div className=" pb-3">
+                <p className="subheader text-forestGreen dark:text-green">Mentor</p>
+                <p className="text-base text-black dark:text-slate-300">
+                  <a href="https://www.linkedin.com/in/tim-gaud/">Tim Gaud</a>
+                </p>
               </div>
+              <div className=" pb-10">
+                <p className="subheader text-forestGreen dark:text-green">Recognitions</p>
+                <p className="text-base text-black dark:text-slate-300">Muzli <span className="text-sm px-3 text-green dark:text-slate-300"><a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">#33</a></span></p>
+              </div>
+            </div>
 
 
           </div>
@@ -71,8 +72,13 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+
+         
         </div>
       </div>
+      <div className="my-10">
+            <Experience />
+          </div>
     </div>
   );
 }

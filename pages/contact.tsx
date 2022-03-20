@@ -39,7 +39,7 @@ export default function ContactPage() {
                   <MapPin size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green " />
                   <div className="ml-3 overflow-hidden">
                     <p className="text-sm font-display text-forestGreen dark:text-green">Location</p>
-                    <p className="text-base text-slate-300 truncate font-light font-body">Based in London | Work remotely</p>
+                    <p className="text-base text-slate-400 truncate font-light font-body">Based in London | Work remotely</p>
                   </div>
                 </li>
                 <li className="flex py-6">
@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <Mail size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green " />
                   <div className="ml-3 overflow-hidden">
                     <p className="text-sm font-display text-forestGreen dark:text-green">Lets Chat</p>
-                    <p className="text-base text-slate-300 truncate font-light font-body">hello@ericandthweb.com</p>
+                    <p className="text-base text-slate-400 truncate font-light font-body">hello@ericandthweb.com</p>
                   </div>
                 </li>
                 <li className="flex py-6 ">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                   <Phone size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green " />
                   <div className="ml-3 overflow-hidden">
                     <p className="text-sm font-display text-forestGreen dark:text-green">Lets Talk</p>
-                    <p className="text-base text-slate-300 truncate font-light font-body">+44 61 057 617 </p>
+                    <p className="text-base text-slate-400 truncate font-light font-body">+44 61 057 617 </p>
                   </div>
                 </li>
               </ul>

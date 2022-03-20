@@ -12,22 +12,22 @@ const Footer = () => {
         <div className="border-gray-200 dark:border-gray-700 py-2">
           <div className="mx-auto container px-4 xl:px-12 2xl:px-4">
             <div className="lg:flex">
-              <div className="w-full lg:w-1/2 flex items-start lg:justify-start justify-center">
+              <div className="w-full lg:w-1/2 flex items-start justify-start ">
               <ul>
-                  <li>
+                  <li className="py-8">
                     <Link href="javascript:void(0)">
-                      <a className="text-base font-bold text-body lg:text-sm leading-none text-forestGreen dark:text-green">
+                      <a className="text-sm font-bold text-body lg:text-sm leading-none text-forestGreen dark:text-green">
                         MY CV
                       </a>
                     </Link>
                   </li>
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 lg:mb-0 flex lg:justify-end justify-center items-start">
+              <div className="w-full lg:w-1/2 lg:mb-0 flex lg:justify-end justify-start items-start">
                 {/* footer icons */}
                 <div className="flex items-center mb-6">
                   <a href="https://github.com/Ericnsamba" target="_blank">
-                    <div className="px-4 hover:animate-bounce ease-in duration-300">
+                    <div className="pr-4 hover:animate-bounce ease-in duration-300">
                       <GitHub  size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green "/>
                     </div>
                   </a>

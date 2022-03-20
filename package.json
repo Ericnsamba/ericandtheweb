@@ -9,6 +9,7 @@
     "@headlessui/react": "^1.4.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
+    "axios": "^0.25.0",
     "feather-icons": "^4.28.0",
     "framer-motion": "^5.6.0",
     "lodash": "^4.17.21",

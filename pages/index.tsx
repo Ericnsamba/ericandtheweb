@@ -3,9 +3,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import SvgAnimation from "../components/SvgAnimation"
 import EricPhoto from "../public/assets/images/eric-picture.png";
+import LatestCode from "../components/LatestCode";
+import userData from "../constants/data";
+import getLatestRepos from "../lib/getLatestRepos";
 
 
-export default function Home() {
+
+export default function Home({ repositories }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +20,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className="landing-hero py-20">
-          <h1 className="UltralightFontSize lg:text-9xl text-5xl text-forestGreen dark:text-green font-display">
+          <h1 className="lg:text-9xl text-5xl text-green dark:text-green font-display">
             Creative
           </h1>
 
@@ -36,7 +40,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <h1 className="UltralightFontSize lg:text-9xl text-5xl text-forestGreen dark:text-green font-display">
+          <h1 className="lg:text-9xl text-5xl text-green dark:text-green font-display">
             Designer
           </h1>
 
@@ -50,7 +54,7 @@ export default function Home() {
 
 
               <div className="">
-                <h1 className="text-7xl text-forestGreen font-bold ">
+                <h1 className="text-7xl text-green font-bold ">
                   About me
                 </h1>
 
@@ -104,8 +108,28 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="mx-auto container my-8">
+        {/* <div className="mx-auto container px-4 xl:px-12 2xl:px-4 py-12 lg:mt-20 bg-bgGrey dark:bg-green rounded-2xl"> */}
+          <LatestCode repositories={repositories} />
+        </div>
+
       </main>
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  console.log(process.env.GITHUB_AUTH_TOKEN);
+  let token = process.env.GITHUB_AUTH_TOKEN;
+
+  const repositories = await getLatestRepos(userData, token);
+  // console.log("REPOSITORIES", repositories);
+
+  return {
+    props: {
+      repositories,
+    },
+  };
+};
 // Eric & The Web
