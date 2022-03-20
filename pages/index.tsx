@@ -9,7 +9,7 @@ import getLatestRepos from "../lib/getLatestRepos";
 
 
 
-export default function Home({ repositories }) {
+export default function Home(repositories: any) {
   return (
     <div className={styles.container}>
       <Head>
