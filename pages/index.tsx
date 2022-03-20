@@ -1,3 +1,4 @@
+import React , { FC}from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -7,9 +8,11 @@ import LatestCode from "../components/LatestCode";
 import userData from "../constants/data";
 import getLatestRepos from "../lib/getLatestRepos";
 
+interface typeDefinition {
+  repositories: any;
+}
 
-
-export default function Home({ repositories }) {
+  const Home: FC<typeDefinition> = ({repositories}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -118,6 +121,8 @@ export default function Home({ repositories }) {
     </div>
   );
 }
+
+export default  Home;
 
 export const getServerSideProps = async () => {
   console.log(process.env.GITHUB_AUTH_TOKEN);
