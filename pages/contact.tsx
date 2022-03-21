@@ -14,10 +14,10 @@ export default function ContactPage() {
       </Head>
 
       <main className={styles.main}>
-        <div className="mx-auto container px-4 xl:px-12 2xl:px-4 ">
+        <div className="mx-auto container px-4 xl:px-12 lg:mt-20 ">
           <div className="lg:flex">
-            <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col lg:px-10 py-1">
-              {/* <div className="w-full h-full bg-slate-100 sm:px-0  lg:w-1/2 justify-between flex flex-col lg:px-10 h-full"> */}
+            <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col py-1">
+              {/* <div className="w-full h-full bg-slate-100 sm:px-0  lg:w-1/2 justify-between flex flex-col h-full"> */}
               <div className="">
                 <h1 className="text-7xl text-forestGreen font-bold dark:text-green">
                   Get in touch
@@ -31,7 +31,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col lg:px-10 py-1">
+            <div className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col py-1">
               <ul role="list" className="px-6">
                 {/* Remove top/bottom padding when first/last child  */}
                 <li className="flex py-6">

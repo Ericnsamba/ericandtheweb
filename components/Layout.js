@@ -11,8 +11,8 @@ const Layout = ({ children }) => {
       <div className="flex flex-col lg:content lg:container mx-auto min-h-screen dark:bg-black">
         <CustomCursor style={{ zIndex:9 }}/>
         <NavBar />
-        <div className={"mainbody py-8 px-8"}>{children}</div>
-        <Footer className="pt-12" />
+        <div className={"mainbody my-20 px-8 lg:px-0"}>{children}</div>
+        <Footer className="pt-0" />
       </div>
     </ThemeProvider>
   );

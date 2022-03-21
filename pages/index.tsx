@@ -22,7 +22,7 @@ interface typeDefinition {
       </Head>
 
       <main className={styles.main}>
-        <div className="landing-hero py-20">
+        <div className="landing-hero py-0">
           <h1 className="lg:text-9xl text-5xl text-green dark:text-green font-display">
             Creative
           </h1>
@@ -57,7 +57,7 @@ interface typeDefinition {
 
 
               <div className="">
-                <h1 className="text-7xl text-green font-bold ">
+                <h1 className="text-7xl text-green dark:text-forestGreen font-bold ">
                   About me
                 </h1>
 
@@ -81,7 +81,7 @@ interface typeDefinition {
                 </div>
                 <div className=" pb-10">
                   <p className="subheader text-forestGreen">Recognitions</p>
-                  <p className="text-base text-black">Muzli <span className="text-sm px-3 text-green"><a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">#33</a></span></p>
+                  <p className="text-base text-black">Muzli <span className="text-sm px-3 text-green dark:text-forestGreen"><a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">#33</a></span></p>
                 </div>
               </div>
 

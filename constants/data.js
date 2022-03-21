@@ -59,7 +59,7 @@ const userData = {
       company: "Lumico",
       year: "2015 2017",
       companyLink: "https://tailwindmasterkit.com",
-      desc: "I started as a Junior Web Developer in the Lumico team. I was responsible for creating and maintaining clients’ websites. I focused on front-end development, ensuring that our clients’ websites navigate easily and look presentable. As I grew in my role, I went on to take on the responsibly of a team lead.",
+      desc: "I started as a Junior Web Developer in the Lumico team. I was responsible for creating and maintaining clients’ websites. I focused on front-end development, ensuring that our clients’ websites navigate easily and look presentable. As I grew in my role, I went on to take on the responsibility of a team lead.",
     },
   ],
   resumeUrl:

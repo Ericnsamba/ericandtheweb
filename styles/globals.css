@@ -42,11 +42,12 @@ p,
 /* main on every page*/
 .mainbody {
     flex: 1;
+    /* min-height: 50vh; */
     /* background-color: beige; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: center; */
 }
 
 
