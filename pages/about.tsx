@@ -27,7 +27,7 @@ export default function AboutPage() {
               <div className="py-10">
                 <p className="text-forestGreen dark:text-green font-normal">
                   I'm Eric — a product designer and app developer.
-                  I have spent the last 3 years designing & building web applications for some of the world's biggest asset managers like Generali, Boston Partners, CTI and many others, whilst working at Kurtosys.
+                  I have spent the last 4 years designing & building web applications for some of the world's biggest asset managers like Generali, Boston Partners, CTI and many others, whilst working at Kurtosys.
                   I’m always learning more, i am pretty much  a javaScript and its frameworks lover.
                   I am passionate about beautiful, clean and minimal designs.
                   I learn quickly and i dont sleep till i solve a bug or i am happy with my design.
