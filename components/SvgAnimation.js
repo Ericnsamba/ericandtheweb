@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 export default function SvgAnimation(className) {
   const animationRef = useRef(null);
   const [changingColor, setChangingColor] = useState('#f2f2f2')
-  // console.log("🚀 ~ file: SvgAnimation.js ~ ", changingColor)
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
       let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
@@ -28,24 +27,24 @@ export default function SvgAnimation(className) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green dark:fill-[#313332]"
+          fill="#F8FAFC"
           fill-rule="evenodd"
 
         >
           <path d="M957.672 34.812C957.672 41.532 956.118 47.496 953.01 52.704C949.986 57.828 945.787 61.692 940.411 64.296L956.286 90H923.526L910.422 67.95H882.325V90H854.604V1.80002H923.904C930.54 1.80002 936.379 3.18602 941.419 5.95802C946.543 8.73002 950.532 12.636 953.388 17.676C956.244 22.632 957.672 28.344 957.672 34.812ZM882.325 44.514H917.604C920.04 44.514 922.099 44.346 923.779 44.01C925.459 43.674 926.887 42.834 928.062 41.49C929.322 40.062 929.953 37.836 929.953 34.812C929.953 31.872 929.322 29.73 928.062 28.386C926.887 26.958 925.459 26.076 923.779 25.74C922.099 25.404 920.04 25.236 917.604 25.236H882.325V44.514Z" />
         </g>
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
           <path d="M783.149 23.346V36.45H848.669V55.35H783.149V68.454H848.669V90H755.429V1.80002H848.669V23.346H783.149Z" />
         </g>
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -53,8 +52,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -62,8 +61,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -71,8 +70,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -80,8 +79,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -89,8 +88,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green "
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green  fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >
@@ -98,8 +97,8 @@ export default function SvgAnimation(className) {
         </g>
 
         <g
-          className="svg-elem-1 stroke-forestGreen dark:stroke-green"
-          fill="none"
+          className="svg-elem-1 stroke-forestGreen dark:stroke-green fill-slate-50 dark:fill-[#313332]"
+          // fill="none"
           fill-rule="evenodd"
           // stroke="#f2f2f2"
         >

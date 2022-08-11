@@ -7,7 +7,7 @@ import { Camera, Dribbble, GitHub, Twitter, Linkedin, Instagram } from "react-fe
 const Footer = () => {
   const [mode, setMode] = useState("auto");
   return (
-    <div className="mt-10  mb-6 lg:mb-0">
+    <div className="mt-10  mb-6 lg:mb-0 border-t border-slate-100 dark:border-[#313332]">
       <footer id="footer" className="relative z-50">
         <div className="border-gray-200 dark:border-gray-700 py-2">
           <div className="mx-auto container px-4 xl:px-12 2xl:px-4">
@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="w-full lg:w-1/2 flex items-start justify-start ">
               <ul>
                   <li className="py-8">
-                    <Link href="javascript:void(0)">
+                    <Link href="https://read.cv/join/eric_manasse">
                       <a className="text-sm font-bold text-body lg:text-sm leading-none text-forestGreen dark:text-green">
                         MY CV
                       </a>
@@ -23,9 +23,10 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 lg:mb-0 flex lg:justify-end justify-start items-start">
+
                 {/* footer icons */}
-                <div className="flex items-center mb-6">
+              <div className="w-full lg:w-1/2 lg:mb-0 flex lg:justify-end justify-start items-center">
+                <div className="flex items-center">
                   <a href="https://github.com/Ericnsamba" target="_blank">
                     <div className="pr-4 hover:animate-bounce ease-in duration-300">
                       <GitHub  size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green "/>
@@ -46,9 +47,9 @@ const Footer = () => {
                       <Linkedin  size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green "/>
                     </div>
                   </a>
-                  <a href="https://dribbble.com/ericandtheweb" target="_blank">
+                  <a href="https://dribbble.com/ericandtheweb ease-in duration-300" target="_blank" >
                     <div className="px-4 hover:animate-bounce ease-in duration-300">
-                      <Dribbble  size={24} className="text-forestGreen dark:text-green cursor-pointer hover:text-green "/>
+                      <Dribbble  size={24} className="ease-in duration-300 text-forestGreen dark:text-green cursor-pointer hover:text-green "/>
                     </div>
                   </a>
 

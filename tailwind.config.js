@@ -16,6 +16,7 @@ module.exports = {
         forestGreen: '#1C4220',
         white: '#ffffff',
         bgGrey: '#f7f9f9',
+        gray: '#E5E7EB',
       },
       fontFamily: {
         'display': ['"Monument Extended"', 'Helvetica, Arial, sans-serif'],

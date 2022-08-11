@@ -57,7 +57,6 @@ export default function AboutPage() {
                 className="mr-10 bg-slate-200 rounded-2xl"
                 src={EricPhoto}
                 alt="Picture of the author"
-                // layout="fill" // required
                 objectFit="cover"
                 priority
                 width="479"
@@ -65,10 +64,10 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 lg:w-96 w-64 -mt-20 lg:-mr-10 lg:self-end self-center	z-10 ">
-              <h4 className="subheader text-black font-display mb-4 text-white text-lg">Portfolio</h4>
+            <div className="flex flex-col bg-green rounded-lg overflow-hidden p-7 lg:w-96 w-64 -mt-20 lg:-mr-10  self-center	z-10 ">
+              <h4 className="subheader text-black font-display mb-4 text-white text-lg">Portfolio (Coming Soon)</h4>
               <p className="font-body text-black">
-                I am a developer and a Prdoduct(UX/UI) designer based in London.
+                I am a developer and a Product(UX/UI) designer based in London.
               </p>
             </div>
           </div>
