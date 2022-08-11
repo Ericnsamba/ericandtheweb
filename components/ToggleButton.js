@@ -28,7 +28,7 @@ export default function ToggleButton( {props}) {
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 stroke="currentColor"
-                className="w-6 h-6 text-gray-500 dark:text-yellow-500"
+                className="w-6 h-6 text-gray dark:text-yellow-500"
               >
                 {theme === "dark" ? (
                   <path

@@ -6,7 +6,7 @@ export default function Experience() {
     <section className="bg-white dark:bg-black">
       <div className="mt-40 mb-10 flex bg-white dark:bg-black items-center justify-center" >
         <h1 className="text-4xl lg:text-7xl text-forestGreen dark:text-green font-bold">
-          Experience
+          Work Experience
         </h1>
       </div>
       <div className="bg-white dark:bg-black -mt-4">
@@ -27,7 +27,7 @@ export default function Experience() {
                   <div className="w-4 h-4 bg-green rounded-full relative z-10">
                     <div className="w-4 h-4 bg-green rounded-full relative z-10 animate-ping"></div>
                   </div>
-                  <div className="w-px h-24 bg-gray-200 dark:bg-gray-500 rounded-full -mt-2"></div>
+                  <div className="w-px h-24 bg-slate-200 dark:bg-[#313332] rounded-full -mt-2"></div>
                 </div>
               )}
             </>
@@ -40,8 +40,7 @@ export default function Experience() {
 
 const ExperienceCard = ({ title, desc, year, company, companyLink }) => {
   return (
-    // <div className="relative experience-card border p-4 rounded-md shadow-xl bg-white dark:bg-black z-10 mx-4">
-    <div className="relative experience-card border p-4 rounded-md bg-white dark:bg-black z-10 mx-4">
+    <div className="relative experience-card border border-slate-100 dark:border-[#313332] p-4 rounded-xl bg-white dark:bg-black z-10 mx-4">
       <h1 className="absolute -top-10 text-center w-full -left-0 md:-top-10 text-4xl text-gray-200 dark:text-[#313332] font-bold">
         {year}
       </h1>
@@ -53,3 +52,4 @@ const ExperienceCard = ({ title, desc, year, company, companyLink }) => {
     </div>
   );
 };
+

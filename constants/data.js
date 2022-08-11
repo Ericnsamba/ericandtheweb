@@ -1,3 +1,9 @@
+import memojiImage from "../public/assets/images/ericMemoji.png";
+import quizzflix from "../public/assets/images/quizzflix.png";
+import Ellelashes from "../public/assets/images/ellelashes.jpg";
+import Eventify from "../public/assets/images/Eventify.jpg";
+
+
 const userData = {
   githubUsername: "Ericnsamba",
   name: "Eric ",
@@ -8,36 +14,43 @@ const userData = {
   address: "John doe.",
   projects: [
     {
-      title: "Tailwind Master Kit",
-      link: "https://tailwindmasterkit.com",
-      imgUrl: "/tmk.jpg",
+      title: "Eventify",
+      link: "https://eventify.app",
+      imgUrl: Eventify,
+      category: "Design | UI / UX",
+      stack: "Figma",
     },
     {
-      title: "PlaceholderTech",
+      title: "LiteKube",
       link: "https://placeholdertech.in",
-      imgUrl: "/placeholdertech.png",
+      imgUrl: memojiImage,
+      category: "Co Founder | Developer",
+      stack: "Digital Consultancy",
     },
     {
-      title: "Portfolio",
-      link: "https://manuarora.in",
-      imgUrl: "/portfolio.png",
+      title: "Ellelashes",
+      link: "https://ellelashes.com/",
+      imgUrl: Ellelashes,
+      category: "Design | Web Development",
+      stack: "Wordpress",
     },
     {
-      title: "CovidRescue",
-      link: "https://covidrescue.co.in",
-      imgUrl: "/covidrescue.png",
+      title: "Quizzflix",
+      link: "https://apps.apple.com/kg/app/quizzflix/id1553991247",
+      imgUrl: quizzflix,
+      category: "Design | Develope",
+      emoji: "🤯",
+      stack: "React Native | Redux | Firebase",
     },
   ],
   about: {
-    title:
-      "I'm a software developer that loves building products and web applications that impact millions of lives",
+    title: "I'm a software developer",
     description: [
-      `I've been developing full-stack application since I was 10 years old. I didn't know what full-stack meant at that time because the term was not coined back then. I'm so out of content right now that I'm literally crying writing this text since lorem text is so 2012 now.`,
-      `After learning HTML and struggling with CSS, I came up with a brilliant idea of using bootstrap so that I don't have to style everything by myself and - for obvious reasons - if you knew bootstrap, you were cool.`,
-      `But now, I'm a legend. I've been coding in React, Angular, Vue, Svelte, Node.js, Express, Fastify, MongoDB, MySQL, Bootstrap, Tailwind, C, C++, C#, Rust, Haskell, Perl, PHP, Assembly, Logo and YouDontKnowShit programming language etc to name a few. Although I barely know the syntax (Psst, Stack overflow!), I consider myself a Ninja developer I'm laughing right now.`,
+      "I'm a software developer with a passion for building web applications. I have a strong background in web development and have worked on a wide range of projects, from small startups to large enterprises.",
+      "I'm a self-taught developer with a strong background in web development. I have worked on a wide range of projects, from small startups to large enterprises.",
     ],
     currentProject: "Tailwind Master Kit",
-    currentProjectUrl: "https://tailwindmasterkit.com",
+    currentProjectUrl: "",
   },
   experience: [
     {
