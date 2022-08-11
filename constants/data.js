@@ -44,21 +44,28 @@ const userData = {
     },
   ],
   about: {
-    title: "I'm a software developer",
+    title: "Product Designer | Developer",
     description: [
       "I'm a software developer with a passion for building web applications. I have a strong background in web development and have worked on a wide range of projects, from small startups to large enterprises.",
       "I'm a self-taught developer with a strong background in web development. I have worked on a wide range of projects, from small startups to large enterprises.",
     ],
-    currentProject: "Tailwind Master Kit",
+    currentProject: "Solve.money",
     currentProjectUrl: "",
   },
   experience: [
     {
-      title: "Freelance",
+      title: "Product Designer",
+      company: "Solve.money",
+      year: "2022",
+      companyLink: "#",
+      desc: "I recently worked as a Product Designer for Solve.money to understand their platform and create a better user experience for their dashboard.",
+    },
+    {
+      title: "Product Designer | Developer",
       // company: "Self Employment",
       year: "2022",
-      companyLink: "https://algochurn.com",
-      desc: "I am currently on a project as a freelancer. I am the lead product designer for a startup call Eventify by Evolutica Pty Ltd.",
+      companyLink: "#",
+      desc: "I worked on a project as a freelancer Designer and Developer for a startup called Eventify by Evolutica Pty Ltd. I've designed the user experience and interface, I later went on to working as a React native UI developer",
     },
     {
       title: "Product designer",
