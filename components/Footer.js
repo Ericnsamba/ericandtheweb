@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="w-full lg:w-1/2 flex items-start justify-start ">
               <ul>
                   <li className="py-8">
-                    <Link href="https://read.cv/join/eric_manasse">
+                    <Link href="https://read.cv/eric_manasse">
                       <a className="text-sm font-bold text-body lg:text-sm leading-none text-forestGreen dark:text-green">
                         MY CV
                       </a>
