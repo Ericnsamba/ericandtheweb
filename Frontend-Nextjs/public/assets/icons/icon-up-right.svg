@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="Frame124" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; max-height: 100%;">
+<line y1="-3.2" x2="38.2152" y2="-3.2" transform="matrix(-0.707107 0.707106 -0.707107 -0.707106 27.7324 2.64453)" stroke="#80E0A7" stroke-width="6.39999" stroke-dasharray="0,0,0,38.2151985168457"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="0.9812764518911476s" values="0,0,0,38.2151985168457; 
+          0,27.01977582306662,11.195422693779083,0; 
+          38.2151985168457,0,0,0" keyTimes="0; 0.7070426655288992; 1" begin="0.3270144632971401s" fill="freeze"></animate></line>
+<line y1="-3.2" x2="38.2152" y2="-3.2" transform="matrix(-0.707107 0.707106 -0.707107 -0.707106 27.7324 2.64453)" stroke="#1C4220" stroke-width="6.39999" stroke-dasharray="0,0,0,38.2151985168457"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="0.951674762705175s" values="0,0,0,38.2151985168457; 
+          0,28.445269417029976,9.769929099815728,0; 
+          38.2151985168457,0,0,0" keyTimes="0; 0.7443444106273835; 1" begin="0.4674322718869789s" fill="freeze"></animate></line>
+<path d="M0 3.35547H32V35.3554" stroke="#80E0A7" stroke-width="6.39999" stroke-dasharray="0,0,0,63.99993133544922"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="0.8350343623871828s" values="0,0,0,63.99993133544922; 
+          0,45.028336472338175,18.97159486311104,0; 
+          63.99993133544922,0,0,0" keyTimes="0; 0.7035685122274065; 1" begin="0.2320488130059411s" fill="freeze"></animate></path>
+<path d="M0 3.35547H32V35.3554" stroke="#1C4220" stroke-width="6.39999" stroke-dasharray="0,0,0,63.99993133544922"><animate attributeType="XML" attributeName="stroke-dasharray" repeatCount="1" dur="0.9259185028034769s" values="0,0,0,63.99993133544922; 
+          0,47.6369130470411,16.363018288408124,0; 
+          63.99993133544922,0,0,0" keyTimes="0; 0.744327564936859; 1" begin="0.16888827288976554s" fill="freeze"></animate></path>
+<setting>{"type":"direct","speed":48,"random":0.8,"shift":0.5,"size":0.8,"rupture":30}</setting></svg>
