@@ -14,7 +14,6 @@ h1 {
   font-weight: regular;
   font-size: 62px;
 }
-
 h2 {
   font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
@@ -26,34 +25,32 @@ h3 {
   font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif !important;
-    font-size: 44px;
+  font-size: 44px;
 }
-
 h4 {
   font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif !important;
-    font-size: 37px;
+  font-size: 37px;
 }
 h5 {
   font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif !important;
-    font-size: 31px;
+  font-size: 31px;
 }
 h6 {
   font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif !important;
-    font-size: 25px;
+  font-size: 25px;
 }
-
 p,
 .header-nav-item a .menuItems {
   font-family: "CircularStd-Book", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .subheader {
@@ -64,28 +61,35 @@ p,
 }
 
 .sectionTitle {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
 
 .sectionCards {
   gap: 10px;
   display: grid;
-grid-row: 1;
+  grid-row: 1;
 }
 
 .sectionItem {
   gap: 10px;
   display: grid;
-grid-row: 1;
+  grid-row: 1;
 }
 .sectionCardsdd {
   gap: 10px;
 }
 
-
 /* main on every page*/
-.navButton {
-  writing-mode: sideways-lr;
+.navButtonLink {
+  -ms-writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
+  -moz-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
 }
 
 .UltralightFontSize {
@@ -96,7 +100,6 @@ grid-row: 1;
   /* letter-spacing: .05em */
 }
 
-
 .progress-bar {
   position: fixed;
   top: 0;
@@ -106,3 +109,4 @@ grid-row: 1;
   background: var(--red);
   transform-origin: 0%;
 }
+

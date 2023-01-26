@@ -18,7 +18,6 @@ export default function Projects({ portfolio }) {
       });
   }, []);
 
-  // console.log("🚀 ~ file: Projects.js:9 ~ Projects ~ portfolio", portfolio)
   return (
     <section className=" w-full">
       <div>

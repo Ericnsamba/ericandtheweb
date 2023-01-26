@@ -13,7 +13,6 @@ interface typeDefinition {
   const Home: FC<typeDefinition> = ({repositories}) => {
   return (
     <main className={''}>
-        <Hero/>
     </main>
   );
 }

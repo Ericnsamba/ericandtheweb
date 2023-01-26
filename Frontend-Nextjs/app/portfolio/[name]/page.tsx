@@ -9,6 +9,8 @@ import image from "../../../public/assets/images/Eventify.jpg";
 import arrowUpRight from "../../../public/assets/icons/Icons-up-right.svg";
 import downloadIcon from "../../../public/assets/icons/icon-up-right.svg";
 import { useNextSanityImage } from "next-sanity-image";
+import imageUrlBuilder from "@sanity/image-url";
+
 // import { type } from "os";
 
 interface portfolioTypes {
@@ -26,11 +28,16 @@ interface portfolioTypes {
   imagesGallery: [];
 }
 
-const PortfolioItem = ({ params }: any) => {
+const builder = imageUrlBuilder(sanityClient);
+
+const PortfolioItem = ({ params, about }: any) => {
   const router = useRouter();
   const [portfolioItem, setPortfolioItem] = useState({} as portfolioTypes);
   const [imageUrl, setImageUrl] = useState("");
   const pageSlug = params.name;
+  const imageProps = useNextSanityImage(sanityClient, portfolioItem.mainImage);
+
+  // const { asset } = about
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,22 +45,16 @@ const PortfolioItem = ({ params }: any) => {
       setPortfolioItem(data);
     };
     fetchData();
+    //
   }, [pageSlug]);
 
-  const imageProps = useNextSanityImage(sanityClient, portfolioItem.mainImage);
-
-  // const galleryImageProps = useNextSanityImage(
-  //   sanityClient,
-  //   portfolioItem.imagesGallery
-  // );
-
   const galleryImageProps = () => {
-   return  portfolioItem.imagesGallery ?
-    portfolioItem.imagesGallery.map((item) =>
-      useNextSanityImage(sanityClient, item.imagesGallery)
-    ) : null 
+    return portfolioItem.imagesGallery
+      ? portfolioItem.imagesGallery.map((item) =>
+          useNextSanityImage(sanityClient, item.imagesGallery)
+        )
+      : null;
   };
-   
 
   const {
     title,
@@ -67,14 +68,20 @@ const PortfolioItem = ({ params }: any) => {
     challenge,
     solution,
     imagesGallery,
+    mainImage,
   } = portfolioItem;
 
-  // console.log("============>", galleryImageProps);
-  console.log("============>", imagesGallery);
+  const url =
+    mainImage !== undefined ? builder.image(mainImage).url().toString() : null;
+
+  const imagesGalleryUrl =
+    imagesGallery && imagesGallery.length > 0
+      ? imagesGallery.map((image) => builder.image(image).url().toString())
+      : null;
 
   return (
-    <div className="w-8/12  mx-auto bg-teal-1000 ">
-      <div className="flex items-center justify-between w-full mb-[60px]">
+    <div className="lg:w-8/12 w-full lg:px-0 px-10 mx-auto bg-teal-1000 ">
+      <div className="flex items-center justify-between w-full my-[60px]">
         <h3 className="text-green leading-120 ">{title}</h3>
         <Button
           children={undefined}
@@ -87,12 +94,14 @@ const PortfolioItem = ({ params }: any) => {
       </div>
 
       <div className="flex items-center justify-between w-full mb-[60px] bg-slate-400 rounded-[18px]">
-        <Image
-          {...imageProps}
-          alt={""}
-          height={328}
-          className=" object-cover rounded-[18px] relative w-full h-[328px]"
-        />
+        {mainImage ? (
+          <img
+            src={url as string}
+            alt={`${title} cover image`}
+            height={328}
+            className=" object-cover rounded-[18px] relative w-full h-[328px]"
+          />
+        ) : null}
       </div>
 
       <div className="flex flex-col gap-10 w-full mb-[60px]">
@@ -129,26 +138,48 @@ const PortfolioItem = ({ params }: any) => {
       </div>
 
       {/* Brief section  */}
+      {brief ? (
+        <div className="flex flex-col gap-5 w-full mb-[60px]">
+          <h6 className="text-green leading-120 ">Brief</h6>
+          <p className="leading-6 text-black">{brief}</p>
+        </div>
+      ) : null}
 
-      <div className="flex flex-col gap-5 w-full mb-[60px]">
-        <h6 className="text-green leading-120 ">Brief</h6>
-        <p className="leading-6 text-black">{brief}</p>
-      </div>
+       {/* Challenge section  */}
+      {challenge ? (
+        <div className="flex flex-col gap-5 w-full mb-[60px]">
+          <h6 className="text-green leading-120 ">Challenge</h6>
+          <p className="leading-6 text-black">{brief}</p>
+        </div>
+      ) : null}
+
+       {/* solution section  */}
+      {solution ? (
+        <div className="flex flex-col gap-5 w-full mb-[60px]">
+          <h6 className="text-green leading-120 ">Solution</h6>
+          <p className="leading-6 text-black">{solution}</p>
+        </div>
+      ) : null}
 
       {/* Images gallery */}
       <div className="flex flex-col gap-5 w-full mb-[60px]">
         {imagesGallery && imagesGallery.length > 0 ? (
-          <div className="flex gap-5">
-          {imagesGallery.map((image, index) => (
-            <Image
-            {...useNextSanityImage(sanityClient, image.imagesGallery)}
-            alt={""}
-            height={360}
-            className=" object-cover rounded-[18px] relative w-full h-[360px]"
-          />
-        ))}
-        </div>
-        ): null }
+          <div className="flex lg:flex-row justify-between gap-5 sm:flex-col">
+            {imagesGallery.map((image, index) => (
+              <img
+                src={
+                  imagesGalleryUrl
+                    ? (imagesGalleryUrl[index] as string)
+                    : undefined
+                }
+                alt={""}
+                // height={360}
+                // width={360}
+                className="object-cover rounded-[18px] w-full lg:max-w-[260px] h-[360px]"
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
       {/*  */}
     </div>

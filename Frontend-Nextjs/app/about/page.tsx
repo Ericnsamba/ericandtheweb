@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import EricPhoto from "../../public/assets/images/eric-picture.png";
+import downloadIcon from "../../public/assets/icons/Icons-download.svg";
 // import {IconExperience, IconMentor, IconRecognitions} from "../public/assets/icons";
 import Experience from "../../components/Experience";
 import IconExperience from "../../public/assets/icons/IconExperience.svg";
@@ -116,9 +117,9 @@ export default function AboutPage() {
             title="Download CV"
             onClick={() => console.log("Download CV")}
             showIconRight
-            iconRight={EricPhoto}
+            iconRight={downloadIcon}
             children={undefined}
-            type={"danger"}
+            type={"primary"}
           />
         </div>
       </div>

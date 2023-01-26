@@ -12,12 +12,13 @@ const NavButton = ({ type, href, children }: Props) => {
     if (type === 'active') {
         className = 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'
     }
-    if (type === 'danger') {
-        className = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
-    }
+    
     return (
         <Link className={className} href={href}>
+            <div className="navButtonLink text-center">
+            {/* <div className="navButtonLink rotate-90 whitespace-nowrap bg-white/50 items-center h-fit"> */}
             {children}
+            </div>
         </Link>
     )
 }

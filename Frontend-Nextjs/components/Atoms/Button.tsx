@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import styles  from "../../styles/buttonStyles.module.css";
 
 interface Props {
   children: React.ReactNode;
@@ -17,8 +18,9 @@ interface Props {
 }
 
 const Button = (props: Props) => {
-  let className =
-    "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+  let className =''
+  // "button-pil flex flex-row gap-2 bg-green/10 dark:bg-white  ";
+    // "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
   if (props.type === "secondary") {
     className =
       "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded";
@@ -30,7 +32,8 @@ const Button = (props: Props) => {
 
   return (
     <button className="self-center" onClick={props.onClick}>
-      <div className="flex flex-row gap-2 bg-[#80e0a66c] hover:bg-green min-w-[166px] w-max  py-[13px] px-[20px] justify-center items-center rounded-full">
+      <div className={styles.buttonPill}>
+      {/* <div className={`${className} min-w-[166px] w-max  py-[13px] px-[20px] justify-center items-center rounded-full transition-all`}> */}
         {props.showIconLeft ? (
           <Image
             className="bg-slate-200 rounded-2xl w-[24px] h-[24px] object-cover"

@@ -17,7 +17,7 @@ const Home: FC<typeDefinition> = ({ repositories }) => {
   return (
     <section className={`flex gap-5 flex-auto min-h-0`}>
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer as any}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
@@ -41,7 +41,6 @@ const Home: FC<typeDefinition> = ({ repositories }) => {
           <div className="w-full sm:px-0 flex flex-col justify-center">
             <div className="">
               <TypingText title="I'm Eric," textStyles="text-left" />
-              <HoverTypingText title="Dribbble" textStyles={`text-sm uppercase`}/>
               <motion.h1
                 variants={textVariant(1.1)}
                 className={"text-[52px] text-green"}
@@ -65,6 +64,7 @@ const Home: FC<typeDefinition> = ({ repositories }) => {
                 className=" object-cover rounded-full z-10 relative"
                 // width={'100%'}
                 height={800}
+                
               />
             </motion.div>
           </div>
