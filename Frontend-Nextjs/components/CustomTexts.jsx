@@ -6,7 +6,7 @@ import { hoverTextContainer, textContainer, textVariant2 } from '../utils/motion
 export const TypingText = ({ title, textStyles }) => (
   <motion.p
     variants={textContainer}
-    className={`font-normal  text-[18px] text-black ${textStyles}`}
+    className={`font-normal  text-[24px] text-black ${textStyles}`}
   >
     {Array.from(title).map((letter, index) => (
       <motion.span  variants={textVariant2} key={index}>

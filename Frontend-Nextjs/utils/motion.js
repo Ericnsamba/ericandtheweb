@@ -1,8 +1,30 @@
 'use client'
-export const navVariants = {
+
+export const bodyVariants = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: 80,
+    transition: {
+      type: 'spring',
+      stiffness: 300,
+      damping: 140,
+    },
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.6,
+      type: 'spring',
+      stiffness: 80,
+      delay: 0.6,
+    },
+  },
+};
+export const childVariants = {
+  hidden: {
+    opacity: 0,
+    y: 80,
     transition: {
       type: 'spring',
       stiffness: 300,
@@ -15,7 +37,28 @@ export const navVariants = {
     transition: {
       type: 'spring',
       stiffness: 80,
-      delay: 1,
+      delay: 0.6,
+    },
+  },
+};
+
+export const navVariants = {
+  hidden: {
+    opacity: 0,
+    y: 80,
+    transition: {
+      type: 'spring',
+      stiffness: 300,
+      damping: 140,
+    },
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 80,
+      delay: 0.6,
     },
   },
 };

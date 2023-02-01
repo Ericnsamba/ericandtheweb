@@ -10,6 +10,7 @@ import arrowUpRight from "../../../public/assets/icons/Icons-up-right.svg";
 import downloadIcon from "../../../public/assets/icons/icon-up-right.svg";
 import { useNextSanityImage } from "next-sanity-image";
 import imageUrlBuilder from "@sanity/image-url";
+import Link from "next/link";
 
 // import { type } from "os";
 
@@ -80,17 +81,23 @@ const PortfolioItem = ({ params, about }: any) => {
       : null;
 
   return (
-    <div className="lg:w-8/12 w-full lg:px-0 px-10 mx-auto bg-teal-1000 ">
+    <div className="lg:w-8/12 w-full lg:px-0 px-5 mx-auto bg-teal-1000 py-32">
       <div className="flex items-center justify-between w-full my-[60px]">
-        <h3 className="text-green leading-120 ">{title}</h3>
-        <Button
-          children={undefined}
-          onClick={() => router.back()}
-          title={"Back to Projects"}
-          type={"danger"}
-          showIconRight
-          iconRight={arrowUpRight}
-        />
+        <h3 className="text-green leading-120 text-[24px]">{title}</h3>
+
+        <div className="hidden lg:flex">
+          <Button
+            children={undefined}
+            onClick={() => router.back()}
+            title={"Back to Projects"}
+            type={"danger"}
+            showIconRight
+            iconRight={arrowUpRight}
+          />
+        </div>
+        <Link href="../portfolio" className="">
+          <Image alt="" src={arrowUpRight} height={24} className=" object-cover" />
+        </Link>
       </div>
 
       <div className="flex items-center justify-between w-full mb-[60px] bg-slate-400 rounded-[18px]">
@@ -145,15 +152,15 @@ const PortfolioItem = ({ params, about }: any) => {
         </div>
       ) : null}
 
-       {/* Challenge section  */}
+      {/* Challenge section  */}
       {challenge ? (
         <div className="flex flex-col gap-5 w-full mb-[60px]">
           <h6 className="text-green leading-120 ">Challenge</h6>
-          <p className="leading-6 text-black">{brief}</p>
+          <p className="leading-6 text-black">{challenge}</p>
         </div>
       ) : null}
 
-       {/* solution section  */}
+      {/* solution section  */}
       {solution ? (
         <div className="flex flex-col gap-5 w-full mb-[60px]">
           <h6 className="text-green leading-120 ">Solution</h6>
@@ -162,9 +169,9 @@ const PortfolioItem = ({ params, about }: any) => {
       ) : null}
 
       {/* Images gallery */}
-      <div className="flex flex-col gap-5 w-full mb-[60px]">
+      <div className="flex flex-col gap-5 w-full mb-[60px] overflow-x-scroll overflow-hidden">
         {imagesGallery && imagesGallery.length > 0 ? (
-          <div className="flex lg:flex-row justify-between gap-5 sm:flex-col">
+          <div className="flex lg:flex-row justify-between gap-5">
             {imagesGallery.map((image, index) => (
               <img
                 src={
@@ -173,8 +180,6 @@ const PortfolioItem = ({ params, about }: any) => {
                     : undefined
                 }
                 alt={""}
-                // height={360}
-                // width={360}
                 className="object-cover rounded-[18px] w-full lg:max-w-[260px] h-[360px]"
               />
             ))}

@@ -15,7 +15,7 @@ export default function ToggleButton( {props}) {
 
 
   return (
-    <div className="py-0">
+    <div className="flex items-center justify-center">
       <button
             aria-label="Toggle Dark Mode"
             type="button"

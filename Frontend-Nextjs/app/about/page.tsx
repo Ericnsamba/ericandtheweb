@@ -12,40 +12,85 @@ import IconRecognitions from "../../public/assets/icons/IconRecognitions.svg";
 import Link from "next/link";
 import Button from "../../components/Atoms/Button";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import NavButton from "../../components/Navigation/NavButton";
 import LocomotiveScroll from "locomotive-scroll";
+// import { bodyVariants, childVariants, navVariants } from "../../utils/motion";
+import { navVariants, bodyVariants } from "../../utils/motion";
+import Navigation from "../../components/Navigation/Menu";
 
 export default function AboutPage() {
   const { scrollYProgress } = useScroll();
+  const scrollRef = useRef(null);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
 
-  // const scroll = new LocomotiveScroll({
-  //   el: document.querySelector("[data-scroll-container]"),
-  //   smooth: true,
-  //   tablet: { smooth: true },
-  //   smartphone: { smooth: true }
-  // });
-
   useEffect(() => {}, []);
 
-  return (
-    <div className={` ${styles.container} flex mb-[80px] h-full gap-x-5`}>
-      <div className="w-3/12">
-        <div className="NavigationBar flex justify-between w-full h-[400px] items-center">
-          <NavButton type={"default"} href="./">
-            home
-          </NavButton>
-        </div>
-      </div>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+  const bodyVariantshh = {
+    hidden: {
+      // y: 200,
+      // scale: 0
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.4,
+        durations: 0.8,
+        type: "spring",
+        stiffness: 80,
+      },
+    },
+  };
 
-      <div className="mx-auto container w-6/12 flex flex-col gap-16">
-        <div className="w-full flex flex-col gap-10">
+  const childVariants = {
+    hidden: {
+      y: 180,
+    },
+    show: {
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 90,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={navVariants}
+      className={`flex h-screen gap-x-5 overflow-hidden`}
+    >
+      <div className="w-3/12  bg-teal-8000 flex">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ root: scrollRef }}
+          className="NavigationBar flex justify-between w-full h-[400px] items-center self-center "
+        >
+          <Navigation routeNames={["home"]} />
+        </motion.div>
+        {/* <motion.div className="progress-bar h-5 bg-teal-500" style={{ scaleX: scrollYProgress }} /> */}
+      </div>
+
+      <motion.div
+        initial="hidden"
+        animate="show"
+        // exit="exitState"
+        variants={bodyVariants}
+        className="mx-auto container w-6/12 flex flex-col gap-16 py-32 overflow-y-scroll scrollbar-hide"
+      >
+        <motion.div
+          variants={childVariants}
+          className="w-full flex flex-col gap-10"
+        >
           {/* <img className="picture" src="https://picsum.photos/800/500" alt="tadaam" /> */}
           <Image
             className="rounded-2xl w-full h-[285px] object-cover"
@@ -54,23 +99,31 @@ export default function AboutPage() {
             priority
           />
 
-          <div className="flex flex-col gap-5">
+          <motion.div variants={childVariants} className="flex flex-col gap-5">
             <p className="text-[34px] text-black dark:text-green font-normal">
               I'm Eric, a product designer and app developer.
             </p>
             <p className="text-base text-black dark:text-green font-normal">
-              I have spent the last 4 years designing & building web
-              applications for some of the world's biggest asset managers like
-              Generali, Boston Partners, CTI and many others, whilst working at
-              Kurtosys. I’m always learning more, i am pretty much a javaScript
-              and its frameworks lover. I am passionate about beautiful, clean
-              and minimal designs. I learn quickly and i don't sleep till i
-              solve a bug or i am happy with my design.
+              As a skilled Production designer and Front-end developer, I bring
+              a unique perspective to the table. With my proficiency in
+              technologies such as React.js, React Native, JavaScript, and
+              Next.js, I am able to seamlessly bridge the gap between design and
+              development. I am passionate about creating visually stunning and
+              user-friendly experiences that not only meet but exceed
+              expectations. I have had the pleasure of working on designs for
+              some of the world's leading asset managers, including Generali,
+              Boston Partners, Hermes, and CTI, during my time at Kurtosys. My
+              experience and dedication to the industry make me a valuable asset
+              to any team, and I am excited for the opportunity to bring my
+              skills to your company.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="flex justify-between w-full ">
+        <motion.div
+          variants={childVariants}
+          className="flex justify-between w-full "
+        >
           <div className="">
             <Image
               className="w-[42px] h-[42px] pb-[10px]"
@@ -106,10 +159,13 @@ export default function AboutPage() {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="justify-between flex flex-col gap-10 mb-[60px]">
-          <h1 className="text-green text-[25px]">Work and Experience</h1>
+        <motion.div
+          variants={childVariants}
+          className="justify-between flex flex-col gap-10 mb-[60px]"
+        >
+          <h1 className="text-green text-[25px]">Work Experience</h1>
           <div className="">
             <Experience />
           </div>
@@ -121,19 +177,14 @@ export default function AboutPage() {
             children={undefined}
             type={"primary"}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="w-3/12 flex-auto">
-        <div className="NavigationBar flex justify-end gap-5 w-full h-[400px] items-center">
-          <NavButton type={"default"} href="./portfolio">
-            my Work
-          </NavButton>
-          <NavButton type={"default"} href="./contact">
-            get in Touch
-          </NavButton>
+      <motion.div variants={childVariants} className="w-3/12 flex-auto flex ">
+        <div className="NavigationBar flex justify-end gap-5 w-full h-[400px] items-center self-center">
+          <Navigation routeNames={["my work", "get in touch"]} justify="end" />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

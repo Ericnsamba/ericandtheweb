@@ -18,8 +18,8 @@ interface Props {
 }
 
 const Button = (props: Props) => {
-  let className =''
-  // "button-pil flex flex-row gap-2 bg-green/10 dark:bg-white  ";
+  let className =
+  "button-pil flex flex-row gap-2 bg-green/10 dark:bg-white hover:bg-green ";
     // "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
   if (props.type === "secondary") {
     className =
@@ -32,11 +32,11 @@ const Button = (props: Props) => {
 
   return (
     <button className="self-center" onClick={props.onClick}>
-      <div className={styles.buttonPill}>
+      <div className={`${styles.buttonPill} bg-green/20 dark:bg-white`}>
       {/* <div className={`${className} min-w-[166px] w-max  py-[13px] px-[20px] justify-center items-center rounded-full transition-all`}> */}
         {props.showIconLeft ? (
           <Image
-            className="bg-slate-200 rounded-2xl w-[24px] h-[24px] object-cover"
+            className="bg-black rounded-2xl w-[24px] h-[24px] object-cover"
             src={props.iconLeft}
             alt="Picture of the author"
             priority

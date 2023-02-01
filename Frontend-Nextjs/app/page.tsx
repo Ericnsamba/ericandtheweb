@@ -5,45 +5,64 @@ import React, { FC } from "react";
 import Image from "next/image";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
-import profilePhoto from "../public/assets/images/image.svg";
+import profilePhoto from "../public/assets/images/Hero-placeholder.png";
 import { HoverTypingText, TypingText } from "../components/CustomTexts";
 import NavButton from "../components/Navigation/NavButton";
+import Navigation from "../components/Navigation/Menu";
 
 interface typeDefinition {
   repositories: any;
 }
 
 const Home: FC<typeDefinition> = ({ repositories }) => {
-  return (
-    <section className={`flex gap-5 flex-auto min-h-0`}>
-      <motion.div
-        variants={staggerContainer as any}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.centerAlign} w-10/12 `}
-      >
-        {/* <div className="flex justify-center items-center flex-col relative z-10">
-            <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-              Metaverse
-            </motion.h1>
-            <motion.div
-              variants={textVariant(1.2)}
-              className="flex flex-row justify-center items-center"
-            >
-              <h1 className={styles.heroHeading}>Ma</h1>
-              <div className={styles.heroDText} />
-              <h1 className={styles.heroHeading}>Ness</h1>
-            </motion.div>
-          </div> */}
+  const navContainerVar = {
+    hidden: {
+      // y: -100,
+      // scale: 0
+    },
+    show: {
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+  
+  const heroImageVar = {
+    hidden: {
+      x: -350,
+      // scale: 0,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      // scale: 1,
+      opacity: 1,
+      transition: {
+        type: "tween",
+        ease: "easeInOut",
+        duration: 0.8,
+        // delay: 1,
+      },
+    },
+  };
 
-        <div className="flex">
-          <div className="w-full sm:px-0 flex flex-col justify-center">
+  return (
+    <motion.section className={`flex lg:gap-5 flex-auto h-screen overflow-hidden pt-[134px] lg:py-0`}>
+      <motion.div
+        exit={{ x: 400, opacity: 0 }}
+        // viewport={{ once: false, amount: 0.25 }}
+        className={` lg:w-10/12  w-full px-5 lg:px-0`}
+      >
+        <div className="flex flex-col lg:flex-row w-full">
+          {/* <div className="w-full sm:px-0 flex flex-col justify-center"> */}
+          <div className="w-full lg:w-1/2 sm:px-0 justify-start flex flex-col lg:justify-center">
             <div className="">
-              <TypingText title="I'm Eric," textStyles="text-left" />
+              {/* <TypingText title="I'm Eric," textStyles="text-left" /> */}
+              <p className="text-black text-[24px]">I'm Eric</p>
               <motion.h1
-                variants={textVariant(1.1)}
-                className={"text-[52px] text-green"}
+                variants={textVariant(1)}
+                className={"lg:text-[52px] text-[52px] text-green"}
               >
                 Product Designer
               </motion.h1>
@@ -51,41 +70,39 @@ const Home: FC<typeDefinition> = ({ repositories }) => {
             </div>
           </div>
 
-          <div className="w-full  sm:px-0 justify-between flex flex-col">
-            <motion.div
-              variants={slideIn("top", "tween", 0.2, 1)}
-              className="relative w-full"
-            >
-              <div className="absolute w-full" />
-
+          <motion.div
+            variants={heroImageVar}
+            initial="hidden"
+            animate="show"
+            // className="w-full relative -top-5 overflow-hidden justify-between flex flex-col bg-fuchsia-200"
+            className="w-full lg:w-1/2 sm:px-0 justify-start flex flex-col lg:justify-center"
+            // className="w-full lg:w-1/2 sm:px-0 justify-between flex flex-col relative -top-12 overflow-hidden"
+          >
+            <div className="w-full  sm:px-0 flex flex-col justify-center bg-fuchsia-3000">
               <Image
                 src={profilePhoto}
                 alt="Picture of the author"
-                className=" object-cover rounded-full z-10 relative"
-                // width={'100%'}
-                height={800}
-                
+                className="object-cover w-11/12 self-center"
               />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
+
       </motion.div>
 
-      <div className={`${styles.centerAlign} flex gap-5 justify-between w-2/12 grow `}>
-
-        <div className="NavigationBar flex justify-between w-full h-[400px]">
-          <NavButton type={"default"} href="./about">
-            About Me
-          </NavButton>
-          <NavButton type={"default"} href="./portfolio">
-            my Work
-          </NavButton>
-          <NavButton type={"default"} href="./contact">
-            get in Touch
-          </NavButton>
-        </div>
+      <div
+        className={`${styles.centerAlign} hidden lg:flex gap-5 justify-between w-2/12 grow `}
+      >
+        <motion.div
+          variants={navContainerVar}
+          initial="hidden"
+          animate="show"
+          className="NavigationBar flex justify-between w-full h-[400px]"
+        >
+          <Navigation routeNames={["about me", "my work", "get in touch"]} />
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

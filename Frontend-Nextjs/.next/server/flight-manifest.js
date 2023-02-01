@@ -1,27 +1,53 @@
 self.__RSC_MANIFEST={
   "__ssr_module_mapping__": {
-    "./public/assets/images/ericMemoji.png": {
+    "(app-client)/./public/assets/images/Hero-placeholder.png": {
       "": {
-        "id": "(sc_client)/./public/assets/images/ericMemoji.png",
+        "id": "(sc_client)/./public/assets/images/Hero-placeholder.png",
         "name": "",
         "chunks": [
-          "pages/_app:pages/_app"
+          "app/page:app/page"
         ],
         "async": false
       },
       "*": {
-        "id": "(sc_client)/./public/assets/images/ericMemoji.png",
+        "id": "(sc_client)/./public/assets/images/Hero-placeholder.png",
         "name": "*",
         "chunks": [
-          "pages/_app:pages/_app"
+          "app/page:app/page"
         ],
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./public/assets/images/ericMemoji.png",
+        "id": "(sc_client)/./public/assets/images/Hero-placeholder.png",
         "name": "default",
         "chunks": [
-          "pages/_app:pages/_app"
+          "app/page:app/page"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/page.tsx": {
+      "": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "*",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "default",
+        "chunks": [
+          "app/page:app/page"
         ],
         "async": false
       }
@@ -74,32 +100,6 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/layout:app/layout"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./app/page.tsx": {
-      "": {
-        "id": "(sc_client)/./app/page.tsx",
-        "name": "",
-        "chunks": [
-          "app/page:app/page"
-        ],
-        "async": false
-      },
-      "*": {
-        "id": "(sc_client)/./app/page.tsx",
-        "name": "*",
-        "chunks": [
-          "app/page:app/page"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./app/page.tsx",
-        "name": "default",
-        "chunks": [
-          "app/page:app/page"
         ],
         "async": false
       }
@@ -204,6 +204,58 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app-client-internals:app-client-internals"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/contact/page.tsx": {
+      "": {
+        "id": "(sc_client)/./app/contact/page.tsx",
+        "name": "",
+        "chunks": [
+          "app/contact/page:app/contact/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/contact/page.tsx",
+        "name": "*",
+        "chunks": [
+          "app/contact/page:app/contact/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/contact/page.tsx",
+        "name": "default",
+        "chunks": [
+          "app/contact/page:app/contact/page"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./app/portfolio/page.tsx": {
+      "": {
+        "id": "(sc_client)/./app/portfolio/page.tsx",
+        "name": "",
+        "chunks": [
+          "app/portfolio/page:app/portfolio/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/portfolio/page.tsx",
+        "name": "*",
+        "chunks": [
+          "app/portfolio/page:app/portfolio/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/portfolio/page.tsx",
+        "name": "default",
+        "chunks": [
+          "app/portfolio/page:app/portfolio/page"
         ],
         "async": false
       }
@@ -338,32 +390,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./app/portfolio/page.tsx": {
-      "": {
-        "id": "(sc_client)/./app/portfolio/page.tsx",
-        "name": "",
-        "chunks": [
-          "app/portfolio/page:app/portfolio/page"
-        ],
-        "async": false
-      },
-      "*": {
-        "id": "(sc_client)/./app/portfolio/page.tsx",
-        "name": "*",
-        "chunks": [
-          "app/portfolio/page:app/portfolio/page"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./app/portfolio/page.tsx",
-        "name": "default",
-        "chunks": [
-          "app/portfolio/page:app/portfolio/page"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./app/portfolio/[name]/page.tsx": {
       "": {
         "id": "(sc_client)/./app/portfolio/[name]/page.tsx",
@@ -393,8 +419,17 @@ self.__RSC_MANIFEST={
   },
   "__edge_ssr_module_mapping__": {},
   "__entry_css_files__": {
+    "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/page": [
+      "static/css/app/page.css"
+    ],
     "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/layout": [
       "static/css/app/layout.css"
+    ],
+    "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/contact/page": [
+      "static/css/app/contact/page.css"
+    ],
+    "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/portfolio/page": [
+      "static/css/app/portfolio/page.css"
     ],
     "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/about/page": [
       "static/css/app/about/page.css"
@@ -403,9 +438,82 @@ self.__RSC_MANIFEST={
       "static/css/app/portfolio/[name]/page.css"
     ]
   },
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/components/Navigation/Menu/menuStyles.module.css": {
+    "default": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/page.css",
+        "static/css/app/contact/page.css",
+        "static/css/app/portfolio/page.css",
+        "static/css/app/about/page.css"
+      ]
+    }
+  },
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/assets/images/Hero-placeholder.png": {
+    "": {
+      "id": "(app-client)/./public/assets/images/Hero-placeholder.png",
+      "name": "",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./public/assets/images/Hero-placeholder.png",
+      "name": "*",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./public/assets/images/Hero-placeholder.png",
+      "name": "default",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    }
+  },
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/page.tsx": {
+    "": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "default",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    }
+  },
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/fonts/stylesheet.css": {
+    "default": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    }
+  },
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/globals.css": {
     "default": {
-      "id": "./styles/globals.css",
+      "id": "null",
       "name": "default",
       "chunks": [
         "static/css/app/layout.css"
@@ -438,15 +546,6 @@ self.__RSC_MANIFEST={
       "async": false
     }
   },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/fonts/stylesheet.css": {
-    "default": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    }
-  },
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/layout.tsx": {
     "": {
       "id": "(app-client)/./app/layout.tsx",
@@ -469,32 +568,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/layout:app/layout"
-      ],
-      "async": false
-    }
-  },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/page.tsx": {
-    "": {
-      "id": "(app-client)/./app/page.tsx",
-      "name": "",
-      "chunks": [
-        "app/page:app/page"
-      ],
-      "async": false
-    },
-    "*": {
-      "id": "(app-client)/./app/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:app/page"
-      ],
-      "async": false
-    },
-    "default": {
-      "id": "(app-client)/./app/page.tsx",
-      "name": "default",
-      "chunks": [
-        "app/page:app/page"
       ],
       "async": false
     }
@@ -707,13 +780,56 @@ self.__RSC_MANIFEST={
       "async": false
     }
   },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/Home.module.css": {
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/contact/page.tsx": {
+    "": {
+      "id": "(app-client)/./app/contact/page.tsx",
+      "name": "",
+      "chunks": [
+        "app/contact/page:app/contact/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/contact/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/contact/page:app/contact/page"
+      ],
+      "async": false
+    },
     "default": {
-      "id": "null",
+      "id": "(app-client)/./app/contact/page.tsx",
       "name": "default",
       "chunks": [
-        "static/css/app/about/page.css"
-      ]
+        "app/contact/page:app/contact/page"
+      ],
+      "async": false
+    }
+  },
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/portfolio/page.tsx": {
+    "": {
+      "id": "(app-client)/./app/portfolio/page.tsx",
+      "name": "",
+      "chunks": [
+        "app/portfolio/page:app/portfolio/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/portfolio/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/portfolio/page:app/portfolio/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./app/portfolio/page.tsx",
+      "name": "default",
+      "chunks": [
+        "app/portfolio/page:app/portfolio/page"
+      ],
+      "async": false
     }
   },
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/buttonStyles.module.css": {
@@ -852,32 +968,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/about/page:app/about/page"
-      ],
-      "async": false
-    }
-  },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/portfolio/page.tsx": {
-    "": {
-      "id": "(app-client)/./app/portfolio/page.tsx",
-      "name": "",
-      "chunks": [
-        "app/portfolio/page:app/portfolio/page"
-      ],
-      "async": false
-    },
-    "*": {
-      "id": "(app-client)/./app/portfolio/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/portfolio/page:app/portfolio/page"
-      ],
-      "async": false
-    },
-    "default": {
-      "id": "(app-client)/./app/portfolio/page.tsx",
-      "name": "default",
-      "chunks": [
-        "app/portfolio/page:app/portfolio/page"
       ],
       "async": false
     }
