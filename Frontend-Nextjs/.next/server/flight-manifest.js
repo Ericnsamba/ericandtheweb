@@ -57,7 +57,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./public/assets/images/ericMemoji.png",
         "name": "",
         "chunks": [
-          "app/about/page:app/about/page"
+          "app/layout:app/layout"
         ],
         "async": false
       },
@@ -65,7 +65,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./public/assets/images/ericMemoji.png",
         "name": "*",
         "chunks": [
-          "app/about/page:app/about/page"
+          "app/layout:app/layout"
         ],
         "async": false
       },
@@ -73,7 +73,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./public/assets/images/ericMemoji.png",
         "name": "default",
         "chunks": [
-          "app/about/page:app/about/page"
+          "app/layout:app/layout"
         ],
         "async": false
       }
@@ -260,58 +260,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./public/assets/images/Eventify.jpg": {
-      "": {
-        "id": "(sc_client)/./public/assets/images/Eventify.jpg",
-        "name": "",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "*": {
-        "id": "(sc_client)/./public/assets/images/Eventify.jpg",
-        "name": "*",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/assets/images/Eventify.jpg",
-        "name": "default",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/assets/images/ellelashes.jpg": {
-      "": {
-        "id": "(sc_client)/./public/assets/images/ellelashes.jpg",
-        "name": "",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "*": {
-        "id": "(sc_client)/./public/assets/images/ellelashes.jpg",
-        "name": "*",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/assets/images/ellelashes.jpg",
-        "name": "default",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./public/assets/images/eric-picture.png": {
       "": {
         "id": "(sc_client)/./public/assets/images/eric-picture.png",
@@ -331,32 +279,6 @@ self.__RSC_MANIFEST={
       },
       "default": {
         "id": "(sc_client)/./public/assets/images/eric-picture.png",
-        "name": "default",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./public/assets/images/quizzflix.png": {
-      "": {
-        "id": "(sc_client)/./public/assets/images/quizzflix.png",
-        "name": "",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "*": {
-        "id": "(sc_client)/./public/assets/images/quizzflix.png",
-        "name": "*",
-        "chunks": [
-          "app/about/page:app/about/page"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./public/assets/images/quizzflix.png",
         "name": "default",
         "chunks": [
           "app/about/page:app/about/page"
@@ -525,7 +447,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./public/assets/images/ericMemoji.png",
       "name": "",
       "chunks": [
-        "app/about/page:app/about/page"
+        "app/layout:app/layout"
       ],
       "async": false
     },
@@ -533,7 +455,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./public/assets/images/ericMemoji.png",
       "name": "*",
       "chunks": [
-        "app/about/page:app/about/page"
+        "app/layout:app/layout"
       ],
       "async": false
     },
@@ -541,7 +463,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./public/assets/images/ericMemoji.png",
       "name": "default",
       "chunks": [
-        "app/about/page:app/about/page"
+        "app/layout:app/layout"
       ],
       "async": false
     }
@@ -842,58 +764,6 @@ self.__RSC_MANIFEST={
       ]
     }
   },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/assets/images/Eventify.jpg": {
-    "": {
-      "id": "(app-client)/./public/assets/images/Eventify.jpg",
-      "name": "",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "*": {
-      "id": "(app-client)/./public/assets/images/Eventify.jpg",
-      "name": "*",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "default": {
-      "id": "(app-client)/./public/assets/images/Eventify.jpg",
-      "name": "default",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    }
-  },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/assets/images/ellelashes.jpg": {
-    "": {
-      "id": "(app-client)/./public/assets/images/ellelashes.jpg",
-      "name": "",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "*": {
-      "id": "(app-client)/./public/assets/images/ellelashes.jpg",
-      "name": "*",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "default": {
-      "id": "(app-client)/./public/assets/images/ellelashes.jpg",
-      "name": "default",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    }
-  },
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/assets/images/eric-picture.png": {
     "": {
       "id": "(app-client)/./public/assets/images/eric-picture.png",
@@ -913,32 +783,6 @@ self.__RSC_MANIFEST={
     },
     "default": {
       "id": "(app-client)/./public/assets/images/eric-picture.png",
-      "name": "default",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    }
-  },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/public/assets/images/quizzflix.png": {
-    "": {
-      "id": "(app-client)/./public/assets/images/quizzflix.png",
-      "name": "",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "*": {
-      "id": "(app-client)/./public/assets/images/quizzflix.png",
-      "name": "*",
-      "chunks": [
-        "app/about/page:app/about/page"
-      ],
-      "async": false
-    },
-    "default": {
-      "id": "(app-client)/./public/assets/images/quizzflix.png",
       "name": "default",
       "chunks": [
         "app/about/page:app/about/page"

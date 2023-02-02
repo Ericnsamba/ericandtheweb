@@ -10,11 +10,11 @@ self.__RSC_CSS_MANIFEST={
       "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/globals.css"
     ]
   },
-  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/layout.tsx": [
-    "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/globals.css"
-  ],
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/page.tsx": [
     "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/components/Navigation/Menu/menuStyles.module.css"
+  ],
+  "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/layout.tsx": [
+    "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/globals.css"
   ],
   "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/app/about/page.tsx": [
     "/Users/ericmanasse/Documents/GitHub/ericandtheweb/Frontend-Nextjs/styles/buttonStyles.module.css",

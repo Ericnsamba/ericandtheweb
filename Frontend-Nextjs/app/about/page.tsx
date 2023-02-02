@@ -68,7 +68,7 @@ export default function AboutPage() {
       variants={navVariants}
       className={`flex h-screen gap-x-5 overflow-hidden`}
     >
-      <div className="w-3/12  bg-teal-8000 flex">
+      <div className="w-3/12  bg-teal-8000 hidden lg:flex ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -80,12 +80,13 @@ export default function AboutPage() {
         {/* <motion.div className="progress-bar h-5 bg-teal-500" style={{ scaleX: scrollYProgress }} /> */}
       </div>
 
+      {/* Body section */}
       <motion.div
         initial="hidden"
         animate="show"
         // exit="exitState"
         variants={bodyVariants}
-        className="mx-auto container w-6/12 flex flex-col gap-16 py-32 overflow-y-scroll scrollbar-hide"
+        className="mx-auto container w-full lg:w-6/12 flex flex-col gap-16 py-32 overflow-y-scroll scrollbar-hide px-5"
       >
         <motion.div
           variants={childVariants}
@@ -120,9 +121,11 @@ export default function AboutPage() {
           </motion.div>
         </motion.div>
 
+
+        {/* Years of experience and Mentor */}
         <motion.div
           variants={childVariants}
-          className="flex justify-between w-full "
+          className="flex justify-between w-full gap-5"
         >
           <div className="">
             <Image
@@ -180,7 +183,8 @@ export default function AboutPage() {
         </motion.div>
       </motion.div>
 
-      <motion.div variants={childVariants} className="w-3/12 flex-auto flex ">
+        {/* Nav right */}
+      <motion.div variants={childVariants} className="w-3/12 flex-auto hidden lg:flex ">
         <div className="NavigationBar flex justify-end gap-5 w-full h-[400px] items-center self-center">
           <Navigation routeNames={["my work", "get in touch"]} justify="end" />
         </div>

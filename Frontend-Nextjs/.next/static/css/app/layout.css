@@ -696,6 +696,9 @@ video {
 .h-\[44px\]{
   height: 44px;
 }
+.h-10{
+  height: 2.5rem;
+}
 .min-h-screen{
   min-height: 100vh;
 }
@@ -765,6 +768,9 @@ video {
 }
 .w-\[44px\]{
   width: 44px;
+}
+.w-10{
+  width: 2.5rem;
 }
 .min-w-\[50px\]{
   min-width: 50px;
@@ -1132,6 +1138,9 @@ video {
 }
 .text-center{
   text-align: center;
+}
+.text-right{
+  text-align: right;
 }
 .font-body{
   font-family: "Circular Std", Helvetica, Arial, sans-serif;
@@ -1649,6 +1658,9 @@ button .menuToggle {
   .lg\:flex-row{
     flex-direction: row;
   }
+  .lg\:justify-start{
+    justify-content: flex-start;
+  }
   .lg\:justify-end{
     justify-content: flex-end;
   }
@@ -1699,6 +1711,9 @@ button .menuToggle {
   }
   .lg\:text-\[44px\]{
     font-size: 44px;
+  }
+  .lg\:text-\[24px\]{
+    font-size: 24px;
   }
 }
 
