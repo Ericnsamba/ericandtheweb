@@ -1,0 +1,151 @@
+@import url("../public/fonts/stylesheet.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+    font-family: 'MonumentExtended';
+} */
+
+html :-webkit-scrollbar {
+  /* .scrollbar-hidden::-webkit-scrollbar {
+  } */
+  display: none;
+}
+
+h1 {
+  font-family: "MonumentExtended-Bold", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-weight: regular;
+  font-size: 62px;
+}
+h2 {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  /* letter-spacing: .05em */
+  font-size: 54px;
+}
+h3 {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-size: 44px;
+}
+h4 {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-size: 37px;
+}
+h5 {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-size: 31px;
+}
+h6 {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-size: 25px;
+}
+p,
+.header-nav-item a .menuItems {
+  font-family: "CircularStd-Book", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-size: 16px;
+}
+
+.subheader {
+  font-family: "MonumentExtended-Regular", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  /* letter-spacing: .05em */
+}
+
+.sectionTitle {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.sectionCards {
+  gap: 10px;
+  display: grid;
+  grid-row: 1;
+}
+
+.sectionItem {
+  gap: 10px;
+  display: grid;
+  grid-row: 1;
+}
+.sectionCardsdd {
+  gap: 10px;
+}
+
+/* main on every page*/
+.navButtonLink {
+  -ms-writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
+  -moz-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+}
+
+.UltralightFontSize {
+  font-family: "Monument Extended Ultralight", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+  font-weight: regular;
+  /* letter-spacing: .05em */
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  /* background: var(--red); */
+  transform-origin: 0%;
+}
+
+.background {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  padding-top: 20px;
+  /* left: 0; */
+  align-self: center;
+  width: 238px;
+  height: 400px;
+  /* background: rgb(255, 255, 255); */
+  justify-content: center;
+  /* align-items: center; */
+  border-radius: 10px;
+  border: 1px solid #DEE6F1;
+}
+
+button .menuToggle {
+  border: 1px solid #DEE6F1;
+  /* outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; */
+  /* cursor: pointer; */
+  /* position: absolute; */
+  /* top: 18px;
+  left: 15px; */
+  /* width: 50px; */
+  /* height: 50px; */
+  /* border-radius: 50%; */
+  /* align-self: center; */
+  /* background: transparent; */
+}

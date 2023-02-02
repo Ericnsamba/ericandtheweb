@@ -1,0 +1,76 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[3].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[3].oneOf[7].use[3]!./styles/buttonStyles.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+.buttonStyles_buttonPill__9FRPr {
+  display: flex;
+  padding: 16px 20px;
+  gap: 10px;
+  border-radius: 60px;
+}
+.buttonStyles_button-pil__xTTYO::before {
+  content: "";
+  background: #000;
+  transition: ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+.buttonStyles_button-pil__xTTYO:hover::before {
+  content: "";
+  background: #000;
+  transition: ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[3].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[3].oneOf[7].use[3]!./components/Navigation/Menu/menuStyles.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.menuStyles_container__yFzhA {
+    width: 210px;
+    height: 400px;
+    display: flex;
+    gap: 5px;
+}
+
+.menuStyles_container__yFzhA .menuStyles_menuItem__YV49z {
+  height: 100%;
+  flex: 1;
+  max-width: 50px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuStyles_container__yFzhA .menuStyles_menuItem__YV49z:hover {
+  flex: 4;
+  max-width: 134px;
+}
+
+.menuStyles_container__yFzhA .menuStyles_menuItem__YV49z .menuStyles_menuText__OChhT {
+  min-width: 14em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.menuStyles_container__yFzhA .menuStyles_menuItem__YV49z:hover .menuStyles_menuText__OChhT {
+  transform: rotate(0);
+}
+
