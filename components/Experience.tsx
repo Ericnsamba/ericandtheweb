@@ -4,6 +4,14 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../utils/client";
 
+type experienceTypes = {
+  logo: any;
+  jobTitle: string;
+  url: string;
+  company: string;
+  year: string;
+}
+
 const builder = imageUrlBuilder(sanityClient);
 
 export default function Experience() {
@@ -31,7 +39,7 @@ export default function Experience() {
     <div className="">
       <div className="flex flex-col gap-10">
         {/* Experience card */}
-        {experienceData.map((exp, idx) => {
+        {experienceData.map((exp: experienceTypes, idx) => {
           const url =
             exp.logo !== null
               ? builder.image(exp.logo).url().toString()

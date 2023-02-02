@@ -12,7 +12,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../../utils/client";
 
 type projTypes = {
-  slug: string;
+  slug: { current: string};
   title: string;
   category: string;
   year: string;
@@ -37,7 +37,7 @@ interface portfolioTypes {
 const builder = imageUrlBuilder(sanityClient);
 
 export default function Home() {
-  const [portfolioItem, setPortfolioItem] = useState([] as portfolioTypes);
+  const [portfolioItem, setPortfolioItem] = useState([]);
 
   useEffect(() => {
     sanityClient
@@ -49,22 +49,6 @@ export default function Home() {
         console.error(error);
       });
   }, []);
-  // console.log("setPortfolioItem", portfolioItems);
-
-  const {
-    title,
-    category,
-    year,
-    description,
-    slug,
-    web_link,
-    app_link,
-    brief,
-    challenge,
-    solution,
-    imagesGallery,
-    mainImage,
-  } = portfolioItem;
 
   const ContainerVar = {
     // hidden: {

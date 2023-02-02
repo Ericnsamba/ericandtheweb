@@ -10,11 +10,8 @@ import { HoverTypingText, TypingText } from "../components/CustomTexts";
 import NavButton from "../components/Navigation/NavButton";
 import Navigation from "../components/Navigation/Menu";
 
-interface typeDefinition {
-  repositories: any;
-}
 
-const Home: FC<typeDefinition> = ({ repositories }) => {
+const Home = () => {
   const navContainerVar = {
     hidden: {
       // y: -100,

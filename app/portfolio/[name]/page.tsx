@@ -49,14 +49,6 @@ const PortfolioItem = ({ params, about }: any) => {
     //
   }, [pageSlug]);
 
-  const galleryImageProps = () => {
-    return portfolioItem.imagesGallery
-      ? portfolioItem.imagesGallery.map((item) =>
-          useNextSanityImage(sanityClient, item.imagesGallery)
-        )
-      : null;
-  };
-
   const {
     title,
     category,
