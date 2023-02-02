@@ -1,7 +1,9 @@
 {
-    "cSpell.words": [
-        "datetime",
-        "eventify",
-        "tailwindcss"
-    ]
+  "cSpell.words": [
+    "eventify",
+    "Lumico",
+    "semibold"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

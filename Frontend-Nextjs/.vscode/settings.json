@@ -1,9 +1,0 @@
-{
-  "cSpell.words": [
-    "eventify",
-    "Lumico",
-    "semibold"
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
-}
