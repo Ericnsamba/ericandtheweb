@@ -1,5 +1,5 @@
 "use client";
-require('dotenv').config()
+// require('dotenv').config()
 import { Transition } from "@headlessui/react";
 import { AnimatePresence, motion, usePresence } from "framer-motion";
 import gsap from "gsap";
@@ -16,7 +16,7 @@ type RootLayoutTypes = {
 export default function RootLayout({ children }: RootLayoutTypes) {
   const path = usePathname();
   const router = useRouter();
-  // console.log("=====>", router);
+  
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
