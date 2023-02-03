@@ -6,11 +6,11 @@ import { Menu, X } from "react-feather";
 import memojiImage from "../../public/assets/images/ericMemoji.png";
 import ToggleButton from "../ToggleButton";
 
-const NavBar = ({ fixed }) => {
+const NavBar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="backdrop-blur-xl z-30 transition-all py-4 px-5 lg:px-0">
+    <div className="backdrop-blur-lg bg-white/10 z-30 transition-all py-4 px-5 lg:px-0 fixed w-full mx-auto max-w-screen-xl">
       {/* <div className="flex flex-wrap py-2"> */}
       <div className="w-full">
         <nav className="w-full relative flex items-center justify-between rounded-xl ">

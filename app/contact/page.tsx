@@ -68,7 +68,7 @@ export default function ContactPage() {
   };
 
   const linkStyles =
-    "text-sm uppercase font-body font-normal  text-black dark:text-green hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
+    "text-sm uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
 
   return (
     <div className="flex w-full gap-5">
@@ -90,7 +90,7 @@ export default function ContactPage() {
         variants={motionVariants}
         className="flex flex-col w-full lg:w-9/12 bg-teal-200n lg:justify-center py-[106px]"
       >
-        <div className="flex flex-col w-full container lg:w-6/12 gap-y-20 lg:pb-10 p-5">
+        <div className="flex flex-col w-full container lg:w-6/12 gap-y-20 lg:pb-10 p-5 ">
           <div className="flex flex-col gap-10">
             <h1 className="lg:text-[54px] text-[25px] text-green whitespace-nowrap">
               Get in touch
@@ -104,8 +104,21 @@ export default function ContactPage() {
           </div>
 
           <div className="w-full">
-            <ul role="list" className="flex flex-row gap-5 flex-wrap">
-            <li className="flex">
+            <ul
+              role="list"
+              className="flex flex-col lg:flex-row gap-5 flex-wrap"
+            >
+              <li className="flex">
+                <div className="overflow-hidden">
+                  <p className="text-sm uppercase font-body font-normal  text-black dark:text-green">
+                    Location
+                  </p>
+                  <p className="text-base text-slate-400 truncate font-light font-body">
+                    Based in London
+                  </p>
+                </div>
+              </li>
+              <li className="flex">
                 <div className="overflow-hidden">
                   <p className="text-sm uppercase font-body font-normal  text-black dark:text-green">
                     Lets Chat
@@ -117,22 +130,11 @@ export default function ContactPage() {
                   </p>
                 </div>
               </li>
-              <li className="flex">
-                <div className="overflow-hidden">
-                  <p className="text-sm uppercase font-body font-normal  text-black dark:text-green">
-                    Location
-                  </p>
-                  <p className="text-base text-slate-400 truncate font-light font-body">
-                    Based in London
-                  </p>
-                </div>
-              </li>
-              
             </ul>
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row justify-between flex-wrap gap-5">
+          <div className="flex w-full flex-row justify-between flex-wrap gap-8">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>

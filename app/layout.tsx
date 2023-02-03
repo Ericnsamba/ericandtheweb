@@ -16,7 +16,7 @@ type RootLayoutTypes = {
 export default function RootLayout({ children }: RootLayoutTypes) {
   const path = usePathname();
   const router = useRouter();
-  
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutTypes) {
     // exitState: { x: -200, opacity: 0 },
     transition: {
       duration: 0.5,
-      type: 'linear',
+      type: "linear",
       ease: "easeIn",
       delay,
     },
@@ -49,15 +49,13 @@ export default function RootLayout({ children }: RootLayoutTypes) {
           exitBeforeEnter
           mode="wait"
           // initial={false}
-          onExitComplete={() => window.scrollTo(0, 0)}
+          // onExitComplete={() => window.scrollTo(0, 0)}
         >
           {/* <body className="flex bg-white min-h-screen h-full flex-col py-5 container mx-auto max-w-screen-xl items-stretch bg-gradient-to-br from-indigo-50 via-white to-cyan-100"> */}
-          <motion.div className="fixed top-0 container mx-auto max-w-screen-xl z-10">
-            <NavBar fixed={undefined} />
-          </motion.div>
+          <NavBar />
           <motion.div
             key={path}
-            variants={bodyVariant(.5)}
+            variants={bodyVariant(0.5)}
             initial="initialState"
             animate="animate"
             exit="exitState"
@@ -65,7 +63,7 @@ export default function RootLayout({ children }: RootLayoutTypes) {
           >
             {children}
           </motion.div>
-          <MobileMenu/>
+          <MobileMenu />
         </AnimatePresence>
       </body>
     </html>
