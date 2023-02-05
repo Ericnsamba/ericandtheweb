@@ -3,6 +3,7 @@ import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { useDimensions } from "../../../utils/use-dimensions";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export const MobileMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -18,8 +19,9 @@ export const MobileMenu = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        // stiffness: 100,
         restDelta: 1,
+        staggerChildren: 0.1,
+        delayChildren: 0.4,
       },
     }),
     closed: {
@@ -32,8 +34,16 @@ export const MobileMenu = () => {
         type: "spring",
         stiffness: 400,
         damping: 40,
+        staggerChildren: 0.1,
+        delayChildren: 0.6,
       },
     },
+  };
+
+  const path = usePathname();
+
+  const menuItemsVariation = {
+    open: { scale: [0, 1], y: [100, 0], opacity: [0, 1] },
   };
 
   return (
@@ -42,24 +52,53 @@ export const MobileMenu = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      // className="bg-green flex w-full"
       className="flex justify-center items-center rounded-xl fixed bottom-5 self-center lg:hidden "
     >
       <motion.div className="background bg-white" variants={sidebar}>
         <div
-          className={`${isOpen ? "flex" : "hidden"} ease-in-out duration-800 flex-col gap-5`}
+          className={`${
+            isOpen ? "flex" : "hidden"
+          } ease-in-out duration-800 flex-col gap-5`}
         >
-          <Link href="../">
-            <p className="text-sm text-black uppercase font-bold text-center">Home</p>
+          <Link href="/">
+            <motion.p
+              variants={menuItemsVariation}
+              className={`${
+                path == "/" ? "text-green" : ""
+              } text-sm text-black uppercase font-bold text-center`}
+            >
+              Home
+            </motion.p>
           </Link>
-          <Link href="../about">
-            <p className="text-sm text-black uppercase font-bold text-center">About me</p>
+          <Link href="/about">
+            <motion.p
+              variants={menuItemsVariation}
+              className={`${
+                path == "/about" ? "text-green" : ""
+              } text-sm text-black uppercase font-bold text-center`}
+            >
+              About me
+            </motion.p>
           </Link>
-          <Link href="../portfolio">
-            <p className="text-sm text-black uppercase font-bold text-center">Portfolio</p>
+          <Link href="/portfolio">
+            <motion.p
+              variants={menuItemsVariation}
+              className={`${
+                path == "/portfolio" ? "text-green" : ""
+              } text-sm text-black uppercase font-bold text-center`}
+            >
+              Portfolio
+            </motion.p>
           </Link>
-          <Link href="../contact">
-            <p className="text-sm text-black uppercase font-bold text-center">contact</p>
+          <Link href="/contact">
+            <motion.p
+              variants={menuItemsVariation}
+              className={`${
+                path == "/contact" ? "text-green" : ""
+              } text-sm text-black uppercase font-bold text-center`}
+            >
+              contact
+            </motion.p>
           </Link>
         </div>
       </motion.div>

@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { type } from "os";
 import { Key, useEffect, useState } from "react";
 import Navigation from "../../components/Navigation/Menu";
 import NavButton from "../../components/Navigation/NavButton";
-import ProjectCard from "../../components/Projects";
+// import ProjectCard from "../../components/Projects";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../../utils/client";
 import { useMediaQuery } from "react-responsive";
+import { useRouter } from "next/navigation";
 
 type projTypes = {
   slug: { current: string };
@@ -38,6 +38,7 @@ interface portfolioTypes {
 const builder = imageUrlBuilder(sanityClient);
 
 export default function Home() {
+  const router = useRouter();
   const [portfolioItem, setPortfolioItem] = useState([]);
 
   useEffect(() => {
@@ -70,8 +71,6 @@ export default function Home() {
     },
   };
 
-  // const isDesktop = window.innerWidth > 768; //Add the width you want to check for here (now 768px)
-  // console.log("🚀 ~ file: page.tsx:97 ~ Home ~ isMobile", isDesktop)
   const isDesktop = useMediaQuery({ minWidth: 768 });
   const boxVariants = (url: any) => ({
     hover: {
@@ -88,8 +87,6 @@ export default function Home() {
     },
   });
 
-  const mobileStyles = "";
-
   const variants = (url: string) => ({
     hover: {
       opacity: 1,
@@ -105,7 +102,7 @@ export default function Home() {
   });
 
   return (
-    <div className="flex h-screen gap-x-5 overflow-hidden scrollbar-hide w-full ">
+    <div className="flex h-screen gap-x-5 overflow-hidden scrollbar-hide w-full mb-[10px]">
       {/* nav left */}
       <div className="w-2/12 flex-auto lg:flex hidden ">
         <div className="NavigationBar flex justify-start gap-5 w-full h-[400px] items-center self-center">
@@ -115,10 +112,10 @@ export default function Home() {
 
       {/* main body */}
       <div className="lg:w-8/12 w-full px-5 h-screen overflow-hidden overflow-y-scroll scrollbar-hide items-center flex flex-col py-32 ">
-        {isDesktop
-          ? ProjectCardDeskTop(portfolioItem)
-          : ProjectCardMobile(portfolioItem)}
+          {ProjectCard(portfolioItem)}
       </div>
+
+      
 
       {/* nav right */}
       <div className="w-2/12 flex-auto lg:flex hidden">
@@ -130,19 +127,16 @@ export default function Home() {
   );
 }
 
-const ProjectCardDeskTop = (project: any) => {
+const ProjectCard = (project: any) => {
   const ContainerVar = {
     hidden: {
-      // opacity: 0,
       y: 100,
     },
     show: {
-      // opacity: 1,
       y: 0,
       transition: {
         // delay: 0.7,
         duration: 0.6,
-        // when: 'beforeChildren',
         staggerChildren: 0.3,
         delayChildren: 0.8,
         ease: "easeInOut",
@@ -156,7 +150,7 @@ const ProjectCardDeskTop = (project: any) => {
       animate="show"
       className="w-full"
     >
-      {project.map((proj: projTypes, index:any) => {
+      {project.map((proj: projTypes, index: any) => {
         const url =
           proj.mainImage !== undefined
             ? builder.image(proj.mainImage).url().toString()
@@ -165,10 +159,7 @@ const ProjectCardDeskTop = (project: any) => {
         return (
           <motion.div
             key={index.toString()}
-            className="border-b border-b-slate-100 bg-white bg-no-repeat overflow-hidden"
-            // initial={{
-            //   background: "transparent",
-            // }}
+            className="border-b border-b-slate-100 bg-white bg-no-repeat overflow-hidden mb-[10px]"
             whileHover={{
               opacity: 1,
               background: `url(${url})`,
@@ -178,11 +169,10 @@ const ProjectCardDeskTop = (project: any) => {
               scale: 1,
               height: 277,
               color: "red",
-              // color: "#FFFFFF",
               transition: { duration: 1 },
             }}
           >
-            <Link
+            <a
               href={`portfolio/${proj.slug.current}`}
               className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 hover:text-white text-green items-center justify-between h-full hover:bg-black/50  hover:px-16 hover:pr-16 ease-in-out duration-800"
             >
@@ -199,43 +189,10 @@ const ProjectCardDeskTop = (project: any) => {
                   {proj.year}
                 </p>
               </div>
-            </Link>
+            </a>
           </motion.div>
         );
       })}
     </motion.div>
-  );
-};
-const ProjectCardMobile = (project: any) => {
-  return (
-    <div className="w-full">
-      {project.map((proj: projTypes, index: any) => {
-        return (
-          <div
-            key={index.toString()}
-            className="border-b border-b-slate-100 bg-white bg-no-repeat overflow-hidden"
-          >
-            <Link
-              href={`portfolio/${proj.slug.current}`}
-              className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 hover:text-white text-green items-center justify-between h-full hover:bg-black/50  hover:px-16 hover:pr-16 ease-in-out duration-800"
-            >
-              <div>
-                <h1 className="text-[25px] lg:text-[44px]  font-bold font-display ease-in-out duration-300">
-                  {proj.title}
-                </h1>
-              </div>
-              <div className="flex w-1/3 gap-x-5 justify-center ease-in-out duration-900">
-                <p className="ease-in-out duration-700 text-[14px] uppercase text-gray font-bold">
-                  {proj.category}
-                </p>
-                <p className="ease-in-out duration-700 text-[14px] uppercase text-gray font-bold">
-                  {proj.year}
-                </p>
-              </div>
-            </Link>
-          </div>
-        );
-      })}
-    </div>
   );
 };

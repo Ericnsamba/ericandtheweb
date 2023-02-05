@@ -87,7 +87,7 @@ const PortfolioItem = ({ params, about }: any) => {
             iconRight={arrowUpRight}
           />
         </div>
-        <Link href="../portfolio" className="">
+        <Link href="../portfolio" className="lg:hidden">
           <Image alt="" src={arrowUpRight} height={24} className=" object-cover" />
         </Link>
       </div>
