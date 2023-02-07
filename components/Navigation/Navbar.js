@@ -5,20 +5,20 @@ import Image from "next/image";
 import { Menu, X } from "react-feather";
 import memojiImage from "../../public/assets/images/ericMemoji.png";
 import ToggleButton from "../ToggleButton";
+import Navigation from "./Menu";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="bg-white/80 backdrop-blur-md z-30 transition-all py-4 px-5 lg:px-0 fixed w-full mx-auto max-w-screen-xl">
-      {/* <div className="flex flex-wrap py-2"> */}
+    <div className="bg-black/80 border border-black/20 backdrop-blur-lg z-30 transition-all py-4 px-5 rounded-[20px]   mx-auto w-[794px]">
       <div className="w-full">
         <nav className="w-full relative flex items-center justify-between rounded-xl ">
           <div className="w-full relative flex justify-between items-center">
             <div className="flex">
               <Link href="/">
                 <Image
-                  className="w-[40px] h-[40px] lg:w-[64px] lg:h-[64px]"
+                  className="w-[38px] h-[38px]"
                   src={memojiImage}
                   alt="Picture of the author"
                   // width={60}
@@ -26,13 +26,19 @@ const NavBar = () => {
                 />
               </Link>
               <div className="flex items-start flex-col	self-center	ml-5">
-                <strong className="text-black lg:text-[20px] text-xs font-normal font-display">
+                <strong className="text-gray text-xs font-normal font-display">
                   Eric & The Web
                 </strong>
-                <span className="text-slate-400 text-xs lg:text-base uppercase	font-body font-light pt-2">
+                <span className="text-slate-400 text-xs uppercase	font-body font-light pt-[4px]">
                   Designer & Developer
                 </span>
               </div>
+            </div>
+
+            <div>
+              <Navigation
+                routeNames={["home", "about me", "portfolio", "get in touch"]}
+              />
             </div>
 
             <div>

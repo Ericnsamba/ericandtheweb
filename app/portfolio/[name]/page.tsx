@@ -38,8 +38,6 @@ const PortfolioItem = ({ params, about }: any) => {
   const pageSlug = params.name;
   const imageProps = useNextSanityImage(sanityClient, portfolioItem.mainImage);
 
-  // const { asset } = about
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPortfolioData(pageSlug);
@@ -74,22 +72,20 @@ const PortfolioItem = ({ params, about }: any) => {
 
   return (
     <div className="lg:w-8/12 w-full lg:px-0 px-5 mx-auto bg-teal-1000 py-32">
-      <div className="flex items-center justify-between w-full my-[60px]">
-        <h3 className="text-green leading-120 text-[24px]">{title}</h3>
+      <div className="flex items-start lg:items-center  justify-between w-full my-[60px] flex-col lg:flex-row gap-5">
+        <h3 className="text-green leading-120 text-[24px] lg:text-[44px]">{title}</h3>
 
-        <div className="hidden lg:flex">
+        <div className="flex">
           <Button
             children={undefined}
-            onClick={() => router.back()}
+            onClick="/portfolio"
             title={"Back to Projects"}
             type={"danger"}
             showIconRight
             iconRight={arrowUpRight}
+            target="_self"
           />
         </div>
-        <Link href="../portfolio" className="lg:hidden">
-          <Image alt="" src={arrowUpRight} height={24} className=" object-cover" />
-        </Link>
       </div>
 
       <div className="flex items-center justify-between w-full mb-[60px] bg-slate-400 rounded-[18px]">
@@ -115,7 +111,7 @@ const PortfolioItem = ({ params, about }: any) => {
           {portfolioItem && web_link ? (
             <Button
               children={undefined}
-              onClick={() => console.log()}
+              onClick={""}
               title={"Visit Website"}
               type={"danger"}
               showIconRight
@@ -126,7 +122,7 @@ const PortfolioItem = ({ params, about }: any) => {
           {portfolioItem && app_link ? (
             <Button
               children={undefined}
-              onClick={() => console.log()}
+              onClick={""}
               title={"View in AppStore"}
               type={"danger"}
               showIconRight

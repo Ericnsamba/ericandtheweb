@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import EricPhoto from "../../public/assets/images/eric-picture.png";
-import downloadIcon from "../../public/assets/icons/Icons-download.svg";
+import downloadIcon from "../../public/assets/icons/Icons-up-right.svg";
 // import {IconExperience, IconMentor, IconRecognitions} from "../public/assets/icons";
 import Experience from "../../components/Experience";
 import IconExperience from "../../public/assets/icons/IconExperience.svg";
@@ -11,8 +13,6 @@ import IconMentor from "../../public/assets/icons/IconMentor.svg";
 import IconRecognitions from "../../public/assets/icons/IconRecognitions.svg";
 import Link from "next/link";
 import Button from "../../components/Atoms/Button";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
 import NavButton from "../../components/Navigation/NavButton";
 import LocomotiveScroll from "locomotive-scroll";
 // import { bodyVariants, childVariants, navVariants } from "../../utils/motion";
@@ -66,27 +66,15 @@ export default function AboutPage() {
   return (
     <motion.div
       variants={navVariants}
-      className={`flex h-screen gap-x-5 overflow-hidden`}
+      className={`flex min-h-screen gap-x-5`}
     >
-      <div className="w-3/12  bg-teal-8000 hidden lg:flex ">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ root: scrollRef }}
-          className="NavigationBar flex justify-between w-full h-[400px] items-center self-center "
-        >
-          <Navigation routeNames={["home"]} />
-        </motion.div>
-        {/* <motion.div className="progress-bar h-5 bg-teal-500" style={{ scaleX: scrollYProgress }} /> */}
-      </div>
-
       {/* Body section */}
       <motion.div
         initial="hidden"
         animate="show"
         // exit="exitState"
         variants={bodyVariants}
-        className="mx-auto container w-full lg:w-6/12 flex flex-col gap-16 py-32 overflow-y-scroll scrollbar-hide px-5"
+        className="mx-auto container w-full lg:w-8/12 flex flex-col gap-16 py-32 overflow-y-scroll scrollbar-hide px-5"
       >
         <motion.div
           variants={childVariants}
@@ -102,7 +90,7 @@ export default function AboutPage() {
 
           <motion.div variants={childVariants} className="flex flex-col gap-5">
             <p className="text-[34px] text-black dark:text-green font-normal">
-              I'm Eric, a product designer and app developer.
+              I'm Eric, a product designer and a creative developer.
             </p>
             <p className="text-base text-black dark:text-green font-normal">
               As a skilled Production designer and Front-end developer, I bring
@@ -120,7 +108,6 @@ export default function AboutPage() {
             </p>
           </motion.div>
         </motion.div>
-
 
         {/* Years of experience and Mentor */}
         <motion.div
@@ -173,22 +160,17 @@ export default function AboutPage() {
             <Experience />
           </div>
           <Button
-            title="Download CV"
-            onClick={() => console.log("Download CV")}
+            title="My Digital CV"
+            onClick={"https://read.cv/eric_manasse"}
             showIconRight
             iconRight={downloadIcon}
             children={undefined}
             type={"primary"}
+            target="_blank"
           />
         </motion.div>
       </motion.div>
-
-        {/* Nav right */}
-      <motion.div variants={childVariants} className="w-3/12 flex-auto hidden lg:flex ">
-        <div className="NavigationBar flex justify-end gap-5 w-full h-[400px] items-center self-center">
-          <Navigation routeNames={["my work", "get in touch"]} justify="end" />
-        </div>
-      </motion.div>
+      {/* Body section ends here */}
     </motion.div>
   );
 }

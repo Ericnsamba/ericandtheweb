@@ -86,7 +86,7 @@ const Home = () => {
       </motion.div>
 
       {/* nav section */}
-      <div
+      {/* <div
         className={`${styles.centerAlign} hidden lg:flex gap-5 justify-between w-2/12 grow `}
       >
         <motion.div
@@ -97,7 +97,7 @@ const Home = () => {
         >
           <Navigation routeNames={["about me", "my work", "get in touch"]} />
         </motion.div>
-      </div>
+      </div> */}
     </motion.section>
   );
 };

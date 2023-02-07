@@ -15,6 +15,7 @@ interface Props {
   iconLeft?: any;
   showIconLeft?: boolean;
   showIconRight?: boolean;
+  target?: string;
 }
 
 const Button = (props: Props) => {
@@ -31,7 +32,7 @@ const Button = (props: Props) => {
   }
 
   return (
-    <button className="self-center" onClick={props.onClick}>
+    <Link className="self-center" href={props.onClick} target={`${props.target}`} >
       <div className={`${styles.buttonPill} bg-green/20 dark:bg-white`}>
       {/* <div className={`${className} min-w-[166px] w-max  py-[13px] px-[20px] justify-center items-center rounded-full transition-all`}> */}
         {props.showIconLeft ? (
@@ -54,7 +55,7 @@ const Button = (props: Props) => {
           />
         ) : null}
       </div>
-    </button>
+    </Link>
   );
 };
 

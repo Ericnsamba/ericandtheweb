@@ -46,7 +46,7 @@ export default function ContactPage() {
   const motionVariants = {
     hidden: {
       opacity: 0,
-      x: 80,
+      y: 80,
       transition: {
         type: "tween",
         Bounce: 0,
@@ -56,7 +56,7 @@ export default function ContactPage() {
     },
     show: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: "tween",
         duration: 0.5,
@@ -114,7 +114,9 @@ export default function ContactPage() {
                     Location
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
-                    Based in London
+                    <Link href="mailto:hello@ericandtheweb.com" target="_blank">
+                      hello@ericandtheweb.com
+                    </Link>
                   </p>
                 </div>
               </li>
@@ -124,9 +126,7 @@ export default function ContactPage() {
                     Lets Chat
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
-                    <Link href="hello@ericandtheweb.com" target="_blank">
-                      hello@ericandtheweb.com
-                    </Link>
+                    London, UK
                   </p>
                 </div>
               </li>

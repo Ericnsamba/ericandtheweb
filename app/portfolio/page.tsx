@@ -157,24 +157,14 @@ const ProjectCard = (project: any) => {
             : null;
 
         return (
-          <motion.div
+          <div
             key={index.toString()}
-            className="border-b border-b-slate-100 bg-white bg-no-repeat overflow-hidden mb-[10px]"
-            whileHover={{
-              opacity: 1,
-              background: `url(${url})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              borderRadius: 20,
-              scale: 1,
-              height: 277,
-              color: "red",
-              transition: { duration: 1 },
-            }}
+            className="rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[200px]"
+            style={{backgroundImage: `url(${url})`}}
           >
             <a
               href={`portfolio/${proj.slug.current}`}
-              className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 hover:text-white text-green items-center justify-between h-full hover:bg-black/50  hover:px-16 hover:pr-16 ease-in-out duration-800"
+              className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 text-white items-center justify-between h-full bg-black/60  px-16 pr-16 ease-in-out duration-800"
             >
               <div>
                 <h1 className="text-[25px] lg:text-[44px]  font-bold font-display ease-in-out duration-300">
@@ -182,15 +172,15 @@ const ProjectCard = (project: any) => {
                 </h1>
               </div>
               <div className="flex w-1/3 gap-x-5 justify-center ease-in-out duration-900">
-                <p className="ease-in-out duration-700 text-[14px] uppercase text-gray font-bold">
+                <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
                   {proj.category}
                 </p>
-                <p className="ease-in-out duration-700 text-[14px] uppercase text-gray font-bold">
+                <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
                   {proj.year}
                 </p>
               </div>
             </a>
-          </motion.div>
+          </div>
         );
       })}
     </motion.div>
