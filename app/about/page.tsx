@@ -113,10 +113,7 @@ export default function AboutPage() {
               user-friendly experiences that not only meet but exceed
               expectations. I have had the pleasure of working on designs for
               some of the world's leading asset managers, including Generali,
-              Boston Partners, Hermes, and CTI, during my time at Kurtosys. My
-              experience and dedication to the industry make me a valuable asset
-              to any team, and I am excited for the opportunity to bring my
-              skills to your company.
+              Boston Partners, Hermes, and CTI, during my time at Kurtosys.
             </p>
           </motion.div>
         </motion.div>
