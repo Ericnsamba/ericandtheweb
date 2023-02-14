@@ -5,7 +5,7 @@ import React, { FC } from "react";
 import Image from "next/image";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
-import profilePhoto from "../public/assets/images/Hero-placeholder.png";
+import profilePhoto from "../public/assets/images/Hero_image.jpg";
 import { HoverTypingText, TypingText } from "../components/CustomTexts";
 import NavButton from "../components/Navigation/NavButton";
 import Navigation from "../components/Navigation/Menu";
