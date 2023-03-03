@@ -1,16 +1,16 @@
 "use client";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Key, useEffect, useState } from "react";
-import Navigation from "../../components/Navigation/Menu";
-import NavButton from "../../components/Navigation/NavButton";
-// import ProjectCard from "../../components/Projects";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import imageUrlBuilder from "@sanity/image-url";
 import { sanityClient } from "../../utils/client";
 import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/navigation";
+import { useSkewAnimate } from "../../hooks/useSkewAnimate";
 
 type projTypes = {
   slug: { current: string };
@@ -52,76 +52,23 @@ export default function Home() {
       });
   }, []);
 
-  const ContainerVar = {
-    hidden: {
-      // opacity: 0,
-      y: 100,
-    },
-    show: {
-      // opacity: 1,
-      y: 0,
-      transition: {
-        // delay: 0.7,
-        duration: 0.6,
-        // when: 'beforeChildren',
-        staggerChildren: 0.3,
-        delayChildren: 0.8,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   const isDesktop = useMediaQuery({ minWidth: 768 });
-  const boxVariants = (url: any) => ({
-    hover: {
-      opacity: 1,
-      background: `url(${url})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      borderRadius: 20,
-      scale: 1,
-      height: 277,
-      color: "red",
-      // color: "#FFFFFF",
-      transition: { duration: 1 },
-    },
-  });
 
-  const variants = (url: string) => ({
-    hover: {
-      opacity: 1,
-      background: `url(${url})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      borderRadius: 20,
-      scale: 1,
-      height: 277,
-      color: "#FFFFFF",
-      transition: { duration: 1 },
-    },
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // WorkExperienceSection();
+      useSkewAnimate(".skewElem")
+      // 
+    });
+
+    return () => ctx.revert();
   });
 
   return (
-    <div className="flex h-screen gap-x-5 overflow-hidden scrollbar-hide w-full mb-[10px]">
-      {/* nav left */}
-      <div className="w-2/12 flex-auto lg:flex hidden ">
-        <div className="NavigationBar flex justify-start gap-5 w-full h-[400px] items-center self-center">
-          <Navigation routeNames={["home", "about me"]} />
-        </div>
-      </div>
-
+    <div className="flex min-h-screen  gap-x-5 overflow-hidden scrollbar-hide w-full mb-[10px]">
       {/* main body */}
-      <div className="lg:w-8/12 w-full px-5 h-screen overflow-hidden overflow-y-scroll scrollbar-hide items-center flex flex-col py-32 ">
-          {ProjectCard(portfolioItem)}
-      </div>
-
-      
-
-      {/* nav right */}
-      <div className="w-2/12 flex-auto lg:flex hidden">
-        <div className="NavigationBar flex justify-end gap-5 w-full h-[400px] items-center self-center">
-          <Navigation routeNames={["get in touch"]} justify="end" />
-        </div>
+      <div className="lg:w-8/12 w-full px-5 items-center flex flex-col py-32 mx-auto bg-cyan-2000 ">
+        {ProjectCard(portfolioItem)}
       </div>
     </div>
   );
@@ -144,12 +91,7 @@ const ProjectCard = (project: any) => {
     },
   };
   return (
-    <motion.div
-      variants={ContainerVar}
-      initial="hidden"
-      animate="show"
-      className="w-full"
-    >
+    <div className="w-full">
       {project.map((proj: projTypes, index: any) => {
         const url =
           proj.mainImage !== undefined
@@ -159,8 +101,8 @@ const ProjectCard = (project: any) => {
         return (
           <div
             key={index.toString()}
-            className="rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[200px]"
-            style={{backgroundImage: `url(${url})`}}
+            className="skewElem rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[277px]"
+            style={{ backgroundImage: `url(${url})` }}
           >
             <a
               href={`portfolio/${proj.slug.current}`}
@@ -183,6 +125,6 @@ const ProjectCard = (project: any) => {
           </div>
         );
       })}
-    </motion.div>
+    </div>
   );
 };

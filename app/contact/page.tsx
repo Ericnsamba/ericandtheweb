@@ -68,7 +68,7 @@ export default function ContactPage() {
   };
 
   const linkStyles =
-    "text-sm uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
+    "text-sm  w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
 
   return (
     <div className="flex w-full gap-5">
@@ -134,7 +134,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row justify-between flex-wrap gap-8">
+          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-0">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>
@@ -142,16 +142,16 @@ export default function ContactPage() {
               href="https://www.instagram.com/ericandtheweb/"
               target="_blank"
             >
-              <p className={`${linkStyles}`}>Instagram</p>
+              <p className={`${linkStyles} text-center`}>Instagram</p>
             </Link>
             <Link
               href="https://www.linkedin.com/in/eric-manasse/"
               target="_blank"
             >
-              <p className={`${linkStyles}`}>LinkedIn</p>
+              <p className={`${linkStyles} text-center`}>LinkedIn</p>
             </Link>
             <Link href="https://dribbble.com/ericandtheweb" target="_blank">
-              <p className={`${linkStyles}`}>Dribbble</p>
+              <p className={`${linkStyles} text-center`}>Dribbble</p>
             </Link>
           </div>
         </div>

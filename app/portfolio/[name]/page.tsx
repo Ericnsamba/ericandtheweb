@@ -1,7 +1,7 @@
 "use client";
 import { Router } from "next/router";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import { sanityClient } from "../../../utils/client";
 import Button from "../../../components/Atoms/Button";
@@ -11,6 +11,8 @@ import downloadIcon from "../../../public/assets/icons/icon-up-right.svg";
 import { useNextSanityImage } from "next-sanity-image";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
+import { useSkewAnimate } from "../../../hooks/useSkewAnimate";
+import gsap from "gsap";
 
 // import { type } from "os";
 
@@ -70,10 +72,20 @@ const PortfolioItem = ({ params, about }: any) => {
       ? imagesGallery.map((image) => builder.image(image).url().toString())
       : null;
 
+      useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+          // WorkExperienceSection();
+          useSkewAnimate(".skewElem")
+          // 
+        });
+    
+        return () => ctx.revert();
+      });
+
   return (
     <div className="lg:w-8/12 w-full lg:px-0 px-5 mx-auto bg-teal-1000 py-32">
       <div className="flex items-start lg:items-center  justify-between w-full my-[60px] flex-col lg:flex-row gap-5">
-        <h3 className="text-green leading-120 text-[24px] lg:text-[44px]">{title}</h3>
+        <h3 className="skewElem text-green leading-120 text-[24px] lg:text-[44px]">{title}</h3>
 
         <div className="flex">
           <Button
@@ -88,7 +100,7 @@ const PortfolioItem = ({ params, about }: any) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between w-full mb-[60px] bg-slate-400 rounded-[18px]">
+      <div className=" flex items-center justify-between w-full mb-[60px] bg-slate-400 rounded-[18px]">
         {mainImage ? (
           <img
             src={url as string}
@@ -157,7 +169,7 @@ const PortfolioItem = ({ params, about }: any) => {
       ) : null}
 
       {/* Images gallery */}
-      <div className="flex flex-col gap-5 w-full mb-[60px] overflow-x-scroll overflow-hidden">
+      <div className="skewElem flex flex-col gap-5 w-full mb-[60px] overflow-x-scroll overflow-hidden">
         {imagesGallery && imagesGallery.length > 0 ? (
           <div className="flex lg:flex-row justify-between gap-5">
             {imagesGallery.map((image, index) => (

@@ -11,7 +11,7 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="bg-black/80 border border-black/20 backdrop-blur-lg z-30 transition-all py-4 px-5 rounded-[20px]   mx-auto w-[794px]">
+    <div className="bg-black/60 border border-black/20 backdrop-blur-lg z-30 transition-all py-4 px-5 rounded-[20px]   mx-auto w-[794px]">
       <div className="w-full">
         <nav className="w-full relative flex items-center justify-between rounded-xl ">
           <div className="w-full relative flex justify-between items-center">
@@ -21,15 +21,13 @@ const NavBar = () => {
                   className="w-[38px] h-[38px]"
                   src={memojiImage}
                   alt="Picture of the author"
-                  // width={60}
-                  // height={64}
                 />
               </Link>
               <div className="flex items-start flex-col	self-center	ml-5">
                 <strong className="text-gray text-xs font-normal font-display">
                   Eric & The Web
                 </strong>
-                <span className="text-slate-400 text-xs uppercase	font-body font-light pt-[4px]">
+                <span className="text-white/70 text-[10px] uppercase	font-body font-light pt-[4px]">
                   Designer & Developer
                 </span>
               </div>

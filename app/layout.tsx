@@ -1,15 +1,15 @@
 "use client";
-// require('dotenv').config()
-import { Transition } from "@headlessui/react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, usePresence } from "framer-motion";
 import gsap from "gsap";
+// import { gsap } from "gsap";
+import Lenis from "@studio-freight/lenis";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname, useRouter } from "next/navigation";
-import { type } from "os";
-import { useEffect, useRef, useState } from "react";
 import { MobileMenu } from "../components/Navigation/MobileMenu";
 import NavBar from "../components/Navigation/Navbar";
 import "../styles/globals.css";
-// import "../styles/locomotive.module.css";
+import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 type RootLayoutTypes = {
   children: React.ReactNode;
@@ -17,57 +17,43 @@ type RootLayoutTypes = {
 export default function RootLayout({ children }: RootLayoutTypes) {
   const path = usePathname();
   const router = useRouter();
+  const ref = useRef(null);
 
   const [loading, setLoading] = useState(false);
-
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    // let scroll: import("locomotive-scroll");
-    // import("locomotive-scroll").then((locomotiveModule) => {
-    //     scroll = new locomotiveModule.default({
-    //         el: document.querySelector("[data-scroll-container]"),
-    //         smooth: true,
-    //         smoothMobile: false,
-    //         resetNativeScroll: true
-    //     });
-    // });
-    // // `useEffect`'s cleanup phase
-    // return () => {
-    //     if (scroll) scroll.destroy();
-    // }
-  });
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      // direction: "vertical", // vertical, horizontal
+      // gestureDirection: "vertical", // vertical, horizontal, both
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
 
-  const bodyVariant = (delay: number) => ({
-    // initialState: { x: 80, opacity: 0 },
-    // animate: { x: 0, opacity: 1 },
-    // exitState: { x: -200, opacity: 0 },
-    transition: {
-      duration: 0.5,
-      type: "linear",
-      ease: "easeIn",
-      delay,
-    },
+    function raf(time: any) {
+      lenis.raf(time);
+      ScrollTrigger.update();
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   });
 
   return (
     <html>
       <head />
-      <body className="flex bg-white min-h-screen h-full flex-col container mx-auto max-w-screen-xl items-stretch  dark:bg-black scrollbar-hide bg-gradient-to-br from-white via-white to-green/20">
+      <body data-scroll-container ref={ref} className="flex bg-white min-h-screen flex-col container mx-auto max-w-screen-xl items-stretch dark:bg-black scrollbar-hide ">
+      {/* <body className="flex bg-white min-h-screen h-full flex-col container mx-auto max-w-screen-xl items-stretch dark:bg-black scrollbar-hide bg-gradient-to-br from-white via-white to-green/20"> */}
         <AnimatePresence
           exitBeforeEnter
           mode="wait"
-          // initial={false}
         >
-          <motion.div
-            key={path}
-            variants={bodyVariant(0.5)}
-            initial="initialState"
-            animate="animate"
-            exit="exitState"
-            className="layoutChildren flex flex-auto "
-          >
-            {children}
-          </motion.div>
-          <div className="hidden lg:flex bottom-10 fixed self-center">
+          <div className="data-scroll">{children}</div>
+
+          <div className="nav hidden lg:flex bottom-10 fixed self-center">
             <NavBar />
           </div>
           <MobileMenu />
