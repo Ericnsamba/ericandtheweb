@@ -424,39 +424,73 @@ const WorkExperience = (experience: any) => {
     return () => ctx.revert();
   });
 
-  const WorkExperienceSection = () => {
-    // WorkExperience__section
-    let headings = gsap.utils.toArray(".experience__inner");
-    let offset = 0; // define offset variable here
+  // const WorkExperienceSection = () => {
+  //   // WorkExperience__section
+  //   let headings = gsap.utils.toArray(".experience__inner");
+  //   let offset = 0; // define offset variable here
 
-    if (headings.length > 0) {
-      offset = headings[1].offsetTop - headings[0].offsetTop;
-    }
+  //   if (headings.length > 0) {
+  //     offset = headings[1].offsetTop - headings[0].offsetTop;
+  //   }
 
-    gsap.set(headings, { yPercent: 200, opacity: 0 });
+  //   gsap.set(headings, { yPercent: 200, opacity: 0 });
 
-    headings.forEach((element: any, i) => {
-      element.anim = gsap.fromTo(
-        element,
-        {
-          y: 50,
+  //   headings.forEach((element: any, i) => {
+  //     element.anim = gsap.fromTo(
+  //       element,
+  //       {
+  //         y: 50,
+  //       },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: element,
+  //           start: "top 70%+=" + offset / 2,
+  //           // end: "center center-=" + offset / 2,
+  //           // markers: true,
+  //           toggleActions: "play reverse play reverse",
+  //         },
+  //       }
+  //     );
+  //   });
+  //   //
+  // };
+
+const WorkExperienceSection = (): void => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const headings = gsap.utils.toArray(".experience__inner");
+  let offset = 0;
+
+  if (headings.length > 0) {
+    offset = headings[1].offsetTop - headings[0].offsetTop;
+  }
+
+  gsap.set(headings, { yPercent: 200, opacity: 0 });
+
+  headings.forEach((element: any, i) => {
+    element.anim = gsap.fromTo(
+      element,
+      {
+        y: 50,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 70%+=" + offset / 2,
+          toggleActions: "play reverse play reverse",
         },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 70%+=" + offset / 2,
-            // end: "center center-=" + offset / 2,
-            // markers: true,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    });
-    //
-  };
+      }
+    );
+  });
+};
+
+export default WorkExperienceSection;
 
   return (
     <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[140vh] ">
