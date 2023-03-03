@@ -75,24 +75,11 @@ export default function Home() {
 }
 
 const ProjectCard = (project: any) => {
-  const ContainerVar = {
-    hidden: {
-      y: 100,
-    },
-    show: {
-      y: 0,
-      transition: {
-        // delay: 0.7,
-        duration: 0.6,
-        staggerChildren: 0.3,
-        delayChildren: 0.8,
-        ease: "easeInOut",
-      },
-    },
-  };
+
   return (
     <div className="w-full">
-      {project.map((proj: projTypes, index: any) => {
+      {project.sort((a: any, b: any) => new Date(b._createdAt) - new Date(a._createdAt)).map((proj: projTypes, index: any) => {
+        // console.log("🚀 ~ file: page.tsx:128 ~ {project.sort ~ project:", project)
         const url =
           proj.mainImage !== undefined
             ? builder.image(proj.mainImage).url().toString()
@@ -125,6 +112,7 @@ const ProjectCard = (project: any) => {
           </div>
         );
       })}
+      
     </div>
   );
 };

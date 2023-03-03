@@ -1,17 +1,8 @@
 "use client";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-import NavButton from "../../components/Navigation/NavButton";
 import { motion } from "framer-motion";
-import {
-  bodyVariants,
-  hoverTextContainer,
-  hoverTextVariant,
-  textContainer,
-  textVariant2,
-} from "../../utils/motion";
 import { HoverTypingText, TypingText } from "../../components/CustomTexts";
 import Navigation from "../../components/Navigation/Menu";
 
@@ -25,20 +16,6 @@ export default function ContactPage() {
       transition: {
         staggerChildren: 0.3,
         delayChildren: 0.8,
-      },
-    },
-  };
-
-  const menuItemsVar = {
-    hidden: {
-      y: -800,
-    },
-    show: {
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 90,
-        ease: "easeOut",
       },
     },
   };
@@ -68,7 +45,7 @@ export default function ContactPage() {
   };
 
   const linkStyles =
-    "text-sm  w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
+    "text-sm  log:w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
 
   return (
     <div className="flex w-full gap-5">
@@ -134,7 +111,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-0">
+          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>

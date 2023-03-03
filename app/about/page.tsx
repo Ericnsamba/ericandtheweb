@@ -415,6 +415,7 @@ function About() {
 }
 
 const WorkExperience = (experience: any) => {
+  console.log("🚀 ~ file: page.tsx:418 ~ WorkExperience ~ experience:", experience)
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       WorkExperienceSection();
@@ -458,28 +459,29 @@ const WorkExperience = (experience: any) => {
   };
 
   return (
-    <div className="main__experiences bg-lime-2000 mx-auto lg:w-[794px] bg-purple-1000 min-h-screen ">
-      {experience.map((proj: any, index: any) => {
-        const year = proj.year;
-        return (
-          <div
-            key={index.toString()}
-            className="experience__inner flex flex-col lg:flex-row justify-between lg:items-center items-start min-h-[100px] mb-5 bg-white "
-          >
-            <div className="left__col year w-[285px]">
-              <h3 className="year text-gray">
-                {year ? year.substring(0, 4) : ""}
-              </h3>
-            </div>
-            <div className="right__col flex flex_col w-[300px]">
-              <p className="year text-black text-[34px]">{proj.company}</p>
-              <p className="year text-gray text-sm uppercase">
-                {proj.jobTitle}
-              </p>
-            </div>
-          </div>
-        );
-      })}
+    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[140vh] ">
+
+{experience.sort((a: any, b: any) => new Date(a._createdAt) - new Date(b._createdAt)).map((proj: any, index: any) => {
+   const year = proj.year;
+     return (
+      <div
+        key={index.toString()}
+        className="experience__inner flex flex-col lg:flex-row justify-between lg:items-center items-start min-h-[100px] mb-5 bg-white "
+      >
+        <div className="left__col year w-[285px]">
+          <h3 className="year text-gray">
+            {year ? year.substring(0, 4) : ""}
+          </h3>
+        </div>
+        <div className="right__col flex flex_col w-[300px]">
+          <p className="year text-black text-[34px]">{proj.company}</p>
+          <p className="year text-gray text-sm uppercase">
+            {proj.jobTitle}
+          </p>
+        </div>
+      </div>
+    );
+  })}
     </div>
   );
 };
