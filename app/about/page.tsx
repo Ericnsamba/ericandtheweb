@@ -170,16 +170,28 @@ function About() {
 
     let currentPosition = 0;
 
+    // function animateMarquee() {
+    //   gsap.to(marqueeElements, {
+    //     duration: speed,
+    //     x: (currentPosition -= 10),
+    //     modifiers: {
+    //       x: gsap.utils.wrap(-marqueeElements[0].offsetWidth, 0),
+    //     },
+    //     onComplete: animateMarquee,
+    //   });
+    // }
     function animateMarquee() {
       gsap.to(marqueeElements, {
         duration: speed,
         x: (currentPosition -= 10),
         modifiers: {
-          x: gsap.utils.wrap(-marqueeElements[0].offsetWidth, 0),
+          x: gsap.utils.wrap(-marqueeElements[0].clientWidth, 0),
+          // OR x: gsap.utils.wrap(-marqueeElements[0].scrollWidth, 0),
         },
         onComplete: animateMarquee,
       });
     }
+    
 
     animateMarquee();
   }
@@ -489,8 +501,6 @@ const WorkExperienceSection = (): void => {
     );
   });
 };
-
-export default WorkExperienceSection;
 
   return (
     <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[140vh] ">
