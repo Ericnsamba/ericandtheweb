@@ -2,29 +2,31 @@ import React from "react";
 import Link from "next/link";
 import styles from "./menuStyles.module.css";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 type navTypes = {
     routeNames: string[],
     justify?: string,
 }
 
-const Navigation = ({ routeNames, justify }: navTypes) => {
+const Navigation = ({ routeNames }: navTypes) => {
+  const path = usePathname();
   return (
-    <motion.div className={`${styles.container} w-full max-w-[220px] justify-${justify ?? "start" }`}>
+    <motion.div className={`${''} w-full flex gap-5 items-center`}>
       {routeNames.map((route, index) => {
         let href = "";
         if (route === "about me") {
-          href = "../about";
-        } else if (route === "my work") {
-          href = "../portfolio";
+          href = "/about";
+        } else if (route === "my work" || route == "portfolio") {
+          href = "/portfolio";
         } else if (route === "get in touch") {
-          href = "../contact";
+          href = "/contact";
         } else {
-          href = "../";
+          href = "/";
         }
         return (
-            <Link key={index} href={href} className={`${styles.menuItem} rounded-2xl border  hover:text-green border-gray2 hover:border-green`}>
-              <p className={`${styles.menuText} font-body font-medium text-[14px]`}>{route}</p>
+            <Link key={index} href={href} className={`${path === href ? "text-green rounded-[10px] border border-green py-[10px] px-5" : "text-white"} capitalize hover:text-green lg:hover:tracking-[1px] ease-in-out duration-300`}>
+              <p className={` font-body font-medium text-sm`}>{route}</p>
             </Link>
         );
       })}
@@ -33,3 +35,4 @@ const Navigation = ({ routeNames, justify }: navTypes) => {
 };
 
 export default Navigation;
+

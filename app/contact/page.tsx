@@ -1,17 +1,8 @@
 "use client";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-import NavButton from "../../components/Navigation/NavButton";
 import { motion } from "framer-motion";
-import {
-  bodyVariants,
-  hoverTextContainer,
-  hoverTextVariant,
-  textContainer,
-  textVariant2,
-} from "../../utils/motion";
 import { HoverTypingText, TypingText } from "../../components/CustomTexts";
 import Navigation from "../../components/Navigation/Menu";
 
@@ -29,24 +20,10 @@ export default function ContactPage() {
     },
   };
 
-  const menuItemsVar = {
-    hidden: {
-      y: -800,
-    },
-    show: {
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 90,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const motionVariants = {
     hidden: {
       opacity: 0,
-      x: 80,
+      y: 80,
       transition: {
         type: "tween",
         Bounce: 0,
@@ -56,7 +33,7 @@ export default function ContactPage() {
     },
     show: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: "tween",
         duration: 0.5,
@@ -68,7 +45,7 @@ export default function ContactPage() {
   };
 
   const linkStyles =
-    "text-sm uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
+    "text-sm  log:w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
 
   return (
     <div className="flex w-full gap-5">
@@ -114,7 +91,9 @@ export default function ContactPage() {
                     Location
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
-                    Based in London
+                    <Link href="mailto:hello@ericandtheweb.com" target="_blank">
+                      hello@ericandtheweb.com
+                    </Link>
                   </p>
                 </div>
               </li>
@@ -124,9 +103,7 @@ export default function ContactPage() {
                     Lets Chat
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
-                    <Link href="hello@ericandtheweb.com" target="_blank">
-                      hello@ericandtheweb.com
-                    </Link>
+                    London, UK
                   </p>
                 </div>
               </li>
@@ -134,7 +111,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row justify-between flex-wrap gap-8">
+          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>
@@ -142,16 +119,16 @@ export default function ContactPage() {
               href="https://www.instagram.com/ericandtheweb/"
               target="_blank"
             >
-              <p className={`${linkStyles}`}>Instagram</p>
+              <p className={`${linkStyles} text-center`}>Instagram</p>
             </Link>
             <Link
               href="https://www.linkedin.com/in/eric-manasse/"
               target="_blank"
             >
-              <p className={`${linkStyles}`}>LinkedIn</p>
+              <p className={`${linkStyles} text-center`}>LinkedIn</p>
             </Link>
             <Link href="https://dribbble.com/ericandtheweb" target="_blank">
-              <p className={`${linkStyles}`}>Dribbble</p>
+              <p className={`${linkStyles} text-center`}>Dribbble</p>
             </Link>
           </div>
         </div>

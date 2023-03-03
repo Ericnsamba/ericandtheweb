@@ -7,10 +7,17 @@
     font-family: 'MonumentExtended';
 } */
 
-html :-webkit-scrollbar {
-  /* .scrollbar-hidden::-webkit-scrollbar {
-  } */
-  display: none;
+html {
+  scroll-behavior: initial;
+  overflow-y: scroll;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -134,18 +141,63 @@ p,
 
 button .menuToggle {
   border: 1px solid #DEE6F1;
-  /* outline: none;
-  border: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none; */
-  /* cursor: pointer; */
-  /* position: absolute; */
-  /* top: 18px;
-  left: 15px; */
-  /* width: 50px; */
-  /* height: 50px; */
-  /* border-radius: 50%; */
-  /* align-self: center; */
-  /* background: transparent; */
+}
+
+span.whitespace {
+  /* display: none; */
+}
+
+.content {
+	/* display: flex;
+	flex-direction: column; */
+	/* width: 50vw; */
+	/* position: relative; */
+	/* padding: var(--page-padding); */
+}
+
+h2 {
+  font-stretch: condensed;
+}
+
+#horizontal {
+  padding: 100px 0;
+}
+
+.horizontal__content {
+  display: flex;
+}
+
+.horizontal__item {
+  border: 1px solid #efefef;
+  padding: 200px 150px;
+
+}
+.horizontal__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.horizontal__num {
+  font-size: 80px;
+  font-weight: 900;
+  font-stretch: condensed;
+  color: #ff98a2;
+}
+
+.myTitle {
+	/* font-size: 5vw; */
+	/* line-height: 0.8;
+	counter-increment: section;
+	text-align: center; */
+	/* display: grid; */
+	/* gap: 2rem; */
+}
+
+.myTitle::before {
+	/* content: '.'counter(section); */
+	/* font-weight: 400; */
+	/* font-family: area-normal, sans-serif; */
+	/* display: block; */
+	/* font-size: 1rem;
+	margin-bottom: 10vh;
+	text-align: center; */
 }

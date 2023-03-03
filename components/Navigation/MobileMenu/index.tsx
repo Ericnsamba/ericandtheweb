@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { useDimensions } from "../../../utils/use-dimensions";
@@ -9,6 +9,11 @@ export const MobileMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const path = usePathname();
+
+  useEffect(() => {
+     toggleOpen(0);
+  }, [path]);
 
   const sidebar = {
     open: (height = 100) => ({
@@ -18,10 +23,10 @@ export const MobileMenu = () => {
       width: 160,
       transition: {
         type: "spring",
-        bounce: 0.4,
+        bounce: 0.2,
         restDelta: 1,
         staggerChildren: 0.1,
-        delayChildren: 0.4,
+        delayChildren: 0.2,
       },
     }),
     closed: {
@@ -40,7 +45,7 @@ export const MobileMenu = () => {
     },
   };
 
-  const path = usePathname();
+  
 
   const menuItemsVariation = {
     open: { scale: [0, 1], y: [100, 0], opacity: [0, 1] },
