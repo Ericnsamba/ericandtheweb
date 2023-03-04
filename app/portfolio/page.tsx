@@ -57,8 +57,8 @@ export default function Home() {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // WorkExperienceSection();
-      useSkewAnimate(".skewElem")
-      // 
+      useSkewAnimate(".skewElem");
+      //
     });
 
     return () => ctx.revert();
@@ -75,44 +75,46 @@ export default function Home() {
 }
 
 const ProjectCard = (project: any) => {
-
   return (
     <div className="w-full">
-      {project.sort((a: any, b: any) => new Date(b._createdAt) - new Date(a._createdAt)).map((proj: projTypes, index: any) => {
-        // console.log("🚀 ~ file: page.tsx:128 ~ {project.sort ~ project:", project)
-        const url =
-          proj.mainImage !== undefined
-            ? builder.image(proj.mainImage).url().toString()
-            : null;
+      {project
+        .sort(
+          (a: any, b: any) =>
+            new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+        )
+        .map((proj: projTypes, index: any) => {
+          const url =
+            proj.mainImage !== undefined
+              ? builder.image(proj.mainImage).url().toString()
+              : null;
 
-        return (
-          <div
-            key={index.toString()}
-            className="skewElem rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[277px]"
-            style={{ backgroundImage: `url(${url})` }}
-          >
-            <a
-              href={`portfolio/${proj.slug.current}`}
-              className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 text-white items-center justify-between h-full bg-black/60  px-16 pr-16 ease-in-out duration-800"
+          return (
+            <div
+              key={index.toString()}
+              className="skewElem rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[277px]"
+              style={{ backgroundImage: `url(${url})` }}
             >
-              <div>
-                <h1 className="text-[25px] lg:text-[44px]  font-bold font-display ease-in-out duration-300">
-                  {proj.title}
-                </h1>
-              </div>
-              <div className="flex w-1/3 gap-x-5 justify-center ease-in-out duration-900">
-                <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
-                  {proj.category}
-                </p>
-                <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
-                  {proj.year}
-                </p>
-              </div>
-            </a>
-          </div>
-        );
-      })}
-      
+              <a
+                href={`portfolio/${proj.slug.current}`}
+                className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 text-white items-center justify-between h-full bg-black/60  px-16 pr-16 ease-in-out duration-800"
+              >
+                <div>
+                  <h1 className="text-[25px] lg:text-[44px]  font-bold font-display ease-in-out duration-300">
+                    {proj.title}
+                  </h1>
+                </div>
+                <div className="flex w-1/3 gap-x-5 justify-center ease-in-out duration-900">
+                  <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
+                    {proj.category}
+                  </p>
+                  <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
+                    {proj.year}
+                  </p>
+                </div>
+              </a>
+            </div>
+          );
+        })}
     </div>
   );
 };
