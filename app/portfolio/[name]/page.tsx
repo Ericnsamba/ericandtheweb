@@ -34,11 +34,11 @@ interface portfolioTypes {
 const builder = imageUrlBuilder(sanityClient);
 
 const PortfolioItem = ({ params, about }: any) => {
-  const router = useRouter();
   const [portfolioItem, setPortfolioItem] = useState({} as portfolioTypes);
-  const [imageUrl, setImageUrl] = useState("");
   const pageSlug = params.name;
-  const imageProps = useNextSanityImage(sanityClient, portfolioItem.mainImage);
+  // const router = useRouter();
+  // const [imageUrl, setImageUrl] = useState("");
+  // const imageProps = useNextSanityImage(sanityClient, portfolioItem.mainImage);
 
   useEffect(() => {
     const fetchData = async () => {
