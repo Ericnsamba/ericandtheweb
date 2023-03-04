@@ -191,7 +191,6 @@ function About() {
         onComplete: animateMarquee,
       });
     }
-    
 
     animateMarquee();
   }
@@ -427,105 +426,70 @@ function About() {
 }
 
 const WorkExperience = (experience: any) => {
-  console.log("🚀 ~ file: page.tsx:418 ~ WorkExperience ~ experience:", experience)
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      WorkExperienceSection();
+      // const headings = gsap.utils.toArray(".experience__inner");
+      // let offset = 0;
+      const headings = gsap.utils.toArray<HTMLElement>(".experience__inner");
+      let offset = 0;
+
+      if (headings.length > 0) {
+        offset = headings[1].offsetTop - headings[0].offsetTop;
+      }
+
+      gsap.set(headings, { yPercent: 200, opacity: 0 });
+
+      headings.forEach((element: any, i) => {
+        element.anim = gsap.fromTo(
+          element,
+          {
+            y: 50,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 70%+=" + offset / 2,
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
+      });
     });
 
     return () => ctx.revert();
   });
 
-  // const WorkExperienceSection = () => {
-  //   // WorkExperience__section
-  //   let headings = gsap.utils.toArray(".experience__inner");
-  //   let offset = 0; // define offset variable here
-
-  //   if (headings.length > 0) {
-  //     offset = headings[1].offsetTop - headings[0].offsetTop;
-  //   }
-
-  //   gsap.set(headings, { yPercent: 200, opacity: 0 });
-
-  //   headings.forEach((element: any, i) => {
-  //     element.anim = gsap.fromTo(
-  //       element,
-  //       {
-  //         y: 50,
-  //       },
-  //       {
-  //         y: 0,
-  //         opacity: 1,
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: element,
-  //           start: "top 70%+=" + offset / 2,
-  //           // end: "center center-=" + offset / 2,
-  //           // markers: true,
-  //           toggleActions: "play reverse play reverse",
-  //         },
-  //       }
-  //     );
-  //   });
-  //   //
-  // };
-
-const WorkExperienceSection = (): void => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const headings = gsap.utils.toArray(".experience__inner");
-  let offset = 0;
-
-  if (headings.length > 0) {
-    offset = headings[1].offsetTop - headings[0].offsetTop;
-  }
-
-  gsap.set(headings, { yPercent: 200, opacity: 0 });
-
-  headings.forEach((element: any, i) => {
-    element.anim = gsap.fromTo(
-      element,
-      {
-        y: 50,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 70%+=" + offset / 2,
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
-  });
-};
-
   return (
     <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[140vh] ">
-
-{experience.sort((a: any, b: any) => new Date(a._createdAt) - new Date(b._createdAt)).map((proj: any, index: any) => {
-   const year = proj.year;
-     return (
-      <div
-        key={index.toString()}
-        className="experience__inner flex flex-col lg:flex-row justify-between lg:items-center items-start min-h-[100px] mb-5 bg-white "
-      >
-        <div className="left__col year w-[285px]">
-          <h3 className="year text-gray">
-            {year ? year.substring(0, 4) : ""}
-          </h3>
-        </div>
-        <div className="right__col flex flex_col w-[300px]">
-          <p className="year text-black text-[34px]">{proj.company}</p>
-          <p className="year text-gray text-sm uppercase">
-            {proj.jobTitle}
-          </p>
-        </div>
-      </div>
-    );
-  })}
+      {experience
+        .sort(
+          (a: any, b: any) =>
+            new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+        )
+        .map((proj: any, index: any) => {
+          const year = proj.year;
+          return (
+            <div
+              key={index.toString()}
+              className="experience__inner flex flex-col lg:flex-row justify-between lg:items-center items-start min-h-[100px] mb-5 bg-white "
+            >
+              <div className="left__col year w-[285px]">
+                <h3 className="year text-gray">
+                  {year ? parseInt(year.substring(0, 4)) : ""}
+                </h3>
+              </div>
+              <div className="right__col flex flex_col w-[300px]">
+                <p className="year text-black text-[34px]">{proj.company}</p>
+                <p className="year text-gray text-sm uppercase">
+                  {proj.jobTitle}
+                </p>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 };
