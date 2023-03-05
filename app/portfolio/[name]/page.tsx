@@ -2,19 +2,15 @@
 import { Router } from "next/router";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useState } from "react";
-import Image from "next/image";
 import { sanityClient } from "../../../utils/client";
 import Button from "../../../components/Atoms/Button";
-import image from "../../../public/assets/images/Eventify.jpg";
+// import Image from "next/image";
+// import image from "../../../public/assets/images/Eventify.jpg";
 import arrowUpRight from "../../../public/assets/icons/Icons-up-right.svg";
-import downloadIcon from "../../../public/assets/icons/icon-up-right.svg";
-import { useNextSanityImage } from "next-sanity-image";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import { useSkewAnimate } from "../../../hooks/useSkewAnimate";
 import gsap from "gsap";
-
-// import { type } from "os";
 
 interface portfolioTypes {
   slug: string;

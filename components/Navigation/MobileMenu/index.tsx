@@ -22,9 +22,9 @@ export const MobileMenu = () => {
       height: 238,
       width: 160,
       transition: {
-        type: "spring",
-        bounce: 0.2,
-        restDelta: 1,
+        // type: "tween",
+        // bounce: 0.1,
+        // restDelta: 1,
         staggerChildren: 0.1,
         delayChildren: 0.2,
       },

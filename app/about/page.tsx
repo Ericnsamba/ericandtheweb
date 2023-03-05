@@ -77,7 +77,7 @@ function About() {
           {
             scaleX: 2,
             xPercent: 50,
-            borderRadius: "40px",
+            borderRadius: "0px",
           },
           "heroScroll"
         )
@@ -169,17 +169,6 @@ function About() {
     const marqueeElements = document.querySelectorAll(".marquee__inner");
 
     let currentPosition = 0;
-
-    // function animateMarquee() {
-    //   gsap.to(marqueeElements, {
-    //     duration: speed,
-    //     x: (currentPosition -= 10),
-    //     modifiers: {
-    //       x: gsap.utils.wrap(-marqueeElements[0].offsetWidth, 0),
-    //     },
-    //     onComplete: animateMarquee,
-    //   });
-    // }
     function animateMarquee() {
       gsap.to(marqueeElements, {
         duration: speed,
@@ -463,7 +452,7 @@ const WorkExperience = (experience: any) => {
   });
 
   return (
-    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[140vh] ">
+    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[100vh] ">
       {experience
         .sort(
           (a: any, b: any) =>

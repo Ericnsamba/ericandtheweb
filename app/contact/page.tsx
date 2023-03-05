@@ -111,7 +111,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0">
+          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0 lg:justify-between">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>
