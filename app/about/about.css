@@ -48,7 +48,7 @@ h1 {
   overflow: hidden;
   width: 100%;
   padding-top: 50%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .image {
