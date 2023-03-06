@@ -477,7 +477,7 @@ const WorkExperience = (experience: any) => {
   });
 
   return (
-    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[100vh] ">
+    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[120vh] ">
       {experience
         .sort(
           (a: any, b: any) =>
