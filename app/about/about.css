@@ -63,8 +63,8 @@ h1 {
   
 }
 
-p {
-  font-size: 24px;
+.bio_copy {
+  font-size: 34px;
   line-height: 1.2em;
 }
 

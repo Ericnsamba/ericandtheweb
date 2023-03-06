@@ -66,18 +66,18 @@ function About() {
         .to(
           ".image-wrapper",
           {
-            scaleY: 2,
-            // height: "462px",
-            borderRadius: "40px",
+            // scaleY: 2,
+            height: "462px",
+            // borderRadius: "40px",
           },
           "heroScroll"
         )
         .to(
           ".image-wrapper .image",
           {
-            scaleX: 2,
-            xPercent: 50,
-            borderRadius: "0px",
+            // scaleX: 2,
+            // xPercent: 50,
+            // borderRadius: "0px",
           },
           "heroScroll"
         )
@@ -210,6 +210,9 @@ function About() {
   const animatedParagraph = () => {
     if (typeof window !== "undefined") {
       SplitTextContent("#my-text", "bio_copy__word");
+      SplitTextContent("#my-text2", "bio_copy__word");
+      SplitTextContent("#my-text3", "bio_copy__word");
+      SplitTextContent("#my-text4", "bio_copy__word");
 
       const fx16Titles = document.querySelectorAll(
         ".bio_copy[data-splitting][data-effect16]"
@@ -313,30 +316,52 @@ function About() {
         <div className="section copy flex flex-col bg-white ">
           <div className="section-wrapper w-full lg:w-8/12 lg:mx-auto">
             <div id="my-text_container" className="content space-y-[60px]">
-              <p
+              <div
                 id="my-text"
                 ref={bioCopy}
                 data-splitting
                 data-effect16
-                className="bio_copy copy_4"
+                className="paragraph_spacer bio_copy copy_1 mb-5"
               >
                 As a skilled Production designer and Front-end developer, I
-                bring a unique perspective to the table. <br />
-                <br />
+                bring a unique perspective to the table.
+              </div>
+              <div
+                id="my-text2"
+                ref={bioCopy}
+                data-splitting
+                data-effect16
+                className="paragraph_spacer bio_copy copy_2 mb-5"
+              >
                 With my proficiency in technologies such as React.js, React
                 Native, JavaScript, and Next.js, I am able to seamlessly bridge
-                the gap between design and development. <br />
-                <br />
+                the gap between design and development.
+              </div>
+              <div
+                id="my-text3"
+                ref={bioCopy}
+                data-splitting
+                data-effect16
+                className="paragraph_spacer bio_copy copy_3 mb-5"
+              >
                 I am passionate about creating visually stunning and
                 user-friendly experiences that not only meet but exceed
-                expectations. <br />
-                <br />I have had the pleasure of working on designs for some of
-                the world's leading asset managers, including Generali, Boston
+                expectations.
+              </div>
+              <div
+                id="my-text4"
+                ref={bioCopy}
+                data-splitting
+                data-effect16
+                className="paragraph_spacer bio_copy copy_4 mb-5"
+              >
+                I have had the pleasure of working on designs for some of the
+                world's leading asset managers, including Generali, Boston
                 Partners, Hermes, and CTI, during my time at Kurtosys. My
                 experience and dedication to the industry make me a valuable
                 asset to any team, and I am always excited for the opportunity
                 to bring my skills to any company and create an impact.
-              </p>
+              </div>
             </div>
           </div>
 
