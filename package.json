@@ -24,6 +24,7 @@
     "gsap": "^3.11.4",
     "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
+    "mouse-follower": "^1.1.2",
     "next": "^13.1.4",
     "next-sanity": "^4.1.1",
     "next-sanity-image": "^5.0.0",

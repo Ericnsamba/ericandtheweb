@@ -48,32 +48,21 @@ export default function ContactPage() {
     "text-sm  log:w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
 
   return (
-    <div className="flex w-full gap-5">
-      <div className="w-3/12  items-center hidden lg:flex">
-        <motion.div
-          variants={navContainerVar}
-          initial="hidden"
-          animate="show"
-          className="NavigationBar flex gap-5 w-full h-[400px] "
-        >
-          <Navigation routeNames={["home", "about me", "my work"]} />
-        </motion.div>
-      </div>
+    <div className="flex w-full gap-5  min-h-screen">
 
       <motion.div
         initial="hidden"
         animate="show"
-        // exit="exitState"
         variants={motionVariants}
-        className="flex flex-col w-full lg:w-9/12 bg-teal-200n lg:justify-center py-[106px]"
+        className="flex flex-col w-full lg:w-7/12 bg-teal-200n lg:justify-center pb-[106px] mx-auto "
       >
-        <div className="flex flex-col w-full container lg:w-6/12 gap-y-20 lg:pb-10 p-5 ">
+        <div className="flex flex-col w-full container  gap-y-20 lg:pb-10 p-5 ">
           <div className="flex flex-col gap-10">
-            <h1 className="lg:text-[54px] text-[25px] text-green whitespace-nowrap">
+            <h1 className="lg:text-[62px] text-[25px] text-black whitespace-nowrap">
               Get in touch
             </h1>
 
-            <div className="">
+            <div className="lg:w-9/12">
               <p className="text-[34px] text-black font-normal dark:text-green leading-120">
                 I like working on existing ideas, get in touch if you have any.
               </p>
@@ -88,7 +77,7 @@ export default function ContactPage() {
               <li className="flex">
                 <div className="overflow-hidden">
                   <p className="text-sm uppercase font-body font-normal  text-black dark:text-green">
-                    Location
+                  Lets Chat
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
                     <Link href="mailto:hello@ericandtheweb.com" target="_blank">
@@ -100,7 +89,7 @@ export default function ContactPage() {
               <li className="flex">
                 <div className="overflow-hidden">
                   <p className="text-sm uppercase font-body font-normal  text-black dark:text-green">
-                    Lets Chat
+                  Location
                   </p>
                   <p className="text-base text-slate-400 truncate font-light font-body">
                     London, UK
@@ -111,7 +100,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0 lg:justify-between">
+          <div className="flex w-full flex-row  flex-wrap lg:flex-nowrap gap-5 lg:gap-0 lg:justify-between lg:w-6/12">
             <Link href="https://twitter.com/EricandTheWeb" target="_blank">
               <p className={`${linkStyles}`}>Twitter</p>
             </Link>

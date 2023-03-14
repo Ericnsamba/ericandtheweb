@@ -1,89 +1,90 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { FC } from "react";
+import React, { FC, useLayoutEffect } from "react";
 import Image from "next/image";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
 import profilePhoto from "../public/assets/images/Hero_image.jpg";
 import { HoverTypingText, TypingText } from "../components/CustomTexts";
+import gsap, { TimelineMax } from "gsap";
 
 const Home = () => {
-  const navContainerVar = {
-    hidden: {
-      // y: -100,
-      // scale: 0
-    },
-    show: {
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
+  useLayoutEffect(() => {
+    let animated = gsap.context(() => {
+      const timeLine = gsap.timeline({ paused: true });
 
-  const heroImageVar = {
-    hidden: {
-      x: -350,
-      // scale: 0,
-      opacity: 0,
-    },
-    show: {
-      x: 0,
-      // scale: 1,
-      opacity: 1,
-      transition: {
-        type: "tween",
-        ease: "easeInOut",
-        duration: 0.8,
-        // delay: 1,
-      },
-    },
-  };
+      gsap.fromTo(
+        ".hero__image",
+        {
+          // width: 190,
+          // x: -500,
+          opacity: 0,
+          y: -500
+        },
+        {
+          y: 0,
+          opacity: 1,
+          // width: 504,
+          delay: "0.8",
+          x: 0,
+          duration: 1,
+          // ease: "Power4.easeIn",
+          ease: "bounce.out",
+        }
+      );
+      gsap.fromTo(
+        ".hero__image",
+        {
+          width: 190,
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          width: 504,
+          delay: "1.8",
+          duration: 2.5,
+          ease: "elastic.out(1, 0.5)",
+        }
+      );
+    }); //
+    return () => animated.revert();
+  });
 
   return (
-    <motion.section
-      className={`flex lg:gap-5 flex-auto h-screen overflow-hidden pt-[134px] lg:py-0`}
-    >
-      <motion.div
-        exit={{ x: 400, opacity: 0 }}
-        // viewport={{ once: false, amount: 0.25 }}
-        className={` lg:w-10/12  w-full px-5 lg:px-0 mx-auto `}
+    <motion.section className={`flex flex-auto h-screen overflow-hidden px-5`}>
+      <div
+        className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center gap-[48px]`}
       >
-        {/* left side */}
-        <div className="flex flex-col lg:flex-row w-full h-full ">
-          <div className="w-full lg:w-1/2 sm:px-0 justify-start flex flex-col lg:justify-center z-10">
-            <div className="">
-              <TypingText title="I'm Eric," textStyles="text-left" />
-              {/* <p className="text-black text-[24px]">I'm Eric</p> */}
-              <motion.h1
-                variants={textVariant(1)}
-                className={"lg:text-[52px] text-[52px] text-green"}
-              >
-                Product Designer
-              </motion.h1>
-              <motion.div />
-            </div>
-          </div>
-
-          <motion.div
-            variants={heroImageVar}
-            initial="hidden"
-            animate="show"
-            className="w-full lg:w-1/2 flex lg:justify-end bg-emerald-1000 justify-end relative -top-[36px] lg:top-0 lg:py-24"
+        {/* top row */}
+        <div className="w-full flex flex-col lg:flex-row justify-center items-start lg:items-center gap-[20px] lg:gap-[48px]">
+          <h1
+            className={"lg:text-[140px] text-[52px] text-black leading-[100%]"}
           >
-            <div className="w-full h-full lg:w-auto lg:h-auto sm:px-0 flex flex-col justify-center bg-fuchsia-3000">
-              <Image
-                src={profilePhoto}
-                alt="Picture of the author"
-                // className="object-cover w-[80%] h-full self-center"
-                className="rounded-[20px] object-cover w-full h-[572px] self-center"
-              />
-            </div>
-          </motion.div>
+            Eric
+          </h1>
+          <div className="h-[190px]">
+            <Image
+              src={profilePhoto}
+              alt="Picture of the author"
+              className="hero__image rounded-full object-cover  h-full self-center"
+              // className="hero__image rounded-full object-cover w-[504px] h-full self-center"
+            />
+          </div>
         </div>
-      </motion.div>
-      {/*  */}
+
+        {/* bottom row */}
+        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-[20px] lg:gap-[48px] h-[190px]">
+          <div className="portfolio py-9 px-24 bg-green text-5xl rounded-full h-full flex justify-center items-center">
+            Portfolio
+          </div>
+          <h1
+            className={"lg:text-[140px] text-[52px] text-black leading-[100%]"}
+          >
+            Manasse
+          </h1>
+        </div>
+      </div>
     </motion.section>
   );
 };

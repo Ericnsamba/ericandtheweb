@@ -75,12 +75,13 @@ export default function Home() {
 }
 
 const ProjectCard = (project: any) => {
+  console.log("🚀 ~ file: page.tsx:78 ~ ProjectCard ~ project:", project)
   return (
     <div className="w-full">
       {project
         .sort(
           (a: any, b: any) =>
-            new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+            new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
         )
         .map((proj: projTypes, index: any) => {
           const url =

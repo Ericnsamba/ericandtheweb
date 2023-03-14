@@ -3,8 +3,9 @@
 }
 
 .hero-scroller {
-  height: 120vh;
+  height: 100vh;
   overflow: hidden;
+  /* background-color: rgb(139, 189, 233); */
 }
 .pin-wrapper {
   /* display: flex; */
@@ -43,12 +44,18 @@ h1 {
   /* margin: 0px; */
 }
 
+.pin-wrapper {
+  display: "flex"
+}
+
+
 .image-wrapper {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  padding-top: 50%;
-  /* border-radius: 20px; */
+  /* width: 100%; */
+  /* padding-top: 50%; */
+  /* border-radius: 2000px; */
+  /* background-color: aquamarine; */
 }
 
 .image {
@@ -69,7 +76,7 @@ h1 {
 }
 
 .myTitle {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .marquee__inner {
@@ -78,7 +85,7 @@ h1 {
 
 .containerHorizontal {
   width: 400vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-wrap: wrap;
 }

@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -23,9 +22,7 @@ function About() {
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
-    cloneMyTitle(8, "marquee1", "experience__title");
-    cloneMyTitle(8, "marquee2", "mentor__title");
-    cloneMyTitle(8, "marquee3", "recognition__title");
+
     sanityClient
       .fetch(`*[_type == "workExperience"]`)
       .then(setExperiences)
@@ -47,37 +44,40 @@ function About() {
           [".hero-header.header-1", ".hero-header.header-3"],
           {
             // scale: 2,
-            // y: vh(150),
-            // xPercent: -150,
+            // y: vh(20),
+            // xPercent: -50,
           },
           "heroScroll"
         )
-        .to(
-          ".header-2",
-          {
-            // scale: 2,
-            // y: vh(100),
-            // opacity: 0,
-            // zIndex: 9,
-            // xPercent: "562px ",
-          }
-          // "heroScroll"
-        )
-        .to(
+        .fromTo(
           ".image-wrapper",
           {
             // scaleY: 2,
+            // height: 140,
+            // width: "50%",
+            // borderRadius: "1000px",
+            height: "362px",
+            xPercent: 0,
+          },
+          {
+            // scaleY: 2,
+            width: "100%",
             height: "462px",
-            // borderRadius: "40px",
+            // borderRadius: "1000px",
           },
           "heroScroll"
         )
-        .to(
+        .fromTo(
           ".image-wrapper .image",
           {
             // scaleX: 2,
-            // xPercent: 50,
-            // borderRadius: "0px",
+            // xPercent: -50,
+            borderRadius: "0px",
+          },
+          {
+            // scaleX: 2,
+            xPercent: 0,
+            borderRadius: "0px",
           },
           "heroScroll"
         )
@@ -99,8 +99,9 @@ function About() {
         start: "top top",
         trigger: ".main",
         pin: ".pin-wrapper",
-        pinSpacing: false,
-        end: `${vh(100)}`,
+        // pinSpacing: false,
+        end: `${vh(50)}`,
+        // end: "+=500",
       });
 
       // let panels = gsap.utils.toArray(".panel");
@@ -126,28 +127,37 @@ function About() {
           trigger: ".marquee",
           start: "top center",
           // start: "top 40%",
-          scrub: 5,
+          scrub: 7,
           // markers: true,
         },
       });
 
       desktopTL
-        .to(".first", { duration: 12, xPercent: -60 })
-        .to(".second", { duration: 12, xPercent: 50 }, "<")
-        .to(".cont", { duration: 2 }, "<")
-        .to(".cta", { duration: 2 }, "<");
+      .fromTo(".first", 
+      { 
+        // duration: 12, 
+        // xPercent: -60 
+      },
+      {
+        xPercent: 0,
+        scrollTrigger: {
+          trigger: ".marquee",
+          start: "top 40%",
+          // start: "top 40%",
+          scrub: 7,
+          // markers: true,
+        },
+      })
 
-      // createMarquee(10);
+       const marqueeElements = document.querySelectorAll('.marquee__inner');
 
-      //  const marqueeElements = document.querySelectorAll('.marquee__inner');
-
-      // let currentPosition = 0;
+      let currentPosition = 0;
 
       // function animateMarquee() {
       //   currentPosition -= 1;
 
       //   marqueeElements.forEach(element => {
-      //     element.style.transform = `translateX(${currentPosition}px)`;
+      //     element.style.transform = `translateX(${-currentPosition}px)`;
       //   });
 
       //   requestAnimationFrame(animateMarquee);
@@ -224,15 +234,17 @@ function About() {
           {
             transformOrigin: "0% 50%",
             // rotate: 3,
+            y:10,
           },
           {
+            y:10,
             ease: "none",
             rotate: 0,
             scrollTrigger: {
               trigger: title,
               start: "top bottom",
               end: "top top",
-              scrub: true,
+              scrub: 1,
             },
           }
         );
@@ -244,14 +256,16 @@ function About() {
             opacity: 0.1,
           },
           {
-            ease: "none",
+            color: "#212322",
             opacity: 1,
             stagger: 0.05,
+            // ease: "none",
+            ease:"circ.out",
             scrollTrigger: {
               trigger: title,
               start: "top bottom-=20%",
               end: "center top+=20%",
-              scrub: true,
+              scrub: 1,
             },
           }
         );
@@ -266,18 +280,14 @@ function About() {
           <div className="section">
             <div className="section-wrapper bg-stone-300o">
               <div className="content bg-pink-3000 z-10 mb-16">
-                <p className="hero-header header-1 header__title text-[24px]">
+                <p className="hero-header header header__title text-[34px]">
                   Hi, I'm Eric
                 </p>
-                <h1 id="header_title_id" className=" header__title text-green">
+                <h1 id="header_title_id" className="hero-header header-1  header__title text-black">
                   Product designer
                 </h1>
-                {/* <h1 className="hero-header header-2">Product designer</h1> */}
-                {/* <h1 className="hero-header header-3 lg:text-[10vh] text-[10vh]">
-                  & Developer
-                </h1> */}
               </div>
-              <div className="pin-wrapper ">
+              <div className="pin-wrapper">
                 <div
                   className="image-wrapper bg-slate-3000 w-full"
                   id="heroImage"
@@ -294,20 +304,6 @@ function About() {
                 <p className="uppercase text-base font-medium text-black">
                   Scroll
                 </p>
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
-                  />
-                </svg> */}
               </div>
             </div>
           </div>
@@ -315,15 +311,15 @@ function About() {
 
         <div className="section copy flex flex-col bg-white ">
           <div className="section-wrapper w-full lg:w-8/12 lg:mx-auto">
-            <div id="my-text_container" className="content space-y-[60px]">
+            <div id="my-text_container" className="content space-y-[60px] text-gray">
               <div
                 id="my-text"
                 ref={bioCopy}
                 data-splitting
                 data-effect16
-                className="paragraph_spacer bio_copy copy_1 mb-5"
+                className="bio_copy copy_1 mb-5"
               >
-                As a skilled Production designer and Front-end developer, I
+                As a skilled Production designer and a developer, I
                 bring a unique perspective to the table.
               </div>
               <div
@@ -331,7 +327,7 @@ function About() {
                 ref={bioCopy}
                 data-splitting
                 data-effect16
-                className="paragraph_spacer bio_copy copy_2 mb-5"
+                className="bio_copy copy_2 mb-5"
               >
                 With my proficiency in technologies such as React.js, React
                 Native, JavaScript, and Next.js, I am able to seamlessly bridge
@@ -342,7 +338,7 @@ function About() {
                 ref={bioCopy}
                 data-splitting
                 data-effect16
-                className="paragraph_spacer bio_copy copy_3 mb-5"
+                className="bio_copy copy_3 mb-5"
               >
                 I am passionate about creating visually stunning and
                 user-friendly experiences that not only meet but exceed
@@ -353,10 +349,10 @@ function About() {
                 ref={bioCopy}
                 data-splitting
                 data-effect16
-                className="paragraph_spacer bio_copy copy_4 mb-5"
+                className="bio_copy copy_4 mb-5"
               >
                 I have had the pleasure of working on designs for some of the
-                world's leading asset managers, including Generali, Boston
+                world's leading asset managers in FinTech, including Generali, Boston
                 Partners, Hermes, and CTI, during my time at Kurtosys. My
                 experience and dedication to the industry make me a valuable
                 asset to any team, and I am always excited for the opportunity
@@ -381,7 +377,7 @@ function About() {
                     data-effect2
                     className="myTitle .experience__title"
                   >
-                    <span className="gray_text text-gray px-5">I have</span>6+
+                    <span className="gray_text text-gray pr-5">I have</span>6+
                     Years Experience
                   </h3>
                 </div>
@@ -395,7 +391,7 @@ function About() {
                     data-effect2
                     className="myTitle .mentor__title"
                   >
-                    <span className="gray_text text-gray px-5">
+                    <span className="gray_text text-gray pr-5">
                       Mentored by
                     </span>
                     <Link href="https://www.linkedin.com/in/tim-gaud/">
@@ -413,11 +409,11 @@ function About() {
                     data-effect2
                     className="myTitle recognition__title"
                   >
+                      Recognitions By
                     <span className="gray_text text-gray px-5">
-                      Recognitions
+                    Muzli
                     </span>
-                    Muzli Recognitions
-                    <span className="px-3 text-green dark:text-slate-300">
+                    <span className="pr-3 text-green dark:text-slate-300">
                       <a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">
                         #33
                       </a>
@@ -438,6 +434,9 @@ function About() {
     </div>
   );
 }
+
+
+// WorkExperience
 
 const WorkExperience = (experience: any) => {
   useLayoutEffect(() => {
@@ -465,7 +464,7 @@ const WorkExperience = (experience: any) => {
             ease: "none",
             scrollTrigger: {
               trigger: element,
-              start: "top 70%+=" + offset / 2,
+              start: "top 60%+=" + offset / 2,
               toggleActions: "play reverse play reverse",
             },
           }
@@ -477,7 +476,7 @@ const WorkExperience = (experience: any) => {
   });
 
   return (
-    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[120vh] ">
+    <div className="main__experiences bg-lime-2000 mx-auto w-full lg:w-[794px] bg-purple-1000 min-h-[120vh] lg:min-h-[100vh] ">
       {experience
         .sort(
           (a: any, b: any) =>

@@ -81,7 +81,7 @@ const PortfolioItem = ({ params, about }: any) => {
   return (
     <div className="lg:w-8/12 w-full lg:px-0 px-5 mx-auto bg-teal-1000 py-32">
       <div className="flex items-start lg:items-center  justify-between w-full my-[60px] flex-col lg:flex-row gap-5">
-        <h3 className="skewElem text-green leading-120 text-[24px] lg:text-[44px]">{title}</h3>
+        <h3 className="skewElem text-black leading-120 text-[24px] lg:text-[44px]">{title}</h3>
 
         <div className="flex">
           <Button
@@ -101,8 +101,8 @@ const PortfolioItem = ({ params, about }: any) => {
           <img
             src={url as string}
             alt={`${title} cover image`}
-            height={328}
-            className=" object-cover rounded-[18px] relative w-full h-[328px]"
+            height={628}
+            className=" object-cover rounded-[18px] relative w-full h-[428px]"
           />
         ) : null}
       </div>
@@ -119,7 +119,7 @@ const PortfolioItem = ({ params, about }: any) => {
           {portfolioItem && web_link ? (
             <Button
               children={undefined}
-              onClick={""}
+              onClick={web_link}
               title={"Visit Website"}
               type={"danger"}
               showIconRight
@@ -130,7 +130,7 @@ const PortfolioItem = ({ params, about }: any) => {
           {portfolioItem && app_link ? (
             <Button
               children={undefined}
-              onClick={""}
+              onClick={app_link}
               title={"View in AppStore"}
               type={"danger"}
               showIconRight
@@ -143,7 +143,7 @@ const PortfolioItem = ({ params, about }: any) => {
       {/* Brief section  */}
       {brief ? (
         <div className="flex flex-col gap-5 w-full mb-[60px]">
-          <h6 className="text-green leading-120 ">Brief</h6>
+          <h6 className="text-black leading-120 ">Brief</h6>
           <p className="leading-6 text-black">{brief}</p>
         </div>
       ) : null}
@@ -151,7 +151,7 @@ const PortfolioItem = ({ params, about }: any) => {
       {/* Challenge section  */}
       {challenge ? (
         <div className="flex flex-col gap-5 w-full mb-[60px]">
-          <h6 className="text-green leading-120 ">Challenge</h6>
+          <h6 className="text-black leading-120 ">Challenge</h6>
           <p className="leading-6 text-black">{challenge}</p>
         </div>
       ) : null}
@@ -159,13 +159,13 @@ const PortfolioItem = ({ params, about }: any) => {
       {/* solution section  */}
       {solution ? (
         <div className="flex flex-col gap-5 w-full mb-[60px]">
-          <h6 className="text-green leading-120 ">Solution</h6>
+          <h6 className="text-black leading-120 ">Solution</h6>
           <p className="leading-6 text-black">{solution}</p>
         </div>
       ) : null}
 
       {/* Images gallery */}
-      <div className="skewElem flex flex-col gap-5 w-full mb-[60px] overflow-x-scroll overflow-hidden">
+      <div className="flex flex-col gap-5 w-full mb-[60px] overflow-x-scroll overflow-hidden">
         {imagesGallery && imagesGallery.length > 0 ? (
           <div className="flex lg:flex-row justify-between gap-5">
             {imagesGallery.map((image, index) => (
@@ -176,7 +176,7 @@ const PortfolioItem = ({ params, about }: any) => {
                     : undefined
                 }
                 alt={""}
-                className="object-cover rounded-[18px] w-full lg:max-w-[260px] h-[360px]"
+                className="skewElem object-cover rounded-[18px] w-full lg:max-w-[260px] h-[360px]"
               />
             ))}
           </div>

@@ -34,7 +34,8 @@ module.exports = {
         blue: {
           950: '#17275c',
         },
-        green: '#80E0A7',
+        green: '#86FF73',
+        light_green: '#80E0A7',
         black: '#212322',
         forestGreen: '#1C4220',
         white: '#ffffff',

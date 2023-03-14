@@ -18,18 +18,15 @@ const NavBar = () => {
             <div className="flex">
               <Link href="/">
                 <Image
-                  className="w-[38px] h-[38px]"
+                  className="w-[38px] h-[38px] rounded-full border border-gray"
                   src={memojiImage}
                   alt="Picture of the author"
                 />
               </Link>
-              <div className="flex items-start flex-col	self-center	ml-5">
+              <div className="flex items-start flex-col	self-center	ml-[10px]">
                 <strong className="text-gray text-xs font-normal font-display">
-                  Eric & The Web
+                  Eric & <br/>The Web
                 </strong>
-                <span className="text-white/70 text-[10px] uppercase	font-body font-light pt-[4px]">
-                  Designer & Developer
-                </span>
               </div>
             </div>
 
