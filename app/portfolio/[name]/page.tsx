@@ -1,16 +1,15 @@
 "use client";
+import { useEffect, useLayoutEffect, useState } from "react";
+import gsap from "gsap";
 import { Router } from "next/router";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useState } from "react";
 import { sanityClient } from "../../../utils/client";
 import Button from "../../../components/Atoms/Button";
-// import Image from "next/image";
-// import image from "../../../public/assets/images/Eventify.jpg";
 import arrowUpRight from "../../../public/assets/icons/Icons-up-right.svg";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import { useSkewAnimate } from "../../../hooks/useSkewAnimate";
-import gsap from "gsap";
+// import Image from "next/image";
 
 interface portfolioTypes {
   slug: string;
@@ -70,8 +69,7 @@ const PortfolioItem = ({ params, about }: any) => {
 
       useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-          // WorkExperienceSection();
-          useSkewAnimate(".skewElem")
+          // useSkewAnimate(".skewElem")
           // 
         });
     

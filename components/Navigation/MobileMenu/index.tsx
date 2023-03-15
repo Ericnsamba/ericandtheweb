@@ -69,7 +69,7 @@ export const MobileMenu = () => {
             <motion.p
               variants={menuItemsVariation}
               className={`${
-                path == "/" ? "text-green" : ""
+                path == "/" ? "rounded-full text-black bg-green py-[10px] px-5" : ""
               } text-sm text-black uppercase font-bold text-center`}
             >
               Home
@@ -79,7 +79,7 @@ export const MobileMenu = () => {
             <motion.p
               variants={menuItemsVariation}
               className={`${
-                path == "/about" ? "text-green" : ""
+                path == "/about" ? "rounded-full text-black bg-green py-[10px] px-5" : ""
               } text-sm text-black uppercase font-bold text-center`}
             >
               About me
@@ -89,7 +89,7 @@ export const MobileMenu = () => {
             <motion.p
               variants={menuItemsVariation}
               className={`${
-                path == "/portfolio" ? "text-green" : ""
+                path == "/portfolio" ? "rounded-full text-black bg-green py-[10px] px-5" : ""
               } text-sm text-black uppercase font-bold text-center`}
             >
               Portfolio
@@ -99,7 +99,7 @@ export const MobileMenu = () => {
             <motion.p
               variants={menuItemsVariation}
               className={`${
-                path == "/contact" ? "text-green" : ""
+                path == "/contact" ? "rounded-full text-black bg-green py-[10px] px-5" : ""
               } text-sm text-black uppercase font-bold text-center`}
             >
               contact

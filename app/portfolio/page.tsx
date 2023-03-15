@@ -56,8 +56,7 @@ export default function Home() {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // WorkExperienceSection();
-      useSkewAnimate(".skewElem");
+      // useSkewAnimate(".skewElem");
       //
     });
 

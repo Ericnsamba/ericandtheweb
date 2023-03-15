@@ -1,13 +1,12 @@
 "use client";
-
-import { motion } from "framer-motion";
 import React, { FC, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import styles from "../styles";
-import { slideIn, staggerContainer, textVariant } from "../utils/motion";
 import profilePhoto from "../public/assets/images/Hero_image.jpg";
-import { HoverTypingText, TypingText } from "../components/CustomTexts";
 import gsap, { TimelineMax } from "gsap";
+// import styles from "../styles";
+// import { slideIn, staggerContainer, textVariant } from "../utils/motion";
+// import { HoverTypingText, TypingText } from "../components/CustomTexts";
 
 const Home = () => {
   useLayoutEffect(() => {
