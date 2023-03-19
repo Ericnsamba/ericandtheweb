@@ -56,9 +56,9 @@ const Home = () => {
         className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center gap-[48px]`}
       >
         {/* top row */}
-        <div className="w-full flex flex-col lg:flex-row justify-center items-start lg:items-center gap-[20px] lg:gap-[48px]">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center lg:items-center gap-[40px] lg:gap-[48px] mb-8">
           <h1
-            className={"lg:text-[140px] text-[52px] text-black leading-[100%]"}
+            className={"lg:text-[140px] text-black leading-[100%]"}
           >
             Eric
           </h1>
@@ -73,12 +73,12 @@ const Home = () => {
         </div>
 
         {/* bottom row */}
-        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-[20px] lg:gap-[48px] h-[190px]">
+        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-[40px] lg:gap-[48px] h-[190px]">
           <div className="portfolio py-9 px-24 bg-green text-5xl rounded-full h-full flex justify-center items-center">
             Portfolio
           </div>
           <h1
-            className={"lg:text-[140px] text-[52px] text-black leading-[100%]"}
+            className={"lg:text-[140px] text-black leading-[100%]"}
           >
             Manasse
           </h1>
