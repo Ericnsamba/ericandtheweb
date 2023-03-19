@@ -22,7 +22,6 @@ function About() {
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
-
     sanityClient
       .fetch(`*[_type == "workExperience"]`)
       .then(setExperiences)
@@ -39,58 +38,21 @@ function About() {
     const vh = (coef: number) => window.innerHeight * (coef / 100);
 
     let ctx = gsap.context(() => {
-      timeLine
-        .to(
-          [".hero-header.header-1", ".hero-header.header-3"],
-          {
-            // scale: 2,
-            // y: vh(20),
-            // xPercent: -50,
-          },
-          "heroScroll"
-        )
-        .fromTo(
-          ".image-wrapper",
-          {
-            // scaleY: 2,
-            // height: 140,
-            // width: "50%",
-            // borderRadius: "1000px",
-            height: "362px",
-            xPercent: 0,
-          },
-          {
-            // scaleY: 2,
-            width: "100%",
-            height: "462px",
-            // borderRadius: "1000px",
-          },
-          "heroScroll"
-        )
-        .fromTo(
-          ".image-wrapper .image",
-          {
-            // scaleX: 2,
-            // xPercent: -50,
-            borderRadius: "0px",
-          },
-          {
-            // scaleX: 2,
-            xPercent: 0,
-            borderRadius: "0px",
-          },
-          "heroScroll"
-        )
-        .to(
-          ".scroll-indicator",
-          {
-            // scaleX: 2,
-            // y: -50,
-            opacity: 0,
-            yPercent: vh(50),
-          },
-          "heroScroll"
-        );
+     
+      // timeline.fromTo(
+      //   ".image-wrapper .image",
+      //   {
+      //     // scaleX: 2,
+      //     // xPercent: -50,
+      //     borderRadius: "0px",
+      //   },
+      //   {
+      //     // scaleX: 2,
+      //     xPercent: 0,
+      //     borderRadius: "0px",
+      //   },
+      //   "heroScroll"
+      // )
 
       ScrollTrigger.create({
         // markers: true,
@@ -98,10 +60,10 @@ function About() {
         scrub: 1,
         start: "top top",
         trigger: ".main",
-        pin: ".pin-wrapper",
+        pin: ".content",
         // pinSpacing: false,
-        end: `${vh(50)}`,
-        // end: "+=500",
+        // end: `${vh(150)}`,
+        end: "+=500",
       });
 
       // let panels = gsap.utils.toArray(".panel");
@@ -132,24 +94,25 @@ function About() {
         },
       });
 
-      desktopTL
-      .fromTo(".first", 
-      { 
-        // duration: 12, 
-        // xPercent: -60 
-      },
-      {
-        xPercent: 0,
-        scrollTrigger: {
-          trigger: ".marquee",
-          start: "top 40%",
-          // start: "top 40%",
-          scrub: 7,
-          // markers: true,
+      desktopTL.fromTo(
+        ".first",
+        {
+          // duration: 12,
+          // xPercent: -60
         },
-      })
+        {
+          xPercent: 0,
+          scrollTrigger: {
+            trigger: ".marquee",
+            start: "top 40%",
+            // start: "top 40%",
+            scrub: 7,
+            // markers: true,
+          },
+        }
+      );
 
-       const marqueeElements = document.querySelectorAll('.marquee__inner');
+      const marqueeElements = document.querySelectorAll(".marquee__inner");
 
       let currentPosition = 0;
 
@@ -234,10 +197,10 @@ function About() {
           {
             transformOrigin: "0% 50%",
             // rotate: 3,
-            y:10,
+            y: 10,
           },
           {
-            y:10,
+            y: 10,
             ease: "none",
             rotate: 0,
             scrollTrigger: {
@@ -260,7 +223,7 @@ function About() {
             opacity: 1,
             stagger: 0.05,
             // ease: "none",
-            ease:"circ.out",
+            ease: "circ.out",
             scrollTrigger: {
               trigger: title,
               start: "top bottom-=20%",
@@ -277,41 +240,35 @@ function About() {
     <div ref={component} className="cont">
       <div className="main">
         <div className="hero-scroller">
-          <div className="section">
-            <div className="section-wrapper bg-stone-300o">
-              <div className="content bg-pink-3000 z-10 mb-16">
-                <p className="hero-header header header__title text-[34px]">
-                  Hi, I'm Eric
-                </p>
-                <h1 id="header_title_id" className="hero-header header-1  header__title text-black">
-                  Product designer
-                </h1>
-              </div>
-              <div className="pin-wrapper">
-                <div
-                  className="image-wrapper bg-slate-3000 w-full"
-                  id="heroImage"
-                >
-                  <Image
-                    className="image aspect-1"
-                    src={EricPhoto}
-                    alt="Picture of the author"
-                    priority
-                  />
-                </div>
-              </div>
-              <div className="scroll-indicator flex flex-col items-center gap-5 my-[60px]">
-                <p className="uppercase text-base font-medium text-black">
-                  Scroll
-                </p>
-              </div>
+          <div className="content pin-wrapper pt-[20vh] absolute min-h-screen mx-auto max-w-[1200px]">
+            <p className="hero-header header header__title text-[24px] uppercase text-center flex justify-center items-center">
+              Hi, I'm Eric
+            </p>
+            <h1
+              id="header_title_id"
+              className="hero-header header-1  header__title text-black lg:text-[142px] text-center uppercase leading-[120%]"
+            >
+              Product Designer
+            </h1>
+          </div>
+          <div className="z-10 min-h-screen justify-center items-center">
+            <div className="image-wrapper bg-slate-3000 w-full flex justify-center items-center" id="heroImage">
+              <Image
+                className="image aspect-1"
+                src={EricPhoto}
+                alt="Picture of the author"
+                priority
+              />
             </div>
           </div>
         </div>
 
         <div className="section copy flex flex-col bg-white ">
           <div className="section-wrapper w-full lg:w-8/12 lg:mx-auto">
-            <div id="my-text_container" className="content space-y-[60px] text-gray">
+            <div
+              id="my-text_container"
+              className="content space-y-[60px] text-gray"
+            >
               <div
                 id="my-text"
                 ref={bioCopy}
@@ -319,8 +276,8 @@ function About() {
                 data-effect16
                 className="bio_copy copy_1 mb-5"
               >
-                As a skilled Production designer and a developer, I
-                bring a unique perspective to the table.
+                As a skilled Production designer and a developer, I bring a
+                unique perspective to the table.
               </div>
               <div
                 id="my-text2"
@@ -352,8 +309,8 @@ function About() {
                 className="bio_copy copy_4 mb-5"
               >
                 I have had the pleasure of working on designs for some of the
-                world's leading asset managers in FinTech, including Generali, Boston
-                Partners, Hermes, and CTI, during my time at Kurtosys. My
+                world's leading asset managers in FinTech, including Generali,
+                Boston Partners, Hermes, and CTI, during my time at Kurtosys. My
                 experience and dedication to the industry make me a valuable
                 asset to any team, and I am always excited for the opportunity
                 to bring my skills to any company and create an impact.
@@ -375,7 +332,7 @@ function About() {
                   <h3
                     data-splitting
                     data-effect2
-                    className="myTitle .experience__title"
+                    className="myTitle lg:whitespace-nowrap .experience__title"
                   >
                     <span className="gray_text text-gray pr-5">I have</span>6+
                     Years Experience
@@ -389,7 +346,7 @@ function About() {
                   <h3
                     data-splitting
                     data-effect2
-                    className="myTitle .mentor__title"
+                    className="myTitle lg:whitespace-nowrap .mentor__title"
                   >
                     <span className="gray_text text-gray pr-5">
                       Mentored by
@@ -407,12 +364,10 @@ function About() {
                   <h3
                     data-splitting
                     data-effect2
-                    className="myTitle recognition__title"
+                    className="myTitle lg:whitespace-nowrap recognition__title"
                   >
-                      Recognitions By
-                    <span className="gray_text text-gray px-5">
-                    Muzli
-                    </span>
+                    Recognitions By
+                    <span className="gray_text text-gray px-5">Muzli</span>
                     <span className="pr-3 text-green dark:text-slate-300">
                       <a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">
                         #33
@@ -434,7 +389,6 @@ function About() {
     </div>
   );
 }
-
 
 // WorkExperience
 

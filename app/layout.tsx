@@ -11,6 +11,8 @@ import "../styles/globals.css";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 import "../node_modules/mouse-follower/src/scss/index.scss";
 import MouseFollower from "mouse-follower";
+import { Lora } from '@next/font/google';
+
 
 
 type RootLayoutTypes = {
