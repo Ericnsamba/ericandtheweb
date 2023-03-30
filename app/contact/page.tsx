@@ -64,7 +64,7 @@ export default function ContactPage() {
 
             <div className="lg:w-9/12">
               <p className="text-[34px] text-black font-normal dark:text-green leading-120">
-                I like working on existing ideas, get in touch if you have any.
+                I like working on exciting ideas, get in touch if you have any.
               </p>
             </div>
           </div>
