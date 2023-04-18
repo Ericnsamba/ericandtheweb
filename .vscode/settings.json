@@ -2,7 +2,8 @@
   "cSpell.words": [
     "eventify",
     "Lumico",
-    "semibold"
+    "semibold",
+    "tailwindcss"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true

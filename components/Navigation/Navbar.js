@@ -11,7 +11,7 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="bg-black/60 border border-black/20 backdrop-blur-lg z-30 transition-all py-4 px-5 rounded-[20px]   mx-auto w-[794px]">
+    <div className="bg-pureBlack/40 border border-black/20 backdrop-blur-lg z-30 transition-all py-4 px-5 rounded-[20px]   mx-auto w-[794px]">
       <div className="w-full">
         <nav className="w-full relative flex items-center justify-between rounded-xl ">
           <div className="w-full relative flex justify-between items-center">
@@ -24,7 +24,7 @@ const NavBar = () => {
                 />
               </Link>
               <div className="flex items-start flex-col	self-center	ml-[10px]">
-                <strong className="text-gray text-xs font-normal font-display">
+                <strong className="text-gray text-sm font-display font-bold">
                   Eric & <br/>The Web
                 </strong>
               </div>
