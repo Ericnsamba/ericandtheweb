@@ -12,6 +12,7 @@ import "./about.css";
 import { sanityClient } from "../../../utils/client";
 import { SplitTextContent } from "../../../utils/splitTextContent";
 import { motion } from "framer-motion";
+import CopyToClipboard from "../../../components/CopyToClipboard";
 
 gsap.registerPlugin(ScrollTrigger);
 function About() {
@@ -99,13 +100,41 @@ function About() {
       const marqueeElements = document.querySelectorAll(".marquee__inner");
 
       animatedParagraph();
-      sectionAnimation();
+      revealElements();
+      // sectionAnimation();
       // headerAnimation();
     });
 
     return () => ctx.revert();
     //
   }, []);
+
+  const revealElements = () => {
+    SplitTextContent("#large_text", "myTitle");
+
+    const fx16Titles = document.querySelectorAll(
+      ".myTitle[data-splitting][data-effect16]"
+    );
+    fx16Titles.forEach((title) => {
+      gsap.from(title.querySelectorAll(".myTitle"), {
+        color: "#86FF73",
+        delay: 2,
+        duration: 1.5,
+        yPercent: 100,
+        ease: "power4",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: title,
+          start: "top bottom-=20%",
+          // start: "top center",
+          // end: "center top+=30%",
+          scrub: 1.6,
+          // pinSpacing: false,
+          // markers: true,
+        },
+      });
+    });
+  };
 
   const sectionAnimation = () => {
     const container = document.getElementById("container");
@@ -233,12 +262,12 @@ function About() {
     <div ref={component} className="cont">
       <div className="main">
         <motion.section
-          className={`flex flex-auto h-screen overflow-hidden pt-10 bg-fuchsia-1000`}
+          className={`flex flex-auto min-h-screen overflow-hidden pt-10 bg-fuchsia-1000`}
         >
           <div
-            className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center`}
+            className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center px-5 lg:px-0`}
           >
-            <h1 className="header font-displayText font-bold text-black">
+            <h1 className="text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center">
               Product Designer
             </h1>
 
@@ -246,42 +275,47 @@ function About() {
               Based in London
             </p>
             {/* top row */}
-            <div className="flex rounded-full border-black border p-[10px] w-5/12 justify-between items-center mb-[60px]">
+            <div className="flex rounded-full border-black border p-[10px] w-fit space-x-5 justify-between items-center mb-[60px]">
               <p className="font-body text-black pl-[10px]">
                 hello@ericandthweb.com
               </p>
-              <p className="font-body bg-green text-black p-[10px] px-[20px] text-base font-normal rounded-full">
-                copy email
-              </p>
+              <CopyToClipboard text="hello@ericandthweb.com" />
             </div>
 
             {/* bottom row */}
             <div
-              className={`here__img w-6/12 h-[626px] rounded-[120px] bg-gray p-10 items-center justify-end flex flex-col bg-no-repeat `}
+              className={`here__img w-full h-[426px] lg:w-6/12 lg:h-[626px] rounded-[60px] lg:rounded-[120px] bg-gray p-10 items-center justify-end flex flex-col bg-no-repeat `}
             >
-              <div className="bg-green text-black font-displayText text-lead px-[60px] py-10 rounded-full bg-cover">
+              <div className="bg-green text-black font-displayText text-mobile_lead lg:text-lead px-[30px] lg:px-[60px] py-5 lg:py-10 rounded-full bg-cover">
                 Eric Manasse
               </div>
             </div>
           </div>
         </motion.section>
 
-        <div className="section2 copy bg-fuchsia-1000 flex flex-col justify-center bg-pink-200h h-[60vh]">
+        <div className="section2 copy bg-fuchsia-1000 flex flex-col justify-center bg-pink-200h min-h-[60vh] my-10 px-5 lg:px-0">
           <div className=" w-full lg:w-8/12 lg:mx-auto">
             <div
               id="my-text"
               ref={bioCopy}
               data-splitting
               data-effect16
-              className="bio_copy font-displayText text-lead"
+              className="bio_copy font-displayText text-mobile_lead lg:text-lead"
             >
-              I have had the pleasure of working on designs for some of the
-              world's leading asset managers in FinTech, including Generali,
-              Boston Partners, Hermes, and CTI, during my time at Kurtosys. My
-              experience and dedication to the industry make me a valuable asset
-              to any team, and I am always excited for the opportunity to bring
-              my skills to any company and create an impact.
+              As a Production designer and Front-end developer, I bring
+              a unique perspective to the table. With my proficiency in
+              technologies such as React.js, React Native, JavaScript, and
+              Next.js, I am able to seamlessly bridge the gap between design and
+              development. I am passionate about creating visually stunning and
+              user-centred experiences. I have had the pleasure of working on designs for
+              some of the world's leading asset managers, including Generali,
+              Boston Partners, Hermes, and JP Morgan during my time at Kurtosys. 
             </div>
+            <Link href="https://read.cv/eric_manasse">
+              <div className="button p-5 px-8 text-[24px] text-black border-1 border w-fit rounded-full mt-10 ">
+                View Resume
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -291,74 +325,41 @@ function About() {
       <div id="container" className="section__container pt-20">
         {/* ======== large text section */}
         <section
-          className="experience__section marquee flex bg-teal-20 w-[80vw] h-screen lg:mx-auto justify-center items-start overflow-hidden mb-[60px"
+          className="experience__section marquee flex bg-teal-20 lg:mx-auto justify-center items-start overflow-hidden mb-[60px] px-5 lg:px-0"
           id="vertical"
         >
           {/* Years of experience and Mentor */}
-          <div className="flex justify-start items-start w-[80vw] h-full bg-violet-3000">
-            <div className="flex flex-col justify-between gap-5 ">
-              <div
-                id="marquee1"
-                className="marquee__inner w-full lg:w-8/12 flex first"
-              >
-                <h3
-                  data-splitting
-                  data-effect2
-                  className="myTitle lg:whitespace-nowrap .experience__title font-bold font-displayText text-[6vw] "
-                >
-                  <span className="gray_text text-gray pr-5">I have</span>6+
-                  Years Experience
-                </h3>
-              </div>
-
-              <div
-                id="marquee2"
-                className="marquee__inner w-full lg:w-8/12 flex second"
-              >
-                <h3
-                  data-splitting
-                  data-effect2
-                  className="myTitle lg:whitespace-nowrap .mentor__title font-bold font-displayText text-[6vw]"
-                >
-                  <span className="gray_text text-gray pr-5">Mentored by</span>
-                  <Link href="https://www.linkedin.com/in/tim-gaud/">
-                    Tim Gaud
-                  </Link>
-                </h3>
-              </div>
-
+          <div className="flex justify-center items-center w-full lg:w-[80vw] h-full bg-violet-1000">
+            <div className="flex flex-col justify-center gap-5 items-center">
               <div
                 id="marquee3"
-                className="marquee__inner w-full lg:w-8/12 flex first"
+                className="marquee__inner w-full lg:w-8/12 flex items-center"
               >
-                <h3
+                <h1
+                  id="large_text"
                   data-splitting
-                  data-effect2
-                  className="myTitle lg:whitespace-nowrap recognition__title font-bold font-displayText text-[6vw]"
+                  data-effect16
+                  className="myTitle text-mobile_header lg:text-header_text recognition__title font-bold font-displayText flex"
                 >
-                  Recognitions By
-                  <span className="gray_text text-gray px-5">Muzli</span>
-                  <span className="pr-3 text-green dark:text-slate-300">
+                  I have 6+ Years Experience, Mentored by Tim Gaud, Recognitions
+                  By Muzli
+                  <span className="bg-green p-10 px-12 text-[54px] text-black rounded-full">
                     <a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">
                       #33
                     </a>
                   </span>
-                </h3>
+                </h1>
               </div>
-              {/*  */}
             </div>
           </div>
         </section>
 
         {/* Work Experience Section */}
-        <div className="WorkExperience__section  w-[80vw] h-full bg-purple-2000 justify-start items-start flex">
+        <div className="WorkExperience__section px-5n lg:px-0 min-h-screen bg-purple-2000 justify-center items-center flex flex-col ">
           {WorkExperience(experiences)}
         </div>
-
-        {/* <div className="spacer w-full h-full bg-fuchsia-2000"></div> */}
       </div>
-
-      {/* <div className="spacer h-[20vh]"></div> */}
+      {/* <div className="spacer h-[10vh]"></div> */}
     </div>
   );
 }
@@ -366,72 +367,103 @@ function About() {
 // WorkExperience
 
 const WorkExperience = (experience: any) => {
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     // const headings = gsap.utils.toArray(".experience__inner");
-  //     // let offset = 0;
-  //     const headings = gsap.utils.toArray<HTMLElement>(".experience__inner");
-  //     let offset = 0;
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // headings.forEach((element: any, i) => {
+      //   element.anim = gsap.fromTo(
+      //     element,
+      //     {
+      //       delay: 2,
+      //     duration: 1.5,
+      //     yPercent: 100,
+      //     ease: "power4",
+      //   },
+      //   {
+      //     yPercent: 20,
+      //     y: -20,
+      //     opacity: 1,
+      //     stagger: 0.2,
+      //     ease: "power4",
+      //       scrollTrigger: {
+      //         trigger: element,
+      //         start: "top 90%+=" + offset/2,
+      //         toggleActions: "play reverse play reverse",
+      //       },
+      //     }
+      //   );
+      // });
 
-  //     if (headings.length > 0) {
-  //       offset = headings[1].offsetTop - headings[0].offsetTop;
-  //     }
+      gsap.set(".main__experiences", {
+        translateY: -60,
+        rotationX: 45,
+        scaleX: 0.8,
+        z: -300,
+        transformOrigin: "bottom",
+      });
+      const tl = gsap.timeline({
+        scale: true,
+        scrollTrigger: {
+          // markers: true,
+          trigger: ".main__experiences",
+          scrub: 1.6,
+          start: "top 60%",
+          end: "bottom 90%",
+          pinSpacing: false,
+          // end: "+=1200 bottom"
+        },
+      });
 
-  //     gsap.set(headings, { yPercent: 200, opacity: 0 });
+      tl.to(".main__experiences", {
+        y: -100,
+        rotateZ: 0,
+        rotateX: 0,
+        scaleX: 1,
+        scaleY: 1,
+        ease: "none",
+        transformOrigin: "bottom",
+      });
+    });
 
-  //     headings.forEach((element: any, i) => {
-  //       element.anim = gsap.fromTo(
-  //         element,
-  //         {
-  //           y: 50,
-  //         },
-  //         {
-  //           y: 0,
-  //           opacity: 1,
-  //           ease: "none",
-  //           scrollTrigger: {
-  //             trigger: element,
-  //             start: "top 60%+=" + offset / 2,
-  //             toggleActions: "play reverse play reverse",
-  //           },
-  //         }
-  //       );
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // });
+    return () => ctx.revert();
+  });
 
   return (
-    <div className="main__experiences bg-lime-2000 w-8/12 bg-purple-1000 border border-black p-20 rounded-[80px]">
-      {experience
-        .sort(
-          (a: any, b: any) =>
-            new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
-        )
-        .map((proj: any, index: any) => {
-          const year = proj.year;
-          return (
-            <div
-              key={index.toString()}
-              className="experience__inner flex  min-h-[100px] mb-5 border-gray border-b"
-            >
-              <div className="right__col flex flex_col w-full items-center lg:items-start">
-                <p className="year font-displayText text-black text-[34px]">
-                  {proj.jobTitle}
-                </p>
+    <div className="main__experiences flex flex-col lg:flex-row bg-black w-full lg:w-10/12  border border-black p-10 lg:p-20 rounded-[40px] lg:rounded-[80px]">
+      {/* <h1 className="experience text-mobile_header text-left w-full lg:w-4/12 text-white lg:text-h3_text font-displayText font-bold mb-10">
+        My Work <br /> <span className="text-green">Experience</span>
+      </h1> */}
+
+      <div className="flex flex-col w-full">
+        {experience
+          .sort(
+            (a: any, b: any) =>
+              new Date(a._createdAt).getTime() -
+              new Date(b._createdAt).getTime()
+          )
+          .map((proj: any, index: any) => {
+            const year = proj.year;
+            return (
+              <div
+                key={index.toString()}
+                className="experience__inner flex  min-h-[100px] mb-5 border-gray border-b last:border-0"
+              >
+                <div className="right__col flex flex_col w-full items-center lg:items-start">
+                  <p className="year font-displayText text-white text-[34px]">
+                    {proj.jobTitle}
+                  </p>
+                </div>
+                <div className="left__col year w-full flex items-center justify-between py-5">
+                  <p className="year text-gray text-lg uppercase">
+                    {proj.company}
+                  </p>
+                  <p className="year text-gray text-center lg:text-left">
+                    {year ? parseInt(year.substring(0, 4)) : ""}
+                  </p>
+                </div>
               </div>
-              <div className="left__col year w-full flex items-center justify-between ">
-                <p className="year text-black text-lg uppercase">
-                  {proj.company}
-                </p>
-                <p className="year text-gray text-center lg:text-left">
-                  {year ? parseInt(year.substring(0, 4)) : ""}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 };

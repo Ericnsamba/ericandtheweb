@@ -91,19 +91,19 @@ const ProjectCard = (project: any) => {
           return (
             <div
               key={index.toString()}
-              className="skewElem rounded-[20px] bg-no-repeat overflow-hidden mb-[10px] bg-cover h-[277px]"
+              className="skewElem rounded-[40px] bg-no-repeat overflow-hidden mb-[20px] bg-cover h-[280px]"
               style={{ backgroundImage: `url(${url})` }}
             >
               <a
                 href={`portfolio/${proj.slug.current}`}
-                className="flex flex-col lg:flex-row grow text-center lg:text-left py-10 text-white items-center justify-between h-full bg-black/60  px-16 pr-16 ease-in-out duration-800"
+                className="flex flex-col lg:flex-row grow text-center lg:text-left p-10 text-white items-center justify-between h-full bg-black/60  ease-in-out duration-800"
               >
                 <div>
-                  <h1 className="text-[25px] lg:text-[44px]  font-bold font-display ease-in-out duration-300">
+                  <h1 className="text-mobile_header lg:text-h3_text lg:w-3/4, font-bold font-displayText ease-in-out duration-300">
                     {proj.title}
                   </h1>
                 </div>
-                <div className="flex w-1/3 gap-x-5 justify-center ease-in-out duration-900">
+                <div className="flex w-full lg:w-1/3 gap-x-5 justify-center ease-in-out duration-900">
                   <p className="ease-in-out duration-700 text-[14px] uppercase font-bold">
                     {proj.category}
                   </p>

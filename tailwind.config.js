@@ -14,9 +14,6 @@ module.exports = {
       container: {
         // default breakpoints but with 40px removed
         screens: {
-          sm: '600px',
-          md: '728px',
-          lg: '984px',
           // xl: '1240px',
           desktop: '1200px',
           '2xl': '1496px',
@@ -52,6 +49,12 @@ module.exports = {
       },
       fontSize: {
         lead: '34px',
+        header_text: '64px',
+        h2_text: '44px',
+        h3_text: '44px',
+        mobile_lead: '24px',
+        mobile_header: '45px',
+
       }
     },
     typography: (theme) => ({}),
