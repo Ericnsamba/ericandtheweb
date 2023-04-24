@@ -9,6 +9,7 @@
     "@headlessui/react": "^1.4.3",
     "@next/font": "^13.2.4",
     "@portabletext/react": "^2.0.0",
+    "@sanity/client": "^5.4.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.0.0",
     "@studio-freight/lenis": "^0.2.28",

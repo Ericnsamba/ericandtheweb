@@ -30,7 +30,7 @@
     "**/*.tsx",
     "__pages/404.ts",
     ".next/types/**/*.ts"
-, "components/SplashScreen/SplashScreen.tsx"  ],
+, "components/SplashScreen/SplashScreen.tsx", "app/(site)/layout.js"  ],
   "exclude": [
     "node_modules"
   ]

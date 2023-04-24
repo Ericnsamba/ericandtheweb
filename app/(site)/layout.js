@@ -11,9 +11,15 @@ import NavBar from "../../components/Navigation/Navbar";
 import "../../styles/globals.css";
 import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 import "../../node_modules/mouse-follower/src/scss/index.scss";
-import AnimatedCursor from "react-animated-cursor";
+// import AnimatedCursor from "react-animated-cursor";
 import localFont from "next/font/local";
 import { Rubik } from "next/font/google";
+
+import dynamic from 'next/dynamic'
+
+const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+  ssr: false
+});
 
 const ClashGrotesk = localFont({
   src: "../../public/fonts/ClashGrotesk-Variable.woff2",
@@ -25,11 +31,12 @@ const rubik = Rubik({
   variable: "--font-rubik",
 });
 
-type RootLayoutTypes = {
-  children: React.ReactNode;
-};
+// type RootLayoutTypes = {
+//   children: React.ReactNode;
+// };
 
-export default function RootLayout({ children }: RootLayoutTypes) {
+// export default function RootLayout({ children }: RootLayoutTypes) {
+export default function RootLayout({ children }) {
   const path = usePathname();
   const router = useRouter();
   const ref = useRef(null);
@@ -58,7 +65,8 @@ export default function RootLayout({ children }: RootLayoutTypes) {
       infinite: false,
     });
 
-    function raf(time: any) {
+    // function raf(time: any) {
+    function raf(time) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
