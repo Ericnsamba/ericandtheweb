@@ -1,3 +1,6 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+/** @type {import('tailwindcss').Config} \*/
+
 module.exports = {
   darkMode: 'class',
   mode: 'jit',
@@ -11,9 +14,6 @@ module.exports = {
       container: {
         // default breakpoints but with 40px removed
         screens: {
-          sm: '600px',
-          md: '728px',
-          lg: '984px',
           // xl: '1240px',
           desktop: '1200px',
           '2xl': '1496px',
@@ -31,9 +31,6 @@ module.exports = {
         '120': '120%',
       },
       colors: {
-        blue: {
-          950: '#17275c',
-        },
         green: '#86FF73',
         light_green: '#80E0A7',
         black: '#212322',
@@ -42,11 +39,23 @@ module.exports = {
         bgGrey: '#f7f9f9',
         gray: '#BAC3D1',
         gray2: '#DEE6F1',
+        pureBlack: '#000',
       },
       fontFamily: {
-        'display': ['"Monument Extended"', 'Helvetica, Arial, sans-serif'],
-        'body': ['"Circular Std"', 'Helvetica, Arial, sans-serif'],
+        ClashGrotesk: ["ClashGrotesk", "Helvetica, Arial, sans-serif"],
+        displayText: ["ClashGrotesk", ...fontFamily.sans],
+        'body': ['var(--font-rubik)', ...fontFamily.sans],
+        bodyText: ['var(--font-rubik)', ...fontFamily.sans],
       },
+      fontSize: {
+        lead: '34px',
+        header_text: '64px',
+        h2_text: '44px',
+        h3_text: '44px',
+        mobile_lead: '24px',
+        mobile_header: '45px',
+
+      }
     },
     typography: (theme) => ({}),
   },
