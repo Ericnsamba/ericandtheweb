@@ -309,9 +309,9 @@ function About() {
               development. I am passionate about creating visually stunning and
               user-centred experiences. I have had the pleasure of working on designs for
               some of the world's leading asset managers, including Generali,
-              Boston Partners, Hermes, and JP Morgan during my time at Kurtosys. 
+              Boston Partners, Hermes, and JP Morgan. 
             </div>
-            <Link href="https://read.cv/eric_manasse">
+            <Link href="https://read.cv/eric_manasse" target="_blank">
               <div className="button p-5 px-8 text-[24px] text-black border-1 border w-fit rounded-full mt-10 ">
                 View Resume
               </div>

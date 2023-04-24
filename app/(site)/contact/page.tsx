@@ -86,7 +86,7 @@ export default function ContactPage() {
           </div>
 
           {/* social links */}
-          <div className="blocks__container flex flex-col lg:flex-row justify-between bg-slate-4000 mt-10 gap-10">
+          <div className="blocks__container flex flex-col lg:flex-row justify-start bg-slate-4000 mt-10 gap-10">
             <div className="bg-black w-full lg:w-5/12 h-[300px] flex flex-col justify-between p-10 rounded-[30px]">
               <div className="">
                 <p className={`text-lead font-displayText text-white`}>

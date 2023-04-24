@@ -11,10 +11,10 @@ import NavBar from "../../components/Navigation/Navbar";
 import "../../styles/globals.css";
 import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 import "../../node_modules/mouse-follower/src/scss/index.scss";
-import MouseFollower from "mouse-follower";
 import AnimatedCursor from "react-animated-cursor";
 import localFont from "next/font/local";
 import { Rubik } from "next/font/google";
+
 const ClashGrotesk = localFont({
   src: "../../public/fonts/ClashGrotesk-Variable.woff2",
   variable: "--font-displayText",
