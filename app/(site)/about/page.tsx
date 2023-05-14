@@ -3,9 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import Image from "next/image";
-import EricPhoto from "../../../public/assets/images/Hero_image.jpg";
 import Link from "next/link";
-// import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import "./about.css";
@@ -18,8 +16,6 @@ gsap.registerPlugin(ScrollTrigger);
 function About() {
   const titleRef = useRef(null);
   const component = useRef(null);
-  const slider = useRef();
-  const bioCopy = useRef(null);
   const [experiences, setExperiences] = useState([]);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -35,9 +31,6 @@ function About() {
 
   useLayoutEffect(() => {
     const timeLine = gsap.timeline({ paused: true });
-    const sections = gsap.utils.toArray(".sectionBlock");
-    const vw = (coef: number) => window.innerWidth * (coef / 100);
-    const vh = (coef: number) => window.innerHeight * (coef / 100);
 
     let ctx = gsap.context(() => {
       //
@@ -48,28 +41,8 @@ function About() {
         start: "top top",
         trigger: ".main",
         pin: ".content",
-        // pinSpacing: false,
-        // end: `${vh(150)}`,
         end: "+=500",
       });
-
-      // let panels = gsap.utils.toArray(".panel");
-      // gsap.to(panels, {
-      //   xPercent: -100 * (panels.length - 1),
-      //   ease: "none",
-      //   scrollTrigger: {
-      //     markers: true,
-      //     start: "top 20%",
-      //     trigger: slider.current,
-      //     pin: true,
-      //     scrub: 1,
-      //     snap: 1 / (panels.length - 1),
-      //     // pinSpacing: false,
-      //     end: () => "+=" + slider.current.offsetWidth,
-      //   },
-      // });
-
-      // ScrollTrigger.refresh();
 
       let desktopTL = gsap.timeline({
         scrollTrigger: {
@@ -99,12 +72,9 @@ function About() {
         }
       );
 
-      const marqueeElements = document.querySelectorAll(".marquee__inner");
-
       // hero__img
-
       gsap.to(".hero__img", {
-        backgroundPosition: "0% 60%",
+        backgroundPosition: "0% 80%",
         ease: "none",
         scrollTrigger: {
           trigger: ".hero__img",
@@ -116,12 +86,9 @@ function About() {
       });
 
       changeText();
-
       animatedParagraph();
       revealElements();
       animatedHeader();
-      // sectionAnimation();
-      // headerAnimation();
     });
 
     return () => ctx.revert();
@@ -136,7 +103,8 @@ function About() {
     );
     fx16Titles.forEach((title) => {
       gsap.from(title.querySelectorAll(".myTitle"), {
-        color: "#86FF73",
+        // color: "#86FF73",
+        opacity: 0.4,
         delay: 2,
         duration: 1.5,
         yPercent: 100,
@@ -145,8 +113,6 @@ function About() {
         scrollTrigger: {
           trigger: title,
           start: "top bottom-=20%",
-          // start: "top center",
-          // end: "center top+=30%",
           scrub: 1.6,
           // pinSpacing: false,
           // markers: true,
@@ -354,8 +320,6 @@ function About() {
               id="my-header"
               className="header flex text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center"
             >
-              {/* Product Designer */}
-              {/* {changeText()} */}
             </h1>
 
             <p className="text-lead font-displayText text-gray mb-5">

@@ -242,8 +242,8 @@ const Cursor = () => {
         // If it does, change the background color
         gsap.to(hoveredElement, {
           duration: 0.4,
-          backgroundColor: '#000',
-          color: '#fff',
+          // backgroundColor: '#000',
+          // color: '#fff',
         });
       } else {
         // Otherwise, set the background color back to the original color
