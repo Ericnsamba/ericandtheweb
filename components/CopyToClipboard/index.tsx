@@ -16,7 +16,7 @@ function CopyToClipboard({ text }: { text: string}) {
   };
 
   return (
-    <button onClick={copyToClipboard} className={`font-body ${copied ? "bg-green": "bg-green/50" } text-black p-[10px] px-[20px] text-base font-normal rounded-full`}>
+    <button onClick={copyToClipboard} className={`font-body change__bg ${copied ? "bg-green": "bg-green/50" } text-black p-[10px] px-[20px] text-base font-normal rounded-full`}>
       {copied ? "Copied" : "Copy"}
     </button>
   );

@@ -39,14 +39,14 @@ const NavBar = () => {
 
             <div>
               {/* <ToggleButton /> */}
-              <Link href="https://read.cv/eric_manasse" target="_blank">
+              <Link href="https://read.cv/eric_manasse" target="_blank" className="cursor__grow">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6 text-gray2"
+                  className="w-6 h-6 text-gray2 cursor__grow"
                 >
                   <path
                     stroke-linecap="round"

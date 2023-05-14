@@ -25,8 +25,8 @@ const Navigation = ({ routeNames }: navTypes) => {
           href = "/";
         }
         return (
-            <Link key={index} href={href} className={`${path === href ? "text-green rounded-[10px] border border-green py-[10px] px-5" : "text-white"} capitalize hover:text-green ease-in-out duration-300`}>
-              <p className={` font-bodyText font-normal text-sm`}>{route}</p>
+            <Link key={index} href={href} className={`cursor__grow ${path === href ? "text-green rounded-[10px] border border-green py-[10px] px-5" : "text-white"} capitalize hover:text-green ease-in-out duration-300`}>
+              <p className={`cursor__grow font-bodyText font-normal text-sm`}>{route}</p>
             </Link>
         );
       })}

@@ -11,7 +11,7 @@ import "splitting/dist/splitting-cells.css";
 import "./about.css";
 import { sanityClient } from "../../../utils/client";
 import { SplitTextContent } from "../../../utils/splitTextContent";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CopyToClipboard from "../../../components/CopyToClipboard";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,6 +21,8 @@ function About() {
   const slider = useRef();
   const bioCopy = useRef(null);
   const [experiences, setExperiences] = useState([]);
+  let { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   useEffect(() => {
     sanityClient
@@ -99,8 +101,25 @@ function About() {
 
       const marqueeElements = document.querySelectorAll(".marquee__inner");
 
+      // hero__img
+
+      gsap.to(".hero__img", {
+        backgroundPosition: "0% 60%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero__img",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          // markers: true,
+        },
+      });
+
+      changeText();
+
       animatedParagraph();
       revealElements();
+      animatedHeader();
       // sectionAnimation();
       // headerAnimation();
     });
@@ -206,7 +225,8 @@ function About() {
       SplitTextContent("#my-text", "bio_copy__word");
 
       const fx16Titles = document.querySelectorAll(
-        ".bio_copy[data-splitting][data-effect16]"
+        ".bio_copy"
+        // ".bio_copy[data-splitting][data-effect16]"
       );
 
       fx16Titles.forEach((title) => {
@@ -225,7 +245,7 @@ function About() {
               trigger: title,
               start: "top bottom",
               end: "top top",
-              scrub: 1.4,
+              scrub: 1.8,
             },
           }
         );
@@ -248,7 +268,7 @@ function About() {
               // start: "top center",
               end: "center top+=30%",
               // end: "center top",
-              scrub: 1.4,
+              scrub: 1.8,
               pinSpacing: false,
               // markers: true,
             },
@@ -258,17 +278,84 @@ function About() {
     }
   };
 
+  // header
+  const animatedHeader = () => {
+    if (typeof window !== "undefined") {
+      SplitTextContent("#my-header", "header__char", "char");
+
+      const headerTitle = document.querySelectorAll(".header");
+
+      headerTitle.forEach((title) => {
+        gsap.fromTo(
+          title.querySelectorAll(".header__char"),
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.04,
+            duration: 2,
+            ease: "power4.out",
+            transformOrigin: "0% 50%",
+          }
+        );
+      });
+    }
+  };
+
+  const changeText = () => {
+    const texts = ["Product Designer", "Creative Developer", "UI UX Designer"]; // Array of text strings
+    let index = 0; // Index of current text
+
+    setInterval(() => {
+      index = (index + 1) % texts.length; // Increment index and loop back to beginning
+      const newText = texts[index];
+
+      // Animate the header element with the new text content
+      if (typeof window !== "undefined") {
+        SplitTextContent("#my-header", "header__char", "char");
+
+        const headerTitle = document.querySelectorAll(".header");
+
+        headerTitle.forEach((title) => {
+          title.textContent = newText;
+          gsap.fromTo(
+            title.querySelectorAll(".header__char"),
+            {
+              y: 100,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              stagger: 0.04,
+              duration: 2,
+              ease: "power4.out",
+              transformOrigin: "0% 50%",
+            }
+          );
+        });
+      }
+    }, 2000); // Repeat every 2 seconds
+  };
+
   return (
     <div ref={component} className="cont">
       <div className="main">
         <motion.section
-          className={`flex flex-auto min-h-screen overflow-hidden pt-10 bg-fuchsia-1000`}
+          className={`flex flex-auto min-h-screen overflow-hidden pt-10 pb-24 bg-fuchsia-1000`}
         >
           <div
             className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center px-5 lg:px-0`}
           >
-            <h1 className="text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center">
-              Product Designer
+            <h1
+              id="my-header"
+              className="header flex text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center"
+            >
+              {/* Product Designer */}
+              {/* {changeText()} */}
             </h1>
 
             <p className="text-lead font-displayText text-gray mb-5">
@@ -283,36 +370,35 @@ function About() {
             </div>
 
             {/* bottom row */}
-            <div
-              className={`here__img w-full h-[426px] lg:w-6/12 lg:h-[626px] rounded-[60px] lg:rounded-[120px] bg-gray p-10 items-center justify-end flex flex-col bg-no-repeat `}
+            <motion.div
+              style={{ y }}
+              className={`cursor__grow hero__img w-full h-[426px] lg:w-6/12 lg:h-[626px] rounded-[60px] lg:rounded-[120px] bg-gray p-10 items-center justify-end flex flex-col bg-no-repeat `}
             >
-              <div className="bg-green text-black font-displayText text-mobile_lead lg:text-lead px-[30px] lg:px-[60px] py-5 lg:py-10 rounded-full bg-cover">
+              <div className="cursor__grow bg-green text-black font-displayText text-mobile_lead lg:text-lead px-[30px] lg:px-[60px] py-5 lg:py-10 rounded-full bg-cover">
                 Eric Manasse
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 
         <div className="section2 copy bg-fuchsia-1000 flex flex-col justify-center bg-pink-200h min-h-[60vh] my-10 px-5 lg:px-0">
-          <div className=" w-full lg:w-8/12 lg:mx-auto">
+          <div className=" w-full lg:w-8/12 lg:mx-auto flex flex-col">
             <div
               id="my-text"
-              ref={bioCopy}
-              data-splitting
-              data-effect16
-              className="bio_copy font-displayText text-mobile_lead lg:text-lead"
+              className="cursor__grow bio_copy font-displayText text-mobile_lead lg:text-lead"
             >
-              As a Production designer and Front-end developer, I bring
-              a unique perspective to the table. With my proficiency in
-              technologies such as React.js, React Native, JavaScript, and
-              Next.js, I am able to seamlessly bridge the gap between design and
-              development. I am passionate about creating visually stunning and
-              user-centred experiences. I have had the pleasure of working on designs for
+              As a Production designer and Front-end developer, I bring a unique
+              perspective to the table. With my proficiency in technologies such
+              as React.js, React Native, JavaScript, and Next.js, I am able to
+              seamlessly bridge the gap between design and development. I am
+              passionate about creating visually stunning and user-centred
+              experiences. I have had the pleasure of working on designs for
               some of the world's leading asset managers, including Generali,
-              Boston Partners, Hermes, and JP Morgan within the FinTech industry. 
+              Boston Partners, Hermes, and JP Morgan within the FinTech
+              industry.
             </div>
-            <Link href="https://read.cv/eric_manasse" target="_blank">
-              <div className="button p-5 px-8 text-[24px] text-black border-1 border w-fit rounded-full mt-10 ">
+            <Link href="https://read.cv/eric_manasse" target="_blank" className="w-fit cursor__grow change__bg">
+              <div className="cursor__grow button p-5 px-8 text-[24px] text-black border-1 border w-fit rounded-full mt-10 ">
                 View Resume
               </div>
             </Link>
@@ -343,7 +429,7 @@ function About() {
                 >
                   I have 6+ Years Experience, Mentored by Tim Gaud, Recognitions
                   By Muzli
-                  <span className="bg-green p-10 px-12 text-[54px] text-black rounded-full">
+                  <span className="cursor__grow bg-green p-10 px-12 text-[54px] text-black rounded-full">
                     <a href="https://medium.muz.li/made-with-studio-67-21849f2f5cc4">
                       #33
                     </a>
@@ -359,7 +445,6 @@ function About() {
           {WorkExperience(experiences)}
         </div>
       </div>
-      {/* <div className="spacer h-[10vh]"></div> */}
     </div>
   );
 }

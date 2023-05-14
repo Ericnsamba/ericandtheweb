@@ -16,6 +16,9 @@ import localFont from "next/font/local";
 import { Rubik } from "next/font/google";
 
 import dynamic from 'next/dynamic'
+import MouseFollow from "../../components/Cursor";
+import CustomCursor from "../../components/Cursor";
+import Cursor from "../../components/Cursor";
 
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false
@@ -31,12 +34,12 @@ const rubik = Rubik({
   variable: "--font-rubik",
 });
 
-// type RootLayoutTypes = {
-//   children: React.ReactNode;
-// };
+type RootLayoutTypes = {
+  children: React.ReactNode;
+};
 
-// export default function RootLayout({ children }: RootLayoutTypes) {
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: RootLayoutTypes) {
+// export default function RootLayout({ children }) {
   const path = usePathname();
   const router = useRouter();
   const ref = useRef(null);
@@ -65,8 +68,8 @@ export default function RootLayout({ children }) {
       infinite: false,
     });
 
-    // function raf(time: any) {
-    function raf(time) {
+
+    function raf(time: any) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
@@ -87,35 +90,7 @@ export default function RootLayout({ children }) {
         ) : (
           <>
             <AnimatePresence exitBeforeEnter mode="wait">
-              <AnimatedCursor
-                innerSize={15}
-                outerSize={10}
-                trailingSpeed={4}
-                // color="0, 0, 0"
-                // color="134, 255, 115"
-                color="100, 4, 125"
-                outerAlpha={0}
-                innerScale={5}
-                outerScale={0.5}
-                hasBlendMode={true}
-                innerStyle={{
-                  mixBlendMode: "exclusion",
-                }}
-                clickables={[
-                  "a",
-                  'input[type="text"]',
-                  'input[type="email"]',
-                  'input[type="number"]',
-                  'input[type="submit"]',
-                  'input[type="image"]',
-                  'input[type="Image"]',
-                  "label[for]",
-                  "select",
-                  "textarea",
-                  "button",
-                  ".link",
-                ]}
-              />
+            <Cursor  />
               <div className="data-scroll">{children}</div>
               <div className="nav hidden lg:flex bottom-10 fixed self-center">
                 <NavBar />
