@@ -11,8 +11,6 @@
 html {
   scroll-behavior: initial;
   overflow-y: scroll;
-  cursor: none;
-  /* pointer-events: none; */
   pointer-events: painted;
 }
 
