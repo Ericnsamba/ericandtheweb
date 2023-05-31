@@ -1,93 +1,43 @@
 "use client";
 import { useLayoutEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { HoverTypingText, TypingText } from "../../../components/CustomTexts";
-import Navigation from "../../../components/Navigation/Menu";
 import gsap from "gsap";
 import "./contact.css";
+import { RevealAnimation } from "../../../utils/revealAnimation";
 
 export default function ContactPage() {
   useLayoutEffect(() => {
     let animated = gsap.context(() => {
-      gsap.utils.toArray(".cardCont").forEach((card: any) => {
-        gsap.set(card, {
-          transformStyle: "preserve-3d",
-          transformOrigin: "50% 50% -20px",
-          // transformPerspective: 1000,
-        });
-        const q = gsap.utils.selector(card);
-        const front = q(".cardFront");
-        const back = q(".cardBack");
 
-        gsap.set(back, { rotationX: -90 });
+      RevealAnimation(".header__title", 0.4, 1, -120);
+      RevealAnimation(".sub__header", 0.6, 1.2, 120);
+      RevealAnimation(".socials__container", 0.8, 1.6, 100);
+      RevealAnimation(".contact__container", 1, 1.6, 100);
 
-        const tl = gsap
-          .timeline({ paused: true })
-          .to(front, { duration: 0.5, rotationX: 90 })
-          .to(back, { duration: 0.5, rotationX: 0, z: 20 }, 0);
-        card.addEventListener("mouseenter", function () {
-          tl.play();
-        });
-        card.addEventListener("mouseleave", function () {
-          tl.reverse();
-        });
-      });
     }); //
     return () => animated.revert();
   });
 
-  const motionVariants = {
-    hidden: {
-      opacity: 0,
-      y: 80,
-      transition: {
-        type: "tween",
-        Bounce: 0,
-        // stiffness: 300,
-        // damping: 140,
-      },
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "tween",
-        duration: 0.5,
-        // Bounce: 0.1,
-        // stiffness: 80,
-        // delay: 1.4,
-      },
-    },
-  };
-
-  const linkStyles =
-    "text-sm  log:w-[120px] uppercase font-body font-normal  text-black dark:text-green lg:hover:tracking-[5px] hover:font-bold ease-in-out duration-300 ";
-
   return (
     <div className="flex w-full gap-5  min-h-screen">
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={motionVariants}
+      <div
         className="flex flex-col w-full lg:w-7/12 bg-teal-200n lg:justify-center pt-16 pb-[106px] mx-auto "
       >
         <div className="flex flex-col w-full container justify-between bg-pink-2000 h-full lg:my-20 px-5 lg:px-0">
-          <div className="flex flex-col gap-0  mb-10 bg-slate-3000">
-            <h1 className="font-displayText text-mobile_header lg:text-header_text font-bold text-black leading-120">
+          <div className="overflow-hidden flex flex-col gap-0  mb-10 bg-slate-3000">
+            <h1 className="header__title font-displayText text-mobile_header lg:text-header_text font-bold text-black leading-120">
               Get in touch
             </h1>
             <div className="lg:w-9/12">
-              <p className="text-lead font-displayText text-black font-normal dark:text-green leading-120">
+              <p className="sub__header text-lead font-displayText text-black font-normal dark:text-green leading-120">
                 I like working on existing ideas, get in touch if you have any.
               </p>
             </div>
           </div>
 
           {/* social links */}
-          <div className="blocks__container flex flex-col lg:flex-row justify-start bg-slate-4000 mt-10 gap-10">
-            <div className="bg-black w-full lg:w-5/12 h-[300px] flex flex-col justify-between p-10 rounded-[30px]">
+          <div className="blocks__container overflow-hidden flex flex-col lg:flex-row justify-start bg-slate-4000 mt-10 gap-10">
+            <div className="socials__container bg-black w-full lg:w-5/12 h-[300px] flex flex-col justify-between p-10 rounded-[30px]">
               <div className="">
                 <p className={`text-lead font-displayText text-white`}>
                   Check out more work.
@@ -214,7 +164,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-green w-full lg:w-5/12 h-[300px] flex flex-col justify-between p-10 rounded-[30px]">
+            <div className="contact__container bg-green w-full lg:w-5/12 h-[300px] flex flex-col justify-between p-10 rounded-[30px]">
               <div className="">
                 <p className={`text-lead font-displayText text-black`}>
                   Have any questions?
@@ -228,7 +178,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
