@@ -2,7 +2,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
-import Image from "next/image";
 import Link from "next/link";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
@@ -11,6 +10,7 @@ import { sanityClient } from "../../../utils/client";
 import { SplitTextContent } from "../../../utils/splitTextContent";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CopyToClipboard from "../../../components/CopyToClipboard";
+import { RevealAnimation } from "../../../utils/revealAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 function About() {
@@ -72,7 +72,6 @@ function About() {
         }
       );
 
-      // hero__img
       gsap.to(".hero__img", {
         backgroundPosition: "0% 80%",
         ease: "none",
@@ -88,7 +87,7 @@ function About() {
       changeText();
       animatedParagraph();
       revealElements();
-      animatedHeader();
+      RevealAnimation(".header", 0.4, 1.5, 120);
     });
 
     return () => ctx.revert();
@@ -121,79 +120,11 @@ function About() {
     });
   };
 
-  const sectionAnimation = () => {
-    const container = document.getElementById("container");
-
-    if (!container) {
-      console.error("Could not find element with ID 'section__container'");
-      return;
-    }
-
-    gsap.to(container, {
-      xPercent: -100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        pin: true,
-        scrub: true,
-        // scrub: 4,
-        // snap: true,
-        // start: "top top",
-        end: () => "+=" + container.offsetWidth,
-      },
-    });
-  };
-
-  function createMarquee(speed: number) {
-    const marqueeElements = document.querySelectorAll(".marquee__inner");
-
-    let currentPosition = 0;
-    function animateMarquee() {
-      gsap.to(marqueeElements, {
-        duration: speed,
-        x: (currentPosition -= 10),
-        modifiers: {
-          x: gsap.utils.wrap(-marqueeElements[0].clientWidth, 0),
-          // OR x: gsap.utils.wrap(-marqueeElements[0].scrollWidth, 0),
-        },
-        onComplete: animateMarquee,
-      });
-    }
-
-    animateMarquee();
-  }
-
-  const cloneMyTitle = (
-    numClones: number,
-    containerId: string,
-    title: string
-  ) => {
-    const container = document.getElementById(containerId);
-
-    // console.log(`Container element with ID ".${title}"`);
-    if (!container) {
-      console.error(`Container element with ID "${containerId}" not found.`);
-      return;
-    }
-
-    const myTitle = document.querySelector(`.${title}`);
-
-    for (let i = 0; i < numClones; i++) {
-      const clone = myTitle?.cloneNode(true);
-      if (clone instanceof Node) {
-        container.appendChild(clone);
-      }
-    }
-  };
-
   const animatedParagraph = () => {
     if (typeof window !== "undefined") {
       SplitTextContent("#my-text", "bio_copy__word");
 
-      const fx16Titles = document.querySelectorAll(
-        ".bio_copy"
-        // ".bio_copy[data-splitting][data-effect16]"
-      );
+      const fx16Titles = document.querySelectorAll(".bio_copy");
 
       fx16Titles.forEach((title) => {
         gsap.fromTo(
@@ -245,31 +176,31 @@ function About() {
   };
 
   // header
-  const animatedHeader = () => {
-    if (typeof window !== "undefined") {
-      SplitTextContent("#my-header", "header__char", "char");
+  // const animatedHeader = () => {
+  //   if (typeof window !== "undefined") {
+  //     SplitTextContent("#my-header", "header__char", "char");
 
-      const headerTitle = document.querySelectorAll(".header");
+  //     const headerTitle = document.querySelectorAll(".header");
 
-      headerTitle.forEach((title) => {
-        gsap.fromTo(
-          title.querySelectorAll(".header__char"),
-          {
-            y: 100,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            stagger: 0.04,
-            duration: 2,
-            ease: "power4.out",
-            transformOrigin: "0% 50%",
-          }
-        );
-      });
-    }
-  };
+  //     headerTitle.forEach((title) => {
+  //       gsap.fromTo(
+  //         title.querySelectorAll(".header__char"),
+  //         {
+  //           y: 100,
+  //           opacity: 0,
+  //         },
+  //         {
+  //           y: 0,
+  //           opacity: 1,
+  //           stagger: 0.04,
+  //           duration: 2,
+  //           ease: "power4.out",
+  //           transformOrigin: "0% 50%",
+  //         }
+  //       );
+  //     });
+  //   }
+  // };
 
   const changeText = () => {
     const texts = ["Product Designer", "Creative Developer", "UI UX Designer"]; // Array of text strings
@@ -281,7 +212,7 @@ function About() {
 
       // Animate the header element with the new text content
       if (typeof window !== "undefined") {
-        SplitTextContent("#my-header", "header__char", "char");
+        // SplitTextContent("#my-header", "header__char", "char");
 
         const headerTitle = document.querySelectorAll(".header");
 
@@ -316,11 +247,14 @@ function About() {
           <div
             className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center px-5 lg:px-0`}
           >
-            <h1
-              id="my-header"
-              className="header flex text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center"
-            >
-            </h1>
+            <div className="header_container overflow-hidden">
+              <h1
+                id="my-header"
+                className="header flex text-mobile_header lg:text-header_text font-displayText font-bold text-black text-center"
+              >
+                Product Designer
+              </h1>
+            </div>
 
             <p className="text-lead font-displayText text-gray mb-5">
               Based in London
@@ -361,7 +295,11 @@ function About() {
               Boston Partners, Hermes, and JP Morgan within the FinTech
               industry.
             </div>
-            <Link href="https://read.cv/eric_manasse" target="_blank" className="w-fit cursor__grow change__bg">
+            <Link
+              href="https://read.cv/eric_manasse"
+              target="_blank"
+              className="w-fit cursor__grow change__bg"
+            >
               <div className="cursor__grow button p-5 px-8 text-[24px] text-black border-1 border w-fit rounded-full mt-10 ">
                 View Resume
               </div>

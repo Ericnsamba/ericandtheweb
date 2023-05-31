@@ -5,34 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import profilePhoto from "../../public/assets/images/Hero_image.jpg";
 import gsap from "gsap";
+import { RevealAnimation } from "../../utils/revealAnimation";
 
 const Home = () => {
-
-  // useLayoutEffect(() => {
-  //   let animated = gsap.context(() => {
-  //     const tl = gsap.timeline({ repeat: -1 });
-
-  //     tl.from(".image__wrapper", {
-  //       width: 180,
-  //       ease: "Expo.easeInOut",
-  //       delay: 1,
-  //     }).to(
-  //       ".image__wrapper",
-  //       {
-  //         width: 504,
-  //         ease: "Expo.easeInOut",
-  //         duration: 3,
-  //         yoyo: true,
-  //         transformOrigin: "center bottom",
-  //       },
-  //       "-=0.5"
-  //     );
-
-  //     tl.play();
-  //   });
-
-  //   return () => animated.revert();
-  // });
 
   useLayoutEffect(() => {
     let animated = gsap.context(() => {
@@ -42,24 +17,13 @@ const Home = () => {
       tl.from(".image__wrapper", {
         width: 80,
         ease: "Expo.easeInOut",
-        delay: .4,
+        delay: .9,
       }).to(
         ".image__wrapper",
         {
           width: 504,
           ease: "Expo.easeInOut",
           duration: 1.4,
-          // // yoyo: true,
-          // transformOrigin: "center bottom",
-          // onComplete: () => {
-          //   gsap.to(".portfolio", {
-          //     width: 384,
-          //     fontFamily: 34,
-          //     ease: "Expo.easeInOut",
-          //     duration: 2,
-          //     transformOrigin: "center bottom",
-          //   });
-          // },
         },
         "-=0.5"
       );
@@ -81,7 +45,18 @@ const Home = () => {
         // },
       })
 
+      gsap.from([".header__title", ".portfolio"], {
+        delay: .4,
+        duration: 1.5,
+        yPercent: 100,
+        ease: "power4",
+        stagger: 0.2
+      });
+
       tl.play();
+
+
+      RevealAnimation(".header__title2", 0.6, 1.5, 120);
     });
   
     return () => animated.revert();
@@ -90,14 +65,14 @@ const Home = () => {
 
 
   return (
-    <motion.section className={`flex flex-auto h-screen overflow-hidden px-5`}>
+    <motion.section className={`flex flex-auto h-screen px-5`}>
       <div
         className={`flex flex-col w-full mx-auto bg-red-2000 justify-center items-center gap-[48px]`}
       >
         {/* top row */}
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center lg:items-center gap-[40px] lg:gap-[48px] mb-8">
+        <div className="overflow-hidden  w-full flex flex-col lg:flex-row justify-center items-center lg:items-center gap-[40px] lg:gap-[48px] mb-8">
           <h1
-            className={`header__title lg:text-[140px] text-black leading-[100%] uppercase font-displayText font-bold`}
+            className={`header__title overflow-hidden lg:h-[190px] inline-block lg:text-[140px] text-black leading-[100%] uppercase font-displayText font-bold`}
           >
             Eric
           </h1>
@@ -105,19 +80,19 @@ const Home = () => {
             <Image
               src={profilePhoto}
               alt="Picture of the author"
-              className="hero__image rounded-full object-cover  h-full self-center"
+              className="hero__image rounded-full object-cover  h-full self-center w-full"
             />
           </div>
         </div>
 
         {/* bottom row */}
-        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-[40px] lg:gap-[48px] h-[190px]">
+        <div className="overflow-hidden flex flex-col-reverse lg:flex-row justify-center items-center gap-[40px] lg:gap-[48px] lg:h-[190px]">
           <div className="portfolio py-9 px-24 bg-green text-5xl rounded-full h-full flex justify-center items-center font-displayText font-medium ">
             Portfolio
           </div>
           <h1
             className={
-              "lg:text-[140px] text-black leading-[100%] uppercase font-displayText font-bold"
+              "header__title2 lg:text-[140px] text-black lg:h-[190px] inline-block leading-[100%] uppercase font-displayText font-bold"
             }
           >
             Manasse
