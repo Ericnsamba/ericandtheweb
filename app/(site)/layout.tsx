@@ -13,12 +13,14 @@ import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 import "../../node_modules/mouse-follower/src/scss/index.scss";
 // import AnimatedCursor from "react-animated-cursor";
 import localFont from "next/font/local";
-import { Rubik } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import dynamic from 'next/dynamic'
 import MouseFollow from "../../components/Cursor";
 import CustomCursor from "../../components/Cursor";
 import Cursor from "../../components/Cursor";
+
+
 
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false
@@ -29,9 +31,10 @@ const ClashGrotesk = localFont({
   variable: "--font-displayText",
 });
 
-const rubik = Rubik({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-rubik",
+  display: 'swap',
+  variable: "--font-inter",
 });
 
 type RootLayoutTypes = {
@@ -39,7 +42,10 @@ type RootLayoutTypes = {
 };
 
 export default function RootLayout({ children }: RootLayoutTypes) {
-// export default function RootLayout({ children }) {
+    // new codebase implementation
+  const [timeline, setTimeline] = useState(null);
+  const [loaderFinished, setLoaderFinished] = useState(false);
+  // old codebase implementation
   const path = usePathname();
   const router = useRouter();
   const ref = useRef(null);
@@ -78,24 +84,23 @@ export default function RootLayout({ children }: RootLayoutTypes) {
   }, [isLoading]);
 
   return (
-    <html className={`${ClashGrotesk.className} ${rubik.className}`} lang="en">
+    <html className={`${ClashGrotesk.className} ${inter.className}`} lang="en">
       <head />
       <body
         data-scroll-container
         ref={ref}
-        className={`.mf-container flex bg-white min-h-screen flex-col container mx-auto max-w-screen-xl items-stretch dark:bg-black scrollbar-hide`}
+        className={`.mf-container flex bg-white min-h-screen flex-col  mx-auto dark:bg-black scrollbar-hide`}
       >
         {isLoading && isPathChange ? (
           <SplashScreen finishLoading={() => setIsLoading(false)} />
         ) : (
           <>
-            <AnimatePresence exitBeforeEnter mode="wait">
-            <Cursor  />
-              <div className="data-scroll">{children}</div>
-              <div className="nav hidden lg:flex bottom-10 fixed self-center">
+            <AnimatePresence mode="wait">
+              <div className="nav hidden lg:flex top-10 fixed self-center z-50 bg-pink-400o w-full px-20">
                 <NavBar />
               </div>
-              <MobileMenu />
+            <Cursor  />
+              <div className="data-scroll">{children}</div>
             </AnimatePresence>
           </>
         )}

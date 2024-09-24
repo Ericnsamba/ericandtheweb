@@ -1,98 +1,170 @@
-import React from "react";
+"use client";
+import React, { FC, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import gsap from "gsap";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import Button from "../../../components/Atoms/Button";
 
-export default function page() {
+const Home = () => {
+  useLayoutEffect(() => {
+    let animated = gsap.context(() => {
+      const timeline = gsap.timeline({
+        defaults: {
+          ease: "none",
+        },
+        scrollTrigger: {
+          trigger: "#container",
+          pin: true,
+          start: "top",
+          end: "bottom",
+          scrub: 1,
+          markers: false,
+          // pinSpacing: false,
+        },
+      });
+      const circles = gsap.utils.toArray("section.circle");
+      circles.forEach((circle) => {
+        timeline.from(circle, {
+          clipPath: "circle(0% at 50% 50%)",
+          stagger: 1,
+        });
+      });
+    });
+
+    return () => animated.revert();
+  }, []);
+
   return (
-    <div className="6/12 container mx-auto my-32">
-      <img
-        data-scroll
-        data-scroll-speed="2"
-        src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ="
-        className="w-full h-[400px]"
-      />
-      <p className="text-1 my-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-        voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-        fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-        accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-        molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-        officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-        nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-        error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis
-        modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias
-        error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt
-        dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed
-        amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
-        temporibus enim commodi iusto libero magni deleniti quod quam
-        consequuntur! Commodi minima excepturi repudiandae velit hic maxime
-        doloremque. Quaerat provident commodi consectetur veniam similique ad
-        earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
-        fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores
-        labore suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto
-        ab laudantium modi minima sunt esse temporibus sint culpa, recusandae
-        aliquam numquam totam ratione voluptas quod exercitationem fuga.
-        Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!
-      </p>
-      <img
-        data-scroll
-        data-scroll-speed="2"
-        src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ="
-        className="w-full h-[400px]"
-      />
-      <p className="text-2 my-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-        voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-        fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-        accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-        molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-        officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-        nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-        error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis
-        modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias
-        error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt
-        dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed
-        amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
-        temporibus enim commodi iusto libero magni deleniti quod quam
-        consequuntur! Commodi minima excepturi repudiandae velit hic maxime
-        doloremque. Quaerat provident commodi consectetur veniam similique ad
-        earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
-        fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores
-        labore suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto
-        ab laudantium modi minima sunt esse temporibus sint culpa, recusandae
-        aliquam numquam totam ratione voluptas quod exercitationem fuga.
-        Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!
-      </p>
-      <img
-        data-scroll
-        data-scroll-speed="2"
-        src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ="
-        className="w-full h-[400px]"
-      />
-      <p className="text-3 my-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-        voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-        fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-        accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-        molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-        officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-        nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-        error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis
-        modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias
-        error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt
-        dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed
-        amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
-        temporibus enim commodi iusto libero magni deleniti quod quam
-        consequuntur! Commodi minima excepturi repudiandae velit hic maxime
-        doloremque. Quaerat provident commodi consectetur veniam similique ad
-        earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
-        fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores
-        labore suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto
-        ab laudantium modi minima sunt esse temporibus sint culpa, recusandae
-        aliquam numquam totam ratione voluptas quod exercitationem fuga.
-        Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!
-      </p>
-    </div>
+    <>
+      {/* <div className="spacer">Section 01</div> */}
+
+      <div id="container">
+        <section className="min-h-screen">
+          <div className="inner text-black flex self-end items-end">
+            <div id="title_wrapper" className="title_wrapper">
+              <h1
+                className={`header__title Product overflow-hidden inline-block lg:text-[196px] text-black  font-displayText font-medium leading-[196px]`}
+              >
+                Product
+              </h1>
+              <h1
+                className={
+                  "header__title2 Designer lg:text-[196px] text-black inline-block  font-displayText font-medium leading-[196px]"
+                }
+              >
+                Designer
+              </h1>
+            </div>
+            <div className="py-10 min-w-[302px]">
+              <p className="text-2xl font-body">
+                Based in London
+                <br />
+                specialised in UX / UI and
+                <br />
+                Software Development
+              </p>
+            </div>
+          </div>
+        </section>
+        {/* Portfolio Heading */}
+        <section className="circle min-h-screen pt-20 bg-[#f5f5f5]">
+          <div className="flex flex-col inner text-black gap-20">
+            {/* Label */}
+            <div className="h-[43px] w-fit px-6 py-3 rounded-[64px] border border-[#212322] justify-center items-center gap-4 inline-flex">
+              <div className="text-[#212322] text-base font-medium leading-tight">
+                My Portfolio
+              </div>
+            </div>
+            {/* Portfolio items */}
+            <h1 className="font-medium text-black">
+              {" "}
+              <span className="text-gray">
+                Every project is a new opportunity{" "}
+              </span>
+              to redefine what’s possible and elevate modern digital experiences
+              to the next level.
+            </h1>
+          </div>
+        </section>
+        {/* Portfolio items */}
+        <div className="spacer px-20 bg-purple-300n bg-[#f5f5f5] py-20">
+          <div className="inner text-black">
+            <div className="flex flex-row flex-wrap gap-1">
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+              <div className="portfolio_item w-full">
+                <div className="flex gap-2 items-center justify-between w-full bg-slate-400 py-6">
+                  <h3 className="font-medium text-gray">Product Name</h3>
+                  <p className="text-gray">Product Description</p>
+                  <p className="text-gray">Product Location</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="spacer h-screen bg-sky-300n bg-[#f5f5f5]">Section 05</div>
+      <div className="space-y-4 p-20 min-h-screen flex justify-center items-center gap-6 bg-[#796b6b]">
+        {/* Primary button with label and both icons */}
+        <Button
+          state="primary"
+          label="Primary Button"
+          iconLeft={<FiArrowLeft />}
+          iconRight={<FiArrowRight />}
+          mode="default"
+        />
+
+        {/* Secondary button with no icons, contrast mode */}
+        <Button state="secondary" label="Secondary Button" mode="contrast" />
+
+        {/* Accent button with right icon only */}
+        <Button
+          state="accent"
+          label="Accent Button"
+          iconRight={<FiArrowRight />}
+          mode="default"
+        />
+
+        {/* Primary button with no label and left icon only */}
+        <Button state="primary" iconLeft={<FiArrowLeft />} mode="default" />
+      </div>
+    </>
   );
-}
+};
+
+export default Home;

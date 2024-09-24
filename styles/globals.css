@@ -26,21 +26,20 @@ body {
   padding: 0;
 }
 
-h1{
+h1 {
   font-size: 64px;
 }
-h2{
+h2 {
   font-size: 54px;
 }
-h3{
+h3 {
   font-size: 44px;
 }
 
 p {
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
-
 
 .sectionCards {
   gap: 10px;
@@ -66,7 +65,6 @@ p {
   writing-mode: vertical-lr;
 }
 
-
 .progress-bar {
   position: fixed;
   top: 0;
@@ -90,11 +88,11 @@ p {
   justify-content: center;
   /* align-items: center; */
   border-radius: 10px;
-  border: 1px solid #DEE6F1;
+  border: 1px solid #dee6f1;
 }
 
 button .menuToggle {
-  border: 1px solid #DEE6F1;
+  border: 1px solid #dee6f1;
 }
 
 span.whitespace {
@@ -102,11 +100,11 @@ span.whitespace {
 }
 
 .content {
-	/* display: flex;
+  /* display: flex;
 	flex-direction: column; */
-	/* width: 50vw; */
-	/* position: relative; */
-	/* padding: var(--page-padding); */
+  /* width: 50vw; */
+  /* position: relative; */
+  /* padding: var(--page-padding); */
 }
 
 h2 {
@@ -124,7 +122,6 @@ h2 {
 .horizontal__item {
   border: 1px solid #efefef;
   padding: 200px 150px;
-
 }
 .horizontal__item:not(:last-child) {
   margin-right: 50px;
@@ -138,20 +135,59 @@ h2 {
 }
 
 .myTitle {
-	/* font-size: 5vw; */
-	/* line-height: 0.8;
+  /* font-size: 5vw; */
+  /* line-height: 0.8;
 	counter-increment: section;
 	text-align: center; */
-	/* display: grid; */
-	/* gap: 2rem; */
+  /* display: grid; */
+  /* gap: 2rem; */
 }
 
-.myTitle::before {
-	/* content: '.'counter(section); */
-	/* font-weight: 400; */
-	/* font-family: area-normal, sans-serif; */
-	/* display: block; */
-	/* font-size: 1rem;
-	margin-bottom: 10vh;
-	text-align: center; */
+.portfolio {
+  /* clip-path: circle(100% at 50% 50%);
+  height: 100vh; */
+  /* background: #f5f5f5; */
+}
+
+
+.spacer {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  justify-items: center;
+  /* margin-bottom: -100vh; */
+}
+section {
+  /* height: 100vh; */
+  grid-area: 1 / 1 / 2 / 2;
+  /* background-color: black; */
+  clip-path: circle(100% at 50% 50%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+section .inner {
+  /* max-width: 900px; */
+  padding: 0 80px;
+}
+section:nth-child(even) {
+  /* background-color: #f5f5f5; */
+  /* margin-bottom: -100vh; */
+}
+
+.circle {
+  /* margin-bottom: -100vh; */
 }

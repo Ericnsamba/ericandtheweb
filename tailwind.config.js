@@ -14,17 +14,8 @@ module.exports = {
       container: {
         // default breakpoints but with 40px removed
         screens: {
-          // xl: '1240px',
-          desktop: '1200px',
-          '2xl': '1496px',
+          // xl: '1440px',
         },
-        // padding: {
-        //   DEFAULT: '0px',
-        //   sm: '0px',
-        //   lg: '0px',
-        //   xl: '0px',
-        //   '2xl': '6rem',
-        // },
       },
       lineHeight: {
         'extra-loose': '2.5',
@@ -42,10 +33,10 @@ module.exports = {
         pureBlack: '#000',
       },
       fontFamily: {
-        ClashGrotesk: ["ClashGrotesk", "Helvetica, Arial, sans-serif"],
-        displayText: ["ClashGrotesk", ...fontFamily.sans],
-        'body': ['var(--font-rubik)', ...fontFamily.sans],
-        bodyText: ['var(--font-rubik)', ...fontFamily.sans],
+        // ClashGrotesk: ["ClashGrotesk", "Helvetica, Arial, sans-serif"],
+        displayText: ["inter", ...fontFamily.sans],
+        'body': ['var(--font-inter)', ...fontFamily.sans],
+        bodyText: ['var(--font-inter)', ...fontFamily.sans],
       },
       fontSize: {
         lead: '34px',
