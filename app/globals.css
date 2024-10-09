@@ -26,3 +26,28 @@ body {
     text-wrap: balance;
   }
 }
+
+h1 {
+  font-size: 96;
+  font-family: "inter";
+}
+h2 {
+  font-size: 88;
+  font-family: "inter";
+}
+h3 {
+  font-size: 80;
+  font-family: "inter";
+}
+h4 {
+  font-size: 72;
+  font-family: "inter";
+}
+h5 {
+  font-size: 64;
+  font-family: "inter";
+}
+p {
+  font-size: 16;
+  font-family: "inter";
+}
