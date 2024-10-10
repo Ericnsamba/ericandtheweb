@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Index() {
   return (
-    <div className="flex justify-between fixed bg-slate-400t w-full p-20">
+    <div className="flex justify-between fixed bg-slate-400t w-full px-20 pt-20">
       <Link
         className="menu_link font-medium text-black"
         scroll={false}

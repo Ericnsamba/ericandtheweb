@@ -18,7 +18,7 @@ export default function index({ project }) {
 
   const { title1, title2, src } = project;
   return (
-    <Link className="link_item" href={`/portfolio/${project.slug}`}>
+    <Link className="link_item" href={`/projects/${project.slug}`}>
       <div
         onMouseEnter={() => {
           setIsActive(true);
