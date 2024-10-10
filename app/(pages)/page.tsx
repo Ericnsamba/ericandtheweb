@@ -2,54 +2,62 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <div className="min-h-screen px-20 pt-[20vh]">
+      <main className="container mx-auto flex flex-col gap-[10vh] row-start-2 items-center sm:items-start w-full bg-red-200t">
+        <div className="hero flex flex-col gap-6 bg-yellow-200t w-full">
+          <div className="h-[204px] justify-start items-center inline-flex self-end gap-[2vw]">
+            <img
+              className="w-[520px] h-[188px]"
+              src="https://via.placeholder.com/520x188"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="flex-col justify-start items-start gap-8 inline-flex">
+              <div className="text-black text-8xl font-medium font-inter uppercase leading-[86.40px] tracking-widest">
+                Eric
+              </div>
+              <div className="text-center text-black text-8xl font-medium font-inter uppercase leading-[86.40px] tracking-widest">
+                Manasse
+              </div>
+            </div>
+          </div>
+          {/*  */}
+          <div className="justify-start items-center gap-[2vw] inline-flex self-start">
+            <div className=" flex-col justify-start items-start gap-[31px] inline-flex">
+              <h1 className="text-black text-8xl font-medium font-inter uppercase leading-[86.40px] tracking-widest">
+                product
+              </h1>
+              <h1 className="text-center text-black text-8xl font-medium font-inter uppercase leading-[86.40px] tracking-widest">
+                designer
+              </h1>
+            </div>
+            <img
+              className="w-[520px] h-[187px]"
+              src="https://via.placeholder.com/520x187"
+            />
+          </div>
         </div>
-      </main> */}
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+
+        {/* bottom hero */}
+        <div className="w-full justify-between flex bg-fuchsia-300t bottom-0 relative items-end">
+          <p className="text-black text-2xl font-normal font-Inter capitalize leading-[32px] tracking-wide">
+            Based in London,Uk
+            <br />
+            specialised in UX / UI and <br />
+            Software Development.
+          </p>
+          <div className="p-2 justify-center items-center gap-2 flex">
+            <div>
+              <span className="text-black text-base font-bold font-inter uppercase leading-snug tracking-tight">
+                Scroll
+              </span>
+              <span className="text-black text-base font-normal font-inter uppercase leading-snug tracking-tight">
+                to See more.
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
@@ -95,7 +103,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }

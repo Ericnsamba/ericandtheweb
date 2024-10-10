@@ -1,10 +1,11 @@
+import { Key } from "react";
 import Project from "@/components/project";
 import ProjectData from "@/data/portfolioData"; // Correct named import
-import { Key } from "react";
+// import "./styles"
 
 export default function Home() {
   return (
-    <main className={``}>
+    <main className={`pb-[10vh]`}>
       <div className="p-20 bg-yellow-500t flex flex-col gap-[30vh] pt-56">
         <div>
           <h2 className="text-black text-7xl uppercase">
@@ -25,9 +26,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`project_container w-[100%] lg:p-20`}>
+      <div className={`project_container w-full lg:p-20`}>
         {ProjectData.map((project: { title1: Key | null | undefined }) => {
-          return <Project project={project} key={project.title1} />;
+          return (
+            <div className="project_item border-black border-t-2 last-of-type:border-b-2" key={project.title1}>
+              <Project project={project} />
+            </div>
+          );
         })}
       </div>
     </main>

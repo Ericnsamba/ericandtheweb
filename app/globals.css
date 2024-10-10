@@ -47,26 +47,30 @@ html.lenis, html.lenis body {
 
 
 h1 {
-  font-size: 96;
+  font-size: 6rem;
   font-family: "inter";
 }
 h2 {
-  font-size: 88;
+  font-size: 5.5rem;
   font-family: "inter";
 }
 h3 {
-  font-size: 80;
+  font-size: 4.5rem;
   font-family: "inter";
 }
 h4 {
-  font-size: 72;
+  font-size: 4.5rem;
   font-family: "inter";
 }
 h5 {
   font-size: 64;
   font-family: "inter";
 }
+h6 {
+  font-size: 1.5rem;
+  font-family: "inter";
+}
 p {
-  font-size: 16;
+  font-size: 1rem;
   font-family: "inter";
 }

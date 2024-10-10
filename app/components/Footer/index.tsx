@@ -3,17 +3,17 @@ import React from "react";
 export default function Footer() {
   return (
     <div
-      className="bg-black flex items-center justify-center  relative h-[800px]"
+      className="bg-black flex items-center justify-center  relative h-screen"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="fixed bottom-0 h-[800px] w-full flex-col justify-start items-center gap-[157px] inline-flex lg:p-20">
+      <div className="fixed bottom-0 h-screen w-full flex-col justify-between items-center inline-flex lg:px-20 py-10">
         <div className="self-stretch justify-between items-start inline-flex">
-          <div className="w-[411px] text-background text-2xl font-medium font-inter leading-loose">
+          <h6 className=" text-background font-medium font-inter">
             Reach out via email or connect with me on LinkedIn
-          </div>
-          <div className="text-background text-[22px] font-medium font-inter leading-[44.80px]">
+          </h6>
+          <h6 className="text-background font-medium font-inter">
             Drop me a message
-          </div>
+          </h6>
         </div>
         <div className="justify-start items-center gap-[100px] inline-flex">
           <div className="w-[845px] text-background text-[88px] font-medium font-inter underline uppercase leading-[96.80px] tracking-widest">
