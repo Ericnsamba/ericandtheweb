@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import "./style.css"
+import "./style.css";
+import MenuLinks from "../menuLinks";
 
 const Header = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -34,11 +35,7 @@ const Header = () => {
       className="fixed top-0 z-10 flex w-full justify-center pt-3"
     >
       <nav className="flex justify-between bg-slate-400t w-full px-20 pt-10 gap-4">
-        <Link
-          className="link font-medium text-black"
-          scroll={false}
-          href="/"
-        >
+        <Link className="link font-medium text-black" scroll={false} href="/">
           <div>
             <p className="text-grey-1 font-bold text-grey_1 text-lg">
               Eric Manasse
@@ -55,35 +52,19 @@ const Header = () => {
             work with me
           </p>
           <div className="flex gap-1 z-10">
-            <p className="font-medium text-black text-lg uppercase">available for work</p>
+            <p className="font-medium text-black text-lg uppercase">
+              available for work
+            </p>
           </div>
         </div>
         <div>
-          <p className="text-grey-1 font-bold text-grey_1 text-lg">
+          <p className="flex text-grey-1 font-bold text-grey_1 text-lg">
             Navigation
           </p>
-          <div className="flex z-10 text-black font-medium text-lg gap-4">
-            <Link
-              className="link font-medium text-black"
-              scroll={false}
-              href="/"
-            >
-              <p className="menu_link font-medium text-black text-lg">Index</p>
-            </Link>
-            <Link
-              className="link font-medium text-black"
-              scroll={false}
-              href="/about"
-            >
-              <p className="menu_link font-medium text-black text-lg">About</p>
-            </Link>
-            <Link
-              className="link font-medium text-black"
-              scroll={false}
-              href="/projects"
-            >
-              <p className="menu_link font-medium text-black text-lg">Projects</p>
-            </Link>
+          <div className="flex text-lg gap-4">
+            <MenuLinks menuName="index" href="/"/> 
+            <MenuLinks menuName="about" href="about"/> 
+            <MenuLinks menuName="projects" href="projects"/> 
           </div>
         </div>
       </nav>
