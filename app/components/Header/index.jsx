@@ -1,10 +1,11 @@
+'use client'
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import "./style.css";
 import MenuLinks from "../menuLinks";
 
-const Header = () => {
+const Header = ({}) => {
   const [isHidden, setIsHidden] = useState(false);
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
@@ -62,9 +63,9 @@ const Header = () => {
             Navigation
           </p>
           <div className="flex text-lg gap-4">
-            <MenuLinks menuName="index" href="/"/> 
-            <MenuLinks menuName="about" href="about"/> 
-            <MenuLinks menuName="projects" href="projects"/> 
+            <MenuLinks className="text-black text-lg uppercase" menuName="index" href="/"/> 
+            <MenuLinks className="text-black text-lg uppercase" menuName="about" href="/about"/> 
+            <MenuLinks className="text-black text-lg uppercase" menuName="projects" href="/projects"/> 
           </div>
         </div>
       </nav>

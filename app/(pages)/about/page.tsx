@@ -2,17 +2,22 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="min-h-screen w-full justify-center items-center bg-slate-400t flex">
-      <div className="w-[1440px] h-[982px] relative ">
-        <img
-          className="w-[217px] h-[263px] left-[1143px] top-[221px] absolute"
-          src="https://via.placeholder.com/217x263"
-        />
-        <div className="w-[737px] h-[258px] left-[80px] top-[221px] absolute text-[#161310] text-[80px] font-medium font-['Inter'] uppercase leading-[88px] tracking-wider">
-          Driven by a passion for innovation{" "}
+    <div className="min-h-screen w-full items-center  flex lg:p-20">
+      <div className="flex flex-col ">
+        <div className="flex w-full bg-slate-400 justify-between mb-[30vh]">
+          <div className="w-6/12">
+            <h2 className="text-black text-[80px] font-medium uppercase leading-[88px] tracking-wider">
+              Driven by a passion for innovation
+            </h2>
+          </div>
+          <img
+            className="w-[217px] h-[263px]"
+            src="https://via.placeholder.com/217x263"
+          />
         </div>
-        <div className="w-[1063px] h-[258px] left-[297px] top-[644px] absolute">
-          <span className="text-[#161310] text-[32px] font-medium font-['Inter'] leading-[44.80px]">
+
+        <div className="lg:w-9/12 w-full self-end">
+          <span className="text-black text-[32px] font-medium leading-[44.80px]">
             Additionally, I have collaborated within the EV Vehicles sector,
             designing cutting-edge digital experiences for one of the world’s
             most renowned vehicle brands,
