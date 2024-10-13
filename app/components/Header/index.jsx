@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
@@ -19,6 +19,11 @@ const Header = ({}) => {
     }
   });
 
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, scale: 12 },
+  };
+
   return (
     <motion.div
       animate={isHidden ? "hidden" : "visible"}
@@ -32,23 +37,31 @@ const Header = ({}) => {
           y: "0%",
         },
       }}
-      transition={{ duration: 0.3 }}
+      transition={{
+        duration: 0.3,
+        delayChildren: 0.5,
+        staggerDirection: -1,
+      }}
       className="fixed top-0 z-10 flex w-full justify-center pt-3"
     >
       <nav className="flex justify-between bg-slate-400t w-full px-20 pt-10 gap-4">
-        <Link className="link font-medium text-black" scroll={false} href="/">
-          <div>
-            <p className="text-grey-1 font-bold text-grey_1 text-lg">
-              Eric Manasse
-            </p>
-            <div className="flex gap-1 z-10">
-              <p className="text-grey font-medium text-black text-lg uppercase">
-                Designer, Developer
+        <motion.div className="link" variants={item}>
+          <Link scroll={false} href="/">
+            <div>
+              <p className="text-grey-1 font-bold text-grey_1 text-lg">
+                Eric Manasse
               </p>
+              <div className="flex gap-1 z-10">
+                <p className="text-grey font-medium text-black text-lg uppercase">
+                  Designer, Developer
+                </p>
+              </div>
             </div>
-          </div>
-        </Link>
-        <div>
+          </Link>
+        </motion.div>
+
+        {/* work with me */}
+        <motion.div variants={item}>
           <p className="text-grey-1 font-bold text-grey_1 text-lg">
             work with me
           </p>
@@ -57,17 +70,30 @@ const Header = ({}) => {
               available for work
             </p>
           </div>
-        </div>
-        <div>
+        </motion.div>
+        {/* menu */}
+        <motion.div variants={item}>
           <p className="flex text-grey-1 font-bold text-grey_1 text-lg">
             Navigation
           </p>
           <div className="flex text-lg gap-4">
-            <MenuLinks className="text-black text-lg uppercase" menuName="index" href="/"/> 
-            <MenuLinks className="text-black text-lg uppercase" menuName="about" href="/about"/> 
-            <MenuLinks className="text-black text-lg uppercase" menuName="projects" href="/projects"/> 
+            <MenuLinks
+              className="text-black text-lg uppercase"
+              menuName="index"
+              href="/"
+            />
+            <MenuLinks
+              className="text-black text-lg uppercase"
+              menuName="about"
+              href="/about"
+            />
+            <MenuLinks
+              className="text-black text-lg uppercase"
+              menuName="projects"
+              href="/projects"
+            />
           </div>
-        </div>
+        </motion.div>
       </nav>
     </motion.div>
   );

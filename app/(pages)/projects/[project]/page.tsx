@@ -1,14 +1,15 @@
 "use client";
-import React, { memo } from "react";
+import React, { memo, FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyData } from "@/data/caseStudyData";
+import Transition from "@/components/Transition";
 
-interface props {
-  params: {};
+interface pageProps {
+  params: any;
 }
 
-const page: FC<props> = ({ params }) => {
+const page: FC<pageProps> = ({ params }) => {
   // Find the project based on the slug in params.project
   // Find the project based on the slug in params.project
   const project = CaseStudyData.find((p) => p.slug === params.project);
@@ -26,7 +27,8 @@ const page: FC<props> = ({ params }) => {
   console.log("🚀 ~ page ~ projects:", CaseStudyData);
 
   return (
-    <div className="flex flex-col min-h-screen w-full pt-[20vh] px-20">
+    <Transition>
+      <div className="flex flex-col min-h-screen w-full pt-[20vh] px-20">
       <div className="flex flex-col gap-[30vh] mb-10">
         <Link href="/projects">
           <div className="flex">All case studies</div>
@@ -116,6 +118,8 @@ const page: FC<props> = ({ params }) => {
         <div className="spacer h-[10vh]" />
       </div>
     </div>
+    </Transition>
+    
   );
 };
 
