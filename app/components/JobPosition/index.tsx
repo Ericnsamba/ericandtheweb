@@ -15,9 +15,9 @@ const JobPosition: React.FC<JobPositionProps> = ({
 }) => {
   return (
     <div
-      className={`${className} w-full py-4 border-b border-black justify-between items-center inline-flex`}
+      className={`${className} w-full py-6 border-b border-black justify-between items-end inline-flex`}
     >
-      <div className="flex-col justify-start items-start gap-2 inline-flex">
+      <div className="flex-col justify-start items-start gap-3 inline-flex">
         <p className="self-stretch text-black text-2xl font-medium leading-[28px] tracking-tight">
           {position}
         </p>
@@ -25,7 +25,7 @@ const JobPosition: React.FC<JobPositionProps> = ({
           {company}
         </p>
       </div>
-      <div className="justify-start items-center gap-6 flex">
+      <div className="justify-start items-end gap-6 flex">
         <p className="text-grey_1 text-base font-normal leading-snug">
         {duration}
         </p>

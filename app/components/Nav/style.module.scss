@@ -1,0 +1,27 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0px;
+    height: 100%;
+    box-sizing: border-box;
+    .body{
+    
+        .linkContainer{
+            perspective: 1200px;
+            perspective-origin: bottom;
+        }
+        a{
+            text-decoration: none;
+            font-size: 24px;
+        }
+    }
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            width: 50%;
+            margin-top: 5px;
+        }
+    }
+}

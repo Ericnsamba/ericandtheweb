@@ -1,0 +1,18 @@
+.menu_link {
+    /* text-transform: uppercase; */
+}
+
+/* mobile nav */
+.header{
+    position: fixed;
+    right: 24px;
+    top: 24px;
+    background-color:#c9fd74;
+    .menu{
+        width: 80vw;
+        height: 650px;
+        // background-color:#c9fd74;
+        border-radius: 25px;
+        position: relative;
+    }
+}

@@ -2,23 +2,24 @@ import { Key } from "react";
 import Project from "@/components/project";
 import ProjectData from "@/data/portfolioData"; // Correct named import
 import Transition from "@/components/Transition";
+import { heading_2 } from "@/utils/styles";
 // import "./styles"
 
-export default function Home() {
+export default function Projects() {
   return (
     <Transition>
-      <section className={`pb-[10vh]`}>
-        <div className="p-20 bg-yellow-500t flex flex-col gap-[30vh] pt-56">
+      <section className={`pb-[10vh] p-6 lg:px-20`}>
+        <div className=" bg-yellow-500t flex flex-col gap-[30vh] lg:pt-[20vh] pb-[10vh] lg:pb-10">
           <div>
-            <h2 className="text-black text-7xl uppercase">
+            <h2 className={`${heading_2}`}>
               Featured
               <br />
               Work
             </h2>
           </div>
-          <div className="flex w-full gap-x-24 bg-neutral-300t justify-end">
-            <p className="text-black text-lg font-medium">Selected Projects</p>
-            <div className="bg-slate-200t w-6/12 self-end">
+          <div className="flex flex-col w-full gap-x-24 bg-neutral-300t justify-end lg:flex-row">
+            {/* <p className="text-black text-lg font-medium mb-6">Selected Projects</p> */}
+            <div className="bg-slate-200t w-full lg:w-6/12 lg:self-end">
               <p className="text-black text-4xl ">
                 A selected set of experiments I&apos;m building as I navigate
                 through ideas and technologies. I learn by testing out and

@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import "./style.css";
+import "./style.module.scss";
 import MenuLinks from "../menuLinks";
 
 const Header = ({}) => {
@@ -42,9 +42,9 @@ const Header = ({}) => {
         delayChildren: 0.5,
         staggerDirection: -1,
       }}
-      className="fixed top-0 z-10 flex w-full justify-center pt-3"
+      className="fixed top-0 z-10 flex w-full justify-center"
     >
-      <nav className="flex justify-between bg-slate-400t w-full px-20 pt-10 gap-4">
+      <nav className="flex justify-between bg-slate-400t w-full px-6 overflow-hidden lg:px-20 pt-10 gap-4">
         <motion.div className="link" variants={item}>
           <Link scroll={false} href="/">
             <div>

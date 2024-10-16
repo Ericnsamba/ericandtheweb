@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Lenis from "lenis";
 import Head from "@/components/Head";
 import Footer from "@/components/Footer";
@@ -14,6 +14,7 @@ import {
   // MotionValue,
   AnimatePresence,
 } from "framer-motion";
+import MobileMenu from "./components/Header/Mobile";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -46,6 +47,9 @@ export default function RootLayout({
       <html lang="en">
         <Head pageProp={undefined} Component={undefined} />
         <body className={`${inter.variable} antialiased`}>
+          <div className="lg:hidden">
+            <MobileMenu />
+          </div>
           <main>{children}</main>
           <Footer />
         </body>

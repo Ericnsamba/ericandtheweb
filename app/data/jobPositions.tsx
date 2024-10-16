@@ -10,7 +10,7 @@ const jobPositions = [
       duration: "2022",
     },
     {
-      position: "Product Designer | Developer",
+      position: "Product Designer / Developer",
       company: "Eventify",
       duration: "2022",
     },
@@ -20,7 +20,7 @@ const jobPositions = [
       duration: "2018",
     },
     {
-      position: "Web Designer/ Developer",
+      position: "Web Designer / Developer",
       company: "Lumico (Pty) Ltd",
       duration: "2015",
     },
