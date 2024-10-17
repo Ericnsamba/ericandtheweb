@@ -1,3 +1,5 @@
+"use client"
+import AnimatedLetters from "@/components/Animations/AnimatedLetters";
 import JobPosition from "@/components/JobPosition";
 import Transition from "@/components/Transition";
 import jobPositions from "@/data/jobPositions";
@@ -10,8 +12,8 @@ export default function About() {
     <Transition>
       <div className="min-h-screen w-full items-center  flex flex-col  p-6 lg:p-20 lg:pt-[24vh] gap-[24vh]">
         <div className="flex flex-col ">
-          <div className="flex w-full bg-slate-400t justify-between gap-10 mb-[24vh] flex-col lg:flex-row">
-            <div className="w-full lg:w-6/12">
+          <div className="flex w-full bg-slate-400t justify-between gap-10 mb-[24vh] flex-col lg:flex-row overflow-hidden">
+            <div className="w-full lg:w-6/12 flex flex-col">
               <h2 className={`${heading_2}`}>
                 Driven by a passion for innovation
               </h2>

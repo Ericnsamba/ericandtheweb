@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const anim = {
   initial: { width: 0 },
@@ -34,7 +35,7 @@ export default function index({ project }) {
           animate={isActive ? "open" : "closed"}
           className={styles.imgContainer}
         >
-          <img src={`/medias/${src}`}></img>
+          <Image src={`/medias/${src}`} width={1000} height={1000} alt={project.slug}/>
         </motion.div>
         <p className="text-black uppercase">{title2}</p>
       </div>

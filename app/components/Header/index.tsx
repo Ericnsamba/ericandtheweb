@@ -72,23 +72,20 @@ const Header = ({}) => {
           </div>
         </motion.div>
         {/* menu */}
-        <motion.div variants={item}>
-          <p className="flex text-grey-1 font-bold text-grey_1 text-lg">
-            Navigation
-          </p>
-          <div className="flex text-lg gap-4">
+        <motion.div variants={item} className="bg-slate-200t flex justify-center items-center">
+          <div className="flex text-2xl gap-4">
             <MenuLinks
-              className="text-black text-lg uppercase"
+              className="text-black text-2xl font-medium"
               menuName="index"
               href="/"
             />
             <MenuLinks
-              className="text-black text-lg uppercase"
+              className="text-black text-2xl font-medium"
               menuName="about"
               href="/about"
             />
             <MenuLinks
-              className="text-black text-lg uppercase"
+              className="text-black text-2xl font-medium"
               menuName="projects"
               href="/projects"
             />

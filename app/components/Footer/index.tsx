@@ -18,7 +18,7 @@ export default function Footer() {
             Drop me a message
           </h6>
         </div>
-        <div className="w-full justify-start items-end lg:items-center lg:gap-[100px] lg:inline-flex lg:flex-col-row flex flex-col  gap-10">
+        <div className="w-full lg:justify-center items-center lg:items-center lg:gap-[100px] lg:inline-flex lg:flex-row flex flex-col  gap-10 self-center">
           <h1 className="lg:w-[845px] text-background text-[8.8vw] lg:text-[88px] font-medium font-inter underline uppercase lg:leading-[96.80px] tracking-widest">
             Hello@ericand
             <br />
@@ -35,7 +35,7 @@ export default function Footer() {
             
           </Magnetic>
         </div>
-        <div className="self-stretch gap-6 flex flex-col justify-between items-start lg:items-center lg:inline-flex">
+        <div className="self-stretch gap-6 flex flex-col lg:flex-row justify-between items-start lg:items-center lg:inline-flex">
           <div className="text-background text-base font-medium font-inter leading-normal">
             © Design and Developed by Eric. Powered by Nextjs & Vercel.
           </div>

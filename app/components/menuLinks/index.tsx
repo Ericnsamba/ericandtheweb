@@ -12,7 +12,7 @@ type navTypes = {
   href: string;
 };
 
-const MenuLinks = ({ menuName, href, className = "" }: navTypes) => {
+const MenuLinks = ({ menuName, href, className }: navTypes) => {
   // const router = useRouter()
   // console.log("🚀 ~ router.asPath ===>:", router)
   // console.log("🚀 ~ usePathname ===>:", usePathname)
@@ -31,7 +31,7 @@ const MenuLinks = ({ menuName, href, className = "" }: navTypes) => {
         className={`cursor__grow flex flex-col justify-start h-auto bg-lime-3003 overflow-hidden gap-0 ${className}`}
       >
         <motion.p
-          className={`cursor__grow menu_link font-medium`}
+          className={`cursor__grow menu_link ${className}`}
           variants={{
             initial: {
               y: 0,
@@ -49,7 +49,7 @@ const MenuLinks = ({ menuName, href, className = "" }: navTypes) => {
           {menuName}
         </motion.p>
         <motion.p
-          className={`cursor__grow menu_link font-medium absolute inset-0`}
+          className={`cursor__grow menu_link absolute inset-0 ${className}`}
           variants={{
             initial: {
               y: "100%",
