@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 // import Header from "@/components/Header";
@@ -7,7 +7,7 @@ import Lenis from "lenis";
 import Head from "@/components/Head";
 import Footer from "@/components/Footer";
 import {
-  // motion,
+  motion,
   // useScroll,
   // useSpring,
   // useTransform,
@@ -15,6 +15,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import MobileMenu from "./components/Header/Mobile";
+import Header from "./components/Header";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -28,7 +29,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  //
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis();
@@ -40,20 +42,56 @@ export default function RootLayout({
     }
 
     requestAnimationFrame(raf);
+
+    // Simulate loading completion
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   }, []);
 
   return (
-    <AnimatePresence mode="wait">
-      <html lang="en">
-        <Head pageProp={undefined} Component={undefined} />
-        <body className={`${inter.variable} antialiased`}>
-          <div className="lg:hidden">
-            <MobileMenu />
-          </div>
-          <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
-    </AnimatePresence>
+    <html lang="en">
+      <Head pageProp={undefined} Component={undefined} />
+      <body className={`${inter.variable} antialiased`}>
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <motion.div
+              // className="fixed inset-0 z-50 flex items-center justify-center bg-blue-500"
+              // initial={{
+              //   y: "100vh",
+              // }}
+              // animate={{
+              //   y: "50vh",
+              // }}
+              // exit={{
+              //   y: 0,
+              //   transition: {
+              //     duration: 5,
+              //     // ease: [0.76, 0, 0.24, 1],
+              //   },
+              // }}
+              // transition={{
+              //   duration: 2,
+              //   ease: [0.76, 0, 0.24, 1],
+              // }}
+            >
+              
+            </motion.div>
+          ) : (
+            <>
+              <div className="lg:hidden">
+                <MobileMenu />
+              </div>
+              <div className="hidden lg:block">
+              <Header />
+              </div>
+
+              <main>{children}</main>
+              <Footer />
+            </>
+          )}
+        </AnimatePresence>
+      </body>
+    </html>
   );
 }

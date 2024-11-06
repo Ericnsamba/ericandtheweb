@@ -1,0 +1,72 @@
+.logo{
+    display: flex;
+    cursor: pointer;
+    gap: 8px;
+    p{
+        margin: 0px;
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        color: #2a2929;
+        font-size: 18px;
+    }
+    .name{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-left: 5px;
+        transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        p{
+            position: relative;
+            transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+            &:nth-of-type(2){
+                padding-left: 0.3em;
+            }
+            &:nth-of-type(3){
+                position: absolute;
+                left: 110px;
+                padding-left: 0.3em;
+            }
+        }
+    }
+    &:hover{
+        .copyright{
+            transform: rotate(360deg);
+        }
+        .name{
+            padding-right: 30px;
+            .codeBy{
+                transform: translateX(-100%);
+            }
+            .eric{
+                transform: translateX(-65px);
+            }
+            .manasse{
+                transform: translateX(-65px);
+            }
+        }
+    }
+}
+
+
+.link{
+    cursor: pointer;
+    width: 164px;
+}
+.menu_link {
+    /* text-transform: uppercase; */
+}
+
+/* mobile nav */
+.header{
+    position: fixed;
+    right: 24px;
+    top: 24px;
+    background-color:#c9fd74;
+    .menu{
+        width: 80vw;
+        height: 650px;
+        // background-color:#c9fd74;
+        border-radius: 25px;
+        position: relative;
+    }
+}

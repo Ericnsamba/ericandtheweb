@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "../Button";
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 import Nav from "../Nav";
 
 const menuContainer = {

@@ -1,39 +1,17 @@
-export const slideIn = {
-    initial: {
-        scaleY: 0
-    },
-    enter: {
-        scaleY: 0
-    },
-    exit: { scaleY: 1 },
-    transition: {
-        duration: 2,
-        ease: [0.22, 1, 0.36, 1]
-    }
-}
-
-export const slideOut = {
-    initial: {
-        scaleY: 1
-    },
-    enter: {
-        scaleY: 0
-    },
-    exit: { scaleY: 0 },
-    transition: {
-        duration: 2,
-        ease: [0.22, 1, 0.36, 1]
-    }
-}
-
 export const perspective = {
     initial: {
         scale: 1,
         y: 0,
+        opacity: 1
     },
     enter: {
         scale: 1,
         y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1.2,
+            ease: [0.76, 0, 0.24, 1]
+        }
     },
     exit: {
         scale: 0.9,
@@ -51,12 +29,16 @@ export const slide = {
         y: "100vh",
     },
     enter: {
-        y: "100vh"
+        y: 0,
+        transition: {
+            duration: 1.5,
+            ease: [0.76, 0, 0.24, 1]
+        }
     },
     exit: {
         y: 0,
         transition: {
-            duration: 1,
+            duration: 1.5,
             ease: [0.76, 0, 0.24, 1]
         }
     }
@@ -69,10 +51,11 @@ export const opacity = {
     enter: {
         opacity: 1,
         transition: {
-            duration: 0.5
+            duration: 0.8,
+            delay: 0.2
         }
     },
     exit: {
-        opacity: 1
+        opacity: 1,
     }
 }

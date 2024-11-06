@@ -1,5 +1,5 @@
 import React from "react";
-import MenuLinks from "@/components/menuLinks";
+import MenuLinks from "@/components/Header/menuLinks";
 import Magnetic from "../Animations/Magnetic/index";
 
 export default function Footer() {

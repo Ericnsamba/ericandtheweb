@@ -74,3 +74,16 @@ p {
   font-size: 1rem;
   font-family: "Inter", sans-serif;;
 }
+
+
+@layer components {
+  .clipped-block {
+    position: relative;
+    /* background-image: url('/public/medias/hero_eric.jpg');  */
+    background-size: cover;
+    background-position: center;
+    mask-image: radial-gradient(circle, rgb(138, 66, 66) 50%, transparent 100%);
+    mask-size: 100% 100%;
+    -webkit-mask-image: radial-gradient(circle, rgb(0, 0, 0) 90%, transparent 100%);
+  }
+}

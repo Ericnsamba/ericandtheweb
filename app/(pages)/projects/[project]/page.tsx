@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CaseStudyData } from "@/data/caseStudyData";
 import Transition from "@/components/Transition";
-import { heading_1, heading_2, text_lg } from "@/utils/styles";
+import { heading_1, heading_2, section_styles, text_lg } from "@/utils/styles";
 
 interface pageProps {
   params: any;
@@ -12,8 +12,13 @@ interface pageProps {
 
 const page: FC<pageProps> = ({ params }) => {
   // Find the project based on the slug in params.project
-  // Find the project based on the slug in params.project
   const project = CaseStudyData.find((p) => p.slug === params.project);
+
+  // Add this: Find the index of current project and determine next project
+  const currentIndex = CaseStudyData.findIndex(
+    (p) => p.slug === params.project
+  );
+  const nextProject = CaseStudyData[(currentIndex + 1) % CaseStudyData.length];
 
   if (!project) {
     return (
@@ -22,17 +27,13 @@ const page: FC<pageProps> = ({ params }) => {
       </div>
     );
   }
-  //
-  console.log("🚀 ~ page ~ params:", params);
-  console.log("🚀 ~ page ~ project:", project);
-  console.log("🚀 ~ page ~ projects:", CaseStudyData);
 
   return (
     <Transition>
-      <section className="flex flex-col min-h-screen w-full p-6 pt-10 lg:pt-[20vh] lg:px-20 overflow-hidden">
-        <div className="flex flex-col gap-[30vh] mb-10">
+      <section className={section_styles}>
+        <div className="flex flex-col w-full gap-[30vh] mb-10">
           <Link href="/projects">
-            <div className="flex">All case studies</div>
+            <p className="flex font-medium">All case studies</p>
           </Link>
           <div className="name_and_date flex w-full justify-between flex-col lg:flex-row gap-6">
             <h1 className={`${heading_1}`}>{project.title}</h1>
@@ -40,7 +41,7 @@ const page: FC<pageProps> = ({ params }) => {
           </div>
         </div>
 
-        <div className="cover_img bg-slate-400 w-screen h-[35vh] lg:w-full lg:h-[60vh] self-center">
+        <div className="cover_img bg-slate-400 w-screen h-[35vh] lg:w-full lg:h-[557px] self-center">
           <Image
             src={`/medias/${project.src}`}
             className="h-full w-full object-cover"
@@ -50,7 +51,7 @@ const page: FC<pageProps> = ({ params }) => {
           />
         </div>
 
-        <div className="lg:container lg:mx-auto flex flex-col gap-32">
+        <div className="lg:container lg:mx-auto flex flex-col gap-32 w-full">
           {/* Overview */}
           <div className="flex flex-col mt-6 lg:mt-32 justify-center gap-10 lg:w-8/12 self-center w-full">
             {/* Description */}
@@ -130,21 +131,26 @@ const page: FC<pageProps> = ({ params }) => {
                 />
               </div>
             ) : null}
-            <div className="p-6 justify-between items-center inline-flex">
-              <p className="text-black text-base font-medium capitalize tracking-tight">
-                Back to home
-              </p>
-              <div className="justify-center items-center gap-3 flex">
-                <p className="text-grey_1 text-base font-medium capitalize tracking-tight">
-                  Next Project
+
+            {/* outcome visuals */}
+            <div className="w-full py-6 justify-between items-center inline-flex">
+              <Link href="/">
+                <p className="text-black text-base font-medium capitalize tracking-tight">
+                  Back to home
                 </p>
+              </Link>
+              <div className="justify-center items-center gap-3 flex">
+                <Link href={`/projects/${nextProject.slug}`}>
+                  <button className="text-grey_1 text-base font-medium capitalize tracking-tight">
+                    Next Project
+                  </button>
+                </Link>
                 <div className="w-6 h-6 flex-col justify-start items-start inline-flex">
-                  <div className="w-6 h-6 pl-[3.19px] pr-[2.81px] pt-[4.70px] pb-[4.90px] justify-center items-center inline-flex bg-black" />
+                  <div className="w-6 h-6 bg-black" />
                 </div>
               </div>
             </div>
           </div>
-          {/* spacer */}
         </div>
       </section>
     </Transition>
