@@ -1,7 +1,5 @@
-.image__wrapper {
-  // width: 340px;
-  height: 412px;
-  position: relative;
+.imgContainer {
+background: #000;
 }
 
 .profile_img {
@@ -9,27 +7,11 @@
   object-fit: cover;
   transform-origin: left;
 }
-
-.reveal {
-  visibility: hidden;
-  position: relative;
-  width: 80%;
-  height: 420px;
-  max-width: 360px;
-  overflow: hidden;
-}
-.image_div {
-  // width: 80%;
-  // height: 420px;
-  // max-width: 360px;
-  // overflow: hidden;
-}
 .reveal_overlay {
   // visibility: hidden;
-  // position: relative;
-  width: 80%;
-  height: 420px;
-  max-width: 360px;
+  position: absolute;
+  width: 100%;
+  height: 547px;
   overflow: hidden;
   // transform-origin: top;
 }

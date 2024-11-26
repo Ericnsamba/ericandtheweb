@@ -1,11 +1,12 @@
 "use client";
 import { Key } from "react";
-import Project from "@/components/project";
+// import Project from "@/components/project";
 import ProjectData from "@/data/portfolioData"; // Correct named import
 import Transition from "@/components/Transition";
 import { heading_2, section_styles } from "@/utils/styles";
 import AnimatedTitle from "@/components/Animations/AnimatedTitle";
 import SlideUpWords from "@/components/Animations/Word/SlideUpWords";
+import Project from "@/components/project";
 // import "./styles"
 
 export default function Projects() {

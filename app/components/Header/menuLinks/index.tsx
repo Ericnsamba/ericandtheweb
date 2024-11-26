@@ -1,7 +1,7 @@
 // "use client"
 import React, { Children } from "react";
 import Link from "next/link";
-// import styles from "./menuStyles.module.css";
+import "./styles.modules.scss";
 import { motion } from "framer-motion";
 // import { usePathname } from "next/navigation";
 // import { useRouter, withRouter } from "next/router";
@@ -13,12 +13,7 @@ type navTypes = {
 };
 
 const MenuLinks = ({ menuName, href, className }: navTypes) => {
-  // const router = useRouter()
-  // console.log("🚀 ~ router.asPath ===>:", router)
-  // console.log("🚀 ~ usePathname ===>:", usePathname)
-  //   const path = usePathname();
   const DURATION = 0.25;
-  //   const STAGGER = 0.025;
 
   return (
     <motion.div
@@ -31,7 +26,7 @@ const MenuLinks = ({ menuName, href, className }: navTypes) => {
         className={`cursor__grow flex flex-col justify-start h-auto bg-lime-3003 overflow-hidden gap-0 ${className}`}
       >
         <motion.p
-          className={`cursor__grow menu_link ${className}`}
+          className={`cursor__grow menu_link mix-blend-difference ${className}`}
           variants={{
             initial: {
               y: 0,
@@ -69,6 +64,7 @@ const MenuLinks = ({ menuName, href, className }: navTypes) => {
       </Link>
     </motion.div>
   );
+
 };
 
 export default MenuLinks;

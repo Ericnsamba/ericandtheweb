@@ -72,7 +72,7 @@ export default function MobileMenu() {
 
   return (
     <motion.div
-      className={`flex p-6  flex-col relative`}
+      className={`flex p-6 flex-col relative border-b-[1px] border-black z-50`}
       variants={menuContainer}
       initial={"closed"}
       animate={isActive ? "open" : "closed"}

@@ -65,24 +65,24 @@ export default function Layout({
         <AnimatePresence  mode="wait">
           {isLoading && isPathChange ? (
             <motion.div
-              // className="fixed inset-0 z-50 flex items-center justify-center bg-blue-500"
-              // initial={{
-              //   y: "100vh",
-              // }}
-              // animate={{
-              //   y: "10vh",
-              // }}
-              // exit={{
-              //   y: 0,
-              //   transition: {
-              //     duration: 2,
-              //     // ease: [0.76, 0, 0.24, 1],
-              //   },
-              // }}
-              // transition={{
-              //   duration: 2,
-              //   ease: [0.76, 0, 0.24, 1],
-              // }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-blue-500"
+              initial={{
+                y: "100vh",
+              }}
+              animate={{
+                y: "10vh",
+              }}
+              exit={{
+                y: 0,
+                transition: {
+                  duration: 2,
+                  // ease: [0.76, 0, 0.24, 1],
+                },
+              }}
+              transition={{
+                duration: 2,
+                ease: [0.76, 0, 0.24, 1],
+              }}
             ></motion.div>
           ) : (
             <>

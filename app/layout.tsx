@@ -17,12 +17,10 @@ import {
 import MobileMenu from "./components/Header/Mobile";
 import Header from "./components/Header";
 
-// If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
 export default function RootLayout({
   children,
@@ -52,28 +50,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head pageProp={undefined} Component={undefined} />
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <AnimatePresence mode="wait">
           {isLoading ? (
             <motion.div
-              // className="fixed inset-0 z-50 flex items-center justify-center bg-blue-500"
-              // initial={{
-              //   y: "100vh",
-              // }}
-              // animate={{
-              //   y: "50vh",
-              // }}
-              // exit={{
-              //   y: 0,
-              //   transition: {
-              //     duration: 5,
-              //     // ease: [0.76, 0, 0.24, 1],
-              //   },
-              // }}
-              // transition={{
-              //   duration: 2,
-              //   ease: [0.76, 0, 0.24, 1],
-              // }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-blue-500"
+              initial={{
+                y: "100vh",
+              }}
+              animate={{
+                y: "0vh",
+              }}
+              exit={{
+                y: 0,
+                transition: {
+                  duration: 5,
+                  // ease: [0.76, 0, 0.24, 1],
+                },
+              }}
+              transition={{
+                duration: 2,
+                ease: [0.76, 0, 0.24, 1],
+              }}
             >
               
             </motion.div>

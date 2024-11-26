@@ -9,12 +9,24 @@ const anim = {
   initial: { width: 0 },
   open: {
     width: "auto",
-    transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
+    height: "5vw",
+    margin: "0 08px",
+    transition: {
+      duration: 0.5,
+      ease: [0.23, 1, 0.32, 1],
+    },
   },
   closed: { width: 0 },
 };
 
-export default function index({ project }) {
+type Project = {
+  title1: string;
+  title2: string;
+  src: string;
+  slug: string;
+};
+
+export default function Index({ project }: { project: Project }) {
   const [isActive, setIsActive] = useState(false);
 
   const { title1, title2, src } = project;
@@ -35,7 +47,13 @@ export default function index({ project }) {
           animate={isActive ? "open" : "closed"}
           className={styles.imgContainer}
         >
-          <Image src={`/medias/${src}`} width={1000} height={1000} alt={project.slug}/>
+          <Image
+          className="object-cover aspect-video"
+            src={`/medias/${src}`}
+            width={1000}
+            height={1000}
+            alt={project.slug}
+          />
         </motion.div>
         <p className="text-black uppercase">{title2}</p>
       </div>

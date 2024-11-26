@@ -1,156 +1,140 @@
-/* eslint-disable @next/next/no-img-element */
+// HeroSection.tsx
 "use client";
+import { useEffect, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { heading_1, heading_2, section_styles, text_lg } from "@/utils/styles";
+import "./HeroSection.css";
 
-import AnimatedLetters from "@/components/Animations/AnimatedLetters";
-import { heading_1 } from "@/utils/styles";
-// import { useState, useEffect } from "react";
+// Register ScrollTrigger
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-// const DynamicClippingImages = () => {
-//   const [viewportWidth, setViewportWidth] = useState(0);
-//   const [viewportHeight, setViewportHeight] = useState(0);
+export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setViewportWidth(window.innerWidth);
-//       setViewportHeight(window.innerHeight);
-//     };
+  useGSAP(
+    () => {
+      const container = document.querySelector(".wrapper");
+      const modal = document.querySelector(".modal");
+      const image = container.querySelector(".wideImage");
 
-//     handleResize(); // Initialize
-//     window.addEventListener("resize", handleResize);
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
+      const itemTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".imageWrap",
+          start: "0%",
+          // end: "bottom 80%",
+          // start: "top 10%",
+          // end: "bottom 80%",
+          scrub: 2,
+          pin: true,
+          markers: true,
+        },
+      });
 
-//   const imageSrc = "/medias/hero_eric.jpg"; // Your image path
-//   const clipWidth = viewportWidth * 0.36; // Adjust the clip width dynamically (50% of viewport width)
-//   const clipHeight = viewportHeight * 0.3; // Adjust the clip height dynamically (30% of viewport height)
-//   const verticalGap = 24; // Fixed vertical gap of 24px between the two rectangles
+      const heroImgTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".heroImg",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
 
-//   return (
-//     <div className="relative w-screen min-h-screen">
-//       {/* SVG definitions for clipping paths */}
-//       <svg width="0" height="0">
-//         <defs>
-//           <clipPath id="myClip1">
-//             <rect
-//               x={`${viewportWidth * 0.1}`}
-//               y={`${viewportHeight * 0.1}`}
-//               width={`${clipWidth}`}
-//               height={`${clipHeight}`}
-//             />
-//           </clipPath>
-//         </defs>
-//       </svg>
-//       <div className="flex">
-//         <AnimatedLetters title="Product" className={heading_1} />
-//         <AnimatedLetters title="Designer" className={heading_1} />
-//         <div className="svg_container">
-//           <svg >
-//             <defs>
-//               <clipPath id="myClip2">
-//                 {/* The y position for the second rect is the first's y + height + 24px gap */}
-//                 <rect y={`${viewportHeight * 0.1 + clipHeight + verticalGap}`} width={`${clipWidth}`} height={`${clipHeight}`} />
-//               </clipPath>
-//             </defs>
-//           </svg>
-//         </div>
-//       </div>
+      const headingTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".heroImg",
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          pin: true,
+        },
+      });
 
-//       {/* First image with the first clip path */}
-//       <img
-//         src={imageSrc}
-//         alt="Clipped Image 1"
-//         className="absolute inset-0 w-full h-auto"
-//         style={{
-//           WebkitClipPath: "url(#myClip1)",
-//           clipPath: "url(#myClip1)",
-//         }}
-//       />
+      heroImgTL.fromTo(
+        ".hero-img__image",
+        { y: 0 },
+        { y: "30%", ease: "none" },
+        0
+      );
 
-//       {/* Second image with the second clip path */}
-//       <img
-//         src={imageSrc}
-//         alt="Clipped Image 2"
-//         className="absolute inset-0 w-full h-auto"
-//         style={{
-//           WebkitClipPath: "url(#myClip2)",
-//           clipPath: "url(#myClip2)",
-//         }}
-//       />
-//     </div>
-//   );
-// };
+      itemTL.fromTo(
+        ".imageWrap",
+        { clipPath: `polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)` },
+        { clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)` }
+      );
+      itemTL.fromTo(image, { scale: 0.5 }, { scale: 1 }, 0);
+      itemTL.fromTo(image, { scale: 1.1 }, { scale: 1 }, 0);
 
-// export default DynamicClippingImages;
+      itemTL.fromTo(
+        modal,
+        {
+          bottom: "-20%",
+          // clipPath: `polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%)`,
+          // scale: 1
+        },
+        {
+          bottom: "0%",
+          x: "50%",
+          // clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`,
+          scale: 0.5,
+        },
+        0
+      );
 
+      headingTL.to(".headingWrapper .headingTitle", {
+        opacity: 1,
+      });
 
+      gsap.fromTo(
+        ".headingWrapper .headingTitle",
+        {
+          y: "190%",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.6,
+          ease: "expo.out",
+          stagger: 0.5,
+        }
+      );
 
-
-import { useState, useEffect, useRef } from "react";
-
-const DynamicClippingImages = () => {
-  const [containerRect, setContainerRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setContainerRect({
-          x: rect.x,
-          y: rect.y,
-          width: rect.width,
-          height: rect.height,
-        });
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const imageSrc = "/medias/hero_eric.jpg"; // Your image path
-  const clipWidth = containerRect.width * 0.36;
-  const clipHeight = containerRect.height * 0.42;
-  const verticalGap = 24;
+      // Cleanup function
+      return () => {
+        itemTL.kill();
+        heroImgTL.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div className="relative w-screen min-h-screen p-20">
-      {/* Parent div containing the SVG container */}
-      <div className="flex" ref={containerRef}>
-        <h1 title="Product" className={`{heading_1}`}> Product<br/> designer </h1>
-        <div className="svg_container relative">
-          {/* SVG now has a defined size */}
-          <svg width="100%" height="100%" style={{ backgroundColor: "rgba(0, 0, 255, 0.1)" }}>
-            <defs>
-              <clipPath id="myClip1">
-                <rect
-                  // x={containerRect.x + containerRect.width * 0.1}
-                  // y={containerRect.y + containerRect.height * 0.1}
-                  x={'100%'}
-                  y={'100%'}
-                  width={`${clipWidth}`}
-                  height={`${218}`}
-                />
-              </clipPath>
-            </defs>
-          </svg>
+    <div className={section_styles}>
+      <div ref={containerRef} className="wrapper mt-[14vh]t">
+        <div className="heroImg">
+          <div className="headingWrapper">
+            <h1 className="headingTitle">MY</h1>
+            <h1 className="headingTitle">MAIN</h1>
+            <h1 className="headingTitle">TITLE</h1>
+          </div>
+        </div>
+        <div className="imageWrap">
+          <img
+            className="wideImage"
+            src="https://images.unsplash.com/photo-1720211370947-68088964ae6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Hero image"
+          />
+          <div className="modal">
+            <h2>Modal heading</h2>
+          </div>
         </div>
       </div>
-
-      {/* First image with the first clip path */}
-      <img
-        src={imageSrc}
-        alt="Clipped Image 1"
-        className="absolute inset-0 w-full h-auto"
-        style={{
-          WebkitClipPath: "url(#myClip1)",
-          clipPath: "url(#myClip1)",
-        }}
-      />
+      <section className="section bg-slate-300 w-full"></section>
     </div>
   );
-};
-
-export default DynamicClippingImages;
+}

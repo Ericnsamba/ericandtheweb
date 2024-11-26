@@ -1,0 +1,63 @@
+/* HeroSection.module.css */
+/* .pageContainer {
+  font-family: Helvetica;
+  font-size: 16px;
+  margin: 0;
+  padding-top: 14vh;
+  padding-left: 40px;
+  padding-right: 40px;
+} */
+
+.section {
+  height: 100vh;
+  /* background-color:chocolate ; */
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.wideImage {
+  aspect-ratio: 16/8;
+  object-fit: cover;
+  width: 100%;
+}
+
+.modal {
+  padding: 50px;
+  background: #333;
+  color: rgb(93, 221, 133);
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  z-index: 1000;
+}
+
+.headingWrapper {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 0.9;
+  overflow: hidden;
+}
+
+.headingTitle {
+  margin: 0;
+  padding: 0;
+  line-height: 0.9;
+  display: inline-block;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+}
+
+.heroImg {
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+.my_img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform-origin: top;
+  }
+  
+  .reveal {
+    visibility: hidden;
+    position: relative;
+    // width: 320px;
+    // height: 420px;
+    overflow: hidden;
+  }

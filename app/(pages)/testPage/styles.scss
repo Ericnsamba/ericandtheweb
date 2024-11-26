@@ -1,0 +1,59 @@
+
+
+// .hero-title h1 {
+//   font-size: clamp(3rem, 8vw, 8rem);
+//   line-height: 1;
+//   font-weight: 700;
+//   margin: 0;
+//   color: var(--light);
+//   text-shadow: 2px 2px 20px rgba(136, 8, 8, 0.5);
+// }
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+/*   padding: 0 200px; */
+}
+
+p.text-content {
+  font-size: 22px;
+}
+
+.wide-image {
+  aspect-ratio: 16/8;
+  object-fit: cover;
+  width: 100%;
+}
+
+.modal {
+  padding: 50px;
+  background: #333;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  z-index: 1000;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.heading-wrapper {
+  font-size: 4rem;
+  margin-left: 100px;
+  margin: 0;
+  line-height: 0.9;
+  overflow: hidden;
+}
+
+.heading-wrapper > .heading-title {
+  line-height: 0.9;
+  display: inline-block;
+}
+
