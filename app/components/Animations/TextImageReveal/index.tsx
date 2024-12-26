@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
@@ -29,7 +28,7 @@ export default function TextImageReveal({ title1, title2, src }: { title1: strin
       }}
       className={styles.project}
     >
-      <p className="text-black uppercase">{title1}</p>
+      <p className="text-Lace_Veil uppercase">{title1}</p>
       <motion.div
         variants={anim}
         animate={isActive ? "open" : "closed"}
@@ -43,7 +42,7 @@ export default function TextImageReveal({ title1, title2, src }: { title1: strin
           alt={"image"}
         />
       </motion.div>
-      <p className="text-black uppercase">{title2}</p>
+      <p className="text-Lace_Veil uppercase">{title2}</p>
     </div>
   );
 }

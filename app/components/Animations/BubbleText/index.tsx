@@ -9,7 +9,7 @@ interface BubbleTextProps {
 
 const BubbleText: React.FC<BubbleTextProps> = ({ text, className }) => {
   return (
-    <h2 className={`${className} cursor-pointer`}>
+    <h2 className={`${className} cursor-pointer text-Lace_Veil`}>
       {text.split("").map((char, idx) => (
         <span className={styles.hoverText} key={idx}>
           {char}

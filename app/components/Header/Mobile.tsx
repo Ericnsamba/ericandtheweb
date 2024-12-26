@@ -86,7 +86,7 @@ export default function MobileMenu() {
               </p>
               <div className="flex gap-1 z-10">
                 <motion.p
-                  className={`text-grey font-medium  text-lg`}
+                  className={`text-Lace_Veil font-medium text-lg`}
                   variants={textColor}
                   initial={"closed"}
                   animate={isActive ? "open" : "closed"}

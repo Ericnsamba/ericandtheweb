@@ -1,0 +1,57 @@
+.imgContainer {
+// background-color: #60c793;
+// background: #212322;
+}
+
+.profile_img {
+  height: 100%;
+  object-fit: cover;
+  transform-origin: left;
+}
+.reveal_overlay {
+  // visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 547px;
+  overflow: hidden;
+  // transform-origin: top;
+}
+
+
+.about-intro {
+  width: 75%;
+  margin: 0 auto;
+  // display: flex;
+  gap: 8em;
+}
+
+.about-portrait-img {
+  flex: 1;
+}
+
+.about-portrait {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.about-copy-wrapper {
+  flex: 1.8;
+}
+
+.about-copy-wrapper h1 {
+  margin-bottom: 2em;
+}
+.about-copy-wrapper h1 {
+  margin-bottom: 2em;
+}
+
+.about-copy p {
+font-size: 2rem;
+}
+
+.about-intro .line-wrapper,
+.about-intro .about-copy-title,
+.cv-header .line-wrapper,
+.cv-name h3 .line-wrapper,
+.cv-year .line-wrapper {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

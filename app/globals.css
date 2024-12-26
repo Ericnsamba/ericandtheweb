@@ -1,18 +1,14 @@
+:root {
+  --bg: #0f0f0f;
+  --text: #fff;
+  --text-secondary: #555555;
+  --text-darker: #2f2f2f;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 100 900;
-  /* src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2'); */
-}
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -21,18 +17,60 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 200;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Thin.ttf) format("truetype");
 }
 
-html.lenis, html.lenis body {
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 300;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Book.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 600;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/PPNeueMontreal-Bold.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+
+
+/* lenis */
+html.lenis,
+html.lenis body {
   height: auto;
-   /* color: var(--foreground); */
-  /* background: #ECEBEB; */
-  background: #ededed;
-  font-family: "inter", Helvetica, sans-serif;
 }
 
 .lenis.lenis-smooth {
@@ -50,48 +88,45 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+/* lenis  end */
 
 
 
 h1 {
   font-size: 6rem;
   line-height: 6.2rem;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
+  /* font-family: "PP Neue Montreal"; */
 }
 h2 {
   font-size: 5.5rem;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
 }
 h3 {
   font-size: 4.5rem;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
 }
 h4 {
   font-size: 3.5rem;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
 }
 h5 {
   font-size: 64;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
 }
 h6 {
   font-size: 1.5rem;
-  /* font-family: "Inter", sans-serif; */
+  letter-spacing: -0.02em;
+  line-height: 120%;
 }
 p {
   font-size: 1rem;
-  /* font-family: "Inter", sans-serif; */
-}
-
-
-@layer components {
-  .clipped-block {
-    position: relative;
-    /* background-image: url('/public/medias/hero_eric.jpg');  */
-    background-size: cover;
-    background-position: center;
-    mask-image: radial-gradient(circle, rgb(138, 66, 66) 50%, transparent 100%);
-    mask-size: 100% 100%;
-    -webkit-mask-image: radial-gradient(circle, rgb(0, 0, 0) 90%, transparent 100%);
-  }
+  letter-spacing: -0.02em;
+  line-height: 120%;
+  font-family: "PP Neue Montreal";
 }

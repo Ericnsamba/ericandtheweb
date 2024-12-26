@@ -45,7 +45,7 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
         gsap.fromTo(image, { scale: 1.1 }, { scale: 1 }),
         gsap.fromTo(
           ".imageWrap",
-          { clipPath: `polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%)` },
+          { clipPath: `polygon(22% 15%, 78% 15%, 78% 60%, 22% 60%)` },
           { clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)` }
         )
       ]);
@@ -59,10 +59,10 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
     <div ref={containerRef} className="proj_hero bg-red-300t w-full">
       <div className="wrapper pt-[14vh]t bg-green-300i">
         <div className="header w-full flex justify-between flex-col lg:flex-row gap-6">
-          <h1 className={`heading ${heading_1} break-all`}>{title}</h1>
-          <h1 className={`heading ${heading_1} text-right`}>{year}</h1>
+          <h1 className={`heading text-Lace_Veil ${heading_1} break-all`}>{title}</h1>
+          <h1 className={`heading text-Lace_Veil ${heading_1} text-right`}>{year}</h1>
         </div>
-        <div className="imageWrap bg-coral">
+        <div className="imageWrap bg-back">
           <Image
             className="wideImage w-full h-full"
             src={imageURL}

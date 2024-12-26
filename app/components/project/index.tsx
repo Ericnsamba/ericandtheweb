@@ -41,7 +41,7 @@ export default function Index({ project }: { project: Project }) {
         }}
         className={styles.project}
       >
-        <p className="text-black uppercase">{title1}</p>
+        <p className="text-Lace_Veil uppercase font-medium">{title1}</p>
         <motion.div
           variants={anim}
           animate={isActive ? "open" : "closed"}
@@ -55,7 +55,7 @@ export default function Index({ project }: { project: Project }) {
             alt={project.slug}
           />
         </motion.div>
-        <p className="text-black uppercase">{title2}</p>
+        <p className="text-Lace_Veil uppercase font-medium">{title2}</p>
       </div>
     </Link>
   );

@@ -8,25 +8,25 @@ const ProjectData = [
   {
     title1: "Solve.",
     title2: "Money",
-    src: "la_grange.jpeg",
+    src: "solve_main.png",
     slug: "solve.money",
   },
   {
     title1: "Even",
     title2: "tify",
-    src: "la_grange.jpeg",
+    src: "eventify_main.png",
     slug: "eventify",
   },
   {
     title1: "Peach",
     title2: "Payment",
-    src: "deux_huit_huit.jpeg",
+    src: "Peach_main.png",
     slug: "peachpayment",
   },
   {
     title1: "Bae",
     title2: "Flag",
-    src: "mambo_mambo.jpeg",
+    src: "baeflag_main.png",
     slug: "baeflag",
   },
 ];

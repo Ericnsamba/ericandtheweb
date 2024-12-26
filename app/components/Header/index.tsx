@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import styles from "./styles.module.scss";
 import MenuLinks from "./menuLinks";
+import TransitionLink from "../TransitionLink";
+import FullScreenMenu from "../FullScreenMenu";
 
 const Header = ({}) => {
   const [isHidden, setIsHidden] = useState(false);
@@ -41,54 +43,45 @@ const Header = ({}) => {
         delayChildren: 0.5,
         staggerDirection: -1,
       }}
-      className="fixed top-0 z-10 flex w-full justify-center"
+      className="fixed z-[5] flex w-full justify-center mix-blend-difference bg-lime-200t"
     >
-      <nav className="flex justify-between bg-slate-400t w-full overflow-hidden lg:mx-10 py-10 gap-4 border-b-[1px] border-black">
+      <nav className="flex justify-between bg-slate-400t w-full overflow-hidden lg:mx-10 py-10 gap-4">
         <motion.div className={styles.link} variants={item}>
-          <Link scroll={false} href="/">
-            <div className={styles.logo}>
-              <p className={styles.copyright}>©</p>
-              <div className={styles.name}>
-                <p className={styles.codeBy}>Code by</p>
-                <p className={styles.eric}>Eric</p>
-                <p className={styles.manasse}>Manasse</p>
-              </div>
-            </div>
-          </Link>
+          <FullScreenMenu />
         </motion.div>
 
         {/* work with me */}
         <motion.div variants={item}>
-          <div className="flex gap-1 z-10">
-            <p className="font-normal text-black text-lg line-through mix-blend-difference">
+          <Link scroll={false} href="/">
+            <p className="name text-blend_dark text-sm uppercase font-bold">
+              © Eric Manasse
+            </p>
+          </Link>
+
+          {/* <div className="flex gap-1 z-10">
+            <p className="font-normal text-Lace_Veil text-sm line-through font-sans">
               Available for work
             </p>
-          </div>
+          </div> */}
         </motion.div>
+
         {/* menu */}
         <motion.div
           variants={item}
           className="bg-slate-200t justify-center items-center"
         >
-          <div className="flex text-lg gap-4">
-           
-
-            <Link href="/">
-              <p  className={`${styles.menuLinks} text-black text-base font-normal uppercase relative`}>
-                index
-              </p>
-            </Link>
-            <Link href="/about">
-              <p  className={`${styles.menuLinks} text-black text-base font-normal uppercase relative`}>
-                about
-              </p>
-            </Link>
-            <Link href="/projects">
-              <p  className={`${styles.menuLinks} text-black text-base font-normal uppercase relative`}>
-                Projects
-              </p>
-            </Link>
-          </div>
+          <TransitionLink
+            className={`${styles.menuLinks} text-blend_dark text-sm font-normal uppercase relative`}
+            href="/"
+            label="Let's Talk"
+          />
+          {/* <div className="flex text-lg gap-4">
+            <div className="flex gap-5">
+              <TransitionLink className={`${styles.menuLinks} text-blend_dark text-sm font-normal uppercase relative`} href="/" label="Home" />
+              <TransitionLink className={`${styles.menuLinks} text-blend_dark text-sm font-normal uppercase relative`} href="/about" label="About" />
+              <TransitionLink className={`${styles.menuLinks} text-blend_dark text-sm font-normal uppercase relative`} href="/projects" label="Projects" />
+            </div>
+          </div> */}
         </motion.div>
       </nav>
     </motion.div>

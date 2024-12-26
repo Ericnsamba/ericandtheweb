@@ -1,16 +1,15 @@
-import { FC } from "react";
+"use client"
+import React from "react";
+import { usePathname, useRouter } from "next/navigation"
 
-interface headProps {
-  pageProp: any
-  Component: any
-}
 
-const  Head: FC<headProps> = ({Component, pageProp}) => {
-  console.log("🚀 pageProp:",  pageProp)
+
+const  Head = () => {
+  // console.log("🚀 pageProp: ===>",  useRouter)
   return (
     <>
       <link rel="icon" href="/favicon.png" />
-      <title>Eric &amp; The Web</title>
+      <title>Eric &amp; The Web | {usePathname()}</title>
         <meta
           name="Description"
           content="Product Designer and Developer"

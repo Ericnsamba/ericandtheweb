@@ -8,16 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['var(--font-inter)'],
-        sans: ['var(--font-inter)'],
-      },
       colors: {
-        background: "#ECEBEB",
-        foreground: "var(--background)",
-        black: "#212322",
+        Lace_Veil: "#ECEBEB",
+        black: "#161616",
         coral: "#F27851",
         grey_1: "#8B8C8E",
+        grey_4: "#212322",
+        coral_blend: "#06739A",
         blend_dark: "#CBC8C9"
       },
     },

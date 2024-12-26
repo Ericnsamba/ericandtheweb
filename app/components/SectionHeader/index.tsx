@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({sectionTitle}: SectionHeaderProps) {
   return (
-    <div className="w-full py-10 border-b-[1px] border-black ">
+    <div className="w-full py-10 border-b-[1px] border-Lace_Veil ">
       <AnimatedTitle title={ sectionTitle} className={heading_2 + ""} />
     </div>
   );

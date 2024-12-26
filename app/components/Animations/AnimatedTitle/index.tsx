@@ -1,8 +1,8 @@
 import styles from "./style.module.scss";
 import { useInView, motion } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { slideUp } from "@/components/Animations/Word/anim";
 import { heading_2 } from "@/utils/styles";
+import { slideUp } from "./anim";
 
 export default function AnimatedTitle({
   title,
