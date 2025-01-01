@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { heading_1 } from "@/utils/styles";
+// import { heading_1 } from "@/utils/styles";
 import "./styles.scss";
 
 // Register ScrollTrigger
