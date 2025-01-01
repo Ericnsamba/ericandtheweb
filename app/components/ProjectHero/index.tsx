@@ -71,8 +71,8 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
     <div ref={containerRef} className="proj_hero w-full overflow-hidden bg-yellow-600t">
       <div className="wrapper lg:h-full">
         <div className="header w-full flex justify-between flex-col lg:flex-row gap-6">
-          <h1 ref={titleRef} className={`heading text-Lace_Veil break-all capitalize`}>{title}</h1>
-          <h1 ref={dateRef} className={`heading text-Lace_Veil text-right`}>{year}</h1>
+          <h1 ref={titleRef} className={`portfolio_heading text-Lace_Veil break-all capitalize`}>{title}</h1>
+          <h1 ref={dateRef} className={`portfolio_heading text-Lace_Veil text-right`}>{year}</h1>
         </div>
         <div ref={heroImgRef} className="imageWrap bg-back overflow-hidden bg-green-400t">
           <Image
