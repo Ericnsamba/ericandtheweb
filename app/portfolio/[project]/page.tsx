@@ -114,7 +114,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
               {/* Description */}
               <SlideUpWords
                 phrase={project.description}
-                className="text-Lace_Veil text-lg lg:text-3xl font-medium"
+                className="text-Lace_Veil text-2xl lg:text-3xl font-medium"
               />
 
               <div className="flex-col justify-start items-start inline-flex w-full lg:w-7/12">
@@ -122,7 +122,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                   <p className="w-[50vw] lg:w-[302px] text-Lace_Veil text-lg">
                     Client
                   </p>
-                  <p className="text-Lace_Veil text-lg text-left w-[50vw]">
+                  <p className="text-Lace_Veil text-lg text-left w-[50vw] capitalize">
                     {project.title}
                   </p>
                 </div>
