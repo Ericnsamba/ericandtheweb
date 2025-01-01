@@ -5,7 +5,7 @@ export const CaseStudyData = [
     title1: "solve.", 
     title2: "money",
     description: "Solve.money, a financial application that allows businesses to apply for loans and receive preapprovals within seconds, brought me on as a Product Designer to enhance their dashboard user experience. The previous design created confusion and frustration for users. By applying Jakob’s Law, I reimagined the interface to align with familiar user patterns, delivering an intuitive and seamless experience. Collaborating closely with stakeholders, I maintained a user-centered approach to align the design with the company’s vision, ensuring it addressed both business goals and user needs. This approach simplified navigation, improved platform usability, and ultimately led to increased adoption and enhanced user satisfaction.",
-    src: "solve_money_main.jpeg",
+    src: "solve_money_main.jpg",
     img_1: "img_1.jpg",
     img_2: "img_2.jpg",
     img_3: "img_3.jpg",
