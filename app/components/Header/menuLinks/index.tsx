@@ -1,5 +1,5 @@
 // "use client"
-import React, { Children } from "react";
+import React from "react";
 import Link from "next/link";
 import "./styles.modules.scss";
 import { motion } from "framer-motion";

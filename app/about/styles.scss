@@ -3,20 +3,6 @@
 // background: #212322;
 }
 
-.profile_img {
-  height: 100%;
-  object-fit: cover;
-  transform-origin: left;
-}
-.reveal_overlay {
-  // visibility: hidden;
-  position: absolute;
-  width: 100%;
-  height: 547px;
-  overflow: hidden;
-  // transform-origin: top;
-}
-
 
 .about-intro {
   width: 75%;
@@ -30,6 +16,9 @@
 }
 
 .about-portrait {
+  height: 100%;
+  object-fit: cover;
+  transform-origin: left;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
@@ -46,6 +35,10 @@
 
 .about-copy p {
 font-size: 2rem;
+}
+
+.hero_bg {
+// position: relative !important;
 }
 
 .about-intro .line-wrapper,

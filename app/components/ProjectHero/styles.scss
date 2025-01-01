@@ -1,42 +1,36 @@
-/* HeroSection.module.css */
-/* .pageContainer {
-  font-family: Helvetica;
-  font-size: 16px;
-  margin: 0;
-  padding-top: 14vh;
-  padding-left: 40px;
-  padding-right: 40px;
-} */
-
 .section {
     height: 100vh;
     /* background-color:chocolate ; */
   }
+
+  .header {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    margin-bottom: 60px;
+  }
   
   .wrapper {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     gap: 60px;
     justify-content: center;
     align-items: center;
     position: relative;
+    // min-height: 80vh;
+  }
+
+  .imageWrap {
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    clip-path: polygon(22% 15%, 78% 15%, 78% 60%, 22% 60%);
   }
   
   .wideImage {
-    aspect-ratio: 16/8;
     object-fit: cover;
     width: 100%;
+    // height: 100% !important;
   }
   
-  .modal {
-    padding: 50px;
-    background: #333;
-    color: #5ddd85;
-    position: absolute;
-    bottom: 0;
-    right: 15%;
-    z-index: 1000;
-  }
   
   .headingWrapper {
     font-size: 4rem;
@@ -60,4 +54,28 @@
   .heroImg {
     position: relative;
     width: 100%;
+  }
+
+
+  @media (max-width: 779px) {
+    .proj_hero {
+      // height: 100svh;
+    }
+
+    .imageWrap {
+      // height:370px;
+      min-height: 100%;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 780px) and (max-width: 900px) {
+    .imageWrap {
+      // height: 50svh;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
   }

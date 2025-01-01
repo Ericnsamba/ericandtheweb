@@ -1,12 +1,12 @@
 // HeroSection.tsx
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { heading_1, heading_2, section_styles, text_lg } from "@/utils/styles";
+import { heading_1 } from "@/utils/styles";
 import "./styles.scss";
-import Image from "next/image";
 
 // Register ScrollTrigger
 if (typeof window !== "undefined") {
@@ -15,12 +15,32 @@ if (typeof window !== "undefined") {
 
 export default function ProjectHero({ imageURL, title, year }: { imageURL: string; title: string; year: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const heroImgRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef(null);
+  const dateRef = useRef(null);
 
   useGSAP(
     () => {
       const container = document.querySelector(".wrapper");
-      const modal = document.querySelector(".modal");
+      if (!container) return;
       const image = container.querySelector(".wideImage");
+      if (!image) return;
+
+      const textTL = gsap.timeline();
+
+      textTL.fromTo(
+        titleRef.current,
+        { y: 100 },
+        { y: 0, duration: 1.5, ease: "power4.out" }
+      );
+
+      textTL.fromTo(
+        dateRef.current,
+        { y: 100 },
+        { y: 0, delay: 0.2, duration: 1.5, ease: "power4.out" },
+        "-=1.4"
+      );
+
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -34,14 +54,6 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
       });
 
       tl.add([
-        
-        // const animation = gsap.to(".photo:not(:first-child)", {
-        //   opacity: 1,
-        //   scale: 1,
-        //   duration: 1,
-        //   stagger: 1,
-        // });
-  
         gsap.fromTo(image, { scale: 1.1 }, { scale: 1 }),
         gsap.fromTo(
           ".imageWrap",
@@ -56,13 +68,13 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
   );
 
   return (
-    <div ref={containerRef} className="proj_hero bg-red-300t w-full">
-      <div className="wrapper pt-[14vh]t bg-green-300i">
+    <div ref={containerRef} className="proj_hero w-full overflow-hidden bg-yellow-600t">
+      <div className="wrapper lg:h-full">
         <div className="header w-full flex justify-between flex-col lg:flex-row gap-6">
-          <h1 className={`heading text-Lace_Veil ${heading_1} break-all`}>{title}</h1>
-          <h1 className={`heading text-Lace_Veil ${heading_1} text-right`}>{year}</h1>
+          <h1 ref={titleRef} className={`heading text-Lace_Veil break-all capitalize`}>{title}</h1>
+          <h1 ref={dateRef} className={`heading text-Lace_Veil text-right`}>{year}</h1>
         </div>
-        <div className="imageWrap bg-back">
+        <div ref={heroImgRef} className="imageWrap bg-back overflow-hidden bg-green-400t">
           <Image
             className="wideImage w-full h-full"
             src={imageURL}

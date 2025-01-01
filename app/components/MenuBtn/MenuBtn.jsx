@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./MenuBtn.css";
 
 import gsap from "gsap";
@@ -36,10 +36,10 @@ const MenuBtn = ({ isOpen, toggleMenu }) => {
       onClick={toggleMenu}
     >
       <div className="menu-copy">
-        <p id="menu-open" ref={menuBtnOpen} className="text-Lace_Veil">
+        <p id="menu-open" ref={menuBtnOpen} className="text-grey_1 ">
           Menu
         </p>
-        <p id="menu-text" ref={menuBtnClose} className="text-Lace_Veil">
+        <p id="menu-text" ref={menuBtnClose} className="text-Lace_Veil ">
           Close
         </p>
       </div>

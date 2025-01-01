@@ -2,14 +2,14 @@ const ProjectData = [
   {
     title1: "Ro",
     title2: "am",
-    src: "jomor_design.jpeg",
+    src: "roam_main.jpeg",
     slug: "roam",
   },
   {
     title1: "Solve.",
     title2: "Money",
-    src: "solve_main.png",
-    slug: "solve.money",
+    src: "solve_money_main.jpeg",
+    slug: "solve_money",
   },
   {
     title1: "Even",

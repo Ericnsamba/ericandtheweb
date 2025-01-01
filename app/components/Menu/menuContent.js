@@ -1,26 +1,27 @@
 export const links = [
   { label: "Index", path: "/" },
-  { label: "Projects", path: "/projects" },
   { label: "About", path: "/about" },
+  { label: "Portfolio", path: "/portfolio" },
   { label: "Contact", path: "/contact" },
 ];
 
 export const socials = [
-  { label: "Instagram", url: "https://instagram.com/codegridweb" },
-  { label: "LinkedIn", url: "https://linkedin.com/codegridweb" },
-  { label: "Twitter", url: "https://twitter.com/codegridweb" },
-  { label: "Facebook", url: "https://facebook.com/codegridweb" },
+  { label: "Instagram", url: "https://instagram.com/ericandtheweb" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/ericmanasse/" },
+  { label: "Twitter", url: "https://twitter.com/ericandtheweb" },
+  { label: "Dribble", url: "https://dribbble.com/ericandtheweb" },
+  // { label: "Facebook", url: "https://facebook.com/ericandtheweb" },
 ];
 
 export const address = [
-  "Stefan Markovic",
-  "9 quao Androe Rockfield",
-  "69001 Ontario",
-  "Canada",
+  "Eric Manasse",
+  "Based in London,Uk",
+  "specialized in UX / UI and",
+  "Software Development.",
 ];
 
 export const contactInfo = [
-  "contact@stefanmarkovic.fr",
-  "job@stefanmarkovic.fr",
-  "01 62 31 82 42",
+  "hello@ericandtheweb.com",
+  // "job@ericandtheweb.com",
+  // "01 62 31 82 42",
 ];

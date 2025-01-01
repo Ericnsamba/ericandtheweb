@@ -1,7 +1,7 @@
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
-import { links, footerLinks } from "./data";
-import { perspective, slideUp } from "./anim";
+import { links } from "./data";
+import { slideUp } from "./anim";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

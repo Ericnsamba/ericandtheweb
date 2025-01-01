@@ -1,15 +1,12 @@
 // "use client";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./components/Header";
 import Head from "@/components/Head";
-import MobileMenu from "./components/Header/Mobile";
-import FullScreenMenu from "./components/FullScreenMenu";
 import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 const PPNeueMontreal = localFont({
   src: [
@@ -43,7 +40,10 @@ export default function RootLayout({
         <main className="w-full">
           <Menu />
           {children}
+
+          <div className="hidden lg:block">
           <Footer />
+          </div>
         </main>
       </body>
     </html>

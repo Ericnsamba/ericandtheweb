@@ -5,18 +5,21 @@ import MenuBtn from "../MenuBtn/MenuBtn";
 
 const MenuBar = ({ isOpen, toggleMenu, closeMenu }) => {
   return (
-    <div className="menu-bar">
-      <div className="menu-toggle-wrapper">
+    <div className="menu-bar mix-blend-difference p-6 lg:p-10">
+      <div className="menu-toggle-wrapper w-16">
         <MenuBtn isOpen={isOpen} toggleMenu={toggleMenu} />
       </div>
 
       <div className="logo text-Lace_Veil" onClick={closeMenu}>
         <Link href="/">
-        <p className="text-Lace_Veil font-bold">Eric Manasse</p></Link>
+        <p className="text-Lace_Veil font-bold  text-center">Eric Manasse</p></Link>
       </div>
 
-      <div className="portfolio-year">
-        <p className="text-Lace_Veil">&copy; 2024</p>
+      <div className="portfolio-year w-16">
+      <Link href="/portfolio">
+      <p className="text-coral ">Portfolio</p>
+      </Link>
+        
       </div>
     </div>
   );

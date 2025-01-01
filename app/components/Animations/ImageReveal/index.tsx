@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "./styles.module.scss"
 
@@ -10,12 +10,12 @@ interface ImageRevealProps {
 
 export default function ImageReveal({ src , styles}: ImageRevealProps) {
     useEffect(() => {
-        let revealContainers = document.querySelectorAll(".reveal");
-        let tl = gsap.timeline({ overwrite: true, paused: true });
+        const revealContainers = document.querySelectorAll(".reveal");
+        const tl = gsap.timeline({ overwrite: true, paused: true });
     
         tl.restart(true, false);
         revealContainers.forEach((container) => {
-          let image = container.querySelector("img");
+          const image = container.querySelector("img");
           tl.fromTo(
             container,
             0.8,

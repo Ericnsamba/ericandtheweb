@@ -31,7 +31,7 @@ export default function Index({ project }: { project: Project }) {
 
   const { title1, title2, src } = project;
   return (
-    <Link className="link_item" href={`/projects/${project.slug}`}>
+    <Link className="link_item" href={`/portfolio/${project.slug}`}>
       <div
         onMouseEnter={() => {
           setIsActive(true);
@@ -49,7 +49,7 @@ export default function Index({ project }: { project: Project }) {
         >
           <Image
           className="object-cover aspect-video"
-            src={`/medias/${src}`}
+            src={`/${project.slug}/${src}`}
             width={1000}
             height={1000}
             alt={project.slug}

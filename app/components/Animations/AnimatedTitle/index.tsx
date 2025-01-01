@@ -1,7 +1,6 @@
 import styles from "./style.module.scss";
 import { useInView, motion } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { heading_2 } from "@/utils/styles";
 import { slideUp } from "./anim";
 
 export default function AnimatedTitle({
@@ -24,7 +23,7 @@ export default function AnimatedTitle({
   return (
     <div ref={description} className={styles.description}>
       <div className={styles.body}>
-        <h2 className={`${styles.paragraphSlideUp} ${heading_2} ${className}`}>
+        <h1 className={`${styles.paragraphSlideUp} ${className}`}>
           {title.split(" ").map((word, index) => {
             return (
               <span
@@ -43,7 +42,7 @@ export default function AnimatedTitle({
               </span>
             );
           })}
-        </h2>
+        </h1>
       </div>
     </div>
   );

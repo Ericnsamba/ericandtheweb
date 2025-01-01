@@ -14,6 +14,7 @@ import { links, socials, address, contactInfo } from "./menuContent";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import CustomEase from "gsap/CustomEase";
+import Footer from "../Footer/Footer";
 
 const Menu = () => {
   const init = useRef(false);
@@ -165,7 +166,7 @@ const Menu = () => {
             </div>
             <div className="sub-col">
               {socials.map((social, index) => (
-                <div className="line" key={index}>
+                <div className="line py-1" key={index}>
                   <p className="text-Lace_Veil">
                     <a
                       href={social.url}
@@ -184,18 +185,22 @@ const Menu = () => {
             </div>
           </div>
         </div>
+        {/* col-2 */}
         <div className="col col-2">
           <div className="links">
             {links.map((link, index) => (
-              <div className="link" key={index}>
+              <div className="link p-1" key={index}>
                 <div className="link-wrapper">
                   <Link href={link.path}>
-                    <h1 className="text-Lace_Veil">{link.label}</h1>
+                    <h1 className="text-Lace_Veil text-5xl lg:text-[80px] ">{link.label}</h1>
                   </Link>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+        <div className="hidden lg:flex">
+          <Footer />
         </div>
       </div>
     </div>
