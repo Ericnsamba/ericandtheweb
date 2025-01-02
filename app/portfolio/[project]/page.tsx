@@ -98,11 +98,11 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
           <div className="lg:container lg:mx-auto flex flex-col gap-6 min-h-[342px] w-full p-10 bg-[#2F2F2F] rounded-xl">
             <SlideUpWords
               phrase={restrictedTitle}
-              className="heading font-[800] text-2xl"
+              className="font-[800] text-2xl"
             />
             <SlideUpWords
               phrase={restrictedMessage}
-              className="restricted_text text-3xlt font-medium"
+              className="restricted_text font-medium"
             />
           </div>
         </section>
