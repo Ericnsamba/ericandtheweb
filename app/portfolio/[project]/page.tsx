@@ -102,7 +102,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
             />
             <SlideUpWords
               phrase={restrictedMessage}
-              className="restricted_text font-medium"
+              className="restricted_text"
             />
           </div>
         </section>
@@ -152,7 +152,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                   className="self-start"
                 >
                   <div className="self-start h-[47px] px-8 py-4 bg-black rounded-[64px] border border-Lace_Veil justify-center items-center gap-4 inline-flex">
-                    <div className="text-white text-base font-medium uppercase">
+                    <div className="text-white text-base font-medium uppercase text-Lace_Veil">
                       Visit Website
                     </div>
                   </div>
@@ -164,7 +164,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
             <div className="imagesContainer flex flex-col gap-16 w-screen lg:w-full self-center pt-10">
               {project.img_1 && (
                 <div
-                  className="img img-1 h-[300px] lg:h-[780px] w-full"
+                  className="img img-1 h-[300px] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[1] = el;
                   }}
@@ -181,7 +181,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
 
               {project.img_2 && (
                 <div
-                  className="img img-2 h-[300px] lg:h-[780px] w-full"
+                  className="img img-2 h-[300px] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[2] = el;
                   }}
@@ -197,7 +197,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
               )}
               {project.img_3 && (
                 <div
-                  className="img img-3 h-[300px] lg:h-[780px] w-full"
+                  className="img img-3 h-[300px] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[3] = el;
                   }}

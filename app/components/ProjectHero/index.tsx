@@ -54,7 +54,7 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
       });
 
       tl.add([
-        gsap.fromTo(image, { scale: 1.1 }, { scale: 1 }),
+        gsap.fromTo(image, { scale: 1.2 }, { scale: 1 }),
         gsap.fromTo(
           ".imageWrap",
           { clipPath: `polygon(22% 15%, 78% 15%, 78% 60%, 22% 60%)` },

@@ -7,17 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      Lace_Veil: "#ECEBEB",
+      black: "#161616",
+      coral: "#F27851",
+      grey_1: "#8B8C8E",
+      grey_2: "#555555",
+      grey_4: "#212322",
+      coral_blend: "#06739A",
+      blend_dark: "#CBC8C9"
+    },
     extend: {
-      colors: {
-        Lace_Veil: "#ECEBEB",
-        black: "#161616",
-        coral: "#F27851",
-        grey_1: "#8B8C8E",
-        grey_2: "#555555",
-        grey_4: "#212322",
-        coral_blend: "#06739A",
-        blend_dark: "#CBC8C9"
-      },
+      
     },
   },
   plugins: [],
