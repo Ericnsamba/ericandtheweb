@@ -110,7 +110,7 @@ const CustomCursor = () => {
       window.removeEventListener('mouseover', mouseOverHandler);
       window.removeEventListener('mouseout', mouseOutHandler);
       window.removeEventListener('mousedown', mouseClickHandler);
-      gsap.ticker.remove();
+      gsap.ticker.remove(mouseMoveHandler);
     };
   }, []);
 
