@@ -36,14 +36,21 @@ export default function RootLayout({
 }>) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.4,
-      autoRaf: true,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 2,
     });
 
-    // Listen for the scroll event and log the event data
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
