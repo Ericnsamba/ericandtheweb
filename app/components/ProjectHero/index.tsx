@@ -82,6 +82,7 @@ export default function ProjectHero({ imageURL, title, year }: { imageURL: strin
             layout="responsive"
             width={1000}
             height={1000}
+            loading="eager"
           />
         </div>
       </div>

@@ -5,6 +5,7 @@ import "./contact.css";
 import { gsap } from "gsap";
 import Link from "next/link";
 import { socials } from "@/components/Menu/menuContent";
+// import AnimatedTitle from "@/components/Animations/AnimatedTitle";
 
 const Page = () => {
   const container = useRef();
@@ -37,38 +38,40 @@ const Page = () => {
 
   return (
     <section className="p-6 lg:p-10 pt-28 h-screen flex">
-      <div className="contact-page flex flex-col justify-center lg:justify-end lg:pb-48 pb-20" ref={container}>
+      <div
+        className="contact-page flex flex-col justify-center lg:justify-end lg:pb-48 pb-20"
+        ref={container}
+      >
+        <div className="contact-header absolute top-[96px]">
+          {/* <AnimatedTitle title={"Contact"} className={"text-Lace_Veil"} /> */}
+        </div>
         <div className="mainContainer ">
-
           <div className="col ">
             <div className="where" ref={(el) => (sectionsRef.current[0] = el)}>
+              <div className="title">
+                <p className="text-grey_2">Who</p>
+              </div>
+              <div className="item">
+                <p>Eric Manasse</p>
+              </div>
+              <div className="item">
+                <p>Specialized in UX / UI and</p>
+              </div>
+              <div className="item">
+                <p>Software Development.</p>
+              </div>
+            </div>
+            <div className="vat" ref={(el) => (sectionsRef.current[1] = el)}>
               <div className="title">
                 <p className="text-grey_2">Where</p>
               </div>
               <div className="item">
-                <p>London, Uk</p>
-              </div>
-              <div className="item">
-                <p>Remote</p>
-              </div>
-              {/* <div className="item">
-                <p>37129 . Verona . Italy</p>
-              </div> */}
-            </div>
-            <div className="vat" ref={(el) => (sectionsRef.current[1] = el)}>
-              <div className="title">
-                <p className="text-grey_2">Time Zone</p>
-              </div>
-              <div className="item">
-                <p>GMT / BST</p>
+                <p>Based in London</p>
               </div>
             </div>
           </div>
 
           <div className="col flex mb-10 lg:mb-0 bg-slate-500t px-0">
-            {/* <div className="contact-header">
-              <h1 ref={headerRef}>Contact</h1>
-            </div> */}
             <div
               className="socials"
               ref={(el) => (sectionsRef.current[2] = el)}
@@ -78,28 +81,44 @@ const Page = () => {
               </div>
               <div className="item">
                 <p className="text-lg text-Lace_Veil">
-                  <Link href={socials[0].url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={socials[0].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {socials[0].label}
                   </Link>
                 </p>
               </div>
               <div className="item">
                 <p className="text-lg text-Lace_Veil">
-                  <Link href={socials[1].url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={socials[1].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {socials[1].label}
                   </Link>
                 </p>
               </div>
               <div className="item">
                 <p className="text-lg text-Lace_Veil">
-                  <Link href={socials[3].url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={socials[3].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {socials[3].label}
                   </Link>
                 </p>
               </div>
               <div className="item">
                 <p className="text-lg text-Lace_Veil">
-                  <Link href={socials[2].url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={socials[2].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {socials[2].label}
                   </Link>
                 </p>
@@ -123,7 +142,6 @@ const Page = () => {
 };
 
 export default Page;
-
 
 // import React from "react";
 // import MenuLinks from "@/components/Header/menuLinks";
@@ -161,7 +179,7 @@ export default Page;
 //                 email
 //               </p>
 //             </button>
-            
+
 //           </Magnetic>
 //         </div>
 //         <div className="hidden self-stretch gap-6  flex-col lg:flex-row justify-between items-start lg:items-center lg:inline-flex">
@@ -190,4 +208,3 @@ export default Page;
 //     </main>
 //   );
 // }
-

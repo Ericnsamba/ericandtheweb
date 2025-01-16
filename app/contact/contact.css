@@ -50,7 +50,7 @@
 
 .contact-header h1 {
   position: relative;
-  transform: translateY(64px);
+  /* transform: translateY(64px); */
   will-change: transform;
 }
 

@@ -13,8 +13,6 @@ import ProjectHero from "@/components/ProjectHero";
 import TextImageReveal from "@/components/Animations/TextImageReveal";
 import SlideUpWords from "@/components/Animations/Word/SlideUpWords";
 import { restrictedMessage, restrictedTitle } from "./content";
-// import { div, section } from "framer-motion/client";
-// import MenuLinks from "@/components/MenuLinks";
 
 interface PageProps {
   params: {
@@ -84,7 +82,6 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
   if (!project) {
     return <div>Project not found</div>; // Handle the case where project is undefined
   }
-  // console.log("🚀 ~ project:", `/${project.slug}/${project.img_1}`);
   return (
     <div className={`${section_styles} lg:w-[85%] lg:mx-auto`}>
       <ProjectHero
@@ -175,6 +172,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     alt={project.title}
                     width={1000}
                     height={1000}
+                    loading="eager"
                   />
                 </div>
               )}
@@ -192,6 +190,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     alt={project.title}
                     width={1000}
                     height={1000}
+                    loading="eager"
                   />
                 </div>
               )}
@@ -208,6 +207,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     alt={project.title}
                     width={1000}
                     height={1000}
+                    loading="eager"
                   />
                 </div>
               )}

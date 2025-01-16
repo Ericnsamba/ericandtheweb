@@ -13,7 +13,7 @@ const CustomCursor = () => {
     gsap.set(cursor, {
       xPercent: -50,
       yPercent: -50,
-      scale: 1
+      scale: 4
     });
 
     // Create smooth follow animation
@@ -54,12 +54,13 @@ const CustomCursor = () => {
         target.closest('a') ||
         target.closest('button') ||
         target.getAttribute('role') === 'button' ||
-        target.classList.contains('hover-target');
+        target.classList.contains('hover-target') ||
+        target.classList.contains('menu-item');
 
       // Animate cursor size
       gsap.to(cursor, {
-        scale: isInteractive ? 1.5 : 1,
-        duration: 0.3,
+        scale: isInteractive ? 4 : 1,
+        duration: 0.4,
         ease: "power2.out"
       });
     };

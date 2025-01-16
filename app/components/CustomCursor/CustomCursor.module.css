@@ -1,11 +1,11 @@
 .cursor {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: difference;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   will-change: transform;
 } 

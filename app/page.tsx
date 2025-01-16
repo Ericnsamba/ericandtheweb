@@ -128,13 +128,13 @@ const HomePage = () => {
             <div className="animated_wrapper bg-black transform -translate-x-1/2 -translate-y-1/2">
               <h1
                 id="heading_1"
-                className="animated_name eric text-coral text-[12vw] font-medium uppercase"
+                className="animated_name eric text-coral text-[12vw] font-medium uppercase mix-blend-difference"
                 style={{ visibility: isTextSplit ? "visible" : "hidden" }}
               >
                 Eric Manasse
               </h1>
             </div>
-            <h1 className="heading developer  text-grey_1">
+            <h1 className="heading developer text-grey_1">
               Developer
             </h1>
           </div>

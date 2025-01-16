@@ -55,8 +55,16 @@ export default function About() {
       gsap.to(".about-portrait", {
         clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         delay: 0.6,
-        duration: 1.2,
+        duration: 1.8,
         ease: "hop",
+        
+      });
+      gsap.from(".about-portrait", {
+        delay: 1,
+        duration: 20,
+        scale: 1.2,
+        transformOrigin: "center bottom",
+        ease: "ExpoScaleEase",
       });
 
       gsap.to(".about-copy-wrapper .about-copy-title h1", {
@@ -83,6 +91,7 @@ export default function About() {
                 width={1000}
                 height={1000}
                 className="about-portrait self-end"
+                loading="eager"
               />
               <div className="image_footer w-full h-6 justify-between items-center inline-flex bg-background pt-2">
                 <p className="SelfPortrait text-Lace_Veil text-sm font-bold uppercase leading-normal">
@@ -131,6 +140,7 @@ export default function About() {
             fill
             className="hero_bg object-cover"
             priority
+            loading="eager"
           />
         </div>
       </section>

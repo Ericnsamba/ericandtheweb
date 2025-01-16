@@ -41,7 +41,7 @@ export default function ImageReveal({ src , styles}: ImageRevealProps) {
   return (
     <div className="fadeit">
       <div className={`${styles} reveal`}>
-        <img src={src} className="my_img"/>
+        <img src={src} className="my_img" alt={src}/>
       </div>
     </div>
   );
