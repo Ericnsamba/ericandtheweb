@@ -6,9 +6,9 @@ import MenuBtn from "../MenuBtn/MenuBtn";
 const MenuBar = ({ isOpen, toggleMenu, closeMenu }) => {
   return (
     <div className="menu-bar mix-blend-difference p-6 lg:p-10">
-      <a className="menu-toggle-wrapper w-16">
+      <div className="menu-toggle-wrapper w-16">
         <MenuBtn isOpen={isOpen} toggleMenu={toggleMenu} />
-      </a>
+      </div>
 
       <div className="logo text-Lace_Veil" onClick={closeMenu}>
         <Link href="/">

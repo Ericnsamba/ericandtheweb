@@ -10,16 +10,20 @@ const CustomCursor = () => {
     if (!cursor) return;
 
     // Initialize cursor position and scale
+    const initialX = window.innerWidth / 2; // Get initial mouse X position
+    const initialY = window.innerHeight / 2; // Get initial mouse Y position
     gsap.set(cursor, {
       xPercent: -50,
       yPercent: -50,
-      scale: 4
+      scale: 4,
+      x: initialX, // Set initial X position
+      y: initialY  // Set initial Y position
     });
 
     // Create smooth follow animation
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const mouse = { x: pos.x, y: pos.y };
-    const speed = 0.2;
+    const speed = 0.1;
 
     const xSet = gsap.quickSetter(cursor, "x", "px");
     const ySet = gsap.quickSetter(cursor, "y", "px");
@@ -115,7 +119,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  return <div ref={cursorRef} className={`${styles.cursor} bg-coral`} />;
+  return <div ref={cursorRef} className={`${styles.cursor} bg-Lace_Veil`} />;
 };
 
 export default CustomCursor; 

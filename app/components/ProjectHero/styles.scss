@@ -49,6 +49,7 @@
   .imageWrap {
     position: relative;
     width: 100%;
+    clip-path: polygon(22% 15%, 78% 15%, 78% 60%, 22% 60%);
   }
   
   .heroImg {
@@ -56,8 +57,8 @@
     width: 100%;
   }
 
-
-  @media (max-width: 779px) {
+// Mobile styles
+  @media (max-width: 900px) {
     .proj_hero {
       // height: 100svh;
     }
@@ -68,14 +69,16 @@
       height: 100%;
       position: relative;
       width: 100%;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
   }
 
-  @media (min-width: 780px) and (max-width: 900px) {
-    .imageWrap {
-      // height: 50svh;
-      height: 100%;
-      position: relative;
-      width: 100%;
-    }
-  }
+  // @media (min-width: 780px) and (max-width: 1024px) {
+  //   .imageWrap {
+  //     // height: 50svh;
+  //     height: 100%;
+  //     position: relative;
+  //     width: 100%;
+  //     // clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  //   }
+  // }

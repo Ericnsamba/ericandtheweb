@@ -61,9 +61,9 @@ export default function About() {
       });
       gsap.from(".about-portrait", {
         delay: 1,
-        duration: 20,
+        duration: 1,
         scale: 1.2,
-        transformOrigin: "center bottom",
+        transformOrigin: "center center",
         ease: "ExpoScaleEase",
       });
 

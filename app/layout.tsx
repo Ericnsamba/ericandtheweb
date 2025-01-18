@@ -57,7 +57,9 @@ export default function RootLayout({
     <html lang="en">
       <CustomHead />
       <body className={`${PPNeueMontreal.className} bg-black`}>
-        <CustomCursor />
+        <div className="hidden lg:block">
+          <CustomCursor />
+        </div>
         <main className="w-full">
           <Menu />
           {children}

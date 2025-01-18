@@ -161,7 +161,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
             <div className="imagesContainer flex flex-col gap-16 w-screen lg:w-full self-center pt-10">
               {project.img_1 && (
                 <div
-                  className="img img-1 h-[300px] lg:h-[780px] w-full bg-grey_4"
+                  className="img img-1 h-[50vh] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[1] = el;
                   }}
@@ -179,7 +179,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
 
               {project.img_2 && (
                 <div
-                  className="img img-2 h-[300px] lg:h-[780px] w-full bg-grey_4"
+                  className="img img-2 h-[50vh] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[2] = el;
                   }}
@@ -196,7 +196,7 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
               )}
               {project.img_3 && (
                 <div
-                  className="img img-3 h-[300px] lg:h-[780px] w-full bg-grey_4"
+                  className="img img-3 h-[50vh] lg:h-[780px] w-full bg-grey_4"
                   ref={(el) => {
                     imgRefs.current[3] = el;
                   }}

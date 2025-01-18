@@ -37,10 +37,10 @@ const MenuBtn = ({ isOpen, toggleMenu }) => {
     >
       <div className="menu-copy">
         <p id="menu-open" ref={menuBtnOpen} className="text-grey_1 ">
-          Menu
+          <a>Menu</a>
         </p>
         <p id="menu-text" ref={menuBtnClose} className="text-Lace_Veil ">
-          Close
+          <a>Close</a>
         </p>
       </div>
     </div>
