@@ -8,6 +8,7 @@ import CustomHead from "@/components/Head";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import CustomCursor from "@/components/CustomCursor/CustomCursor";
+import { Analytics } from "@vercel/analytics/react";
 
 const PPNeueMontreal = localFont({
   src: [
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="en">
       <CustomHead />
       <body className={`${PPNeueMontreal.className} bg-black`}>
+        <Analytics />
         <div className="hidden lg:block">
           <CustomCursor />
         </div>
