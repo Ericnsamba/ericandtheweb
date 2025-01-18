@@ -58,7 +58,6 @@ export default function RootLayout({
     <html lang="en">
       <CustomHead />
       <body className={`${PPNeueMontreal.className} bg-black`}>
-        <Analytics />
         <div className="hidden lg:block">
           <CustomCursor />
         </div>
@@ -69,6 +68,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </main>
+        <Analytics />
       </body>
     </html>
   );
