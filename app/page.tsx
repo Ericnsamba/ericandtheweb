@@ -106,12 +106,12 @@ const HomePage = () => {
   return (
     <>
       {showPreloader && (
-        <div className="pre-loader" ref={preloaderRef}>
+        <div className="pre-loader bg-black" ref={preloaderRef}>
           <div className="progress-bar bg-Lace_Veil" ref={progressBarRef}></div>
           <div className="text-wrapper flex w-full h-full text-Lace_Veil justify-center items-center">
             <div className="text_container">
               <p style={{ visibility: isTextSplit ? "visible" : "hidden" }}
-               id="loading_text" className="text flex">Loading...</p>
+               id="loading_text" className="text-4xl flex">Loading...</p>
             </div>
           </div>
         </div>

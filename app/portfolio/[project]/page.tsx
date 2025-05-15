@@ -22,8 +22,6 @@ interface PageProps {
 
 const ProjectDetails: FC<PageProps> = ({ params }) => {
   const project = CaseStudyData.find((p) => p.slug === params.project);
-  // const profileImgRef = useRef<HTMLImageElement | null>(null);
-  // const sectionRef = useRef<HTMLElement | null>(null);
   const heroImgRef = useRef<HTMLDivElement | null>(null);
   const imgRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -170,8 +168,10 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     src={`/${project.slug}/${project.img_1}`}
                     className="h-full w-full object-cover"
                     alt={project.title}
-                    width={1000}
-                    height={1000}
+                    width={1920}
+                    height={1080}
+                    quality={100}
+                    priority={true}
                     loading="eager"
                   />
                 </div>
@@ -188,8 +188,9 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     src={`/${project.slug}/${project.img_2}`}
                     className="h-full w-full object-cover"
                     alt={project.title}
-                    width={1000}
-                    height={1000}
+                    width={1920}
+                    height={1080}
+                    quality={100}
                     loading="eager"
                   />
                 </div>
@@ -205,8 +206,9 @@ const ProjectDetails: FC<PageProps> = ({ params }) => {
                     src={`/${project.slug}/${project.img_3}`}
                     className="h-full w-full object-cover"
                     alt={project.title}
-                    width={1000}
-                    height={1000}
+                    width={1920}
+                    height={1080}
+                    quality={100}
                     loading="eager"
                   />
                 </div>

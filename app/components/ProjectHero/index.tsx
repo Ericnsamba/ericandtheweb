@@ -105,8 +105,10 @@ export default function ProjectHero({
             src={imageURL}
             alt="Hero image"
             layout="responsive"
-            width={1000}
-            height={1000}
+            width={1920}
+            height={1080}
+            quality={100}
+            priority={true}
             loading="eager"
           />
         </div>

@@ -9,17 +9,14 @@ import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./styles.scss";
-import SlideUpWords from "@/components/Animations/Word/SlideUpWords";
 import SectionHeader from "@/components/SectionHeader";
-import AnimatedTitle from "@/components/Animations/AnimatedTitle";
-// import TextImageReveal from "@/components/Animations/TextImageReveal";
-// import Footer from "@/components/Footer/Footer";
+import AnimatedText from "@/components/Animations/AnimatedText";
 
 export default function About() {
   const container = useRef<HTMLDivElement>(null);
-  // const aboutCopyRef = useRef(null);
   const ref = useRef(null);
   const heroImgRef = useRef<HTMLDivElement>(null);
+  const aboutMe = "Hi I'm Eric,  a product designer with a background in development. As designer I play an active role in the product development process, from shaping ideas, designing end-to-end flows, and collaborating with cross-functional teams to deliver elegant solutions that drive impact. Recently, I’ve contributed to the EV sector, crafting digital experiences for a globally renowned luxury vehicle brand. I'm fluent in tools like Figma & design systems, React.js, React Native, Next.js, HTML/CSS, JavaScript, and TailwindCSS. I am a self-driven, self-motivated designer with a growth mindset. Right now, I run a newly founded Design Studio where I help startups and modern businesses build bold, high-impact digital products.";
 
   useEffect(() => {
     gsap.registerPlugin(CustomEase, ScrollTrigger);
@@ -57,7 +54,6 @@ export default function About() {
         delay: 0.6,
         duration: 1.8,
         ease: "hop",
-        
       });
       gsap.from(".about-portrait", {
         delay: 1,
@@ -108,20 +104,34 @@ export default function About() {
           <div className="right_col w-full lg:w-6/12 flex flex-col gap-10 lg:gap-32 justify-between bg-red-200t">
             <div className="flex flex-col gap-10 lg:gap-32">
               <div className="about-copy-title lg:max-w-[80%]">
-                <AnimatedTitle
-                  title={
+                <AnimatedText
+                  text={
                     "Product Designer with over 8 years of experience across design and development."
                   }
-                  className={"title text-Lace_Veil text-4xl lg:text-[40px] font-medium"}
+                  tag="h2"
+                  className="title text-Lace_Veil text-4xl lg:text-[40px] font-medium"
+                  delay={0.8}
+                  duration={1.4}
+                  stagger={0.1}
+                  once={false}
+                  // reverseAnimation={true}
+                  // reverseDelay={0}
+                  // reverseDuration={0.4}
+                  animationType="words"
+                  mask={true}
                 />
               </div>
 
               <div className={`col-start-1 col-span-9 flex flex-col gap-6`}>
-                <SlideUpWords
-                  phrase={
-                    "Hi, I’m Eric Manasse, a Product Designer & Developer based in London. I’ve worked across industries, from creating asset management platforms for financial firms to designing innovative solutions for startups. Recently, I’ve contributed to the EV sector, crafting digital experiences for a globally renowned luxury vehicle brand. With a background in software development, I excel at bridging design and development, ensuring features are both visually engaging and technically feasible."
-                  }
-                  className="text-2xl"
+                <AnimatedText
+                  text={aboutMe}
+                  tag="h2"
+                  className="text-Lace_Veil text-2xl"
+                  delay={2}
+                  duration={1.4}
+                  stagger={0.2}
+                  animationType="lines"
+                  mask={true}
                 />
               </div>
             </div>
@@ -131,7 +141,7 @@ export default function About() {
 
       <section className="hero">
         <div
-          className="about-hero-img w-screen h-[75vh] overflow-hidden my-32 relative"
+          className="about-hero-img w-screen h-[80vh] lg:h-screen overflow-hidden my-32 relative"
           ref={heroImgRef}
         >
           <Image
@@ -149,9 +159,7 @@ export default function About() {
       <section className="flex flex-col w-full min-h-screen bg-slate-300t">
         <div className="flex w-full ">
           <div className="w-full text-Lace_Veil overflow-hidden" ref={ref}>
-            <div className=" w-full">
-              <SectionHeader sectionTitle={"Work Experience"} />
-            </div>
+            <SectionHeader sectionTitle={"Work Experience"} />
           </div>
         </div>
 

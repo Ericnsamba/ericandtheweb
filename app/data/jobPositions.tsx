@@ -1,5 +1,10 @@
 const jobPositions = [
     {
+      position: "Designer | Founder",
+      company: "Projiro",
+      duration: "2025",
+    },
+    {
       position: "Product Designer",
       company: "TheBang",
       duration: "2023 - 2024",

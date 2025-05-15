@@ -1,15 +1,23 @@
 import React from "react";
-// import { heading_2 } from "@/utils/styles";
-import AnimatedTitle from "../Animations/AnimatedTitle";
+import AnimatedText from "../Animations/AnimatedText";
 
 interface SectionHeaderProps {
-    sectionTitle: string;
+  sectionTitle: string;
 }
 
-export default function SectionHeader({sectionTitle}: SectionHeaderProps) {
+export default function SectionHeader({ sectionTitle }: SectionHeaderProps) {
   return (
     <div className="w-full py-10 border-b-[1px] border-Lace_Veil ">
-      <AnimatedTitle title={ sectionTitle} className={""} />
+      <AnimatedText
+        text={sectionTitle}
+        tag="h1"
+        className="text-Lace_Veil"
+        delay={0.2}
+        duration={1.4}
+        stagger={0.3}
+        animationType="words"
+        mask={true}
+      />
     </div>
   );
 }

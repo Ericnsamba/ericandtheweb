@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './CustomCursor.module.css';
@@ -9,13 +10,12 @@ const CustomCursor = () => {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    // Initialize cursor position and scale
+    // Initialize cursor position - with fixed size
     const initialX = window.innerWidth / 2; // Get initial mouse X position
     const initialY = window.innerHeight / 2; // Get initial mouse Y position
     gsap.set(cursor, {
       xPercent: -50,
       yPercent: -50,
-      scale: 4,
       x: initialX, // Set initial X position
       y: initialY  // Set initial Y position
     });
@@ -48,50 +48,18 @@ const CustomCursor = () => {
         return;
       }
 
-      // Show cursor and handle hover states
+      // Show cursor without changing size
       cursor.style.opacity = '1';
-      
-      // Check if element is interactive
-      const isInteractive = 
-        target.tagName.toLowerCase() === 'a' ||
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.getAttribute('role') === 'button' ||
-        target.classList.contains('hover-target') ||
-        target.classList.contains('menu-item');
-
-      // Animate cursor size
-      gsap.to(cursor, {
-        scale: isInteractive ? 4 : 1,
-        duration: 0.4,
-        ease: "power2.out"
-      });
     };
 
-    // Handle mouse click animation
+    // No scaling on click
     const mouseClickHandler = () => {
-      gsap.to(cursor, {
-        scale: 1.8,
-        duration: 0.6,
-        ease: "power2.out",
-        onComplete: () => {
-          gsap.to(cursor, {
-            scale: 1,
-            duration: 1,
-            ease: "elastic.out(1, 1)"
-          });
-        }
-      });
+      // No scaling on click
     };
 
-    // Add mouseout handler for elements
+    // No scaling on mouseout
     const mouseOutHandler = () => {
-      gsap.to(cursor, {
-        scale: 1,
-        duration: 0.3,
-        ease: "power2.out"
-      });
+      // No scaling changes
     };
 
     window.addEventListener('mousemove', mouseMoveHandler);

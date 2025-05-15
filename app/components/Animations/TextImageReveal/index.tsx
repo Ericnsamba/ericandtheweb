@@ -37,8 +37,9 @@ export default function TextImageReveal({ title1, title2, src }: { title1: strin
         <Image
         className="bg-black w-full h-full object-cover"
           src={src}
-          width={1000}
-          height={1000}
+          width={1920}
+          height={1080}
+          quality={100}
           alt={"image"}
         />
       </motion.div>
