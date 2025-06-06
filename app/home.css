@@ -70,20 +70,38 @@
 
 
 .animated_wrapper {
-  position: absolute;
+  position: fixed;
   display: flex;
-  justify-items: center;
   align-items: center;
   justify-content: center;
-  height: 14vw;
+  min-height: 14vw;
   z-index: 1;
-  top: 55%;
+  top: 54%;
   left: 50%;
   width: 100vw;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.animated_name {
+.animated_name .char {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transform: translateY(100%);
+  will-change: transform;
+  /* visibility: hidden; */
+}
+
+.loading_text .char {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transform: translateY(100%);
+  will-change: transform;
+  /* visibility: hidden; */
+}
+
+/* .animated_name {
   overflow: hidden;
   display: flex;
   visibility: hidden;
@@ -91,7 +109,7 @@
 
 .animated_name.split {
   visibility: visible;
-}
+} */
 
 
 .header__char:nth-child(4) {
@@ -105,4 +123,53 @@
   line-height: 13.4vw; 
   font-weight: 500; 
   text-transform: capitalize;
+}
+
+
+.intro-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.intro-title .char,
+.outro-title .char,
+.card .char {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.intro-title .char,
+.outro-title .char {
+  margin-top: 0.75rem;
+}
+
+.intro-title .char span,
+.outro-title .char span,
+.tag .word {
+  position: relative;
+  display: inline-block;
+  transform: translateY(-100%);
+  will-change: transform;
+}
+
+.intro-title .first-char {
+  transform-origin: top left;
+}
+
+.content_wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

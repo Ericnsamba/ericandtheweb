@@ -145,7 +145,7 @@ const Menu = () => {
   }, [isAnimating, isOpen]);
 
   return (
-    <div ref={container}>
+    <div ref={container} className="bg-coral">
       <MenuBar isOpen={isOpen} toggleMenu={toggleMenu} closeMenu={closeMenu} />
 
       <div className="menu" ref={menuRef}>

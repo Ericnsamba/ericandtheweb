@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-// import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import CustomEase from "gsap/CustomEase";
 import { SplitText } from "gsap/SplitText";
-import "./HeroSection.css";
+import "./styles.css";
 
 let isInitialLoad = true;
 
-const HomePage = () => {
+const Loading = () => {
   const containerRef = useRef(null);
   const preloaderRef = useRef(null);
+  const progressBarRef = useRef(null);
   const [showPreloader] = useState(isInitialLoad);
 
   useLayoutEffect(() => {
@@ -32,6 +32,35 @@ const HomePage = () => {
   useGSAP(
     () => {
       if (!showPreloader) return;
+
+      if (showPreloader) {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            // setShowPreloader(false)
+          },
+        });
+
+        tl.to(progressBarRef.current, {
+          scaleX: 1,
+          duration: 4,
+          ease: "power1.inOut",
+        });
+
+        tl.set(progressBarRef.current, { transformOrigin: "right" }).to(
+          progressBarRef.current,
+          {
+            scaleX: 0,
+            duration: 1,
+            ease: "power2.in",
+          }
+        );
+
+        tl.to(preloaderRef.current, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+          duration: 1.5,
+          ease: "hop-main",
+        });
+      }
 
       const splitTextElements = (
         selector: string,
@@ -62,6 +91,12 @@ const HomePage = () => {
       // Split the text elements
       splitTextElements(".preloader .intro-title h1", "words,chars", true);
 
+      // Make the h1 visible now that text is split
+      const introTitle = document.querySelector(".preloader .intro-title");
+      if (introTitle) {
+        introTitle.classList.add("text-split");
+      }
+
       // Set initial positions
       gsap.set(".preloader .intro-title .char span", { y: "100%" });
 
@@ -85,7 +120,28 @@ const HomePage = () => {
           duration: 0.75,
           stagger: 0.05,
         },
-        2
+        2.6
+      )
+      // // Animate first char of intro title characters out
+      // .to(
+      //   ".preloader .intro-title .first-char span",
+      //   {
+      //     fontSize: "14.4vw",
+      //     color: "#CC6945",
+      //     duration: 0.85,
+      //     stagger: 0.05,
+      //   },
+      //   2
+      // )
+      // Animate first char of intro title characters out
+      .to(
+        ".preloader .intro-title .first-char span",
+        {
+          y: "100%",
+          duration: 0.75,
+          stagger: 0.05,
+        },
+        4.6
       )
     },
     { scope: containerRef, dependencies: [showPreloader] }
@@ -93,15 +149,18 @@ const HomePage = () => {
 
   return (
     <div ref={containerRef}>
-      {showPreloader && (
-        <div className="preloader" ref={preloaderRef}>
-          <div className="intro-title">
-            <h1>ericandtheweb</h1>
+      <div className="pre-loader bg-black" ref={preloaderRef}>
+          <div className="progress-bar bg-Lace_Veil" ref={progressBarRef}></div>
+          <div className="text-wrapper flex w-full h-full text-Lace_Veil justify-center items-center">
+            <div className="preloader" ref={preloaderRef}>
+              <div className="intro-title">
+                <h1>ericandtheweb</h1>
+              </div>
+            </div>
           </div>
         </div>
-      )}
     </div>
   );
 };
 
-export default HomePage;
+export default Loading;

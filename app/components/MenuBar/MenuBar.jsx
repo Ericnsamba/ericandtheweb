@@ -17,7 +17,7 @@ const MenuBar = ({ isOpen, toggleMenu, closeMenu }) => {
 
       <div className="portfolio-year w-16">
       <Link href="/portfolio">
-      <p className="text-coral ">Portfolio</p>
+      <p className="Portfolio_text text-coral ">Portfolio</p>
       </Link>
         
       </div>
