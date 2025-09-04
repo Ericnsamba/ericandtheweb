@@ -13,18 +13,13 @@ export const portfolio = [
         img: "/hero.jpg",
       },
       {
+        name: "ROAM",
+        tags: "founding designer, ai travel guide",
+        img: "/roam/roam_main.jpeg",
+      },
+      {
         name: "Nocturne Blur",
         tags: "motion, design",
-        img: "/about.jpg",
-      },
-      {
-        name: "Phase // 03",
-        tags: "art direction, identity",
-        img: "/hero.jpg",
-      },
-      {
-        name: "Hidden Signal",
-        tags: "web, creative direction",
         img: "/about.jpg",
       },
       {
@@ -116,6 +111,11 @@ export const portfolio = [
         name: "Rift Oscillator",
         tags: "motion, design",
         img: "/about.jpg",
+      },
+      {
+        name: "Peach Payments",
+        tags: "checkout experience, mobile-first design",
+        img: "/hero.jpg",
       },
     ],
   },

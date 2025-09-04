@@ -148,7 +148,7 @@ export default function CaseStudyPage() {
           </Copy>
           <div className="section-content">
             <Copy>
-              <h2>Our Approach</h2>
+              <h2>My Approach</h2>
             </Copy>
             <Copy>
               <p>{caseStudy.solution}</p>
