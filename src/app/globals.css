@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+:root {
+  --background: #1a1a1a;
+  --background-200: #141414;
+  --foreground: #e4e7df;
+  --foreground-200: #666666;
+  --btn-icon: #ffc22a;
+}
+
+/* @font-face {
+  font-family: "nm";
+  src: url("/fonts/nm/nm-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "nm";
+  /* background-color: #000; */
+  font-family: "Lay Grotesk - Trial", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  user-select: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+  line-height: 1;
+}
+
+
+h2 {
+  font-size: clamp(2rem, 1.25rem + 2.25vw, 5rem);
+  font-weight: 550;
+  -webkit-font-smooting: antialised;
+  letter-spacing: -0.015rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 0.75rem + 1.75vw, 3.5rem);
+  font-weight: 550;
+  letter-spacing: -0.0075rem;
+}
+
+p, a {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25;
+  /* margin-bottom: 1em; */
+}
+
+span {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+p.sm,
+a.sm {
+  font-size: 1rem;
+}
+
+p.caps,
+a.caps {
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+p.caps.mono,
+a.caps.mono {
+  font-family: "DM Mono";
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  /* min-height: 100svh; */
+  padding: 1.5rem;
+}
+
+.dark {
+  color: var(--foreground);
+}
+
+.light {
+  color: var(--background);
+}
+
+.revealer {
+  position: relative;
+  width: max-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
+}

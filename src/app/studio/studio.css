@@ -1,0 +1,134 @@
+.studio {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.studio-hero {
+  position: relative;
+  width: 100vw;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.studio-hero h1 {
+  font-size: 50vw;
+  position: relative;
+}
+
+.studio-hero-img {
+  aspect-ratio: 7/5;
+  position: relative;
+  width: calc(100vw - 3rem);
+  margin: 0 auto -25% auto;
+}
+
+.studio-hero-img-wrapper {
+  position: relative;
+  transform: translateY(-50%);
+}
+
+.studio-header {
+  width: 100%;
+  padding: 1.5rem 1.5rem 10rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.studio-header-copy {
+  width: 60%;
+}
+
+.mission-intro {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.mission-intro-col-sm {
+  flex: 2;
+}
+
+.mission-intro-col-lg {
+  flex: 4;
+}
+
+.mission-intro-copy {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mission-link {
+  margin-top: 4.5rem;
+}
+
+.recognition {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 1.5rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.recognition-copy {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.recognition-copy p {
+  color: var(--foreground-200);
+}
+
+.char {
+  display: inline-block;
+  letter-spacing: 0;
+}
+
+.char-mask {
+  overflow: hidden;
+  display: inline-block;
+}
+
+@media (max-width: 1000px) {
+  .studio-hero {
+    padding: 7.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .studio-header-copy,
+  .mission-intro-copy,
+  .recognition-copy {
+    width: 100%;
+  }
+
+  .mission-intro-col-sm {
+    display: none;
+  }
+
+  .mission-intro {
+    min-height: 100svh;
+    height: 100%;
+  }
+}

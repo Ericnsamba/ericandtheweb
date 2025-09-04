@@ -1,0 +1,240 @@
+.case-studies-page {
+  min-height: 100vh;
+  padding-top: 8rem;
+}
+
+/* Header */
+.case-studies-header {
+  max-width: 1200px;
+  margin: 0 auto 8rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.case-studies-header h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.case-studies-header p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Labels */
+.section-label {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+/* Featured Case Studies */
+.featured-case-studies {
+  max-width: 1200px;
+  margin: 0 auto 8rem auto;
+  padding: 0 1.5rem;
+}
+
+.featured-grid {
+  display: grid;
+  gap: 4rem;
+}
+
+.featured-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+.featured-item:hover {
+  opacity: 0.8;
+}
+
+.featured-item:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.featured-item:nth-child(even) .case-study-image {
+  order: 2;
+}
+
+.featured-item:nth-child(even) .case-study-content {
+  order: 1;
+}
+
+/* All Case Studies */
+.all-case-studies {
+  max-width: 1200px;
+  margin: 0 auto 8rem auto;
+  padding: 0 1.5rem;
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+/* Case Study Items */
+.case-study-item {
+  transition: opacity 0.3s ease;
+}
+
+.case-study-item:hover {
+  opacity: 0.8;
+}
+
+.case-study-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.featured-item .case-study-image {
+  height: 400px;
+}
+
+.case-study-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.case-study-item:hover .case-study-image img {
+  transform: scale(1.05);
+}
+
+.case-study-content {
+  padding: 0;
+}
+
+.case-study-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  opacity: 0.6;
+}
+
+.case-study-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.featured-item .case-study-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-subtitle {
+  font-size: 1rem;
+  color: var(--foreground-muted);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.case-study-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.featured-item .case-study-description {
+  display: block;
+}
+
+.case-study-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .case-studies-page {
+    padding-top: 6rem;
+  }
+  
+  .case-studies-header {
+    margin-bottom: 6rem;
+  }
+  
+  .featured-item {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .featured-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-item:nth-child(even) .case-study-image,
+  .featured-item:nth-child(even) .case-study-content {
+    order: initial;
+  }
+  
+  .featured-item .case-study-image {
+    height: 250px;
+  }
+  
+  .featured-item .case-study-title {
+    font-size: 2rem;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .case-study-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-studies-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .case-studies-header p {
+    font-size: 1.125rem;
+  }
+  
+  .featured-item .case-study-title {
+    font-size: 1.75rem;
+  }
+}

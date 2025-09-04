@@ -1,0 +1,117 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.menu a,
+.menu p {
+  position: relative;
+  color: var(--foreground);
+  display: block;
+  text-decoration: none;
+  line-height: 1;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 1000;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.nav {
+  pointer-events: all;
+  position: relative;
+  width: 100vw;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a,
+.nav p {
+  position: relative;
+  color: var(--foreground);
+  display: block;
+  text-decoration: none;
+  line-height: 1;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nav-logo {
+  flex: 2;
+}
+
+.nav-items {
+  flex: 1;
+  display: flex;
+}
+
+.nav-menu-time {
+  flex: 1;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links .revealer {
+  cursor: pointer;
+}
+
+.nav-links a,
+.nav-logo a {
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-logo a:hover {
+  opacity: 0.7;
+}
+
+.nav-logo .revealer {
+  cursor: pointer;
+}
+
+img.logo-img {
+  width: 2rem;
+}
+
+
+.revealer {
+  position: relative;
+  width: max-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 1000px) {
+  .nav-menu-time {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 1rem;
+  }
+}

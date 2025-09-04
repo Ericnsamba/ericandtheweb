@@ -1,0 +1,69 @@
+.archive-page {
+  width: 100vw;
+  height: 100vh;
+  background: var(--background);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.archive-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150vw;
+  height: 150vh;
+  overflow: hidden;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 4px;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.img {
+  width: calc((100% - 236px) / 60);
+  transform: scale(0);
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#drag-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  touch-action: none;
+  z-index: 1;
+}
+
+#drag-layer.active {
+  cursor: grab;
+}
+
+#drag-layer.active:active {
+  cursor: grabbing;
+}

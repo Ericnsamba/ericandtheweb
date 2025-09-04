@@ -1,0 +1,76 @@
+.whoweare {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.whoweare-container {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--foreground);
+  clip-path: circle(0% at 50% 50%);
+  will-change: clip-path;
+  overflow: hidden;
+}
+
+.whoweare-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400vw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0%) scale(0.85);
+  transform-origin: 10% center;
+  will-change: transform;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.whoweare .whoweare-header h1 {
+  text-transform: uppercase;
+  font-size: 55vw;
+  color: var(--background);
+}
+
+.whoweare-img {
+  position: absolute;
+  width: 25vw;
+  will-change: transform;
+}
+
+#whoweare-img-1 {
+  top: 20%;
+  left: 5%;
+}
+
+#whoweare-img-2 {
+  top: 50%;
+  left: 25%;
+}
+
+#whoweare-img-3 {
+  top: 35%;
+  left: 50%;
+}
+
+#whoweare-img-4 {
+  top: 20%;
+  left: 75%;
+}
+
+#whoweare-img-5 {
+  top: 50%;
+  left: 95%;
+}
+
+@media (max-width: 1000px) {
+  .whoweare-img {
+    width: 50vw;
+  }
+}

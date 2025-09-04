@@ -1,0 +1,94 @@
+.process-cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+}
+
+.process-card {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 1.5rem;
+  display: flex;
+  gap: 3rem;
+  will-change: transform;
+}
+
+.process-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: var(--after-opacity, 0);
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.process-card-index {
+  flex: 2;
+  color: var(--background);
+}
+
+.process-card-content {
+  flex: 4;
+  padding-top: 1.5rem;
+  color: var(--background);
+}
+
+.process-card-content-wrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.process-card-header {
+  width: 75%;
+}
+
+.process-card-img img {
+  aspect-ratio: 5/3;
+}
+
+.process-card-copy {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.process-card-copy-title {
+  flex: 2;
+}
+
+.process-card-copy-description {
+  flex: 4;
+}
+
+@media (max-width: 1000px) {
+  .process-card {
+    gap: 0;
+  }
+
+  .process-card,
+  .process-card-copy {
+    flex-direction: column;
+  }
+
+  .process-card-copy {
+    gap: 0.5rem;
+  }
+
+  .process-card-index {
+    flex: 1;
+  }
+
+  .process-card-content-wrapper {
+    width: 100%;
+  }
+}
