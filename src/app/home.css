@@ -1,3 +1,83 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  color: var(--black);
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.hero-header {
+  position: absolute;
+  top: 10svh;
+  /* top: 25svh; */
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+}
+
+.hero-logo {
+  /* position: absolute; */
+  /* bottom: 15vh; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: left;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.hero-header-col-lg {
+  flex: 4;
+}
+
+.hero-header-col-sm {
+  flex: 2;
+}
+
+.hero-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.hero-footer-col-wrapper {
+  margin-bottom: 40px;
+  width: 100%;
+  /* padding: 1.5rem; */
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-footer-col-lg {
+  flex: 4;
+  display: flex;
+  gap: 4.5rem;
+}
+
+.hero-footer-col-lg h3 {
+  width: 65%;
+}
+
+.hero-footer-col-sm {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-tags {
+  flex-shrink: 0;
+}
+
+
 .col,
 .sub-col {
   flex: 1;
@@ -8,6 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .hero-img {
@@ -27,14 +108,28 @@
   color: #909090;
 }
 
+
+.header h1 {
+
+}
+
+
+
 .about-img {
   height: max-content;
   padding: 8em 2em;
 }
 
-.about-img img {
+.about-img-container {
   width: 20%;
   aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about,
@@ -42,28 +137,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+  padding: 1.5rem;
 }
 
 .philosophy {
-  background-color: #202020;
+  background-color: var(--black);
   margin-bottom: 4rem;
 }
 
 .philosophy h1,
 .philosophy span {
-  color: #fff;
+  color: var(--white);
 }
 
 .about h1,
 .philosophy h1 {
-  text-indent: 25%;
+  /* text-indent: 25%; */
 }
 
 .story {
-  height: max-content;
+  min-height: 60dvh;
   display: flex;
   gap: 1em;
   margin-bottom: 8em;
+  align-items: center;
+  padding: 1.5rem;
 }
 
 .preloader-overlay {
@@ -125,7 +224,7 @@
 
 @media (max-width: 1000px) {
   .hero {
-    background-color: var(--background);
+    background-color: var(--white);
   }
 
   .hero-header-col-lg,
@@ -143,9 +242,109 @@
 
   section.story {
     flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4em;
+    padding: 1.5rem;
+    align-items: flex-start;
   }
 
-  .about-img img {
-    width: 80%;
+  .story {
+    
 }
+
+  .about-img-container {
+    width: 80%;
+  }
+}
+
+/* Work Experience Section */
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.work-experience-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.work-experience-table .work-experience-row:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.work-experience-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.work-experience-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+.work-experience-position,
+.work-experience-company,
+.work-experience-duration {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-experience-position h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--black);
+}
+
+.work-experience-company p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--black);
+}
+
+.work-experience-duration span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground-200);
+  text-align: right;
+  display: block;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .work-experience-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+  
+  .work-experience-duration {
+    justify-self: start;
+  }
+  
+  .work-experience-duration span {
+    text-align: left;
+  }
 }

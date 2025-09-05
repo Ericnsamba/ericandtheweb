@@ -10,31 +10,33 @@ export const caseStudies = [
     challenge: "PsyExpert was launching as a new practice and needed to establish an online presence from scratch. The market lacked clear, professional websites for trauma-focused therapy aimed at families and children. The practice needed to communicate expertise, warmth, and accessibility while presenting information clearly. There was no existing website, branding, or visual direction to build upon. The core problem was how to convey professional credibility and a welcoming environment while guiding users to take action, all without an existing digital foundation.",
     solution: "We developed the founding website from the ground up with a focus on clarity, trust, and user experience. Organized content into intuitive sections—Home, About, Treatment, Contact—to make navigation simple and encourage engagement. Used soft, calming colors and generous white space to reflect a safe, approachable atmosphere for families and children. Highlighted PsyExpert founder Vanity Veraar, including her profile and qualifications, to build trust and humanize the practice. Prominent CTAs such as 'Plan a free conversation' guide visitors toward making contact. Emphasized outcomes and reassurance to communicate empathy and expertise clearly.",
     results: ["Established PsyExpert's online presence as a professional, approachable practice", "Visitors can quickly understand services, founder credentials, and how to get in touch", "Design builds trust while keeping navigation and messaging clear", "Provided a scalable foundation for future growth and content expansion"],
-    hero: "/hero.jpg",
+    hero: "/psyexpert/hero.jpg",
     images: [
-      "/hero.jpg",
-      "/about.jpg",
-      "/hero.jpg"
+      "/psyexpert/hero.jpg",
+      "/psyexpert/img_1.jpg",
+      "/psyexpert/img_2.jpg",
+      "/psyexpert/img_3.jpg",
+      "/psyexpert/img_4.jpg"
     ],
     tags: ["Healthcare Website", "Trust Building", "Family Services"],
     featured: true
   },
   {
-    id: "roam",
-    title: "ROAM",
+    id: "Roam",
+    title: "Roam",
     subtitle: "Founding Designer, AI Travel Guide",
     year: "2024",
-    client: "ROAM",
+    client: "Roam",
     services: ["Product Design", "Design System", "AI/UX Integration"],
-    description: "This case study presents my work as founding designer for ROAM, a personal AI travel guide app. I lead the design strategy, interface, and system design, shaping consistent and intuitive experiences across mobile platforms. ROAM allows users to chat with AI as if talking to a local guide and offers customizable audio tours with selectable tones, from local to curator or historian. This is an ongoing project, and I contribute once a week, gaining experience in designing AI-driven products and working closely with a talented multidisciplinary team.",
-    challenge: "ROAM needed to stand out in a crowded travel app market. Traditional apps provide static guides or audio tours that lack interactivity and personalization. Users wanted the ability to explore cities dynamically while receiving real-time guidance, asking questions, and experiencing tours in different narrative tones. Existing solutions failed to combine adaptive AI-driven paths with interactive, customizable content, creating a gap that ROAM aimed to fill.",
-    solution: "Designed ROAM to leverage AI for personalized tours with adaptive paths, customizable audio, and AI chat functionality that mimics a local guide. Focused on keeping the interface simple and intuitive while handling complex AI logic in the background. Developed the UI/UX, interactive prototypes, and a comprehensive design system covering typography, color, iconography, and component patterns. Built a cohesive system with warm, earthy tones to reflect grounded, smart, and locally inspired experiences. Worked weekly with developers, AI engineers, and product leads to iterate on AI features and ensure usability.",
-    results: ["ROAM now enables users to engage with AI as if speaking to a local, with fully adaptive audio tours", "The design system ensures consistency and scalability for future features", "Users receive personalized, dynamic experiences tailored to preferences and real-time input", "Deepened understanding of designing AI products and collaborative product development"],
-    hero: "/roam/roam_main.jpeg",
+    description: "This case study presents my work as founding designer for Roam, a personal AI travel guide app. I lead the design strategy, interface, and system design, shaping consistent and intuitive experiences across mobile platforms. Roam allows users to chat with AI as if talking to a local guide and offers customizable audio tours with selectable tones, from local to curator or historian. This is an ongoing project, and I contribute once a week, gaining experience in designing AI-driven products and working closely with a talented multidisciplinary team.",
+    challenge: "Roam needed to stand out in a crowded travel app market. Traditional apps provide static guides or audio tours that lack interactivity and personalization. Users wanted the ability to explore cities dynamically while receiving real-time guidance, asking questions, and experiencing tours in different narrative tones. Existing solutions failed to combine adaptive AI-driven paths with interactive, customizable content, creating a gap that Roam aimed to fill.",
+    solution: "Designed Roam to leverage AI for personalized tours with adaptive paths, customizable audio, and AI chat functionality that mimics a local guide. Focused on keeping the interface simple and intuitive while handling complex AI logic in the background. Developed the UI/UX, interactive prototypes, and a comprehensive design system covering typography, color, iconography, and component patterns. Built a cohesive system with warm, earthy tones to reflect grounded, smart, and locally inspired experiences. Worked weekly with developers, AI engineers, and product leads to iterate on AI features and ensure usability.",
+    results: ["Roam now enables users to engage with AI as if speaking to a local, with fully adaptive audio tours", "The design system ensures consistency and scalability for future features", "Users receive personalized, dynamic experiences tailored to preferences and real-time input", "Deepened understanding of designing AI products and collaborative product development"],
+    hero: "/Roam/roam_main.jpeg",
     images: [
-      "/roam/roam_main.jpeg",
-      "/hero.jpg",
-      "/about.jpg"
+      "/Roam/roam_main.jpeg",
+      // "/hero.jpg",
+      // "/about.jpg"
     ],
     tags: ["AI Product Design", "Travel Tech", "Design System"],
     featured: true
@@ -82,7 +84,7 @@ export const caseStudies = [
     featured: false
   },
   {
-    id: "peach-payments",
+    id: "peach-payment",
     title: "Peach Payments",
     subtitle: "Checkout Experience, Mobile-First Design",
     year: "2023",
@@ -92,11 +94,12 @@ export const caseStudies = [
     challenge: "Peach Payments' hosted Checkout enables customers to pay via multiple methods including Card, Bank transfer (EFT), Scan to Pay, and Vouchers. The issue: when certain payment methods went offline or became temporarily unavailable, there was no clear UI feedback. This often led to confusion and increased checkout abandonment. Key constraints included 75% of users on mobile requiring optimization for small screens, customer preference for specific methods potentially leading to abandonment, inconsistent merchant vs. Checkout indications, and an outdated design system built in 2019 using Material's Backdrop that was misaligned with Peach's broader product design system.",
     solution: "I approached the problem with a mobile-first design strategy focused on clarity, transparency, and user trust. Analyzed existing checkout flows to identify friction points and defined UX goals to reduce abandonment and maintain trust. Designed a payment method list with clear availability states: Available (active, selectable) and Unavailable (visually dimmed with explanatory messages). Added contextual microcopy to reassure users and created a mobile-optimized layout with emphasis on one-tap clarity. Iterated on a modernized UI aesthetic, moving beyond the old Material Backdrop pattern towards a cleaner, more intuitive system.",
     results: ["Delivered a functional, mobile-first design solution to a real industry problem", "Received strong feedback on creativity, usability, and alignment with user needs", "Confirmed approach addressed abandonment risk by making unavailability transparent", "Became a significant growth experience in communicating design decisions effectively"],
-    hero: "/hero.jpg",
+    hero: "/peachpayment/hero.jpg",
     images: [
-      "/hero.jpg",
-      "/about.jpg",
-      "/hero.jpg"
+      "/peachpayment/hero.jpg",
+      "/peachpayment/img_1.jpg",
+      "/peachpayment/img_2.jpg",
+      "/peachpayment/img_3.jpg",
     ],
     tags: ["Fintech Design", "Checkout Experience", "Mobile-First"],
     featured: false

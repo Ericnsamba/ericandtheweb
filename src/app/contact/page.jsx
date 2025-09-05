@@ -7,6 +7,7 @@ import Copy from "@/components/Copy/Copy";
 import { useTransitionRouter } from "next-view-transitions";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 const page = () => {
   const router = useTransitionRouter();
@@ -99,56 +100,62 @@ const page = () => {
     <div className="contact" ref={contactRef}>
       <div className="contact-img-wrapper">
         <div className="contact-img">
-          <img src="/images/contact/contact.jpeg" alt="" />
+          <img src="/medias/eric_hero.jpg" alt="Eric Manasse" />
         </div>
       </div>
       <div className="contact-copy">
         <div className="contact-copy-bio">
           <Copy delay={1}>
-            <p className="caps sm">Wu Wei Studios</p>
-            <p className="caps sm">Toronto / Copenhagen</p>
+            <h1>Let's Connect</h1>
+            <p>
+              Ready to bring your vision to life? Let's discuss your project and
+              explore how we can work together.
+            </p>
           </Copy>
         </div>
 
-        <div className="contact-copy-tags">
+        <div className="contact-copy-details">
           <Copy delay={1.15}>
-            <p className="caps sm">Web Systems</p>
-            <p className="caps sm">Interface Design</p>
-            <p className="caps sm">Creative Development</p>
-            <p className="caps sm">End To End Delivery</p>
+            <div className="contact-detail">
+              <span className="detail-label">Email</span>
+              <a href="mailto:hello@ericandtheweb.com" className="detail-value">
+                hello@ericandtheweb.com
+              </a>
+            </div>
           </Copy>
         </div>
 
-        <div className="contact-copy-addresses">
-          <div className="contact-address">
+        <div className="contact-copy-socials">
+          <span className="detail-label">Connect</span>
+          <div className="social-links">
             <Copy delay={1.3}>
-              <p className="caps sm">Toronto</p>
-              <p className="caps sm">Studio 302, Richmond St W</p>
-              <p className="caps sm">M5V 3A8</p>
+              <Link
+                href="https://www.linkedin.com/in/ericmanasse/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </Link>
+            </Copy>
+            <Copy delay={1.5}>
+              <Link
+                href="https://instagram.com/ericandtheweb"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </Link>
+            </Copy>
+            <Copy delay={1.8}>
+              <Link
+                href="https://dribbble.com/ericandtheweb"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dribbble
+              </Link>
             </Copy>
           </div>
-
-          <div className="contact-address">
-            <Copy delay={1.45}>
-              <p className="caps sm">Copenhagen</p>
-              <p className="caps sm">Unit 02 Refshalevej 167A</p>
-              <p className="caps sm">1432 KØBENHAVN K</p>
-            </Copy>
-          </div>
-        </div>
-
-        <div className="contact-copy-links">
-          <Copy delay={1.6}>
-            <a href="/studio" onClick={(e) => handleNavigation(e, "/studio")}>
-              <p className="caps sm">Studio Overview</p>
-            </a>
-            <a href="/archive" onClick={(e) => handleNavigation(e, "/archive")}>
-              <p className="caps sm">Project Archive</p>
-            </a>
-            <a href="/work" onClick={(e) => handleNavigation(e, "/work")}>
-              <p className="caps sm">Selected Work</p>
-            </a>
-          </Copy>
         </div>
       </div>
 
@@ -156,14 +163,14 @@ const page = () => {
         <div className="fc-col-lg">
           <div className="footer-text">
             <div className="footer-text-content">
-              <p className="sm caps">Developed by Codegrid</p>
+              <p className="sm caps">Developed by Eric</p>
             </div>
           </div>
         </div>
         <div className="fc-col-sm">
           <div className="footer-text">
             <div className="footer-text-content">
-              <p className="sm caps">&copy; 2025 All Rights Reserved</p>
+              <p className="sm caps">&copy; 2025</p>
             </div>
           </div>
         </div>

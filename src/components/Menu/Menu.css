@@ -11,7 +11,8 @@
 .menu a,
 .menu p {
   position: relative;
-  color: var(--foreground);
+  color: #ffffff;
+  /* color: var(--foreground); */
   display: block;
   text-decoration: none;
   line-height: 1;
@@ -30,6 +31,7 @@
   pointer-events: none;
 }
 
+
 .nav {
   pointer-events: all;
   position: relative;
@@ -42,7 +44,7 @@
 .nav a,
 .nav p {
   position: relative;
-  color: var(--foreground);
+  color: #ffffff;
   display: block;
   text-decoration: none;
   line-height: 1;

@@ -61,7 +61,8 @@ export default function CaseStudiesPage() {
 
   useGSAP(
     () => {
-      const caseStudyItems = caseStudiesRef.current.querySelectorAll(".case-study-item");
+      const caseStudyItems =
+        caseStudiesRef.current.querySelectorAll(".case-studies-item");
       gsap.set(caseStudyItems, { y: 100, opacity: 0 });
       gsap.to(caseStudyItems, {
         y: 0,
@@ -76,45 +77,59 @@ export default function CaseStudiesPage() {
   );
 
   // Separate featured and regular case studies
-  const featuredCaseStudies = caseStudies.filter(study => study.featured);
-  const regularCaseStudies = caseStudies.filter(study => !study.featured);
+  const featuredCaseStudies = caseStudies.filter((study) => study.featured);
+  const regularCaseStudies = caseStudies.filter((study) => !study.featured);
 
   return (
     <>
       <div className="case-studies-page" ref={caseStudiesRef}>
         {/* Header */}
-        <div className="case-studies-header">
+        <section className="case-studies-header">
           <Copy delay={0.5}>
             <h1>Case Studies</h1>
           </Copy>
-          <Copy delay={0.7}>
-            <p>A curated selection of our most impactful work, showcasing creative solutions for forward-thinking clients.</p>
+          <Copy delay={0.8}>
+            {/* <h1>
+              <span className="spacer">&nbsp;</span>A curated collection of
+              projects and experiments that showcase my journey through design,
+              ideas, and technology. Each piece reflects my approach to learning
+              exploring concepts, testing possibilities, and building to bring
+              ideas to life.
+            </h1> */}
+            <h1>
+              <span className="spacer">&nbsp;</span>A selection of projects and
+              explorations that capture my approach to design and
+              technology, testing ideas, refining concepts, and turning them into
+              real outcomes.
+            </h1>
           </Copy>
-        </div>
+        </section>
 
         {/* All Case Studies */}
         <section className="all-case-studies">
-          <Copy>
+          {/* <Copy>
             <span className="section-label">All Projects</span>
-          </Copy>
-          <div className="case-studies-grid">
+          </Copy> */}
+          <div className="case-studies-table">
             {caseStudies.map((caseStudy, index) => (
               <div
                 key={caseStudy.id}
-                className="case-study-item"
+                className="case-studies-row"
                 onClick={() => navigateToCaseStudy(caseStudy.id)}
-                style={{ cursor: "pointer" }}
               >
-                <div className="case-study-image">
-                  <img src={caseStudy.hero} alt={caseStudy.title} />
-                </div>
-                <div className="case-study-content">
-                  <div className="case-study-meta">
-                    <span className="case-study-year">{caseStudy.year}</span>
-                    <span className="case-study-client">{caseStudy.client}</span>
+                <div className="case-studies-image-container">
+                  <div className="case-studies-image">
+                    <img src={caseStudy.hero} alt={caseStudy.title} />
                   </div>
-                  <h3 className="case-study-title">{caseStudy.title}</h3>
-                  <p className="case-study-subtitle">{caseStudy.subtitle}</p>
+                </div>
+                <div className="case-studies-info">
+                  <h1 className="case-studies-title">{caseStudy.title}</h1>
+                </div>
+                <div className="case-studies-tags">
+                  <span className="case-studies-tag">{caseStudy.subtitle}</span>
+                </div>
+                <div className="case-studies-year">
+                  <span>{caseStudy.year}</span>
                 </div>
               </div>
             ))}

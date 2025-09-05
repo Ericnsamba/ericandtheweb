@@ -147,21 +147,6 @@ const Menu = ({ onMenuStateChange }) => {
             <div className="nav-links">
               <div className="revealer">
                 <a
-                  href="/"
-                  className="sm caps mono"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (isExactPath("/")) return;
-                    router.push("/", {
-                      onTransitionReady: slideInOut,
-                    });
-                  }}
-                >
-                  Index
-                </a>
-              </div>
-              <div className="revealer">
-                <a
                   href="/case-studies"
                   className="sm caps mono"
                   onClick={(e) => {
