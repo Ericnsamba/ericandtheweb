@@ -25,11 +25,11 @@ const TrailContainer = () => {
       easing: "cubic-bezier(0.87, 0, 0.13, 1)",
     };
 
-    const trailImageCount = 20;
-    const images = Array.from(
-      { length: trailImageCount },
-      (_, i) => `/trail-images/img${i + 1}.jpeg`
-    );
+    const images = [
+      `/trail-images/img1.jpg`,
+      `/trail-images/img2.jpg`
+    ];
+    const trailImageCount = images.length;
 
     const trailContainer = trailContainerRef.current;
     if (!trailContainer) return;

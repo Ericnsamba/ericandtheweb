@@ -55,8 +55,8 @@
   justify-content: space-between;
   gap: 3rem;
   padding: 3rem 0;
-  border-top: 1px solid rgb(0, 0, 0);
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-top: 1px solid var(--foreground-200);
+  border-bottom: 1px solid var(--foreground-200);
   width: 100%;
 }
 
@@ -163,15 +163,21 @@
   max-width: 1200px;
   margin: 0 auto 8rem auto;
   padding: 0 1.5rem;
-  text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 4rem;
+}
+
+.next-project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .next-project-content h2 {
   font-size: 2rem;
   font-weight: 300;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   opacity: 0.8;
 }
 

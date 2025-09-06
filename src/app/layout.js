@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import ClientLayout from "@/client-layout";
+import { fontVariables } from "@/lib/fonts";
 
 import { ViewTransitions } from "next-view-transitions";
 
@@ -12,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={fontVariables}>
         <ViewTransitions>
           <ClientLayout>{children}</ClientLayout>
         </ViewTransitions>

@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import { caseStudies } from "@/data/case-studies";
 import Copy from "@/components/Copy/Copy";
 import Footer from "@/components/Footer/Footer";
+import BtnLink from "@/components/BtnLink/BtnLink";
 import { useTransitionRouter } from "next-view-transitions";
 import "./case-study.css";
 
@@ -10,6 +11,12 @@ export default function CaseStudyPage() {
   const params = useParams();
   const router = useTransitionRouter();
   const caseStudy = caseStudies.find(study => study.id === params.slug);
+  
+  // Calculate next project route
+  const currentIndex = caseStudies.findIndex(study => study.id === caseStudy?.id);
+  const nextIndex = (currentIndex + 1) % caseStudies.length;
+  const nextCaseStudy = caseStudies[nextIndex];
+  const nextProjectRoute = `/case-studies/${nextCaseStudy?.id}`;
 
   const slideInOut = () => {
     document.documentElement.animate(
@@ -188,25 +195,16 @@ export default function CaseStudyPage() {
 
         {/* Next Project CTA */}
         <section className="next-project-cta">
-          <Copy>
+
             <div className="next-project-content">
               <h2>View Next Project</h2>
-              <div 
-                className="next-project-button"
-                onClick={() => {
-                  const currentIndex = caseStudies.findIndex(study => study.id === caseStudy.id);
-                  const nextIndex = (currentIndex + 1) % caseStudies.length;
-                  const nextCaseStudy = caseStudies[nextIndex];
-                  
-                  router.push(`/case-studies/${nextCaseStudy.id}`, {
-                    onTransitionReady: slideInOut,
-                  });
-                }}
-              >
-                <span className="button-text">Next Project →</span>
-              </div>
+              <BtnLink 
+                label="Next Project" 
+                route={nextProjectRoute}
+                dark={false}
+              />
             </div>
-          </Copy>
+
         </section>
       </div>
       <Footer />

@@ -9,8 +9,7 @@
 
 .hero-header {
   position: absolute;
-  top: 10svh;
-  /* top: 25svh; */
+  bottom: 1.5rem;
   width: 100%;
   padding: 1.5rem;
   display: flex;
@@ -151,18 +150,18 @@
   color: var(--white);
 }
 
-.about h1,
-.philosophy h1 {
-  /* text-indent: 25%; */
-}
 
 .story {
-  min-height: 60dvh;
+  /* min-height: 60dvh; */
   display: flex;
   gap: 1em;
   margin-bottom: 8em;
-  align-items: center;
+  /* align-items: center; */
   padding: 1.5rem;
+}
+
+.story-copy p {
+  margin-bottom: 24px;
 }
 
 .preloader-overlay {
@@ -173,7 +172,7 @@
   height: 100svh;
   overflow: hidden;
   z-index: 10000000;
-  background-color: var(--background-200);
+  background-color: var(--black);
   pointer-events: none;
 }
 
@@ -209,7 +208,8 @@
 }
 
 .count .digit h1 {
-  color: var(--foreground);
+  color: var(--white);
+  font-size: 12vw;
 }
 
 .count .digit {
@@ -233,7 +233,7 @@
   }
 
   .hero-header {
-    top: 40svh;
+    bottom: 1.5rem;
   }
 
   .hero h3 {

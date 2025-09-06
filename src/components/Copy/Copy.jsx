@@ -17,14 +17,11 @@ export default function Copy({ children, animateOnScroll = true, delay = 0 }) {
 
   const waitForFonts = async () => {
     try {
+      // Next.js optimized fonts are loaded automatically
+      // Just wait for document fonts to be ready
       await document.fonts.ready;
-
-      const customFonts = ["nm", "DM Mono"];
-      const fontCheckPromises = customFonts.map((fontFamily) => {
-        return document.fonts.check(`16px ${fontFamily}`);
-      });
-
-      await Promise.all(fontCheckPromises);
+      
+      // Small delay to ensure layout is stable
       await new Promise((resolve) => setTimeout(resolve, 100));
 
       return true;

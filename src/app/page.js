@@ -234,7 +234,7 @@ export default function Home() {
 
   return (
     <>
-      {/* {showPreloader && (
+      {showPreloader && (
         <div className="preloader-overlay">
           <div className="progress-bar"></div>
           <div className="counter">
@@ -280,27 +280,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-      )} */}
+      )}
 
-      {/* <section className="hero">
-        <div className="hero-img">
-          <img src="/hero.jpg" alt="" />
-        </div>
-
-        <div className="header">
-          <Copy delay={0.5}>
-            <h1>We craft identities and experiences for the bold.</h1>
-          </Copy>
-        </div>
-      </section> */}
-
-      <section className="about">
-        <div className="header">
-          <Copy>
+      <section className="hero">
+        <div className="hero-header">
+          <Copy delay={showPreloader ? 6.2 : 0.9}>
             <h1>
               <span className="spacer">&nbsp;</span>
-              Product Designer and Design Engineer with 8+ years of experience
-              bridging the gap between design and development.
+              London based Product Designer and Design Engineer with 8+ years of experience
+              creating digital products across fintech, mobility, and consumer
+              apps.
             </h1>
           </Copy>
         </div>
@@ -309,7 +298,7 @@ export default function Home() {
 
       <section className="about-img" ref={aboutImgRef}>
         <div className="about-img-container">
-          <img src="/medias/eric_hero.jpg" alt="Eric Manasse" />
+          <img src="/trail-images/img1.jpg" alt="Eric Manasse" />
         </div>
       </section>
 
@@ -321,9 +310,39 @@ export default function Home() {
             </h1>
           </Copy>
         </div>
-        <div className="col">
+        <div className="col story-copy">
           <Copy>
             <p>
+              My path to design started with sketchbooks and Lego, moved through
+              poster design, and evolved into a passion for digital design.
+              Because I’ve always loved bringing ideas to life, I went a step
+              further and developed the skills to build what I designed. That
+              dual skillset became my strength, ensuring ideas are carried
+              through without compromise.
+            </p>
+          </Copy>
+          <Copy delay={0.4}>
+            <p>
+              At Kurtosys, my mentor Tim helped me refine my development skills
+              while design remained my focus. Since then, I’ve worked on
+              platforms for Generali and JP Morgan, as well as electric vehicle
+              experiences for Jaguar Land Rover. In every project, my role has
+              been to craft clear, user-centered solutions that balance
+              aesthetics with usability.
+            </p>
+          </Copy>
+          <Copy delay={0.6}>
+            <p>
+              Today, I’m the founder of Projiro, a digital design studio focused
+              on financial products. My current work centers on developing a
+              system design approach that helps startups and fintech companies
+              ship faster and with greater consistency. It’s the framework I’m
+              building in the background, shaping how Projiro supports teams in
+              turning ideas into scalable, production-ready products.
+            </p>
+          </Copy>
+
+          {/* <p>
               Hi I'm Eric, a product designer with a background in development.
               As designer I play an active role in the product development
               process, from shaping ideas, designing end-to-end flows, and
@@ -339,8 +358,7 @@ export default function Home() {
               self-driven, self-motivated designer with a growth mindset. Right
               now, I run a newly founded Design Studio where I help startups and
               modern businesses build bold, high-impact digital products.
-            </p>
-          </Copy>
+            </p> */}
         </div>
       </section>
 
@@ -351,12 +369,11 @@ export default function Home() {
         <div className="header">
           <Copy>
             <h1>
-              <span className="spacer">&nbsp;</span>I believe great design
-              happens where user needs meet business goals. My approach combines
-              strategic thinking with hands-on execution—from research and
-              prototyping to pixel-perfect implementation. I design systems that
-              scale, solve real problems, and drive measurable impact. Every
-              decision is intentional, every interface has purpose.
+              <span className="spacer">&nbsp;</span>Traveling shapes how i design.
+              Every new place, every conversation, every observation adds to my
+              understanding of how people interact with the world around them.
+              Because the best designers aren't just students of design, they're
+              students of humanity.
             </h1>
           </Copy>
         </div>
