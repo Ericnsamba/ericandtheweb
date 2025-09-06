@@ -17,8 +17,6 @@ import TrailContainer from "@/components/TrailContainer";
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
-let isInitialLoad = true;
-
 const workExperience = [
   {
     position: "Designer | Founder",
@@ -53,15 +51,23 @@ const workExperience = [
 ];
 
 export default function Home() {
-  const [showPreloader, setShowPreloader] = useState(isInitialLoad);
+  const [showPreloader, setShowPreloader] = useState(false);
   const homeRef = useRef(null);
   const aboutImgRef = useRef(null);
   const workExperienceRef = useRef(null);
 
   useEffect(() => {
-    return () => {
-      isInitialLoad = false;
-    };
+    // Check if this is the initial page load
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+    
+    if (!hasVisited) {
+      // First time loading the home page in this session
+      setShowPreloader(true);
+      sessionStorage.setItem('hasVisitedHome', 'true');
+    } else {
+      // Already visited home page, no preloader
+      setShowPreloader(false);
+    }
   }, []);
 
   useGSAP(() => {
@@ -313,7 +319,7 @@ export default function Home() {
         <div className="col story-copy">
           <Copy>
             <p>
-              My path to design started with sketchbooks and Lego, moved through
+              My path to design started as a kid with sketchbooks and Lego, moved through
               poster design, and evolved into a passion for digital design.
               Because I’ve always loved bringing ideas to life, I went a step
               further and developed the skills to build what I designed. That
