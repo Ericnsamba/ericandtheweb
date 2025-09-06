@@ -32,11 +32,9 @@ export const caseStudies = [
     challenge: "Roam needed to stand out in a crowded travel app market. Traditional apps provide static guides or audio tours that lack interactivity and personalization. Users wanted the ability to explore cities dynamically while receiving real-time guidance, asking questions, and experiencing tours in different narrative tones. Existing solutions failed to combine adaptive AI-driven paths with interactive, customizable content, creating a gap that Roam aimed to fill.",
     solution: "Designed Roam to leverage AI for personalized tours with adaptive paths, customizable audio, and AI chat functionality that mimics a local guide. Focused on keeping the interface simple and intuitive while handling complex AI logic in the background. Developed the UI/UX, interactive prototypes, and a comprehensive design system covering typography, color, iconography, and component patterns. Built a cohesive system with warm, earthy tones to reflect grounded, smart, and locally inspired experiences. Worked weekly with developers, AI engineers, and product leads to iterate on AI features and ensure usability.",
     results: ["Roam now enables users to engage with AI as if speaking to a local, with fully adaptive audio tours", "The design system ensures consistency and scalability for future features", "Users receive personalized, dynamic experiences tailored to preferences and real-time input", "Deepened understanding of designing AI products and collaborative product development"],
-    hero: "/Roam/roam_main.jpg",
+    hero: "/roam/roam_main.jpg",
     images: [
-      "/Roam/roam_main.jpg",
-      // "/hero.jpg",
-      // "/about.jpg"
+      "/roam/roam_main.jpg",
     ],
     tags: ["AI Product Design", "Travel Tech", "Design System"],
     featured: true

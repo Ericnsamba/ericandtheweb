@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ericandtheweb.com
+
+# Sitemaps
+Sitemap: https://ericandtheweb.com/sitemap.xml
