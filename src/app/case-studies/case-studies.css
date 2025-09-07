@@ -1,13 +1,14 @@
 .case-studies-page {
   min-height: 100vh;
   padding-top: 8rem;
+  background-color: var(--white);
 }
 
 /* Header */
 .case-studies-header {
   margin: 0 auto 4rem auto;
   padding: 1.5rem;
-  min-height: 80vh;
+  min-height: 80dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

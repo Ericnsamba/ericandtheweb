@@ -1,6 +1,7 @@
 .case-study {
   min-height: 100vh;
   padding-top: 8rem;
+  background-color: var(--white);
 }
 
 /* Hero Section */
@@ -11,7 +12,7 @@
 
 .case-study-hero-img {
   width: 100%;
-  height: 80vh;
+  height: 80dvh;
   overflow: hidden;
   margin-bottom: 3rem;
 }
@@ -222,6 +223,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .case-study-hero {
+    margin-bottom: 4rem;
+    padding-bottom: 0;
+  }
   .case-study {
     padding-top: 6rem;
   }
@@ -234,11 +239,19 @@
     flex-direction: column;
     gap: 2rem;
   }
+
+  .case-study-info {
+    margin: 0 auto 4rem auto;
+  }
   
   .case-study-section,
   .case-study-results {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 0.5rem;
+  }
+
+  .case-study-section {
+    margin: 0 auto 4rem auto;
   }
 
   .case-study-hero-content {

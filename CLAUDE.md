@@ -27,6 +27,7 @@ npm run lint        # Run ESLint to check code quality
 - **Lenis** for smooth scrolling
 - **next-view-transitions** for page transitions
 - **React 19** with modern hooks
+- **Website url** `https://ericandtheweb.com`
 
 ### Key Directories
 ```

@@ -239,7 +239,7 @@ export default function Home() {
   }, [showPreloader]);
 
   return (
-    <>
+    <main className="home-page">
       {showPreloader && (
         <div className="preloader-overlay">
           <div className="progress-bar"></div>
@@ -408,6 +408,6 @@ export default function Home() {
       </section>
 
       <Footer />
-    </>
+    </main>
   );
 }

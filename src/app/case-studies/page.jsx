@@ -82,7 +82,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <div className="case-studies-page" ref={caseStudiesRef}>
+      <main className="case-studies-page" ref={caseStudiesRef}>
         {/* Header */}
         <section className="case-studies-header">
           <Copy delay={0.5}>
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
             ))}
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </>
   );
