@@ -8,11 +8,12 @@ export default function sitemap() {
     '',
     '/case-studies',
     '/contact',
+    '/services',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
     changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/services' ? 0.9 : 0.8,
   }));
 
   // Dynamic case study pages

@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Contact',
-  description: 'Get in touch with Eric Manasse for product design and development projects. Available for freelance work, consulting, and full-time opportunities in London and remote.',
+  title: 'Hire Freelance UI/UX Designer London | Contact Eric Manasse',
+  description: 'Ready to hire a freelance UI/UX designer in London? Contact Eric Manasse for web design, product design, and development projects. Free consultation available.',
   openGraph: {
-    title: 'Contact Eric Manasse | Product Designer',
-    description: 'Get in touch with Eric Manasse for product design and development projects. Available for freelance work, consulting, and full-time opportunities.',
+    title: 'Hire Freelance UI/UX Designer London | Contact Eric Manasse',
+    description: 'Ready to hire a freelance UI/UX designer in London? Contact Eric Manasse for web design, product design, and development projects.',
     images: [
       {
         url: '/trail-images/img1.jpg',
@@ -14,8 +14,8 @@ export const metadata = {
     ],
   },
   twitter: {
-    title: 'Contact Eric Manasse | Product Designer',
-    description: 'Get in touch with Eric Manasse for product design and development projects.',
+    title: 'Hire Freelance UI/UX Designer London | Contact Eric Manasse',
+    description: 'Ready to hire a freelance UI/UX designer? Contact Eric for web design & development projects.',
   },
 };
 

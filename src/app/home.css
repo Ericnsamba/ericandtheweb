@@ -19,6 +19,16 @@
   margin-bottom: 1rem;
 }
 
+.hero-header h1{
+  line-height: 110%;
+  /* padding-bottom: 2rem; */
+}
+
+/* Initial state for SplitText lines */
+.hero-header h1 .line {
+  /* transform: translateY(100%); */
+}
+
 
 
 

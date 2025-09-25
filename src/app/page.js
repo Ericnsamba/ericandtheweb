@@ -9,12 +9,13 @@ import BtnLink from "@/components/BtnLink/BtnLink";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import CustomEase from "gsap/CustomEase";
 import Footer from "@/components/Footer/Footer";
 import TrailContainer from "@/components/TrailContainer";
 // import InteractiveGradient from "@/components/InteractiveGradient";
 
-gsap.registerPlugin(ScrollTrigger, CustomEase);
+gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
 const workExperience = [
@@ -53,6 +54,7 @@ const workExperience = [
 export default function Home() {
   const [showPreloader, setShowPreloader] = useState(false);
   const homeRef = useRef(null);
+  const heroTextRef = useRef(null);
   const aboutImgRef = useRef(null);
   const workExperienceRef = useRef(null);
 
@@ -73,6 +75,52 @@ export default function Home() {
   useGSAP(() => {
     const heroLink = document.querySelector(".hero-link");
     const animationDelay = showPreloader ? 6.2 : 0.9;
+
+    // Hero text animation
+    if (heroTextRef.current) {
+      // const waitForFonts = async () => {
+      //   try {
+      //     await document.fonts.ready;
+      //     await new Promise((resolve) => setTimeout(resolve, 100));
+      //     return true;
+      //   } catch (error) {
+      //     console.warn("Font loading check failed, proceeding anyway:", error);
+      //     await new Promise((resolve) => setTimeout(resolve, 200));
+      //     return true;
+      //   }
+      // };
+
+      const initializeHeroTextAnimation = async () => {
+        console.log("Initializing hero text animation...");
+
+        // await waitForFonts();
+
+        const split = SplitText.create(heroTextRef.current, {
+          type: "lines",
+          mask: "lines",
+          linesClass: "line++",
+          lineThreshold: 0.1,
+        });
+
+        console.log("SplitText created with", split.lines.length, "lines");
+
+        // Animate from CSS initial state to final position
+        gsap.to(split.lines, {
+          y: "0%",
+          duration: 1,
+          stagger: 0.1,
+          ease: "power4.out",
+          onStart: () => console.log("Hero animation started"),
+          onComplete: () => console.log("Hero animation completed"),
+          delay: animationDelay,
+        });
+      };
+
+      // Use a timeout to ensure DOM is ready
+
+        initializeHeroTextAnimation();
+
+    }
 
     if (showPreloader) {
       const tl = gsap.timeline({
@@ -236,7 +284,7 @@ export default function Home() {
         });
       });
     }
-  }, [showPreloader]);
+  }, [showPreloader, heroTextRef]);
 
   return (
     <main className="home-page">
@@ -290,14 +338,11 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-header">
-          <Copy delay={showPreloader ? 6.2 : 0.9}>
-            <h1>
-              <span className="spacer">&nbsp;</span>
-              London based Product Designer and Design Engineer with 8+ years of experience
-              creating digital products across fintech, mobility, and consumer
-              apps.
-            </h1>
-          </Copy>
+          <h1 ref={heroTextRef}>
+            <span className="spacer">&nbsp;</span>
+            Freelance UI/UX Designer & Web Developer based in London, with 8+ years of experience
+            creating digital products for fintech, startups, and consumer brands.
+          </h1>
         </div>
         <TrailContainer />
       </section>
@@ -339,12 +384,12 @@ export default function Home() {
           </Copy>
           <Copy delay={0.6}>
             <p>
-              Today, I’m the founder of Projiro, a digital design studio focused
-              on financial products. My current work centers on developing a
-              system design approach that helps startups and fintech companies
-              ship faster and with greater consistency. It’s the framework I’m
-              building in the background, shaping how Projiro supports teams in
-              turning ideas into scalable, production-ready products.
+              Today, I'm the founder of Projiro, a digital design studio focused
+              on financial products. I offer freelance design and development services
+              to startups and fintech companies, helping them ship faster with
+              greater consistency through systematic design approaches. Whether you need 
+              a complete product design, website redesign, or design system implementation,
+              I turn ideas into scalable, production-ready digital products.
             </p>
           </Copy>
 
