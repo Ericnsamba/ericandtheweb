@@ -237,7 +237,7 @@ export default function Home() {
 
       workRows.forEach((row) => {
         const bg = row.querySelector(".work-experience-bg");
-        const position = row.querySelector(".work-experience-position h3");
+        const position = row.querySelector(".work-experience-position p");
         const company = row.querySelector(".work-experience-company p");
         const duration = row.querySelector(".work-experience-duration span");
 
