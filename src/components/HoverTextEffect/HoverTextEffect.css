@@ -1,0 +1,37 @@
+.hover-text-effect {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hover-text-effect a {
+  position: relative;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hover-text-effect a span {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-text-effect a span:nth-child(2),
+.hover-text-effect a h2:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hover-text-effect .char {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}

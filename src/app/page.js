@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 
 // import DynamicBackground from "@/components/DynamicBackground/DynamicBackground";
 import Copy from "@/components/Copy/Copy";
-import BtnLink from "@/components/BtnLink/BtnLink";
+// import BtnLink from "@/components/BtnLink/BtnLink";
 
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -13,6 +13,7 @@ import { SplitText } from "gsap/SplitText";
 import CustomEase from "gsap/CustomEase";
 import Footer from "@/components/Footer/Footer";
 import TrailContainer from "@/components/TrailContainer";
+// import HoverTextEffect from "@/components/HoverTextEffect";
 // import InteractiveGradient from "@/components/InteractiveGradient";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
@@ -439,7 +440,7 @@ export default function Home() {
             <div key={index} className="work-experience-row">
               <div className="work-experience-bg"></div>
               <div className="work-experience-position">
-                <h3>{experience.position}</h3>
+                <p>{experience.position}</p>
               </div>
               <div className="work-experience-company">
                 <p>{experience.company}</p>

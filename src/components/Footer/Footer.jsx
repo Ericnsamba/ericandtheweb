@@ -5,41 +5,42 @@ import { useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import HoverTextEffect from "../HoverTextEffect";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const footerRef = useRef(null);
 
-  useGSAP(
-    () => {
-      const textElements = footerRef.current.querySelectorAll(".footer-text");
+  // useGSAP(
+  //   () => {
+  //     const textElements = footerRef.current.querySelectorAll(".footer-text");
 
-      textElements.forEach((element) => {
-        const textContent = element.querySelector(".footer-text-content");
-        gsap.set(textContent, {
-          y: "100%",
-        });
-      });
+  //     textElements.forEach((element) => {
+  //       const textContent = element.querySelector(".footer-text-content");
+  //       gsap.set(textContent, {
+  //         y: "100%",
+  //       });
+  //     });
 
-      ScrollTrigger.create({
-        trigger: footerRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          textElements.forEach((element, index) => {
-            const textContent = element.querySelector(".footer-text-content");
-            gsap.to(textContent, {
-              y: "0%",
-              duration: 0.8,
-              delay: index * 0.1,
-              ease: "power3.out",
-            });
-          });
-        },
-      });
-    },
-    { scope: footerRef }
-  );
+  //     ScrollTrigger.create({
+  //       trigger: footerRef.current,
+  //       start: "top 80%",
+  //       onEnter: () => {
+  //         textElements.forEach((element, index) => {
+  //           const textContent = element.querySelector(".footer-text-content");
+  //           gsap.to(textContent, {
+  //             y: "0%",
+  //             duration: 0.8,
+  //             delay: index * 0.1,
+  //             ease: "power3.out",
+  //           });
+  //         });
+  //       },
+  //     });
+  //   },
+  //   { scope: footerRef }
+  // );
 
   return (
     <div className="footer" ref={footerRef}>
@@ -54,40 +55,32 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-social">
-            <a href="mailto:hello@ericandtheweb.com">
-              <div className="footer-text">
-                <div className="footer-text-content">
-                  <h2>Email</h2>
-                </div>
+            <div className="footer-text">
+              <div className="footer-text-content">
+                <HoverTextEffect text="Email" as="h2" href="mailto:hello@ericandtheweb.com" />
               </div>
-            </a>
+            </div>
           </div>
           <div className="footer-social">
-            <a href="https://www.linkedin.com/in/ericmanasse/">
-              <div className="footer-text">
-                <div className="footer-text-content">
-                  <h2>LinkedIn</h2>
-                </div>
+            <div className="footer-text">
+              <div className="footer-text-content">
+                <HoverTextEffect text="LinkedIn" as="h2" href="https://www.linkedin.com/in/ericmanasse/" />
               </div>
-            </a>
+            </div>
           </div>
           <div className="footer-social">
-            <a href="https://instagram.com/ericandtheweb">
-              <div className="footer-text">
-                <div className="footer-text-content">
-                  <h2>Instagram</h2>
-                </div>
+            <div className="footer-text">
+              <div className="footer-text-content">
+                <HoverTextEffect text="Instagram" as="h2" href="https://instagram.com/ericandtheweb" />
               </div>
-            </a>
+            </div>
           </div>
           <div className="footer-social">
-            <a href="https://dribbble.com/ericandtheweb">
-              <div className="footer-text">
-                <div className="footer-text-content">
-                  <h2>Dribbble</h2>
-                </div>
+            <div className="footer-text">
+              <div className="footer-text-content">
+                <HoverTextEffect text="Dribbble" as="h2" href="https://dribbble.com/ericandtheweb" />
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
